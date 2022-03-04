@@ -1,0 +1,26 @@
+.utility_bar {
+  position: relative;
+  width: calc(100% - 40px);
+  margin-left: 20px;
+
+  margin-right: auto;
+  background-color: #ffbc32;
+  height: 40px;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.info_bar {
+  position: relative;
+  height: 100%;
+  width: calc(100% - 150px);
+  overflow: hidden;
+}
+
+.bar_container {
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+  padding-left: 50px;
+  padding-right: 50px;
+}

@@ -1,0 +1,23 @@
+.announcements {
+  position: relative;
+  width: calc(100% - 40px);
+  margin-left: auto;
+  margin-right: auto;
+  height: 30px;
+  overflow: hidden;
+  background-color: #222431;
+  padding-top: 20px;
+  z-index: 100;
+}
+.announcements_text {
+  position: relative;
+  white-space: nowrap;
+  height: 100%;
+  line-height: 30px;
+  display: block;
+  color: white;
+  font-size: 18px;
+  font-family: "gemunu";
+  width: fit-content;
+  cursor: default;
+}

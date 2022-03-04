@@ -20,7 +20,6 @@ function ButtonsContainer() {
       <div className="buttons_container">
         <UniSwapButton />
         <MenuButton />
-        <div className="uniswap_white"></div>
       </div>
     </>
   );

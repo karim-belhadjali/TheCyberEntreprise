@@ -25,7 +25,7 @@
   float: left;
 }
 
-.text {
+.text_btn {
   position: relative;
   display: block;
   font-size: 30px;
@@ -63,4 +63,14 @@
 
 .text_p3 {
   clip-path: polygon(0% 33.3%, 100% 33.3%, 100% 0%, 0% 0%);
+}
+
+.uniswap_white {
+  position: absolute;
+  top: 0px;
+  right: 120px;
+  width: 30px;
+  height: 100%;
+  background-color: white;
+  clip-path: polygon(100% 0%, 100% 100%, 0 100%);
 }

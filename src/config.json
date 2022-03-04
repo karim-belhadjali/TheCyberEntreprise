@@ -1,0 +1,12 @@
+{
+  "mainFont": "'gemunu'",
+  "secondFont": "'terminator'",
+
+  "mainBg": "#222431",
+  "yellow": "#ffbc32",
+  "yellow_bright": " #ffedc9",
+  "btn_color": "#171822",
+
+  "uniswap_btn_width": "340px",
+  "menu_btn_width": "120px"
+}
