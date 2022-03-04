@@ -1,0 +1,87 @@
+.hero {
+  position: relative;
+  width: calc(100% - 40px);
+  height: calc(100vh - 225px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero_svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 20;
+}
+
+.mascot_svg {
+  position: absolute;
+  max-width: 400px;
+
+  right: -5px;
+  bottom: 0px;
+  z-index: 30;
+}
+.hero_mascot_img {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 300px;
+  height: auto;
+}
+
+.hero_main_bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url("../../assets/webp/hero_background.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.flame_small {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  background-image: url("../../assets/webp/back.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+
+.flame_big {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  background-image: url("../../assets/webp/front.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+
+.hero_bottom_svg {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 0px;
+  z-index: 100;
+}
+.bottom_hero_bottom_svg {
+  display: block;
+  width: 100%;
+}

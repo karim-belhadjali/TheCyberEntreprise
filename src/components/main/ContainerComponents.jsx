@@ -1,6 +1,6 @@
 import React from "react";
 import Announcements from "../annoucements/AnnouncementComponents";
-import FixedBot from "../fixedBottom/FixedBotComponent";
+import HeroContainer from "../hero/HeroContainerComponent";
 import UtilityBar from "../utility-bar/UtilityBarComponent";
 import "./ContainerStyle.css";
 
@@ -9,7 +9,7 @@ function Container() {
     <div className="container">
       <Announcements />
       <UtilityBar />
-      <FixedBot />
+      <HeroContainer />
     </div>
   );
 }

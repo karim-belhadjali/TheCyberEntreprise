@@ -21,7 +21,7 @@
   z-index: 20;
 }
 
-.brackets {
+.brackets_bottom {
   position: absolute;
   color: white;
   top: 3px;
@@ -33,13 +33,11 @@
 }
 
 .bracket_left_bottom {
-  position: absolute;
   left: 0px;
   z-index: 19;
 }
 
 .bracket_right_bottom {
-  position: absolute;
   right: 0px;
   z-index: 19;
 }
