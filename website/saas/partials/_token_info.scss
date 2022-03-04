@@ -1,0 +1,149 @@
+div.token_info {
+    position : relative;
+    width : calc(100% - 40px);
+    overflow : auto;
+    margin-top : 50px;
+    margin-bottom : 120px;
+    margin-left : auto;
+    margin-right : auto;
+  
+    display : flex;
+    justify-content : center;
+  
+  
+    div.token_image {
+      width : 500px;
+      height : auto;
+      background-image : url('../design/webp/boxes.webp');
+      background-size : contain;
+      background-position : center;
+      background-repeat : no-repeat;
+      transform: translateX(50px);
+    }
+  
+  
+    div.token_info_border {
+      position : relative;
+      width : 500px;
+      overflow : auto;
+      background-color : black;
+      clip-path: polygon(0% 50px, 50px 0px, 100% 0%, 100% calc(100% - 50px), calc(100% - 50px) 100%, 0px 100%);
+      transform: translateX(-50px);
+  
+      div.token_info_container {
+        position : relative;
+        width : calc(100% - 8px);
+        margin-top : 4px;
+        margin-bottom : 4px;
+        margin-left : auto;
+        margin-right : auto;
+        background-color : $btn_color;
+        text-align : center;
+        padding-top : 40px;
+        padding-bottom : 40px;
+  
+        clip-path: polygon(0% 46px, 46px 0px, 100% 0%, 100% calc(100% - 46px), calc(100% - 46px) 100%, 0px 100%);
+      
+        div.token_info_element {
+          position : relative;
+          width : calc(100% - 60px);
+          margin-left : auto;
+          margin-right : auto;
+          overflow : auto;
+          margin-bottom : 40px;
+  
+  
+          div.info_title {
+            position : relative;
+            width : 100%;
+            font-family : $secondFont;
+            font-size : 22px;
+            color : $yellow_bright;
+          }
+          
+  
+  
+          div.info_data {
+            position : relative;
+            width : 100%;
+            font-size : 20px;
+            color : white;
+            margin-top : 10px;
+          }
+  
+          div.info_title:before{
+            position : absolute;
+            top : 0px;
+            left : 0px;
+            content : "[";
+            color : white;
+            font-size : 22px;
+          }
+  
+          div.info_data:after{
+            position : absolute;
+            bottom : 0px;
+            right : 0px;
+            content : "]";
+            color : white;
+            font-family : $secondFont;
+            font-size : 22px;
+          }
+  
+          div#no_bracket:after {
+            content : "";
+          }
+  
+          div.info_links {
+            position : relative;
+            width : 100%;
+            margin-top : 10px;
+            display : flex;
+            justify-content: flex-end;
+  
+            div.link_element {
+              margin-left : 10px;
+              background-color : #68696f;
+              height : 24px;
+              padding-top : 1px;
+              padding-bottom : 1px;
+  
+              clip-path: polygon(0% 8px, 8px 0px, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0px 100%);
+  
+              a{
+                height : 22px;
+                display : block;
+                background-color : $yellow;
+                border-style : solid;
+                border-color : $btn_color;
+                border-width : 1px;
+                padding-left : 10px;
+                padding-right : 10px;
+                line-height : 22px;
+                margin-left : 1px;
+                margin-right : 1px;
+                color : $btn_color;
+                transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+                clip-path: polygon(0% 4px, 7px 0px, 100% 0%, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0px 100%);
+              }
+  
+              a:hover {
+                background-color : white;
+              }
+  
+            }
+          }
+  
+  
+  
+        }
+  
+        div.token_info_element:last-child {
+          margin-bottom : 0px;
+        }
+      
+      }
+    
+    }
+  
+  }

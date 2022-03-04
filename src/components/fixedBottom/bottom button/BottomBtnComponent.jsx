@@ -5,8 +5,8 @@ function BottomBtn({ text }) {
   return (
     <div class="bottom_btn">
       <span className="bottom_button_text">{text}</span>
-      <span className="brackets bracket_left_bottom">[</span>
-      <span className="brackets bracket_right_bottom">]</span>
+      <span className="brackets_bottom bracket_left_bottom">[</span>
+      <span className="brackets_bottom bracket_right_bottom">]</span>
     </div>
   );
 }

@@ -1,0 +1,104 @@
+
+div.hero {
+    position : relative;
+    width : calc(100% - 40px);
+    height : calc(100vh - 225px);
+    margin-left : auto;
+    margin-right : auto;
+  
+  
+  
+    div.hero_container {
+      position : relative;
+      width : 100%;
+      height : 100%;
+  
+  
+  
+      div.hero_svg {
+        position : absolute;
+        width : 100%;
+        height : 100%;
+        top : 0px;
+        left : 0px;
+        z-index : 20;
+      }
+  
+  
+      div.mascot_svg {
+        position : absolute;
+        max-width : 400px;
+
+        right : -5px;
+        bottom : 0px;
+        z-index : 30;
+  
+        img {
+          display : block;
+          width : 100%;
+          min-width : 300px;
+          height : auto;
+        }
+      }
+  
+  
+      div.hero_main_bg {
+        position : absolute;
+        width : 100%;
+        height : 100%;
+        overflow : hidden;
+        background-image : url('../design/webp/hero_background.webp');
+        background-position : center;
+        background-size : cover;
+        background-repeat : no-repeat;
+  
+        div.flame_small {
+  
+          position : absolute;
+          width : 120%;
+          height : 120%;
+          top : -10%;
+          left : -10%;
+          background-image : url('../design/webp/back.webp');
+          background-size : cover;
+          background-repeat : no-repeat;
+          background-position: center;
+          opacity: 0;
+        }
+    
+    
+        div.flame_big {
+          position : absolute;
+          width : 120%;
+          height : 120%;
+          top : -10%;
+          left : -10%;
+          background-image : url('../design/webp/front.webp');
+          background-size : cover;
+          background-repeat : no-repeat;
+          background-position: center;
+          opacity : 0;
+        }
+      }
+  
+  
+  
+    }
+  
+  
+    div.hero_bottom_svg {
+      position : absolute;
+      width : 100%;
+      height : auto;
+      bottom : 0px;
+      z-index : 100;
+      img {
+        display : block;
+        width : 100%;
+      }
+    }
+  }
+  
+  
+  
+  
