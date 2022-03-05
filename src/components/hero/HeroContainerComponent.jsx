@@ -1,5 +1,5 @@
 import React from "react";
-import "./HeroContainerStyle.css";
+import "./HeroContainerStyle.scss";
 import mascotSvg from "../../assets/webp/inu.webp";
 import hero_bottom_svg from "../../assets/svg/top-mask-bar.svg";
 function HeroContainer() {

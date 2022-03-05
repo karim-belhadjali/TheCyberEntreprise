@@ -1,7 +1,7 @@
 import React from "react";
 import Bar from "./Bar/BarComponent";
 import LanguageButton from "./language-selection/LanguageButtonComponent";
-import "./UtilityBarStyle.css";
+import "./UtilityBarStyle.scss";
 
 function UtilityBar() {
   return (

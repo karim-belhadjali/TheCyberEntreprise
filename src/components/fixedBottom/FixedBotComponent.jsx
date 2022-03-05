@@ -1,5 +1,5 @@
 import React from "react";
-import "./FixedBotStyle.css";
+import "./FixedBotStyle.scss";
 import fixed_bot_svg from "../../assets/svg/bottom-mask-bar.svg";
 import BottomBtn from "./bottom button/BottomBtnComponent";
 

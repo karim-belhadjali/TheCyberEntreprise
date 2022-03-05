@@ -2,8 +2,8 @@ import React from "react";
 import Announcements from "../annoucements/AnnouncementComponents";
 import HeroContainer from "../hero/HeroContainerComponent";
 import UtilityBar from "../utility-bar/UtilityBarComponent";
-import "./ContainerStyle.css";
 import TokenInfo from "../token-info/token-info";
+import "./ContainerStyle.scss";
 
 function Container() {
   return (

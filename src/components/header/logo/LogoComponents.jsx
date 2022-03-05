@@ -1,5 +1,5 @@
 import React from "react";
-import "./LogoStyle.css";
+import "./LogoStyle.scss";
 import Image from "react-image-webp";
 
 function Logo() {
