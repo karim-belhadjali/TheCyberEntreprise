@@ -1,8 +1,8 @@
 .uniswap_btn {
   position: relative;
-  width: 340px;
+  width: var(--var-uniswap_btn_width);
   height: 100%;
-  background-color: #ffbc32;
+  background-color: var(--var-yellow);
   float: left;
   clip-path: polygon(0% 100%, 70px 0%, 100% 10px, 100% calc(100% - 10px));
   -webkit-animation: increaseSwapOut 0.2s linear forwards;
@@ -29,8 +29,8 @@
   position: relative;
   display: block;
   font-size: 30px;
-  font-family: "gemunu";
-  color: #000;
+  font-family: var(--var-mainFont);
+  color: var(--var-btn_color);
   height: 80px;
   font-weight: bold;
   margin-left: 15px;
