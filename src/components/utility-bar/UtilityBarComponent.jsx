@@ -5,9 +5,9 @@ import "./UtilityBarStyle.scss";
 
 function UtilityBar() {
   return (
-    <div class="utility_bar">
-      <div class="info_bar">
-        <div class="bar_container">
+    <div className="utility_bar">
+      <div className="info_bar">
+        <div className="bar_container">
           <Bar text="Price in ETH: 0.0000000000002419" />
           <Bar text="Price in USD: $0.0000000009154" />
           <Bar text="Last 24h change: 0.86%" />

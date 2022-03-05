@@ -7,7 +7,7 @@ import uniswapp from "../../../assets/svg/uniswap_yellow.svg";
 function ButtonsContainer() {
   return (
     <>
-      <div class="buttons_container_bg">
+      <div className="buttons_container_bg">
         <span className="backgtound_svg">
           <img
             className="second_backgtound_svg"
