@@ -9,11 +9,19 @@ body {
 }
 @font-face {
   font-family: "terminator";
-  src: local("terminator"), url(./assets/fonts/terminator.woff) format("woff");
+  src: local("terminator"), url(./assets/fonts/terminator.woff) format("woff"),
+    url(./assets/fonts/terminator.woff2) format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "gemunu";
-  src: local("gemunu"), url(./assets/fonts/gemunu.woff) format("woff");
+  src: local("gemunu"), url(./assets/fonts/gemunu.woff) format("woff"),
+    url(./assets/fonts/gemunu.woff2) format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 code {
@@ -22,14 +30,12 @@ code {
 }
 
 :root {
-  $mainFont: "gemunu";
-  $secondFont: "terminator";
-
-  $mainBg: #222431;
-  $yellow: #ffbc32;
-  $yellow_bright: #ffedc9;
-  $btn_color: #171822;
-
-  $uniswap_btn_width: 340px;
-  $menu_btn_width: 120px;
+  --var-mainFont: "gemunu";
+  --var-secondFont: "terminator";
+  --var-mainBg: #222431;
+  --var-yellow: #ffbc32;
+  --var-yellow_bright: #ffedc9;
+  --var-btn_color: #171822;
+  --var-uniswap_btn_width: 340px;
+  --var-menu_btn_width: 120px;
 }
