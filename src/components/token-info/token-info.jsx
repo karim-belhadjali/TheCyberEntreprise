@@ -1,5 +1,5 @@
 import React from "react";
-import "./token-info.css";
+import "./token-info.scss";
 import mascotSvg from "../../assets/webp/inu.webp";
 import hero_bottom_svg from "../../assets/svg/top-mask-bar.svg";
 function TokenInfo() {
