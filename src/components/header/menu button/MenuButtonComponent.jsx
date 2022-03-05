@@ -1,5 +1,5 @@
 import React from "react";
-import "./MenuButtonStyle.css";
+import "./MenuButtonStyle.scss";
 
 function MenuButton() {
   return (

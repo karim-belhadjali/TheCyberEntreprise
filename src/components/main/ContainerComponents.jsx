@@ -2,7 +2,7 @@ import React from "react";
 import Announcements from "../annoucements/AnnouncementComponents";
 import HeroContainer from "../hero/HeroContainerComponent";
 import UtilityBar from "../utility-bar/UtilityBarComponent";
-import "./ContainerStyle.css";
+import "./ContainerStyle.scss";
 
 function Container() {
   return (

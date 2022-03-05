@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
-    "react-image-webp": "^0.8.0"
+    "react-image-webp": "^0.8.0",
+    "sass": "^1.49.9"
   }
 }

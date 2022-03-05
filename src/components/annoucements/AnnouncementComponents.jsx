@@ -1,5 +1,5 @@
 import React from "react";
-import "./AnnouncementStyle.css";
+import "./AnnouncementStyle.scss";
 
 function Announcements() {
   return (

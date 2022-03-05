@@ -1,5 +1,5 @@
 import React from "react";
-import "./LanguageButtonStyle.css";
+import "./LanguageButtonStyle.scss";
 
 function LanguageButton() {
   return (

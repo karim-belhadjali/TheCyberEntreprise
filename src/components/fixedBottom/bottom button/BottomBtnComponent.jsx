@@ -1,5 +1,5 @@
 import React from "react";
-import "./BottomBtnStyle.css";
+import "./BottomBtnStyle.scss";
 
 function BottomBtn({ text }) {
   return (
