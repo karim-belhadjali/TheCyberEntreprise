@@ -2,10 +2,13 @@
   position: relative;
   display: inline-block;
   height: 36px;
-
   margin-left: 15px;
   margin-right: 15px;
 }
+// .bottom_button_text:hover {
+//   padding-left: 15px;
+//   padding-right: 15px;
+// }
 .bottom_button_text {
   position: relative;
   display: block;
@@ -40,4 +43,15 @@
 .bracket_right_bottom {
   right: 0px;
   z-index: 19;
+}
+
+div.bottom_icons {
+  margin-top : 10px;
+  width : 30px;
+  height : 30px;
+  display : none;
+  cursor : pointer;
+  overflow : hidden;
+  text-indent : -999px;
+  background-repeat: no-repeat;
 }
