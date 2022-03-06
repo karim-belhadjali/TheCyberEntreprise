@@ -1,40 +1,20 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  //   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  //   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #222431;
 }
-@font-face {
-  font-family: "terminator";
-  src: local("terminator"), url(./assets/fonts/terminator.woff) format("woff"),
-    url(./assets/fonts/terminator.woff2) format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "gemunu";
-  src: local("gemunu"), url(./assets/fonts/gemunu.woff) format("woff"),
-    url(./assets/fonts/gemunu.woff2) format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-:root {
-  --var-mainFont: "gemunu";
-  --var-secondFont: "terminator";
-  --var-mainBg: #222431;
-  --var-yellow: #ffbc32;
-  --var-yellow_bright: #ffedc9;
-  --var-btn_color: #171822;
-  --var-uniswap_btn_width: 340px;
-  --var-menu_btn_width: 120px;
-}
+
+
+@import "styles/variables.scss";
+@import "styles/font.scss";
+@import "styles/reset.scss";

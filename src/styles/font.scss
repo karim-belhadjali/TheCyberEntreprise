@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "terminator";
+    src: local("terminator"), url(../assets/fonts/terminator.woff) format("woff"),
+      url(../assets/fonts/terminator.woff2) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "gemunu";
+    src: local("gemunu"), url(../assets/fonts/gemunu.woff) format("woff"),
+      url(../assets/fonts/gemunu.woff2) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
