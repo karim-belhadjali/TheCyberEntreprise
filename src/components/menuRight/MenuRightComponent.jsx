@@ -1,4 +1,5 @@
 import React from "react";
+import SideBtn from "./sideButton/SideBtnComponent";
 import "./MenuRightStyle.scss";
 
 function MenuRight({ closeMenu }) {
@@ -6,46 +7,47 @@ function MenuRight({ closeMenu }) {
     <div className="menu_right">
       <ul id="language_menu" className="menu_container">
         <li>
-          <a href="#">English</a>
+          <SideBtn text="English" />
+          {/* <a href="#">English</a> */}
         </li>
         <li>
-          <a href="#">Spanish</a>
+          <SideBtn text="Spanish" />
         </li>
         <li>
-          <a href="#">German</a>
+          <SideBtn text="German" />
         </li>
         <li>
-          <a href="#">Romanian</a>
+          <SideBtn text="Romanian" />
         </li>
         <li>
-          <a href="#">Italian</a>
+          <SideBtn text="Italian" />
         </li>
       </ul>
 
       <ul id="main_menu" className="menu_container">
         <li>
-          <a href="#">CyberART</a>
+          <SideBtn text="CyberART" />
         </li>
         <li>
-          <a href="#">Team</a>
+          <SideBtn text="Team" />
         </li>
         <li>
-          <a href="#">RoadMap</a>
+          <SideBtn text="RoadMap" />
         </li>
         <li>
-          <a href="#">Telegram Groups</a>
+          <SideBtn text="Telegram Groups" />
         </li>
         <li>
-          <a href="#">How to Buy</a>
+          <SideBtn text="How to Buy" />
         </li>
         <li>
-          <a href="#">RUBBE System</a>
+          <SideBtn text="RUBBE System" />
         </li>
         <li>
-          <a href="#">Chart</a>
+          <SideBtn text="Chart" />
         </li>
         <li>
-          <a href="#">Press Release</a>
+          <SideBtn text="Press Release" />
         </li>
       </ul>
 

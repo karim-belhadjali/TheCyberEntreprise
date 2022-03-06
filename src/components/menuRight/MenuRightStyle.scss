@@ -19,41 +19,7 @@ div.menu_right {
       width: 100%;
       margin-bottom: 30px;
 
-      a {
-        position: relative;
-        display: block;
-        font-family: var(--var-mainFont);
-        text-align: center;
-        color: white;
-        font-size: 24px;
-        height: 32px;
-        line-height: 32px;
-        z-index: 2;
-
-        span {
-          position: absolute;
-          width: calc(100% - 40px);
-          left: 20px;
-          height: 100%;
-          display: block;
-          font-family: var(--var-mainFont);
-          font-size: 24px;
-          top: 0px;
-          background-color: #171822;
-        }
-
-        span.indigo_1 {
-          clip-path: polygon(0% 100%, 100% 100%, 100% 66.6%, 0% 66.6%);
-        }
-
-        span.indigo_2 {
-          clip-path: polygon(0% 31.2%, 100% 31.2%, 100% 68.7%, 0% 68.7%);
-        }
-
-        span.indigo_3 {
-          clip-path: polygon(0% 33.3%, 100% 33.3%, 100% 0%, 0% 0%);
-        }
-      }
+     
 
       span.brackets {
         position: absolute;
@@ -66,13 +32,7 @@ div.menu_right {
         display: block;
       }
 
-      span.bracket_left {
-        left: 0px;
-      }
-
-      span.bracket_right {
-        right: 0px;
-      }
+    
     }
   }
 

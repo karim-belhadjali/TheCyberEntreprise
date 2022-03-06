@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import { noiseTrigger } from "../../../hooks/useTrigger";
-import "./BottomBtnStyle.scss";
+import "./SideBtnStyle.scss";
 
-function BottomBtn({ text }) {
+function SideBtn({ text }) {
   const textRef1 = useRef();
   const textRef2 = useRef();
   const textRef3 = useRef();
@@ -10,7 +10,7 @@ function BottomBtn({ text }) {
 
   return (
     <div
-      className="bottom_btn"
+      className="btn"
       onMouseEnter={() => {
         noiseTrigger(textRef1.current, textRef2.current, textRef3.current);
         setBracketDistance(12);
@@ -19,24 +19,25 @@ function BottomBtn({ text }) {
         setBracketDistance(0);
       }}
     >
-      <a href="">
-        <span className="bottom_button_text indigo indigo_1" ref={textRef1}>
-          {text}
-        </span>
-        <span className="bottom_button_text indigo indigo_2" ref={textRef2}>
-          {text}
-        </span>
-        <span className="bottom_button_text indigo indigo_3" ref={textRef3}>
-          {text}
-        </span>
+      <a href="" className="indigo-container">
         <span
-          className="brackets_bottom bracket_left_bottom"
+          className="brackets bracket_left_bottom"
           style={{ left: breacketsDistance + "px" }}
         >
           [
         </span>
+        <span className="indigo indigo_1" ref={textRef1}>
+          {text}
+        </span>
+        <span className="indigo indigo_2" ref={textRef2}>
+          {text}
+        </span>
+        <span className="indigo indigo_3" ref={textRef3}>
+          {text}
+        </span>
+
         <span
-          className="brackets_bottom bracket_right_bottom"
+          className="brackets bracket_right_bottom"
           style={{ right: breacketsDistance + "px" }}
         >
           ]
@@ -46,4 +47,4 @@ function BottomBtn({ text }) {
   );
 }
 
-export default BottomBtn;
+export default SideBtn;
