@@ -2,12 +2,12 @@ import React from "react";
 import ButtonsContainer from "../buttons container/ButtonsContainer";
 import Logo from "../logo/LogoComponents";
 import "./FixedTopStyle.scss";
-function FixedTop() {
+function FixedTop({ menuClick }) {
   return (
     <>
       <div className="fixed_top">
         <Logo />
-        <ButtonsContainer />
+        <ButtonsContainer menuClick={menuClick} />
       </div>
     </>
   );

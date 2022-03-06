@@ -4,7 +4,7 @@ import LanguageButton from "./language-selection/LanguageButtonComponent";
 import "./UtilityBarStyle.scss";
 import Anime from "react-animejs-wrapper";
 
-function UtilityBar() {
+function UtilityBar({ languageClick }) {
   const utilityRef = useRef(null);
   const utilitySpanRef = useRef(null);
   const animeRef = useRef(null);
@@ -42,7 +42,7 @@ function UtilityBar() {
             <Bar text="Pooled CYBR: 145,925,290,251,841.84" />
           </div>
         </div>
-        <LanguageButton />
+        <LanguageButton onClick={languageClick} />
       </div>
     </Anime>
   );

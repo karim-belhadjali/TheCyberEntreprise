@@ -4,7 +4,7 @@ import uniswapp from "../../../assets/svg/uniswap_yellow.svg";
 import uniswap from "../../../assets/svg/uniswap_black.svg";
 import { noiseTrigger } from "../../../hooks/useTrigger";
 
-function ButtonsContainer() {
+function ButtonsContainer({ menuClick }) {
   const span1Ref = useRef(null);
   const span2Ref = useRef(null);
   const span3Ref = useRef(null);
@@ -41,7 +41,7 @@ function ButtonsContainer() {
             </span>
           </a>
         </div>
-        <div id="menu_btn" className="menu_btn">
+        <div onClick={menuClick} id="menu_btn" className="menu_btn">
           <span className="btn"> MENU </span>
           <span className="loading_container">
             <span className="load1"></span>
