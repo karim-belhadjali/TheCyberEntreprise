@@ -1,26 +1,57 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./ButtonsContainer.scss";
-import MenuButton from "../menu button/MenuButtonComponent";
-import UniSwapButton from "../Uniswap button/UniswapButtonComponent";
 import uniswapp from "../../../assets/svg/uniswap_yellow.svg";
+import uniswap from "../../../assets/svg/uniswap_black.svg";
+import { noiseTrigger } from "../../../hooks/useTrigger";
 
 function ButtonsContainer() {
+  const span1Ref = useRef(null);
+  const span2Ref = useRef(null);
+  const span3Ref = useRef(null);
+
   return (
     <>
       <div className="buttons_container_bg">
-        <span className="backgtound_svg">
-          <img
-            className="second_backgtound_svg"
-            src={uniswapp}
-            width="100%"
-            height="100%"
-            alt=""
-          />
+        <span>
+          <img src={uniswapp} width="100%" height="100%" alt="" />
         </span>
       </div>
       <div className="buttons_container">
-        <UniSwapButton />
-        <MenuButton />
+        <div
+          onMouseEnter={() =>
+            noiseTrigger(span1Ref.current, span2Ref.current, span3Ref.current)
+          }
+          className="uniswap_btn"
+        >
+          <a href="#">
+            <span className="image">
+              <img src={uniswap} width="100%" height="100%" alt="" />
+            </span>
+            <span className="text">
+              <span className="text_opacity">BUY ON UNISWAP</span>
+              <span ref={span1Ref} className="text_p1 absolute">
+                BUY ON UNISWAP
+              </span>
+              <span ref={span2Ref} className="text_p2 absolute">
+                BUY ON UNISWAP
+              </span>
+              <span ref={span3Ref} className="text_p3 absolute">
+                BUY ON UNISWAP
+              </span>
+            </span>
+          </a>
+        </div>
+        <div id="menu_btn" className="menu_btn">
+          <span className="btn"> MENU </span>
+          <span className="loading_container">
+            <span className="load1"></span>
+            <span className="load2"></span>
+            <span className="load3"></span>
+            <span className="load4"></span>
+            <span className="load5"></span>
+          </span>
+        </div>
+        <div className="uniswap_white"></div>
       </div>
     </>
   );
