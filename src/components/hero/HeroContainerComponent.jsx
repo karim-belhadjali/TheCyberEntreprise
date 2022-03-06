@@ -1,4 +1,4 @@
-import React, { useState, forwardRef,useImperativeHandle } from "react";
+import React, { useState, forwardRef, useImperativeHandle } from "react";
 import "./HeroContainerStyle.scss";
 import mascotSvg from "../../assets/webp/inu.webp";
 import hero_bottom_svg from "../../assets/svg/top-mask-bar.svg";
@@ -7,18 +7,30 @@ const HeroContainer = forwardRef((props, ref) => {
   const [bigFlameTop, setBigFlameTop] = useState(0);
   const [smallFlameLeft, setSmallFlameLeft] = useState(0);
   const [smallFlameTop, setSmallFlameTop] = useState(0);
-  const bigFlameStyle = { left: bigFlameLeft + "%", top: bigFlameTop + "%" };
+  const [opacity, setOpacity] = useState(0);
+  const bigFlameStyle = {
+    left: bigFlameLeft + "%",
+    top: bigFlameTop + "%",
+    opacity
+  };
   const smallFlameStyle = {
     left: smallFlameLeft + "%",
-    top: smallFlameTop + "%"
+    top: smallFlameTop + "%",
+    opacity
   };
+  const [hiddenFlames, setHiddenFlames] = useState(true);
+
   var xSize = document.body.clientWidth;
   var halfBodyWidth = xSize / 2;
   var ySize = document.body.clientHeight;
   var halfBodyHeight = ySize / 2;
-  var hiddenFlames = true;
   useImperativeHandle(ref, () => ({
     mouseMoving(e) {
+      if (hiddenFlames) {
+        setHiddenFlames(false);
+        setOpacity(1);
+        //opacity 1
+      }
       let xPos = e.clientX;
       let yPos = e.clientY;
 
@@ -52,8 +64,8 @@ const HeroContainer = forwardRef((props, ref) => {
           </div>
 
           <div className="hero_main_bg">
-            <div className="flame_small" style={smallFlameStyle}></div>
-            <div className="flame_big" style={bigFlameStyle}></div>
+            <div className={"flame_small flame"} style={smallFlameStyle}></div>
+            <div className={"flame_big flame"} style={bigFlameStyle}></div>
           </div>
 
           <div className="hero_bottom_svg">

@@ -47,6 +47,10 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+.flame {
+  transition: opacity .5s;
+  opacity: 0;
+}
 
 .flame_small {
   position: absolute;
@@ -58,7 +62,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 1;
 }
 
 .flame_big {
@@ -71,7 +74,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 1;
 }
 
 .hero_bottom_svg {
