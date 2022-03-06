@@ -1,8 +1,41 @@
-import React from "react";
+import React, { useState, forwardRef,useImperativeHandle } from "react";
 import "./HeroContainerStyle.scss";
 import mascotSvg from "../../assets/webp/inu.webp";
 import hero_bottom_svg from "../../assets/svg/top-mask-bar.svg";
-function HeroContainer() {
+const HeroContainer = forwardRef((props, ref) => {
+  const [bigFlameLeft, setBigFlameLeft] = useState(0);
+  const [bigFlameTop, setBigFlameTop] = useState(0);
+  const [smallFlameLeft, setSmallFlameLeft] = useState(0);
+  const [smallFlameTop, setSmallFlameTop] = useState(0);
+  const bigFlameStyle = { left: bigFlameLeft + "%", top: bigFlameTop + "%" };
+  const smallFlameStyle = {
+    left: smallFlameLeft + "%",
+    top: smallFlameTop + "%"
+  };
+  var xSize = document.body.clientWidth;
+  var halfBodyWidth = xSize / 2;
+  var ySize = document.body.clientHeight;
+  var halfBodyHeight = ySize / 2;
+  var hiddenFlames = true;
+  useImperativeHandle(ref, () => ({
+    mouseMoving(e) {
+      let xPos = e.clientX;
+      let yPos = e.clientY;
+
+      let horizontalPercentageBig = ((xPos / halfBodyWidth) * 100) / 10;
+      setBigFlameLeft(-horizontalPercentageBig);
+
+      let verticalPercentageBig = ((yPos / halfBodyHeight) * 100) / 10;
+      setBigFlameTop(-verticalPercentageBig);
+
+      let horizontalPercentageSmall = ((xPos / halfBodyWidth) * 100) / 20;
+      setSmallFlameLeft(-horizontalPercentageSmall);
+
+      let verticalPercentageSmall = ((yPos / halfBodyHeight) * 100) / 20;
+      setSmallFlameTop(-verticalPercentageSmall);
+    }
+  }));
+
   return (
     <>
       <div className="hero">
@@ -19,8 +52,8 @@ function HeroContainer() {
           </div>
 
           <div className="hero_main_bg">
-            <div className="flame_small"></div>
-            <div className="flame_big"></div>
+            <div className="flame_small" style={smallFlameStyle}></div>
+            <div className="flame_big" style={bigFlameStyle}></div>
           </div>
 
           <div className="hero_bottom_svg">
@@ -36,6 +69,6 @@ function HeroContainer() {
       </div>
     </>
   );
-}
+});
 
 export default HeroContainer;
