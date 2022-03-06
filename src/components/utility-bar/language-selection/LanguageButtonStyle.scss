@@ -25,7 +25,7 @@
   display: block;
   font-size: 20px;
   top: 7px;
-  font-family: "gemunu";
+  font-family: var(--var-mainFont);
 }
 .brackets {
   position: absolute;
@@ -41,14 +41,14 @@
 .bracket_left {
   position: absolute;
   left: 18px;
-  color: #ffbc32;
+  color: var(--var-yellow);
   font-size: 26px;
 }
 
 .bracket_right {
   position: absolute;
   right: 18px;
-  color: #ffbc32;
+  color: var(--var-yellow);
   font-size: 26px;
 }
 

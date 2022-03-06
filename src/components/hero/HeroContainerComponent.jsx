@@ -5,10 +5,10 @@ import hero_bottom_svg from "../../assets/svg/top-mask-bar.svg";
 function HeroContainer() {
   return (
     <>
-      <div class="hero">
-        <div class="hero_container">
-          <div class="hero_svg"></div>
-          <div class="mascot_svg">
+      <div className="hero">
+        <div className="hero_container">
+          <div className="hero_svg"></div>
+          <div className="mascot_svg">
             <img
               className="hero_mascot_img"
               src={mascotSvg}
@@ -18,12 +18,12 @@ function HeroContainer() {
             />
           </div>
 
-          <div class="hero_main_bg">
-            <div class="flame_small"></div>
-            <div class="flame_big"></div>
+          <div className="hero_main_bg">
+            <div className="flame_small"></div>
+            <div className="flame_big"></div>
           </div>
 
-          <div class="hero_bottom_svg">
+          <div className="hero_bottom_svg">
             <img
               className="bottom_hero_bottom_svg"
               src={hero_bottom_svg}

@@ -5,8 +5,8 @@ import BottomBtn from "./bottom button/BottomBtnComponent";
 
 function FixedBot() {
   return (
-    <div class="fixed_bot">
-      <div class="fixed_bot_svg">
+    <div className="fixed_bot">
+      <div className="fixed_bot_svg">
         <img
           className="imageBot"
           src={fixed_bot_svg}
@@ -15,13 +15,13 @@ function FixedBot() {
           alt=""
         />
       </div>
-      <div class="fixed_bot_container">
-        <div class="left_side">
+      <div className="fixed_bot_container">
+        <div className="left_side">
           <BottomBtn text="Origins" />
           <BottomBtn text="about" />
           <BottomBtn text="Cyber Paper" />
         </div>
-        <div class="right_side">
+        <div className="right_side">
           <BottomBtn text="Discord" />
           <BottomBtn text="Telegram" />
         </div>
