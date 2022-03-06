@@ -1,28 +1,207 @@
-.buttons_container_bg {
+div.buttons_container_bg {
   position: absolute;
   top: -10px;
   right: 0px;
   height: 80px;
   width: calc(var(--var-uniswap_btn_width) + var(--var-menu_btn_width));
+
+  span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    img {
+      position: relative;
+      display: block;
+      width: 60px;
+      height: auto;
+      margin-left: 30px;
+    }
+  }
 }
-.buttons_container {
+div.buttons_container {
   position: absolute;
   top: -10px;
   right: 0px;
   height: 80px;
   background-color: white;
   clip-path: polygon(0% 100%, 70px 0%, 100% 0%, 100% 100%);
-}
-.backgtound_svg {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.second_backgtound_svg {
-  position: relative;
-  display: block;
-  width: 60px;
-  height: auto;
-  margin-left: 30px;
+
+  div.uniswap_btn {
+    position: relative;
+    width: var(--var-uniswap_btn_width);
+    height: 100%;
+    background-color: var(--var-yellow);
+    float: left;
+    clip-path: polygon(0% 100%, 70px 0%, 100% 10px, 100% calc(100% - 10px));
+    -webkit-animation: increaseSwapOut 0.2s linear forwards;
+    -moz-animation: increaseSwapOut 0.2s linear forwards;
+    animation: increaseSwapOut 0.2s linear forwards;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      span.image {
+        position: relative;
+        display: block;
+        width: 60px;
+        height: auto;
+        margin-left: 30px;
+        float: left;
+
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+
+      span.text {
+        position: relative;
+        display: block;
+        font-size: 30px;
+        color: var(--var-btn_color);
+        height: 80px;
+        font-weight: bold;
+        margin-left: 15px;
+        float: left;
+        line-height: 80px;
+
+        span.text_opacity {
+          position: relative;
+          opacity: 0;
+        }
+
+        span.absolute {
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 36px;
+          top: 22px;
+          line-height: 36px;
+          left: 0px;
+        }
+
+        span.text_p1 {
+          clip-path: polygon(0% 100%, 100% 100%, 100% 66.6%, 0% 66.6%);
+        }
+
+        span.text_p2 {
+          clip-path: polygon(0% 31.2%, 100% 31.2%, 100% 68.7%, 0% 68.7%);
+        }
+
+        span.text_p3 {
+          clip-path: polygon(0% 33.3%, 100% 33.3%, 100% 0%, 0% 0%);
+        }
+      }
+    }
+  }
+
+  div.uniswap_btn:hover {
+    -webkit-animation: increaseSwapIn 0.2s linear forwards;
+    -moz-animation: increaseSwapIn 0.2s linear forwards;
+    animation: increaseSwapIn 0.2s linear forwards;
+  }
+
+  div.menu_btn {
+    position: relative;
+    width: var(--var-menu_btn_width);
+    height: 100%;
+    float: left;
+
+    span.btn {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      line-height: 80px;
+      font-size: 22px;
+      cursor: pointer;
+      font-family: var(--var-secondFont);
+      color: var(--var-btn_color);
+      z-index: 2;
+    }
+
+    span.loading_container {
+      position: absolute;
+      bottom: 18px;
+      width: 100px;
+      height: 5px;
+      display: flex;
+      justify-content: space-between;
+      opacity: 0;
+      z-index: 1;
+
+      span {
+        display: block;
+        width: 18px;
+        height: 100%;
+        background-color: var(--var-yellow);
+        opacity: 0;
+      }
+    }
+  }
+
+  div.menu_btn:hover > span.loading_container {
+    opacity: 1;
+  }
+
+  div.menu_btn:hover > span.loading_container > span {
+    -webkit-animation-duration: 1.4s;
+    -moz-animation-duration: 1.4s;
+    animation-duration: 1.4s;
+
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    animation-timing-function: linear;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+
+  div.menu_btn:hover > span.loading_container > span.load1 {
+    -webkit-animation-name: fadein1;
+    -moz-animation-name: fadein1;
+    animation-name: fadein1;
+  }
+
+  div.menu_btn:hover > span.loading_container > span.load2 {
+    -webkit-animation-name: fadein2;
+    -moz-animation-name: fadein2;
+    animation-name: fadein2;
+  }
+
+  div.menu_btn:hover > span.loading_container > span.load3 {
+    -webkit-animation-name: fadein3;
+    -moz-animation-name: fadein3;
+    animation-name: fadein3;
+  }
+
+  div.menu_btn:hover > span.loading_container > span.load4 {
+    -webkit-animation-name: fadein4;
+    -moz-animation-name: fadein4;
+    animation-name: fadein4;
+  }
+
+  div.menu_btn:hover > span.loading_container > span.load5 {
+    -webkit-animation-name: fadein5;
+    -moz-animation-name: fadein5;
+    animation-name: fadein5;
+  }
+
+  div.uniswap_white {
+    position: absolute;
+    top: 0px;
+    right: var(--var-menu_btn_width);
+    width: 30px;
+    height: 100%;
+    background-color: white;
+    clip-path: polygon(100% 0%, 100% 100%, 0 100%);
+  }
 }
