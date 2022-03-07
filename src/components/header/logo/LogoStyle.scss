@@ -4,34 +4,36 @@
   margin-top: 10px;
   width: 262px;
   margin-left: 10px;
-}
-.a {
-  display: block;
-  width: 100%;
-  height: 100%;
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    img.logo_first {
+      float: left;
+      display: block;
+      width: 50px;
+      height: 50px;
+    }
+
+    img.logo_second {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 50px;
+      height: 50px;
+    }
+
+    img.logo_text {
+      float: left;
+      display: block;
+      margin-left: 10px;
+    }
+  }
 }
 
-.logo_first {
-  float: left;
-  display: block;
-  width: 50px;
-  height: 50px;
-}
-
-.logo_second {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 50px;
-  height: 50px;
-}
-
-.logo_text {
-  float: left;
-  display: block;
-  margin-left: 10px;
-}
-.logo:hover > a > .logo_first {
+div.logo:hover > a > img.logo_first {
   -webkit-animation: spin 0.5s linear forwards;
   -moz-animation: spin 0.5s linear forwards;
   animation: spin 0.5s linear forwards;
