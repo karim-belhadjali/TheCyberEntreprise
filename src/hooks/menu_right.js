@@ -1,5 +1,5 @@
 import { anime } from "react-animejs-wrapper";
-
+import { noiseTrigger } from "./useTrigger";
 export const showDarkLayer = (darkLayer, callback) => {
   darkLayer.style.display = "block";
 
@@ -173,5 +173,68 @@ export const close_language_menu_right = (darkLayer) => {
       hideDarkLayer(darkLayer);
       languageMenuUL.style.display = "none";
     },
+  });
+};
+
+export const changeBackgroundToWhite = (elem) => {
+  let linkElem = elem.querySelector("a");
+
+  let span1 = linkElem.querySelector("span.indigo_1");
+  let span2 = linkElem.querySelector("span.indigo_2");
+  let span3 = linkElem.querySelector("span.indigo_3");
+
+  anime({
+    targets: span1,
+    background: "#FFF",
+    color: "#171822",
+    duration: 500,
+    easing: "linear",
+  });
+  anime({
+    targets: span2,
+    background: "#FFF",
+    color: "#171822",
+    duration: 500,
+    easing: "linear",
+  });
+  anime({
+    targets: span3,
+    background: "#FFF",
+    color: "#171822",
+    duration: 500,
+    easing: "linear",
+    complete: () => {
+      noiseTrigger(span1, span2, span3);
+    },
+  });
+};
+
+export const changeBackgroundToNormal = (elem) => {
+  let linkElem = elem.querySelector("a");
+
+  let span1 = linkElem.querySelector("span.indigo_1");
+  let span2 = linkElem.querySelector("span.indigo_2");
+  let span3 = linkElem.querySelector("span.indigo_3");
+
+  anime({
+    targets: span1,
+    background: "#171822",
+    color: "#fff",
+    duration: 500,
+    easing: "linear",
+  });
+  anime({
+    targets: span2,
+    background: "#171822",
+    color: "#fff",
+    duration: 500,
+    easing: "linear",
+  });
+  anime({
+    targets: span3,
+    background: "#171822",
+    color: "#fff",
+    duration: 500,
+    easing: "linear",
   });
 };

@@ -31,7 +31,11 @@ function UtilityBar({ languageClick }) {
   };
   return (
     <Anime ref={animeRef} config={utilityAnim}>
-      <div className="utility_bar">
+      <div
+        onMouseEnter={animeRef.current?.pause}
+        onMouseLeave={animeRef.current?.play}
+        className="utility_bar"
+      >
         <div ref={utilityRef} className="info_bar">
           <div ref={utilitySpanRef} className="bar_container">
             <Bar text="Price in ETH: 0.0000000000002419" />

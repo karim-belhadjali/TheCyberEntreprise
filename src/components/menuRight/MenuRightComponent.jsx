@@ -8,7 +8,6 @@ function MenuRight({ closeMenu }) {
       <ul id="language_menu" className="menu_container">
         <li>
           <SideBtn text="English" />
-          {/* <a href="#">English</a> */}
         </li>
         <li>
           <SideBtn text="Spanish" />

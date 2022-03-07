@@ -1,5 +1,4 @@
 .btn {
- 
   a {
     position: relative;
     display: block;
@@ -22,7 +21,6 @@
       font-size: 24px;
       top: 0px;
     }
-    
 
     span.indigo_1 {
       clip-path: polygon(0% 100%, 100% 100%, 100% 66.6%, 0% 66.6%);
@@ -44,7 +42,7 @@
       line-height: 32px;
       z-index: 4;
       display: block;
-      transition: all 0.1s;
+      transition: all 0.2s;
     }
   }
 }
