@@ -1,10 +1,10 @@
 import "./App.scss";
-import Container from "./components/main/ContainerComponents";
+import MainScreen from "./screens/main/MainScreen";
 
 function App() {
   return (
     <>
-      <Container />
+      <MainScreen />
     </>
   );
 }

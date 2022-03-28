@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
-import { noiseTrigger } from "../../../hooks/useTrigger";
+import { noiseTrigger } from "../../../animations/useTrigger";
 import "./SideBtnStyle.scss";
 import {
   changeBackgroundToNormal,
   changeBackgroundToWhite,
-} from "../../../hooks/menu_right";
+} from "../../../animations/menu_right";
 function SideBtn({ text }) {
   const mainRef = useRef();
   const textRef1 = useRef();
