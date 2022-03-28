@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./LanguageButtonStyle.scss";
-import { addBracket, makeTextSpans } from "../../../hooks/addBracket";
-import { noiseTrigger } from "../../../hooks/useTrigger";
+import { addBracket, makeTextSpans } from "../../../animations/addBracket";
+import { noiseTrigger } from "../../../animations/useTrigger";
 
 function LanguageButton({ onClick }) {
   const span1Ref = useRef(null);

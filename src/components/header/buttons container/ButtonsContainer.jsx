@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import "./ButtonsContainer.scss";
 import uniswapp from "../../../assets/svg/uniswap_yellow.svg";
 import uniswap from "../../../assets/svg/uniswap_black.svg";
-import { noiseTrigger } from "../../../hooks/useTrigger";
+import { noiseTrigger } from "../../../animations/useTrigger";
 
 function ButtonsContainer({ menuClick }) {
   const span1Ref = useRef(null);
