@@ -19,7 +19,7 @@ import MenuRight from "../../components/menuRight/MenuRightComponent";
 import Roadmap from "../../components/Roadmap/RoadmapComponent";
 
 function MainScreen() {
-  const heroRef = React.useRef(null);
+  //const heroRef = React.useRef(null);
   const darklayerRef = React.useRef(null);
   const [isMenu, setisMenu] = useState(false);
 
@@ -41,7 +41,7 @@ function MainScreen() {
   return (
     <div
       className="container"
-      onMouseMove={(ev) => heroRef.current.mouseMoving(ev)}
+    //onMouseMove={(ev) => heroRef.current.mouseMoving(ev)}
     >
       <MenuRight closeMenu={closeMenu} />
       <div className="top_hide"></div>

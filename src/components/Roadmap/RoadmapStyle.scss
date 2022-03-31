@@ -1,88 +1,64 @@
-div.forms {
+div.roadmap {
   position: relative;
   width: calc(100% - 40px);
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-
+  flex-grow: 1;
+  background-color: #0e0e14;
   display: flex;
 
-  div.form_followers {
-    flex-grow: 1;
-    background-color: #0e0e14;
-  }
-
-  div.form_shillers {
-    flex-grow: 1;
-
+  div.hand_info_border {
     position: relative;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 5px;
+    left: -10px;
+    top: -10px;
+    background-color: #0e0e14;
+    clip-path: polygon(
+      0% 50px,
+      50px 0px,
+      100% 0%,
+      100% calc(100% - 50px),
+      calc(100% - 50px) 100%,
+      0px 100%
+    );
 
-    border-top-width: 3px;
-    border-top-style: solid;
-    border-top-color: #0e0e14;
-
-    border-right-width: 3px;
-    border-right-style: solid;
-    border-right-color: #0e0e14;
-
-    border-bottom-width: 3px;
-    border-bottom-style: solid;
-    border-bottom-color: #0e0e14;
-
-    div.hand_info_border {
+    div.hand_info_container {
       position: relative;
-      width: 200px;
-      height: 200px;
-      margin-top: 20px;
-      margin-left: 20px;
-      left: -10px;
-      top: -10px;
-      background-color: #0e0e14;
+      width: calc(100% - 8px);
+      height: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #171822;
+      text-align: center;
+      padding-bottom: 40px;
       clip-path: polygon(
-        0% 50px,
-        50px 0px,
+        0% 46px,
+        46px 0px,
         100% 0%,
-        100% calc(100% - 50px),
-        calc(100% - 50px) 100%,
+        100% calc(100% - 46px),
+        calc(100% - 46px) 100%,
         0px 100%
       );
 
-      div.hand_info_container {
+      div.hand_title_element {
         position: relative;
-        width: calc(100% - 8px);
-        height: 100%;
+        width: calc(100% - 60px);
         margin-left: auto;
         margin-right: auto;
-        background-color: #171822;
-        text-align: center;
-        padding-bottom: 40px;
-        clip-path: polygon(
-          0% 46px,
-          46px 0px,
-          100% 0%,
-          100% calc(100% - 46px),
-          calc(100% - 46px) 100%,
-          0px 100%
-        );
+        overflow: auto;
+        margin-bottom: 20px;
 
-        div.hand_title_element {
+        h3 {
           position: relative;
-          width: calc(100% - 60px);
-          margin-left: auto;
-          margin-right: auto;
-          overflow: auto;
-          margin-bottom: 20px;
-
-          h3 {
-            position: relative;
-            width: 100%;
-            font-size: 22px;
-            color: white;
-          }
+          width: 100%;
+          font-size: 22px;
+          color: white;
         }
       }
     }
@@ -94,8 +70,6 @@ div.rules {
   width: calc(100% - 40px);
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
   padding: 20px;
   color: white;
 
@@ -117,6 +91,21 @@ div.rules {
   }
 }
 
+.cyber_logo {
+  position: absolute;
+  width: 20%;
+  height: auto;
+  right: 80px;
+  margin-top: 20px;
+}
+.cyber_hand {
+  width: 100%;
+  height: auto;
+  bottom: 0px;
+  margin-top: 20px;
+  overflow: visible;
+}
+
 @media only screen and (max-width: 680px) {
   div.rules {
     width: calc(100% - 20px);
@@ -124,14 +113,8 @@ div.rules {
 }
 
 @media only screen and (max-width: 680px) {
-  div.forms {
+  div.roadmap {
     width: calc(100% - 20px);
     flex-direction: column;
-
-    div.form_shillers {
-      border-width: 10px;
-      border-style: solid;
-      border-color: #0e0e14;
-    }
   }
 }

@@ -14,6 +14,7 @@ function UtilityBar({ languageClick }) {
   useEffect(() => {
     setutilityWidth(utilityRef.current.offsetWidth);
     setutilitySpanWidth(utilitySpanRef.current.offsetWidth);
+
   }, []);
 
   let speed = 70; // pixels per second
