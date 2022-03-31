@@ -105,7 +105,13 @@ div.rules {
   margin-top: 20px;
   overflow: visible;
 }
-
+.hero_bottom_svg {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 0px;
+  z-index: 100;
+}
 @media only screen and (max-width: 680px) {
   div.rules {
     width: calc(100% - 20px);
