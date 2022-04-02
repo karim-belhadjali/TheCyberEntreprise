@@ -4,17 +4,16 @@ import LanguageButton from "./language-selection/LanguageButtonComponent";
 import "./UtilityBarStyle.scss";
 import Anime from "react-animejs-wrapper";
 
-function UtilityBar({ languageClick }) {
-  const utilityRef = useRef(null);
-  const utilitySpanRef = useRef(null);
-  const animeRef = useRef(null);
+function UtilityBar({ languageClick }: { languageClick: any }) {
+  const utilityRef = useRef<any>();
+  const utilitySpanRef = useRef<any>();
+  const animeRef = useRef<any>(null);
   const [utilityWidth, setutilityWidth] = useState(0);
   const [utilitySpanWidth, setutilitySpanWidth] = useState(0);
 
   useEffect(() => {
     setutilityWidth(utilityRef.current.offsetWidth);
     setutilitySpanWidth(utilitySpanRef.current.offsetWidth);
-
   }, []);
 
   let speed = 70; // pixels per second

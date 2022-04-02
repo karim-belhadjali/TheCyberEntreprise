@@ -3,10 +3,10 @@ import "./AnnouncementStyle.scss";
 import Anime from "react-animejs-wrapper";
 
 function Announcements() {
-  const annoucementRef = useRef(null);
-  const annoucementSpanRef = useRef(null);
+  const annoucementRef = useRef<any>();
+  const annoucementSpanRef = useRef<any>();
   const animeRef = useRef(null);
-  const [annoucmentsWidth, setannoucmentsWidth] = useState(0);
+  const [annoucmentsWidth, setannoucmentsWidth] = useState<any>([0]);
   const [annoucementsSpanWidth, setannoucementsSpanWidth] = useState(0);
 
   useEffect(() => {

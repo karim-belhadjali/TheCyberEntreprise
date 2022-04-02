@@ -2,10 +2,10 @@ import React, { useRef, useState } from "react";
 import { noiseTrigger } from "../../../hooks/useTrigger";
 import "./BottomBtnStyle.scss";
 
-function BottomBtn({ text }) {
-  const textRef1 = useRef();
-  const textRef2 = useRef();
-  const textRef3 = useRef();
+function BottomBtn({ text }: { text: string }) {
+  const textRef1 = useRef<HTMLDivElement>(null);
+  const textRef2 = useRef<HTMLDivElement>(null);
+  const textRef3 = useRef<HTMLDivElement>(null);
   const [breacketsDistance, setBracketDistance] = useState(0);
 
   return (

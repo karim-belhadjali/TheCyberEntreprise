@@ -4,7 +4,7 @@ import uniswapp from "../../../assets/svg/uniswap_yellow.svg";
 import uniswap from "../../../assets/svg/uniswap_black.svg";
 import { noiseTrigger } from "../../../animations/useTrigger";
 
-function ButtonsContainer({ menuClick }) {
+function ButtonsContainer({ menuClick }: { menuClick: any }) {
   const span1Ref = useRef(null);
   const span2Ref = useRef(null);
   const span3Ref = useRef(null);

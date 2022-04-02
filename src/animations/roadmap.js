@@ -10,6 +10,6 @@ export const floatLogo = (logo, logoWidth, gridWidth) => {
     easing: "linear",
     loop: true,
     direction: "alternate",
-    translateY: [logoWidth / 2, maxTranslate / 5],
+    translateY: [logoWidth / 3, maxTranslate / 9],
   });
 };

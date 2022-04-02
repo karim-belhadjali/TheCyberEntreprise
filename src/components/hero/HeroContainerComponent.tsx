@@ -1,7 +1,7 @@
 import React, { useState, forwardRef, useImperativeHandle } from "react";
 import "./HeroContainerStyle.scss";
-import mascotSvg from "../../assets/webp/inu.webp";
-import hero_bottom_svg from "../../assets/svg/top-mask-bar.svg";
+import  mascotSvg from "../../assets/webp/inu.webp";
+import  hero_bottom_svg from "../../assets/svg/top-mask-bar.svg";
 const HeroContainer = forwardRef((props, ref) => {
   const [bigFlameLeft, setBigFlameLeft] = useState(0);
   const [bigFlameTop, setBigFlameTop] = useState(0);
@@ -25,7 +25,7 @@ const HeroContainer = forwardRef((props, ref) => {
   var ySize = document.body.clientHeight;
   var halfBodyHeight = ySize / 2;
   useImperativeHandle(ref, () => ({
-    mouseMoving(e) {
+    mouseMoving(e:any) {
       if (hiddenFlames) {
         setHiddenFlames(false);
         setOpacity(1);

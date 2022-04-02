@@ -1,24 +1,26 @@
 import React, { useState } from "react";
 
-import Announcements from "../annoucements/AnnouncementComponents";
-import HeroContainer from "../hero/HeroContainerComponent";
-import UtilityBar from "../utility-bar/UtilityBarComponent";
-import TokenInfo from "../token-info/token-info";
-import FixedTop from "../header/fixedTop/FixedTopComponent";
-import FixedBot from "../fixedBottom/FixedBotComponent";
+import Announcements from "../../components/annoucements/AnnouncementComponents";
+import HeroContainer from "../../components/hero/HeroContainerComponent";
+import UtilityBar from "../../components/utility-bar/UtilityBarComponent";
+import TokenInfo from "../../components/token-info/token-info";
+import FixedTop from "../../components/header/fixedTop/FixedTopComponent";
+import FixedBot from "../../components/fixedBottom/FixedBotComponent";
 import {
   showLanguageMenu,
   showDarkLayer,
   close_language_menu_right,
   close_main_menu_right,
   showMainmenu,
-} from "../../hooks/menu_right";
+} from "../../animations/menu_right";
 
-import "./ContainerStyle.scss";
-import MenuRight from "../menuRight/MenuRightComponent";
+import "./MainScreenStyle.scss";
+import MenuRight from "../../components/menuRight/MenuRightComponent";
+import Roadmap from "../../components/Roadmap/RoadmapComponent";
+import { Routes, Route } from "react-router-dom";
 
-function Container() {
-  const heroRef = React.useRef(null);
+function MainScreen() {
+  const heroRef = React.useRef<any>(null);
   const darklayerRef = React.useRef(null);
   const [isMenu, setisMenu] = useState(false);
 
@@ -35,17 +37,21 @@ function Container() {
       ? close_main_menu_right(darklayerRef.current)
       : close_language_menu_right(darklayerRef.current);
   };
+
   return (
     <div
       className="container"
-      onMouseMove={(ev) => heroRef.current.mouseMoving(ev)}
+      onMouseMove={(ev) => heroRef.current?.mouseMoving(ev)}
     >
       <MenuRight closeMenu={closeMenu} />
       <div className="top_hide"></div>
       <FixedTop menuClick={openMainMenu} />
       <Announcements />
       <UtilityBar languageClick={openLanguage} />
-      <HeroContainer ref={heroRef} />
+      <Routes>
+        <Route path="/roadmap" element={<Roadmap />} />
+        <Route path="/" element={<HeroContainer ref={heroRef} />} />
+      </Routes>
       <TokenInfo />
       <FixedBot />
       <div className="bottom_hide"></div>
@@ -54,4 +60,4 @@ function Container() {
   );
 }
 
-export default Container;
+export default MainScreen;

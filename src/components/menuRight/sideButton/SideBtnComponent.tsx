@@ -1,15 +1,26 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
+
 import { noiseTrigger } from "../../../animations/useTrigger";
 import "./SideBtnStyle.scss";
 import {
   changeBackgroundToNormal,
   changeBackgroundToWhite,
 } from "../../../animations/menu_right";
-function SideBtn({ text }) {
-  const mainRef = useRef();
-  const textRef1 = useRef();
-  const textRef2 = useRef();
-  const textRef3 = useRef();
+
+function SideBtn({
+  text,
+  link,
+  onClick,
+}: {
+  text: string;
+  link: string;
+  onClick: any;
+}) {
+  const mainRef = useRef<HTMLDivElement>(null);
+  const textRef1 = useRef<HTMLDivElement>(null);
+  const textRef2 = useRef<HTMLDivElement>(null);
+  const textRef3 = useRef<HTMLDivElement>(null);
   const [breacketsDistance, setBracketDistance] = useState(0);
 
   return (
@@ -26,7 +37,7 @@ function SideBtn({ text }) {
         changeBackgroundToNormal(mainRef.current);
       }}
     >
-      <a className="indigo-container">
+      <Link onClick={onClick} to={link} className="indigo-container">
         <span
           className="brackets bracket_left_bottom"
           style={{ left: breacketsDistance + "px" }}
@@ -49,7 +60,7 @@ function SideBtn({ text }) {
         >
           ]
         </span>
-      </a>
+      </Link>
     </div>
   );
 }

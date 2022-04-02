@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import Anime from "react-animejs-wrapper";
-import { Grid } from '@mui/material';
+import { Grid } from "@mui/material";
 
 import "./RoadmapStyle.scss";
-import logo_cybr from '../../assets/png/cyberLogo.png'
-import hand_cybr from '../../assets/png/cybrHand.png'
+import logo_cybr from "../../assets/png/cyberLogo.png";
+import hand_cybr from "../../assets/png/cybrHand.png";
 import hero_bottom_svg from "../../assets/svg/top-mask-bar.svg";
 import { floatLogo } from "../../animations/roadmap";
 function Roadmap() {
-  const logoGridRef = useRef(null);
-  const logoItemRef = useRef(null);
+  const logoGridRef = useRef<any>();
+  const logoItemRef = useRef<any>();
 
   const [logoGridWidth, setlogoGridWidth] = useState(0);
   const [logoItemWidth, setlogoItemWidth] = useState(0);
@@ -18,11 +18,9 @@ function Roadmap() {
     setlogoGridWidth(logoGridRef.current.offsetWidth);
     setlogoItemWidth(logoItemRef.current.offsetWidth);
     if (logoGridWidth !== 0) {
-      floatLogo(logoItemRef.current, logoItemWidth, logoGridWidth)
+      floatLogo(logoItemRef.current, logoItemWidth, logoGridWidth);
     }
   }, [logoGridWidth, logoItemWidth]);
-
-
 
   return (
     <div className="roadmap">
@@ -52,7 +50,6 @@ function Roadmap() {
               Note: All winners will be chosen completely at random
             </p>
           </div>
-
         </Grid>
         <Grid item md={5} sm={5} xs={12}>
           <Grid container direction="row">
@@ -64,17 +61,21 @@ function Roadmap() {
                   </div>
                 </div>
               </div>
-
             </Grid>
             <Grid item md={7} xs={12}>
               <div className="rules">
                 <Grid container direction="column" spacing={2}>
                   <div ref={logoGridRef}>
                     <Grid item md={2} sm={2} xs={12}>
-                      <img ref={logoItemRef} src={logo_cybr} className="cyber_logo" alt="" />
+                      <img
+                        ref={logoItemRef}
+                        src={logo_cybr}
+                        className="cyber_logo"
+                        alt=""
+                      />
                     </Grid>
                   </div>
-                  <Grid item md="auto" sm="auto" xs={12} >
+                  <Grid item md="auto" sm="auto" xs={12}>
                     <img src={hand_cybr} className="cyber_hand" alt="" />
                   </Grid>
                 </Grid>
