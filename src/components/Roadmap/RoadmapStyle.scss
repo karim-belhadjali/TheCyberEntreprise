@@ -8,68 +8,37 @@ div.roadmap {
   flex-grow: 1;
   background-color: #0e0e14;
   display: flex;
+}
 
-  div.hand_info_border {
+div.progress {
+  position: relative;
+  margin-bottom: 25px;
+
+  div.map {
     position: relative;
-    width: 200px;
-    height: 200px;
-    margin-top: 20px;
-    margin-left: 20px;
-    padding: 5px;
-    left: -10px;
-    top: -10px;
-    background-color: #0e0e14;
-    clip-path: polygon(
-      0% 50px,
-      50px 0px,
-      100% 0%,
-      100% calc(100% - 50px),
-      calc(100% - 50px) 100%,
-      0px 100%
-    );
-
-    div.hand_info_container {
-      position: relative;
-      width: calc(100% - 8px);
-      height: 100%;
-      margin-left: auto;
-      margin-right: auto;
-      background-color: #171822;
-      text-align: center;
-      padding-bottom: 40px;
-      clip-path: polygon(
-        0% 46px,
-        46px 0px,
-        100% 0%,
-        100% calc(100% - 46px),
-        calc(100% - 46px) 100%,
-        0px 100%
-      );
-
-      div.hand_title_element {
-        position: relative;
-        width: calc(100% - 60px);
-        margin-left: auto;
-        margin-right: auto;
-        overflow: auto;
-        margin-bottom: 20px;
-
-        h3 {
-          position: relative;
-          width: 100%;
-          font-size: 22px;
-          color: white;
-        }
-      }
-    }
+    width: calc(100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    color: white;
   }
 }
 
+.hero_bottom_svg {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 0px;
+  z-index: 100;
+}
 div.rules {
   position: relative;
   width: calc(100% - 40px);
   margin-left: auto;
   margin-right: auto;
+  background-color: #0e0e14;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding: 20px;
   color: white;
 
@@ -91,27 +60,6 @@ div.rules {
   }
 }
 
-.cyber_logo {
-  position: absolute;
-  width: 20%;
-  height: auto;
-  right: 80px;
-  margin-top: 20px;
-}
-.cyber_hand {
-  width: 100%;
-  height: auto;
-  bottom: 0px;
-  margin-top: 20px;
-  overflow: visible;
-}
-.hero_bottom_svg {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  bottom: 0px;
-  z-index: 100;
-}
 @media only screen and (max-width: 680px) {
   div.rules {
     width: calc(100% - 20px);

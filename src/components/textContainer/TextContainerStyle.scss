@@ -1,0 +1,64 @@
+div.about_project {
+  margin-top: 40px;
+  position: relative;
+  overflow: visible;
+
+  color: white;
+
+  div.fade_background {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(34, 36, 49, 0.4);
+
+    clip-path: polygon(
+      0% 0%,
+      30% 0%,
+      30% 10px,
+      100% 10px,
+      100% 100%,
+      70% 100%,
+      70% calc(100% - 10px),
+      0% calc(100% - 10px)
+    );
+
+    div.text_container {
+      position: relative;
+
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      background-color: #222431;
+      padding: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+
+      p {
+        font-size: 30px;
+        span {
+          color: #ffbc32;
+        }
+      }
+    }
+  }
+
+  div.corner_top {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 40px;
+    height: 40px;
+    background-color: #222431;
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+  }
+
+  div.corner_bottom {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background-color: #222431;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+  }
+}
