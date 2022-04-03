@@ -1,16 +1,25 @@
-.cyber_logo {
-  position: absolute;
-  width: 20%;
-  height: auto;
-  right: 80px;
-  margin-top: 20px;
+div.hand_wrapper {
+  display: grid;
+  grid-template-rows: 0.2fr 3fr;
+
+  .cyber_logo {
+    position: absolute;
+    width: 20%;
+    height: auto;
+    right: calc(100% - 70%);
+  }
+  .cyber_hand {
+    position: sticky;
+    width: 90%;
+    height: auto;
+    bottom: 0px;
+    overflow: visible;
+    margin-top: 10px;
+  }
 }
-.cyber_hand {
-  width: 100%;
-  height: auto;
-  bottom: 0px;
-  margin-top: 20px;
-  overflow: visible;
-  display: flex;
-  flex-wrap: wrap;
+
+@media only screen and (max-width: 1240px) {
+  div.cyber_hand {
+    max-width: 30px !important;
+  }
 }

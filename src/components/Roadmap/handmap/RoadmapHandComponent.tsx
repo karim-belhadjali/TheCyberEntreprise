@@ -21,21 +21,12 @@ function RoadmapHand() {
     }
   }, [logoGridHeight, logoItemHeight]);
   return (
-    <Grid container direction="column" spacing={2}>
-      <div ref={logoGridRef}>
-        <Grid item md={2} sm={2} xs={12}>
-          <img
-            ref={logoItemRef}
-            src={logo_cybr}
-            className="cyber_logo"
-            alt=""
-          />
-        </Grid>
+    <div className="hand_wrapper">
+      <div ref={logoGridRef} className="logo_wrapper">
+        <img ref={logoItemRef} src={logo_cybr} className="cyber_logo" alt="" />
       </div>
-      <Grid item md="auto" sm="auto" xs={12}>
-        <img src={hand_cybr} className="cyber_hand" alt="" />
-      </Grid>
-    </Grid>
+      <img src={hand_cybr} className="cyber_hand" alt="" />
+    </div>
   );
 }
 

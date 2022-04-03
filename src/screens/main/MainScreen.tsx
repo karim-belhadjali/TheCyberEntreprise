@@ -50,10 +50,18 @@ function MainScreen() {
       <UtilityBar languageClick={openLanguage} />
       <Routes>
         <Route path="/roadmap" element={<Roadmap />} />
-        <Route path="/" element={<HeroContainer ref={heroRef} />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <HeroContainer ref={heroRef} />
+              <FixedBot />
+            </>
+          }
+        />
       </Routes>
       <TokenInfo />
-      <FixedBot />
+
       <div className="bottom_hide"></div>
       <div ref={darklayerRef} className="dark_layer"></div>
     </div>

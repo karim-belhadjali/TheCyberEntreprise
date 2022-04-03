@@ -1,69 +1,55 @@
-div.roadmap {
+div.roadmap_container {
   position: relative;
   width: calc(100% - 40px);
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  flex-grow: 1;
   background-color: #0e0e14;
   display: flex;
-}
+  flex-wrap: wrap;
+  overflow: visible;
 
-div.progress {
-  position: relative;
-  margin-bottom: 25px;
+  div.roadmap {
+    display: flex;
+    gap: 2rem;
 
-  div.map {
-    position: relative;
-    width: calc(100% - 40px);
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    color: white;
+    div.roadmap_info {
+      flex: 1;
+      margin-bottom: 10px;
+    }
+    div.roadmap_legend {
+      flex-basis: 50%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      div.progress {
+        position: relative;
+        margin-bottom: 25px;
+      }
+      div.map {
+        position: relative;
+        height: auto;
+        padding: 20px;
+        color: white;
+      }
+    }
   }
 }
 
 .hero_bottom_svg {
-  position: absolute;
+  position: sticky;
   width: 100%;
   height: auto;
   bottom: 0px;
   z-index: 100;
 }
-div.rules {
-  position: relative;
-  width: calc(100% - 40px);
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #0e0e14;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 20px;
-  color: white;
-
-  h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-
-  p {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  p.note {
-    display: inline;
-    border-bottom-style: solid;
-    border-bottom-color: #ffbc32;
-    border-width: 3px;
+@media only screen and (max-width: 1240px) {
+  div.roadmap_legend {
+    grid-template-columns: 1fr !important;
   }
 }
 
-@media only screen and (max-width: 680px) {
-  div.rules {
-    width: calc(100% - 20px);
-  }
+@media only screen and (max-width: 900px) {
 }
 
 @media only screen and (max-width: 680px) {
@@ -71,4 +57,6 @@ div.rules {
     width: calc(100% - 20px);
     flex-direction: column;
   }
+}
+@media only screen and (max-width: 450px) {
 }
