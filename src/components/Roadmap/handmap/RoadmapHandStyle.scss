@@ -1,6 +1,6 @@
 div.hand_wrapper {
   display: grid;
-  grid-template-rows: 0.2fr 3fr;
+  grid-template-columns: 1fr;
 
   .cyber_logo {
     position: absolute;
@@ -11,15 +11,9 @@ div.hand_wrapper {
   .cyber_hand {
     position: sticky;
     width: 90%;
-    height: auto;
+    height: 100%;
     bottom: 0px;
     overflow: visible;
     margin-top: 10px;
-  }
-}
-
-@media only screen and (max-width: 1240px) {
-  div.cyber_hand {
-    max-width: 30px !important;
   }
 }

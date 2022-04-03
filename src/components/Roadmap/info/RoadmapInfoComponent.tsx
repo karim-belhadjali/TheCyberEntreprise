@@ -6,18 +6,20 @@ import "./RoadmapInfoStyle.scss";
 function RoadmapInfo() {
   return (
     <div className="roadmap_info">
-      <h2>Roadmap</h2>
-      <InfoSection
-        title="Number Key"
-        values={[
-          "T1: Tier 1 project",
-          "T2: Tier 2 project",
-          "T3: Tier 3 project",
-          "T4: Tier 4 symbiotic project",
-        ]}
-      />
+      <h2 className="grid-col-3-span">Roadmap</h2>
+      <div className="grid-col-3-span">
+        <InfoSection
+          title="Number Key"
+          values={[
+            "T1: Tier 1 project",
+            "T2: Tier 2 project",
+            "T3: Tier 3 project",
+            "T4: Tier 4 symbiotic project",
+          ]}
+        />
+      </div>
 
-      <div className="tasks_wrapper">
+      <div className="tasks_wrapper grid-col-3-span">
         <InfoSection title="In Preparation" values={["T4: Cyber Creditors"]} />
         <InfoSection
           title="In Progress"

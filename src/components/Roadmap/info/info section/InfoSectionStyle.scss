@@ -26,10 +26,3 @@ div.info {
     }
   }
 }
-
-@media only screen and (max-width: 1060px) {
-  div.info {
-    flex: 1 0 50% !important;
-    margin-bottom: 40px;
-  }
-}
