@@ -149,7 +149,7 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 640px) {
   div.top_hide {
     display: none !important;
   }
@@ -162,6 +162,12 @@
     width: 100px !important;
     span.btn {
       font-size: 18px !important;
+    }
+  }
+  div.roadmap_container {
+    height: 100vh !important;
+    div.roadmap_legend {
+      flex-direction: column;
     }
   }
 

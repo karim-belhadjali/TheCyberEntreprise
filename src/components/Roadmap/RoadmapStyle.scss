@@ -1,15 +1,18 @@
 div.roadmap_container {
   position: relative;
   width: calc(100% - 40px);
-  min-height: calc(100vh - 225px);
+  height: calc(100vh - 225px);
   margin-left: auto;
   margin-right: auto;
   background-color: #0e0e14;
+  overflow: hidden;
 
   div.roadmap {
+    position: relative;
+    width: 100%;
+    height: 100%;
     display: flex;
-
-    gap: 2rem;
+    gap: 0 2rem;
 
     div.roadmap_info {
       flex-shrink: 0;
@@ -28,8 +31,8 @@ div.roadmap_container {
         margin-bottom: 25px;
       }
       div.map {
-        padding: 20px;
-        flex: 1 1 40%;
+        margin-bottom: 1em;
+        flex: 1;
       }
     }
   }
@@ -42,9 +45,17 @@ div.roadmap_container {
   bottom: 0px;
   z-index: 100;
 }
-@media only screen and (max-width: 1280px) {
+@media (max-width: 1380px) {
   div.roadmap_legend {
+    flex: 1 !important;
     flex-direction: column;
+    div.progress {
+      flex: 1;
+      margin-bottom: 25px;
+    }
+    div.map {
+      flex: 1 1 40% !important;
+    }
   }
 }
 
