@@ -19,7 +19,7 @@ function RoadmapInfo() {
         />
       </div>
 
-      <div className="tasks_wrapper grid-col-3-span">
+      <div className="tasks_wrapper">
         <InfoSection title="In Preparation" values={["T4: Cyber Creditors"]} />
         <InfoSection
           title="In Progress"

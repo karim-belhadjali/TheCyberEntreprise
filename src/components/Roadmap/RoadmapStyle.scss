@@ -5,34 +5,31 @@ div.roadmap_container {
   margin-left: auto;
   margin-right: auto;
   background-color: #0e0e14;
-  display: flex;
-  flex-wrap: wrap;
-  overflow: visible;
 
   div.roadmap {
     display: flex;
+
     gap: 2rem;
 
     div.roadmap_info {
-      flex: 1;
+      flex-shrink: 0;
+      flex-grow: 1;
       justify-content: center;
       margin-bottom: 10px;
     }
     div.roadmap_legend {
       flex: 0 1 50%;
       height: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-wrap: wrap;
 
       div.progress {
-        position: relative;
+        flex: 1;
         margin-bottom: 25px;
       }
       div.map {
-        position: relative;
-        height: auto;
         padding: 20px;
-        color: white;
+        flex: 1 1 40%;
       }
     }
   }
@@ -45,20 +42,15 @@ div.roadmap_container {
   bottom: 0px;
   z-index: 100;
 }
-@media only screen and (max-width: 1240px) {
+@media only screen and (max-width: 1280px) {
   div.roadmap_legend {
-    grid-template-columns: 1fr !important;
+    flex-direction: column;
   }
 }
 
-@media only screen and (max-width: 900px) {
-}
-
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 40em) {
   div.roadmap {
     width: calc(100% - 20px);
     flex-direction: column;
   }
-}
-@media only screen and (max-width: 450px) {
 }
