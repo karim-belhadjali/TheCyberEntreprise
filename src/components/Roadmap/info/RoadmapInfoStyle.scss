@@ -5,6 +5,10 @@ div.roadmap_info {
   display: flex;
   flex-direction: column;
   gap: 1rem 0;
+
+  .roadmap_info > * {
+    flex: 1;
+  }
   h2 {
     color: white;
     font-size: 30px;

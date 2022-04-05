@@ -49,7 +49,15 @@ function MainScreen() {
       <Announcements />
       <UtilityBar languageClick={openLanguage} />
       <Routes>
-        <Route path="/roadmap" element={<Roadmap />} />
+        <Route
+          path="/roadmap"
+          element={
+            <>
+              <Roadmap />
+              <FixedBot />{" "}
+            </>
+          }
+        />
         <Route
           path="/"
           element={

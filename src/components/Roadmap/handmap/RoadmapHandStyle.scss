@@ -2,20 +2,19 @@ div.hand_wrapper {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  max-width: 300px;
 
   .cyber_logo {
     position: absolute;
-    max-width: 25%;
+    width: 20%;
     height: auto;
-    right: calc(100% - 65%);
+    right: calc(100% - 70%);
   }
   .cyber_hand {
-    position: absolute;
-    max-width: 100%;
-    height: auto;
-    right: calc(100% - 82%);
-    overflow: hidden;
-    margin-top: 2rem;
+    position: sticky;
+    width: 90%;
+    height: 100%;
+    bottom: 0px;
+    overflow: visible;
+    margin-top: 10px;
   }
 }
