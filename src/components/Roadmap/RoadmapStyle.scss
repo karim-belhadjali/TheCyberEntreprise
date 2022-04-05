@@ -51,3 +51,8 @@ div.roadmap_container {
     flex-direction: column;
   }
 }
+@media only screen and (max-width: 1280px) {
+  div.roadmap_legend {
+    flex-direction: column;
+  }
+}

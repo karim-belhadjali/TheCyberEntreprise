@@ -54,7 +54,6 @@ function MainScreen() {
           element={
             <>
               <Roadmap />
-              <FixedBot />{" "}
             </>
           }
         />
