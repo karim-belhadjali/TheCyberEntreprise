@@ -1,5 +1,4 @@
 div.about_project {
-  margin-top: 40px;
   position: relative;
   overflow: visible;
 
@@ -21,25 +20,6 @@ div.about_project {
       70% calc(100% - 10px),
       0% calc(100% - 10px)
     );
-
-    div.text_container {
-      position: relative;
-
-      margin-top: 20px;
-      margin-bottom: 20px;
-
-      background-color: #222431;
-      padding: 20px;
-      margin-left: 20px;
-      margin-right: 20px;
-
-      p {
-        font-size: 30px;
-        span {
-          color: #ffbc32;
-        }
-      }
-    }
   }
 
   div.corner_top {

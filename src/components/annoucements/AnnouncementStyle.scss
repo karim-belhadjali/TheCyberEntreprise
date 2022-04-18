@@ -1,4 +1,4 @@
-.announcements {
+div.announcements {
   position: relative;
   width: calc(100% - 40px);
   margin-left: auto;
@@ -6,18 +6,17 @@
   height: 30px;
   overflow: hidden;
   background-color: var(--var-mainBg);
-  padding-top: 20px;
   z-index: 100;
-}
-.announcements_text {
-  position: relative;
-  white-space: nowrap;
-  height: 100%;
-  line-height: 30px;
-  display: block;
-  color: white;
-  font-size: 18px;
-  font-family: var(--var-mainFont);
-  width: fit-content;
-  cursor: default;
+
+  span {
+    position: relative;
+    white-space: nowrap;
+    height: 100%;
+    line-height: 30px;
+    display: block;
+    color: white;
+    font-size: 18px;
+    width: fit-content;
+    cursor: default;
+  }
 }

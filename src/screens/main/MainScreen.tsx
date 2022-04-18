@@ -16,8 +16,8 @@ import {
 
 import "./MainScreenStyle.scss";
 import MenuRight from "../../components/menuRight/MenuRightComponent";
-import Roadmap from "../../components/Roadmap/RoadmapComponent";
 import { Routes, Route } from "react-router-dom";
+import RoadmapScreen from "../roadmap/RoadmapScreen";
 
 function MainScreen() {
   const heroRef = React.useRef<any>(null);
@@ -49,24 +49,10 @@ function MainScreen() {
       <Announcements />
       <UtilityBar languageClick={openLanguage} />
       <Routes>
-        <Route
-          path="/roadmap"
-          element={
-            <>
-              <Roadmap />
-            </>
-          }
-        />
-        <Route
-          path="/"
-          element={
-            <>
-              <HeroContainer ref={heroRef} />
-              <FixedBot />
-            </>
-          }
-        />
+        <Route path="/roadmap" element={<RoadmapScreen />} />
+        <Route path="/" element={<HeroContainer ref={heroRef} />} />
       </Routes>
+      <FixedBot />
       <TokenInfo />
 
       <div className="bottom_hide"></div>

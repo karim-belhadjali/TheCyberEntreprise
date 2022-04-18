@@ -17,9 +17,6 @@ function FixedBot() {
       </div>
       <div className="fixed_bot_container">
         <div className="left_side">
-          <BottomBtn text="Origins" />
-          <BottomBtn text="about" />
-          <BottomBtn text="Cyber Paper" />
           <div className="bottom_icons button_pdf"></div>
         </div>
         <div className="right_side">

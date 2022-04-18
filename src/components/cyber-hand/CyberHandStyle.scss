@@ -1,0 +1,55 @@
+div.hand {
+  position: relative;
+  width: 100%;
+  height: auto;
+  img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 10;
+  }
+
+  div.inner_comp {
+    position: absolute;
+    width: 20px;
+    height: 70px;
+    background-color: #5bbf5d;
+    left: 130px;
+    bottom: 238px;
+    z-index: 5;
+  }
+
+  div.inner_prog {
+    position: absolute;
+    width: 20px;
+    height: 50px;
+    background-color: #ffbb32;
+    left: 156px;
+    bottom: 238px;
+    z-index: 5;
+  }
+
+  div.inner_prep {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff2100;
+    left: 180px;
+    bottom: 238px;
+    z-index: 5;
+  }
+}
+
+div.token {
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  width: 80px;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
