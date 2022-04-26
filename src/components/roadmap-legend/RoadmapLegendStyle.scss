@@ -1,0 +1,32 @@
+div.list {
+  position: relative;
+  width: 100%;
+  overflow: auto;
+  margin-bottom: 50px;
+
+  h3 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    font-size: 18px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: white;
+  }
+  h4.comp {
+    color: #5bbf5d;
+  }
+  h4.prog {
+    color: #ffbb32;
+  }
+  h4.prep {
+    color: #ff2100;
+  }
+}
+
+.rm_btn {
+  cursor: pointer;
+}

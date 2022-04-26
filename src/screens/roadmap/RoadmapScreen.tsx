@@ -3,120 +3,53 @@ import { useRef, useEffect } from "react";
 
 import "./RoadmapScreenStyle.scss";
 
+import {
+  completedLiquidAnim,
+  preparationBtnLiquidAnim,
+  progressBtnLiquidAnim,
+} from "src/animations/roadmap";
+
 import top_mask_bar from "../../assets/svg/top-mask-bar.svg";
 import CybrHand from "src/components/cyber-hand/CyberHandComponent";
 import TextContainer from "src/components/textContainer/TextContainerComponent";
-import {
-  completedLiquidAnim,
-  completedTasksEnter,
-  completedTasksLeave,
-  progressBtnLiquidAnim,
-  progressTasksEnter,
-  progressTasksLeave,
-} from "src/animations/roadmap";
+import RoadmapLegend from "src/components/roadmap-legend/RoadmapLegendComponent";
 
 function RoadmapScreen() {
   const completedBtn = useRef<any>();
   const progressBtn = useRef<any>(null);
   const preparationBtn = useRef<any>(null);
+
   const completedLiquid = useRef<any>(null);
   const progressLiquid = useRef<any>(null);
   const preparationLiquid = useRef<any>(null);
+
+  const tier1Btn = useRef<any>(null);
+  const tier2Btn = useRef<any>(null);
+  const tier3Btn = useRef<any>(null);
+  const tier4Btn = useRef<any>(null);
   useEffect(() => {
     completedLiquidAnim(completedBtn.current, completedLiquid.current);
     progressBtnLiquidAnim(progressBtn.current, progressLiquid.current);
-    completedLiquidAnim(preparationBtn.current, preparationLiquid.current);
-  }, [completedBtn, completedLiquid]);
+    preparationBtnLiquidAnim(preparationBtn.current, preparationLiquid.current);
+  }, []);
+
   return (
     <>
       <div className="roadmap">
         <div className="roadmap_container">
           <div className="roadmap_history">
-            <div className="list">
-              <h3>Colour Key:</h3>
-              <h4
-                className="comp rm_btn"
-                ref={completedBtn}
-                onMouseEnter={() =>
-                  completedTasksEnter(
-                    progressBtn.current,
-                    preparationBtn.current,
-                    progressLiquid.current,
-                    preparationLiquid.current
-                  )
-                }
-                onMouseLeave={() => {
-                  completedTasksLeave(
-                    progressBtn.current,
-                    preparationBtn.current,
-                    progressLiquid.current,
-                    preparationLiquid.current
-                  );
-                }}
-              >
-                Completed Tasks
-              </h4>
-              <h4
-                className="prog rm_btn"
-                ref={progressBtn}
-                onMouseEnter={() =>
-                  progressTasksEnter(
-                    completedBtn.current,
-                    preparationBtn.current,
-                    completedLiquid.current,
-                    preparationLiquid.current
-                  )
-                }
-                onMouseLeave={() => {
-                  progressTasksLeave(
-                    completedBtn.current,
-                    preparationBtn.current,
-                    completedLiquid.current,
-                    preparationLiquid.current
-                  );
-                }}
-              >
-                In Progress
-              </h4>
-              <h4
-                className="prep rm_btn"
-                ref={preparationBtn}
-                onMouseEnter={() =>
-                  completedTasksEnter(
-                    progressBtn.current,
-                    completedBtn.current,
-                    progressLiquid.current,
-                    completedLiquid.current
-                  )
-                }
-                onMouseLeave={() => {
-                  completedTasksLeave(
-                    progressBtn.current,
-                    completedBtn.current,
-                    progressLiquid.current,
-                    completedLiquid.current
-                  );
-                }}
-              >
-                In Preparation
-              </h4>
-            </div>
-
-            <div className="list">
-              <h3>Number Key:</h3>
-              <h4 className="t1 rm_btn" id="tier1Btn">
-                T1: Tier 1 project
-              </h4>
-              <h4 className="t2 rm_btn" id="tier2Btn">
-                T2: Tier 2 project
-              </h4>
-              <h4 className="t3 rm_btn" id="tier3Btn">
-                T3: Tier 3 project
-              </h4>
-              <h4 className="t4 rm_btn" id="tier4Btn">
-                T4: Symbiotic project
-              </h4>
-            </div>
+            <RoadmapLegend
+              completedBtn={completedBtn}
+              progressBtn={progressBtn}
+              preparationBtn={preparationBtn}
+              completedLiquid={completedLiquid}
+              progressLiquid={progressLiquid}
+              preparationLiquid={preparationLiquid}
+              tier1Btn={tier1Btn}
+              tier2Btn={tier2Btn}
+              tier3Btn={tier3Btn}
+              tier4Btn={tier4Btn}
+            />
           </div>
 
           <div className="roadmap_image">
@@ -124,6 +57,9 @@ function RoadmapScreen() {
               completedRef={completedLiquid}
               progRef={progressLiquid}
               prepRef={preparationLiquid}
+              completedLiquidRef={completedLiquid}
+              progressLiquidRef={progressLiquid}
+              preparationLiquidRef={preparationLiquid}
             />
           </div>
           <div className="roadmap_text_container">

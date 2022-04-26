@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useRef, useEffect } from "react";
+
 import { floatLogo } from "src/animations/roadmap";
 
 import roadmap_hand from "../../assets/webp/roadmap_hand.webp";
@@ -10,15 +11,29 @@ function CybrHand({
   completedRef,
   progRef,
   prepRef,
+  completedLiquidRef,
+  progressLiquidRef,
+  preparationLiquidRef,
 }: {
   completedRef: any;
   progRef: any;
   prepRef: any;
+  completedLiquidRef: any;
+  progressLiquidRef: any;
+  preparationLiquidRef: any;
 }) {
   const token = useRef<any>(null);
+
   useEffect(() => {
     floatLogo(token.current);
-  }, []);
+  }, [
+    completedRef,
+    progRef,
+    prepRef,
+    completedLiquidRef,
+    progressLiquidRef,
+    preparationLiquidRef,
+  ]);
 
   return (
     <>
