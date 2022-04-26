@@ -23,7 +23,7 @@ function ButtonsContainer({ menuClick }: { menuClick: any }) {
           }
           className="uniswap_btn"
         >
-          <a href="#">
+          <a>
             <span className="image">
               <img src={uniswap} width="100%" height="100%" alt="" />
             </span>

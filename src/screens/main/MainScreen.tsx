@@ -18,6 +18,7 @@ import "./MainScreenStyle.scss";
 import MenuRight from "../../components/menuRight/MenuRightComponent";
 import { Routes, Route } from "react-router-dom";
 import RoadmapScreen from "../roadmap/RoadmapScreen";
+import CalculatorScreen from "../calculator/CalculatorScreen";
 
 function MainScreen() {
   const heroRef = React.useRef<any>(null);
@@ -50,6 +51,7 @@ function MainScreen() {
       <UtilityBar languageClick={openLanguage} />
       <Routes>
         <Route path="/roadmap" element={<RoadmapScreen />} />
+        <Route path="/calculator" element={<CalculatorScreen />} />
         <Route path="/" element={<HeroContainer ref={heroRef} />} />
       </Routes>
       <FixedBot />

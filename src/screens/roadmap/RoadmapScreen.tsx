@@ -13,6 +13,8 @@ import top_mask_bar from "../../assets/svg/top-mask-bar.svg";
 import CybrHand from "src/components/cyber-hand/CyberHandComponent";
 import TextContainer from "src/components/textContainer/TextContainerComponent";
 import RoadmapLegend from "src/components/roadmap-legend/RoadmapLegendComponent";
+import InfoBox from "src/components/info-box/InfoBoxComponent";
+import { RoadmapInfos } from "src/assets/text/InfoTexts";
 
 function RoadmapScreen() {
   const completedBtn = useRef<any>();
@@ -27,6 +29,7 @@ function RoadmapScreen() {
   const tier2Btn = useRef<any>(null);
   const tier3Btn = useRef<any>(null);
   const tier4Btn = useRef<any>(null);
+
   useEffect(() => {
     completedLiquidAnim(completedBtn.current, completedLiquid.current);
     progressBtnLiquidAnim(progressBtn.current, progressLiquid.current);
@@ -179,85 +182,7 @@ function RoadmapScreen() {
         </div>
       </div>
 
-      <div className="page_text" itemScope={true}>
-        <div className="pt_info">Information</div>
-
-        <div
-          className="pt_text"
-          itemScope={true}
-          itemProp={"mainEntity"}
-          itemType="https://schema.org/Question"
-        >
-          <div className="pt_text_title" itemProp="name">
-            Roadmap Meaning
-          </div>
-          <div
-            className="pt_text_container"
-            itemScope={true}
-            itemProp="acceptedAnswer"
-            itemType="https://schema.org/Answer"
-          >
-            <div className="pt_answer" itemProp="text">
-              <p>
-                A roadmap is a strategic plan that defines our goals and desired
-                outcomes over a period of time and includes the major steps or
-                milestones needed to reach it.{" "}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className="pt_text"
-          itemScope={true}
-          itemProp="mainEntity"
-          itemType="https://schema.org/Question"
-        >
-          <div className="pt_text_title" itemProp="name">
-            Why is a roadmap important?
-          </div>
-          <div
-            className="pt_text_container"
-            itemScope={true}
-            itemProp="acceptedAnswer"
-            itemType="https://schema.org/Answer"
-          >
-            <div className="pt_answer" itemProp="text">
-              <p>
-                When a roadmap is on track it provides clarity to investors what
-                the tasks at hand are, as well as provides an estimated time for
-                what areas.{" "}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className="pt_text"
-          itemScope={true}
-          itemProp="mainEntity"
-          itemType="https://schema.org/Question"
-        >
-          <div className="pt_text_title" itemProp="name">
-            Will a roadmap work?
-          </div>
-          <div
-            className="pt_text_container"
-            itemScope={true}
-            itemProp="acceptedAnswer"
-            itemType="https://schema.org/Answer"
-          >
-            <div className="pt_answer" itemProp="text">
-              <p>
-                There are a few key things that a roadmap needs in order for it
-                to not only work smoothly, but also work effectively. A roadmap
-                without dates, can pose as a threat to investors as uncertainty
-                of the execution plan.{" "}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <InfoBox title="Information" info={RoadmapInfos} />
     </>
   );
 }

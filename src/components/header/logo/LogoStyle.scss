@@ -1,8 +1,8 @@
 .logo {
   position: relative;
   height: 50px;
-  padding-top: 10px;
-  width: 62px;
+  margin-top: 10px;
+  width: 262px;
   margin-left: 10px;
 
   a {
@@ -20,6 +20,22 @@
       top: 9px;
       left: 19px;
     }
+  }
+}
+div.logo_text {
+  position: absolute;
+  top: 0px;
+  left: 72px;
+  height: 62px;
+  padding-top: 10px;
+  a {
+    position: relative;
+    font-size: 26px;
+    height: 52px;
+    line-height: 52px;
+    padding-left: 10px;
+    display: inline-block;
+    color: white;
   }
 }
 

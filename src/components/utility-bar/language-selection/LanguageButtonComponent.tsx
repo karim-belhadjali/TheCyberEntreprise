@@ -10,7 +10,7 @@ function LanguageButton({ onClick }: { onClick: any }) {
     addBracket(span1Ref.current, "left");
     addBracket(span1Ref.current, "right");
     makeTextSpans(span1Ref.current, text);
-  }, []);
+  }, [text]);
   return (
     <>
       <div onClick={onClick} className="language">
@@ -26,7 +26,7 @@ function LanguageButton({ onClick }: { onClick: any }) {
           id="language_btn"
           className="language_btn"
         >
-          <a href="#">English</a>
+          <a>English</a>
         </span>
       </div>
       <div className="language_mask"></div>
