@@ -5,6 +5,45 @@ DOCUMENT READY
 docReady(function() {
 
 
+    
+    // START Logo Animation
+    var logoLink = document.getElementById("logo_link");
+    var logoText = document.getElementsByClassName("logo_text")[0];
+    var interiorEye = document.getElementsByClassName("interior_eye")[0];
+
+    logoLink.addEventListener("mouseenter", function( event ){
+        animateLogoEye();
+    });
+
+    logoText.addEventListener("mouseenter", function( event ){
+        animateLogoEye();
+    });
+
+    function animateLogoEye(){
+        var tl = anime.timeline({
+                
+        });
+
+        tl
+        .add({
+            targets: interiorEye,
+            rotate: 360,
+            duration: 1300,
+            loop: false,
+            elasticity: 600,
+            easing: 'easeOutElastic',
+        })
+        .add({
+            targets: interiorEye,
+            delay : 1300,
+            rotate: 0,
+            duration: 0,
+        });
+   
+    }
+
+    // End Logo Animation
+
     // START Buy On Uniswap Animation
 
     let linkElem = document.getElementsByClassName('uniswap_btn')[0].querySelector('a');
@@ -589,6 +628,41 @@ docReady(function() {
 
 
 
+
+
+   // Home Harmony Token Animation
+    var wave1 = document.getElementsByClassName("wave1")[0];
+    var wave2 = document.getElementsByClassName("wave2")[0];
+    var wave3 = document.getElementsByClassName("wave3")[0];
+
+    if(typeof(wave1) != 'undefined' && wave1 != null){
+        
+        anime({
+            targets: wave1,
+            r: 20,
+            direction: 'alternate',
+            loop: true,
+            easing: 'easeInOutSine'
+        });
+
+        anime({
+            targets: wave2,
+            r: 20,
+            direction: 'alternate',
+            loop: true,
+            easing: 'easeInOutSine'
+        });
+
+        anime({
+            targets: wave3,
+            r: 20,
+            direction: 'alternate',
+            loop: true,
+            easing: 'easeInOutSine'
+        });
+
+    }
+   // END of Harmony Token Animation
 
 
 });
