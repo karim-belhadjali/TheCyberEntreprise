@@ -1,0 +1,195 @@
+div.press_release {
+    position : relative;
+    width : calc(100% - 40px);
+    overflow : visible;
+    margin-left : auto;
+    margin-right : auto;
+  
+  
+  
+    div.press_release_container {
+        position : relative;
+        width : 100%;
+
+        background-color : #0e0e14;
+        overflow : hidden;
+        padding-bottom : 30px;
+
+
+  
+
+
+        div.pr_title {
+            position : relative;
+            width : 100%;
+            overflow : auto;
+            color : white;
+            font-size : 30px;
+            text-align : center;
+            margin-top : 20px;
+            margin-bottom : 20px;
+
+        }
+
+        div.pr_box {
+            position : relative;
+            width : calc(100% - 40px);
+            margin-left : auto;
+            margin-right : auto;
+            background-color : rgba(34,36,49,0.4);
+            overflow : auto;
+            display : flex;
+            gap : 20px;
+            padding-left : 20px;
+            padding-right : 20px;
+            margin-bottom : 20px;
+       
+
+            div.pr_content {
+                position : relative;
+                margin-left : auto;
+                margin-right : auto;
+                margin-top : 20px;
+                overflow : auto;
+
+                padding-bottom : 20px;
+                
+    
+                div.text {
+                    position : relative;
+                    overflow : auto;
+                    color : white;
+                    font-size : 18px;
+
+                    
+                    margin-top : 20px;
+                    text-align : justify;
+                }
+    
+ 
+
+
+                h1 {
+                    font-size : 26px;
+                    display : block;
+                    margin-left : auto;
+                    margin-right : auto;
+                    color: #ffbc32;
+                    text-decoration: underline;
+
+                    a {
+                        color: #ffbc32;
+                    }
+                }
+    
+                div.release {
+                    display : inline-block;
+                    position : relative;
+                    margin-left : auto;
+                    margin-right : auto;
+                    color : white;
+                    font-size : 18px;
+                    margin-top : 5px;
+                }
+
+                div.release::after {
+                    content : "";
+                    position : absolute;
+                    bottom : 0px;
+                    left : 0px;
+                    width : 100%;
+                    height : 2px;
+                    background-color : #ffbc32;
+                }
+
+                div.date {
+                    display : block;
+                    position : relative;
+                    margin-left : auto;
+                    margin-right : auto;
+                    color : white;
+                    font-size : 18px;
+                    margin-top : 5px;
+                }
+    
+                div.read_time {
+                    position : relative;
+                    margin-left : auto;
+                    margin-right : auto;
+                    color : white;
+                    font-size : 18px;
+                    margin-top : 5px;
+
+                    span.dots {
+                        position : relative;
+                        display : inline-block;
+                        width : 12px;
+                        height : 7px;
+                    }
+
+                    span.fast_read {
+                        background-image : url("../design/dots_completed.png");
+                    }
+
+                    span.medium_read {
+                        background-image : url("../design/dots_progress.png");
+                    }
+
+                    span.long_read {
+                        background-image : url("../design/dots_preparation.png");
+                    }
+                }
+    
+            }
+
+
+            div.line {
+                position : relative;
+                width : 4px;
+                margin-top : 20px;
+                margin-bottom : 20px;
+                background-color : black;
+            }
+
+
+            div.logo {
+                position : relative;
+                width : 100px;
+                overflow : auto;
+          
+  
+                flex-shrink: 0;
+                flex-basis: 1;
+                display : flex;
+                align-items : center;
+
+                img {
+                    display: block;
+                    width : 100%;
+                    height : auto;
+          
+                }
+            }
+
+
+ 
+        }
+  
+    }
+
+
+
+    div.press_release_bottom_svg {
+        position : absolute;
+        width : 100%;
+        height : auto;
+        bottom : 0px;
+        z-index : 100;
+        img {
+          display : block;
+          width : 100%;
+          height : auto;
+        }
+    }
+}
+

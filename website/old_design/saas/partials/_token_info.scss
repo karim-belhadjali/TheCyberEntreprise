@@ -1,34 +1,108 @@
 div.token_info {
     position : relative;
-    width : calc(100% - 40px);
+    width : 100%;
     overflow : auto;
-    margin-top : 50px;
-    margin-bottom : 120px;
+    margin-top : 20px;
+    margin-bottom : 0px;
     margin-left : auto;
     margin-right : auto;
   
     display : flex;
-    justify-content : center;
+  
   
   
     div.token_image {
-      width : 500px;
+      flex-grow: 1;
       height : auto;
-      background-image : url('../design/webp/boxes.webp');
       background-size : contain;
       background-position : center;
       background-repeat : no-repeat;
-      transform: translateX(50px);
+      margin-left : 20px;
+      margin-right : 20px;
+      z-index : 2;
+      display : flex;
+
+      div.token_image_container {
+        position : relative;
+        align-self : flex-end;
+        margin-left : auto;
+        margin-right : auto;
+        margin-bottom : 10px;
+
+        img.tkn_images {
+          height : auto;
+          display : block;
+          position : relative;
+          float : left;
+        }
+
+        img.tkn_token {
+          position : absolute;
+          width : 53px;
+          height : 53px;
+          left : 186px;
+          top : 126px;
+          z-index : 5;
+        }
+
+        svg.token_wave {
+          position : absolute;
+          top : 110px;
+          left : 170px;
+          z-index : 4;
+
+          circle.wave {
+            opacity : 0.2;
+          }
+        }
+  
+        img.tkn_harmony {
+          position : absolute;
+          bottom : 0px;
+          width : 260px;
+        }
+  
+        img.tkn_box1 {
+          width : 150px;
+          margin-left : 170px;
+        }
+  
+        img.tkn_box2 {
+          width : 150px;
+          margin-left : -45px;
+        }
+  
+        img.tkn_box3 {
+          width : 150px;
+          margin-left : -45px;
+        }
+
+        img.tkn_box4 {
+          width : 150px;
+          margin-left : -50px;
+        }
+
+        img.tkn_box5 {
+          width : 150px;
+          margin-left : -50px;
+        }
+      }
+
+
+
+
     }
   
   
     div.token_info_border {
       position : relative;
-      width : 500px;
+      width : 420px;
       overflow : auto;
       background-color : black;
       clip-path: polygon(0% 50px, 50px 0px, 100% 0%, 100% calc(100% - 50px), calc(100% - 50px) 100%, 0px 100%);
-      transform: translateX(-50px);
+      margin-right : 20px;
+      z-index : 2;
+      margin-bottom : 20px;
   
       div.token_info_container {
         position : relative;
@@ -49,7 +123,6 @@ div.token_info {
           width : calc(100% - 60px);
           margin-left : auto;
           margin-right : auto;
-          overflow : auto;
           margin-bottom : 40px;
   
   
@@ -57,7 +130,7 @@ div.token_info {
             position : relative;
             width : 100%;
             font-family : $secondFont;
-            font-size : 22px;
+            font-size : 16px;
             color : $yellow_bright;
           }
           
@@ -66,14 +139,14 @@ div.token_info {
           div.info_data {
             position : relative;
             width : 100%;
-            font-size : 20px;
+            font-size : 16px;
             color : white;
             margin-top : 10px;
           }
   
           div.info_title:before{
             position : absolute;
-            top : 0px;
+            top : -5px;
             left : 0px;
             content : "[";
             color : white;
@@ -82,7 +155,7 @@ div.token_info {
   
           div.info_data:after{
             position : absolute;
-            bottom : 0px;
+            bottom : -2px;
             right : 0px;
             content : "]";
             color : white;
@@ -134,7 +207,15 @@ div.token_info {
             }
           }
   
-  
+          div.hourglass {
+            position : absolute;
+            width : 25px;
+            height : 25px;
+            background-image : url('../design/hourglass3.png');
+            background-size: cover;
+            right : 60px;
+            top : 47px;
+          }
   
         }
   
@@ -145,5 +226,118 @@ div.token_info {
       }
     
     }
+
+
+    div.triangle_floor {
+      position : absolute;
+      width : 100%;
+      height : 200px;
+      background-color : #878787;
+      bottom : 0px;
+      left : 0px;
+      z-index : 1;
+
+      clip-path: polygon(0% 0%, calc(100% - 20px) 100%, 0px 100%);
+    }
   
   }
+
+
+
+
+
+@media only screen and (max-width: 1230px) {
+
+  img.tkn_box5 {
+    display : none !important;
+  }
+}
+
+
+@media only screen and (max-width: 1126px) {
+
+  img.tkn_box4 {
+    display : none !important;
+  }
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+  img.tkn_box3 {
+    display : none !important;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+
+  img.tkn_box2 {
+    display : none !important;
+  }
+
+}
+
+
+@media only screen and (max-width: 870px) {
+
+  img.tkn_box1 {
+    display : none !important;
+  }
+
+  img.tkn_harmony {
+    position : relative !important;
+  }
+
+  img.tkn_token {
+    top : 108px !important;
+  }
+
+  svg.token_wave {
+    top : 92px !important;
+    left : 170px !important;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 800px) {
+
+  img.tkn_harmony {
+    position : relative !important;
+    width: 200px !important;
+  }
+
+  img.tkn_token {
+    top : 72px !important;
+    left : 142px !important;
+  }
+
+  svg.token_wave {
+    top : 56px !important;
+    left : 126px !important;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 680px) {
+
+  div.token_info_border {
+    margin-bottom : 0px !important;
+  }
+
+  div.token_image {
+    display : none !important;
+  }
+
+  div.token_info_border {
+    width : 100% !important;
+    margin-left : 20px !important;
+  }
+
+  div.triangle_floor {
+    display : none;
+  }
+}

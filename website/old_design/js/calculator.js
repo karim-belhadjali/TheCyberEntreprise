@@ -268,6 +268,7 @@ docReady(function() {
     var total = messageWidth - messageWidth * 2;
     var textTimeout;
     var movingText = false;
+    var calculatorState = "on";
   
 
     function moveText(){
@@ -290,9 +291,24 @@ docReady(function() {
 
 
     // Start CE Click
+    var visible_text_numbers = document.getElementsByClassName("visible_text_numbers")[0];
+    var written_number = "";
+    var blink_line = document.getElementsByClassName("calc_line")[0];
+   
 
     btn_calc_ce[1].addEventListener("click", function(){
-        initialPosition = 165 + 15;
+
+        if(calculatorState == "on"){
+            initialPosition = 165 + 15;
+            visible_text_numbers.innerHTML = "";
+            written_number = "";
+    
+            if(movingText == false){
+                blink_line.style.display = "block";
+            }
+
+        }
+
     });
 
     // END CE Click
@@ -301,16 +317,279 @@ docReady(function() {
     // Start ON/OFF Click
 
     btn_calc_on[1].addEventListener("click", function(){
-        if(movingText == true){
+        if(calculatorState == "on"){
             initialPosition = 165 + 15;
             visible_text.style.left = initialPosition + "px";
             clearTimeout(textTimeout);
             movingText = false;
+            blink_line.style.display = "none";
+            calculatorState = "off";
+            written_number = "";
+            visible_text_numbers.innerHTML = "";
         }else{
             moveText();
+            calculatorState = "on";
+            
         }
     });
 
     // END ON/OFF Click
+
+
+
+    // Start Click On Numbers
+
+    var numeric_btns = document.getElementsByClassName("btn_calc_number");
+    
+
+    for(let i = 0; i < numeric_btns.length; i++){
+        numeric_btns[i].addEventListener("click", function(){
+
+            if(calculatorState == "on"){
+                // stop the default text
+                if(movingText == true){
+                    initialPosition = 165 + 15;
+                    visible_text.style.left = initialPosition + "px";
+                    clearTimeout(textTimeout);
+
+                    movingText = false;
+                }
+
+                // add spans with the numbers
+                let clicked_number = this.innerHTML;
+                let spanEl = document.createElement("span");
+
+                let spanText = document.createTextNode(clicked_number);
+                spanEl.appendChild(spanText);
+                visible_text_numbers.appendChild(spanEl);
+
+
+                // hide blinking line 
+                blink_line.style.display = "none";
+
+                // add numbers to variable
+
+                written_number = written_number + clicked_number;
+                console.log(written_number);
+            }
+
+        });
+
+    }
+
+    // END Click On Numbers
+
+
+
+    // Start Hit Equal
+    var equal_btn = document.getElementsByClassName("equal_btn")[0];
+    var calcErrorMessage = document.getElementsByClassName("calc_error")[0];
+
+    var acceptedComb = ["80085", "800", "90", "2026"];
+
+    equal_btn.addEventListener('click', function(){
+        if(calculatorState == "on" && movingText == false){
+            blink_line.style.display = "none";
+
+            if(acceptedComb.includes(written_number)){
+
+                // Combination Found
+                hideCalculator();
+
+
+                if(written_number == "80085"){ // 80085 egg
+                    let egg_80085 = document.getElementsByClassName('egg_80085')[0];
+                    egg_80085.style.display = "block";
+
+
+                    var showEgg_80085 = anime.timeline({
+                        easing: 'easeOutExpo',
+                    });
+            
+                    showEgg_80085
+                    .add({
+                        targets: egg_80085,
+                        opacity: 1,
+                        duration: 500,
+                        delay : 500,
+                        duration: 300,
+                        easing: 'easeInOutSine'
+                    })
+            
+                    .add({
+                        targets: egg_80085,
+                        opacity: 0,
+                        delay: 5000,
+                        duration: 500,
+                        complete: function() {
+                            showCalculator();
+                        }
+                    });
+                }
+
+
+                if(written_number == "800"){ // 800 egg
+                    let egg_800 = document.getElementsByClassName('egg_800')[0];
+                    egg_800.style.display = "block";
+
+
+                    var showEgg_800 = anime.timeline({
+                        easing: 'easeOutExpo',
+                    });
+            
+                    showEgg_800
+                    .add({
+                        targets: egg_800,
+                        opacity: 1,
+                        duration: 500,
+                        delay : 500,
+                        duration: 300,
+                        easing: 'easeInOutSine'
+                    })
+            
+                    .add({
+                        targets: egg_800,
+                        opacity: 0,
+                        delay: 5000,
+                        duration: 500,
+                        complete: function() {
+                            showCalculator();
+                        }
+                    });
+                }
+
+
+                if(written_number == "90"){ // 90 egg
+                    let egg_90 = document.getElementsByClassName('egg_90')[0];
+                    egg_90.style.display = "block";
+
+
+                    var showEgg_90 = anime.timeline({
+                        easing: 'easeOutExpo',
+                    });
+            
+                    showEgg_90
+                    .add({
+                        targets: egg_90,
+                        opacity: 1,
+                        duration: 500,
+                        delay : 500,
+                        duration: 300,
+                        easing: 'easeInOutSine'
+                    })
+            
+                    .add({
+                        targets: egg_90,
+                        opacity: 0,
+                        delay: 5000,
+                        duration: 500,
+                        complete: function() {
+                            showCalculator();
+                        }
+                    });
+                }
+
+
+                if(written_number == "2026"){ // 2026 egg
+                    let egg_2026 = document.getElementsByClassName('egg_2026')[0];
+                    egg_2026.style.display = "block";
+
+
+                    var showEgg_2026 = anime.timeline({
+                        easing: 'easeOutExpo',
+                    });
+            
+                    showEgg_2026
+                    .add({
+                        targets: egg_2026,
+                        opacity: 1,
+                        duration: 500,
+                        delay : 500,
+                        duration: 300,
+                        easing: 'easeInOutSine'
+                    })
+            
+                    .add({
+                        targets: egg_2026,
+                        opacity: 0,
+                        delay: 5000,
+                        duration: 500,
+                        complete: function() {
+                            showCalculator();
+                        }
+                    });
+                }
+
+
+
+
+
+            }else{
+
+                // Error - No combination
+                visible_text_numbers.innerHTML = "";
+                written_number = "";
+
+                var errAnim = anime.timeline({
+                    easing: 'easeOutExpo',
+                });
+        
+                errAnim
+                .add({
+                    targets: calcErrorMessage,
+                    opacity: 1,
+                    duration: 500
+                })
+        
+                .add({
+                    targets: calcErrorMessage,
+                    opacity: 0,
+                    delay: 1000,
+                    duration: 500,
+                    complete: function() {
+                        blink_line.style.display = "block";
+                    }
+                });
+            }
+        }
+    });
+    // End Hit Equal
+
+
+
+    // Start Hide Calculator
+        function hideCalculator(){
+            let toHideArray = document.getElementsByClassName("to_hide");
+
+            anime({
+                targets: toHideArray,
+                opacity : 0,
+                duration: 300,
+                easing: 'easeInOutSine'
+            });
+        }
+
+    // End Hide Calculator
+
+
+        // Start Hide Calculator
+        function showCalculator(){
+            let toHideArray = document.getElementsByClassName("to_hide");
+
+            moveText();
+            calculatorState = "on";
+            blink_line.style.display = "none";
+            written_number = "";
+            visible_text_numbers.innerHTML = "";
+
+            anime({
+                targets: toHideArray,
+                opacity : 1,
+                duration: 300,
+                easing: 'easeInOutSine'
+            });
+        }
+
+    // End Hide Calculator
 
 });

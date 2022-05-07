@@ -1,0 +1,831 @@
+div.documents {
+    position : relative;
+    width : calc(100% - 40px);
+    overflow : visible;
+    margin-left : auto;
+    margin-right : auto;
+
+  
+  
+  
+    div.documents_container {
+        position : relative;
+        width : 100%;
+
+        background-color : #0e0e14;
+        overflow : hidden;
+
+
+        div.doc_title {
+            position: relative;
+            width: 100%;
+            overflow: auto;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+
+        div.horizontal_line {
+            position : relative;
+            width : calc(100% - 40px);
+            height : 2px;
+            background-color : #232332;
+            margin-left : auto;
+            margin-right : auto;
+            margin-bottom : 20px;
+        }
+
+        div.doc_bottom_space {
+            width : 100%;
+            height : 30px;
+        }
+
+
+        div.doc_category {
+            position : relative;
+            width : calc(100% - 40px);
+            margin-left : auto;
+            margin-right : auto;
+            margin-bottom : 20px;
+            display : flex;
+            gap : 20px;
+
+            div.doc_left {
+                position : relative;
+                width : 400px;
+                overflow : auto;
+                display : flex;
+                flex-direction: column;
+                align-items : stretch;
+                flex-shrink: 0;
+
+                div.doc_title_category {
+                    position : relative;
+                    width : 100%;
+                    text-align : center;
+                    font-size : 26px;
+                    color : #ffbc32;
+                    text-decoration: underline;
+                    margin-bottom : 20px;
+                }
+
+                div.image {
+                    width : 100%;
+                    height : auto;
+                    flex-grow: 1;
+                    display : flex;
+                    align-items: center;
+
+                    div.image_container_docs {
+                        position : relative;
+                        width : 340px;
+                        overflow: hidden;
+                        margin-left : auto;
+                        margin-right : auto;
+
+                        img.documents_folder {
+                            position : relative;
+                            width : 100%;
+                            display : block;
+                            z-index : 10;
+                        }
+
+                        img.documents_file {
+                            position : absolute;
+                            width : 100%;
+                            top : 110px;
+                            left : 0px;
+                            display : block;
+                            z-index : 5;
+                        }
+
+                        div.logo_gray_layer {
+                            position : absolute;
+                            width : 95px;
+                            height : 114px;
+                            background-color : #232323;
+                            top : 94px;
+                            left : 241px;
+                            overflow: hidden;
+
+                            img.cyber_lines {
+                                position : absolute;
+                                width : 190px;
+                                height : 228px;
+                                top : -180px;
+                                left : -150px;
+                                display : block;
+                            }
+                        }
+
+                        img.logo_crop {
+                            position : absolute;
+                            width : 95px;
+                            height : 114px;
+                            top : 94px;
+                            left : 241px;
+                            display : block;
+                        }
+
+                        div.credit_card_name {
+                            position : absolute;
+                            height : 28px;
+                            color : white;
+                            top : 208px;
+                            right : 117px;
+                            font-size : 24px;
+
+                            span.date {
+                                position : absolute;
+                                right : 0px;
+                                top : -20px;
+                                font-size : 18px;
+                            }
+                        }
+
+                        div.card_number {
+                            position : absolute;
+                            height : 48px;
+                            width : 210px;
+                      
+                            top : 130px;
+                            left : 13px;
+                            color : white;
+                            font-size : 24px;
+                            line-height : 26px;
+                            overflow : hidden;
+
+                            div.card_number_top_fade {
+                                position : relative;
+                                width : 100%;
+                                height : 12px;
+                                background-image: linear-gradient(to top, rgba(35,35,35,0), rgba(35,35,35,1));
+                                z-index : 20;
+                            }
+
+                            div.fade_full_color {
+                                width : 100%;
+                                height : 12px;
+                                background-color : rgba(35,35,35,1);
+                                opacity: 1;
+                            }
+
+                            div.card_number_container {
+                                position : relative;
+                                width : 100%;
+                                height : 24px;
+                              
+                                display : flex;
+                                justify-content: space-between;
+
+                                div.card_number_group {
+                                    position : relative;
+                                    height : 26px;
+                                    width : 44px;
+
+
+                                    div.number_container_element_1 {
+                                        position : absolute;
+                                        top : 0px;
+                                        left : 0px;
+                                        height : 260px;
+                                        width : 11px;
+
+
+                                        span {
+                                            display : block;
+                                            width : 11px;
+                                            height : 26px;
+                                        }
+                                    }
+
+                                    div.number_container_element_2 {
+                                        position : absolute;
+                                        top : 0px;
+                                        left : 11px;
+                                        height : 260px;
+                                        width : 11px;
+
+
+                                        span {
+                                            display : block;
+                                            width : 11px;
+                                            height : 26px;
+                                        }
+                                    }
+
+                                    div.number_container_element_3 {
+                                        position : absolute;
+                                        top : 0px;
+                                        left : 22px;
+                                        height : 260px;
+                                        width : 11px;
+       
+
+                                        span {
+                                            display : block;
+                                            width : 11px;
+                                            height : 26px;
+                                        }
+                                    }
+
+                                    div.number_container_element_4 {
+                                        position : absolute;
+                                        top : 0px;
+                                        left : 33px;
+                                        height : 260px;
+                                        width : 11px;
+                 
+
+                                        span {
+                                            display : block;
+                                            width : 11px;
+                                            height : 26px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            div.card_number_initial {
+                                display : none;
+                            }
+
+                            div.card_number_circulating {
+                                display : none;
+                            }
+
+                            div.card_number_bottom_fade {
+                                position : relative;
+                                width : 100%;
+                                height : 12px;
+                                background-image: linear-gradient(to bottom, rgba(35,35,35,0), rgba(35,35,35,1));
+                                
+                            }
+                        }
+
+                        div.credit_card_hover {
+                            position : absolute;
+                            width : 340px;
+                            height : 213px;
+                            top : 37px;
+                            z-index : 50;
+                        }
+
+
+
+                        div.scroll_gray_background {
+                            position : absolute;
+                            width : 120px;
+                            height : 29px;
+                            background-color : #232323;
+                            top : 13px;
+                            left :  110px;
+                        }
+
+
+                        div.scroll_blue_left {
+                            position : absolute;
+                            width : 0px;
+                            height : 29px;
+                            background-color : #8dfcfc;
+                            top : 13px;
+                            left :  110px;
+                        }
+
+
+                        div.scroll_blue_right {
+                            position : absolute;
+                            width : 0px;
+                            height : 29px;
+                            background-color : #8dfcfc;
+                            top : 13px;
+                            right : 110px;
+                        }
+
+
+                        img.main_scroll {
+                            position : relative;
+                            width : 100%;
+                            display : block;
+                        }
+
+                        div.scroll_contract {
+                            position : absolute;
+                            width : 148px;
+                            height : 196px;
+                            display : block;
+                            top : 50px;
+                            left : 95px;
+
+                            div.scroll_contract_overflow {
+                                position : relative;
+                                width : 148px;
+                                height : 196px;
+                                overflow : hidden;
+
+                                img.scroll_contract_image_empty {
+                                    display : none;
+                                }
+
+                                div.scroll_data {
+                                    position : absolute;
+                                    width : 122px;
+                                    height : 190px;
+                                    top : 3px;
+                                    left : 14px;
+                                    display : none;
+
+                                    span.title {
+                                        font-size : 24px;
+                                        display : block;
+                                        text-align : center;
+                                        margin-top : 60px;
+                                    }
+
+                                    span.number {
+                                        font-size : 30px;
+                                        display : block;
+                                        text-align : center;
+                                        margin-top : 10px;
+                                    }
+                                }
+                            }
+
+                            div.stamp_button {
+                                position : absolute;
+                                width : 29px;
+                                height : 29px;
+                                left : 105px;
+                                top : 166px;
+                                z-index: 50;
+                            }
+    
+                            div.point_cursor {
+                                cursor : pointer;
+                            }
+
+                            div.scroll_signature_click {
+                                position : absolute;
+                                width : 51px;
+                                height : 31px;
+                                top : 164px; 
+                                left : 25px;
+                                z-index: 50;
+                            }
+
+                            img.scroll_wood {
+                                position : absolute;
+                                bottom : -11px;
+                                left : 0px;
+                            }
+                        }
+
+                        img.scroll_stamp {
+                            position : absolute;
+                            width : 100%;
+                            display : block;
+                            top : 0px;
+                            left : 0px;
+                            opacity : 0;
+                        }
+
+                       
+
+
+                        div.diamond_left {
+                            position : absolute;
+                            width : 12px;
+                            height : 7px;
+                            top : 23px;
+                            left : 78px;
+                        }
+
+
+                        div.diamond_right {
+                            position : absolute;
+                            width : 12px;
+                            height : 7px;
+                            top : 23px;
+                            left : 250px;
+                        }
+
+
+                        
+                    }
+
+
+
+
+                    img.inu_face {
+                        position : absolute;
+                        top : 0px;
+                        left : 0px;
+                    }
+
+                    div.inu_hover {
+                        position : absolute;
+                        width : 200px;
+                        height : 202px;
+                        top : 0px;
+                        left : 70px;
+                    }
+                }
+            }
+
+            div.doc_list {
+                position : relative;
+                flex-grow: 1;
+                display: flex;
+                gap : 20px;
+                flex-wrap: wrap;
+
+                div.document_el {
+                    width : 100%;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    flex-basis: 100%;
+                    display : flex;
+                    gap : 20px;
+                    background-color : rgba(34,36,49,0.4);
+                    padding : 20px;
+                    align-items : center;
+
+                    div.document_content {
+                        position : relative;
+
+                        div.pdf_title {
+                            display : inline-block;
+                            position : relative;
+                            font-size : 22px;
+                            color : white;
+                        }
+
+                        div.pdf_title:after {
+                            content : "";
+                            position : absolute;
+                            bottom : 0px;
+                            left : 0px;
+                            height : 2px;
+                            width : 100%;
+                            background-color : #ffbc32;
+                        }
+
+                        div.doc_description {
+                            position : relative;
+                            font-size : 18px;
+                            color : white;
+                            margin-top : 10px;
+                            text-align : justify;
+                        }
+                       
+                    }
+
+                    div.doc_vertical_line {
+                        width : 2px;
+                        height : 100%;
+                        background-color : black;
+                    }
+
+                    div.document_languages {
+                        width : 300px;
+                        position : relative;
+                
+                        flex-shrink: 0;
+                        flex-grow: 1;
+                        display : flex;
+                        flex-wrap: wrap;
+                        gap : 10px;
+                        
+
+                        div.language_btn {
+                            height : 30px;
+                            width : 33.33333%;
+                            background-color : black;
+                            flex-basis : calc(33.33333% - 7px);
+
+                            text-align : center;
+                            line-height : 30px;
+                            color : white;
+                            cursor : default;
+                            color : #9d9d9d;
+                            -webkit-clip-path: polygon(0% 8px, 8px 0px, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0px 100%);
+                            clip-path: polygon(0% 8px, 8px 0px, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0px 100%);
+
+
+                            a {
+                                display : block;
+                                height : 30px;
+                                width : 100%;
+                                display : block;
+                                text-align : center;
+                                line-height : 30px;
+                                color : white;
+                            }
+
+
+                            a:hover {
+                                color : black;
+                                background-color : white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+
+
+
+    div.documents_bottom_svg {
+        position : absolute;
+        width : 100%;
+        height : auto;
+        bottom : 0px;
+        z-index : 100;
+        img {
+          display : block;
+          width : 100%;
+          height : auto;
+        }
+    }
+
+}
+
+
+div.doc_team {
+    position: relative;
+    width: calc(100% - 40px);
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #0E0E14;
+    color: white;
+
+    display : flex;
+
+    div.doc_team_thanks {
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: calc(50% - 40px);
+        margin : 20px;
+
+        div.doc_thanks_text {
+            width : 100%;
+            text-align : justify;
+            margin-top : 20px;
+        }
+
+        div.doc_thanks_list {
+            position : relative;
+            width : 100%;
+
+
+            margin-top : 20px;
+            border-top-width : 2px;
+            border-top-style : solid;
+            border-top-color : #232332;
+            display : flex;
+
+
+            div.list_names {
+                flex-grow: 1;
+                flex-shrink: 0;
+                flex-basis : 50%;
+                text-align : center;
+
+                border-right-width: 2px;
+                border-right-color: #232332;
+                border-right-style: solid;
+
+                div.name_title {
+                    position: relative;
+                    font-size: 22px;
+                    color: white;
+                    border-bottom-width: 2px;
+                    border-bottom-color: #232332;
+                    border-bottom-style: solid;
+
+                    cursor: default;
+                    
+                    div.name_title_text {
+                        position : relative;
+                        display : inline-block;
+                        padding-top : 10px;
+                        padding-bottom : 10px;
+                    }
+                    
+                    div.name_title_text:after {
+                        position: absolute;
+                        content: "";
+                        height: 2px;
+                        width: calc(100% + 20px);
+                        top: 32px;
+                        left: -10px;
+                        background-color: #ffbc32;
+                    }
+                }
+
+
+                div.thanks_name_el {
+                    position: relative;
+                    font-size: 20px;
+                    color: white;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    cursor: default;
+                }
+
+                div.hover_background {
+                    background-color : #222431;
+                }
+    
+                
+            }
+
+            div.list_languages {
+                flex-grow: 1;
+                flex-shrink: 0;
+                flex-basis : 50%;
+                text-align : center;
+
+
+                div.language_title {
+                    position: relative;
+                    font-size: 22px;
+                    color: white;
+
+                    border-bottom-width: 2px;
+                    border-bottom-color: #232332;
+                    border-bottom-style: solid;
+                    cursor: default;
+
+                    div.language_title_text {
+                        position : relative;
+                        display : inline-block;
+                        padding-top : 10px;
+                        padding-bottom : 10px;
+
+                        
+                    }
+
+                    div.language_title_text:after {
+                        position: absolute;
+                        content: "";
+                        height: 2px;
+                        width: calc(100% + 20px);
+                        top: 32px;
+                        left: -10px;
+                        background-color: #ffbc32;
+                    }
+                }
+
+                div.thanks_language_el {
+                    position: relative;
+                    font-size: 20px;
+                    color: white;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    cursor: default;
+                }
+
+                div.hover_background {
+                    background-color : #222431;
+                }
+            }
+        }
+    }
+
+    div.doc_team_form {
+        background-color : #222431;
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: calc(50% - 40px);
+        margin-top : 20px;
+        margin-bottom : 20px;
+        margin-right : 20px;
+
+        div.doc_team_text {
+            position : relative;
+            width : calc(100% - 40px);
+            margin-left : auto;
+            margin-right : auto;
+            margin-top : 20px;
+            text-align : justify;
+            
+            a {
+                color : white;
+                position: relative;
+            }
+
+            a:after {
+                content : "";
+                position : absolute;
+                width : 100%;
+                height : 2px;
+                background-color : #ffbc32;
+                bottom : 0px;
+                left : 0px;
+            }
+        }
+
+
+    }
+
+    div.doc_title {
+        font-size : 22px;
+        color : #ffbc32;
+        margin-top : 20px;
+        width : 100%;
+        text-align : center;
+    }
+
+    div.align_left {
+        text-align : left !important;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 1700px) {
+
+    div.doc_left {
+        width : 340px !important;
+    }
+
+    
+
+}
+
+
+
+@media only screen and (max-width: 1300px) {
+
+    div.document_languages {
+
+        width : 200px !important;
+
+        div.language_btn {
+            width : 50% !important;
+            flex-basis: calc(50% - 7px) !important;
+        }
+    }
+
+}
+
+
+
+@media only screen and (max-width: 1120px) {
+
+    div.doc_category{
+
+        display : block !important;
+
+
+        div.doc_left {
+            width : 100% !important;
+            div.image { 
+                display : none !important;
+            }
+        }
+    }
+
+
+
+}
+
+
+
+@media only screen and (max-width: 680px) {
+
+
+    div.documents div.documents_container div.doc_category div.doc_list div.document_el {
+        display : block;
+
+        div.doc_vertical_line {
+            width : 100%;
+            height : 2px;
+            margin-top : 20px;
+            margin-bottom : 20px;
+        }
+
+        div.document_languages {
+            width : 100% !important;
+
+            div.language_btn {
+                width : 33.33333% !important;
+                flex-basis : calc(33.33333% - 7px) !important;
+            }
+        }
+    }
+
+
+
+}

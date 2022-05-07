@@ -135,12 +135,12 @@
               <div class="image_container">
                 <div class="image">
 
-                  <div class="bag">
-                    <img src="design/calculator/bag.png" class="piece_bag" alt="">
-                    <img src="design/calculator/bag_logo_cybr.png" class="piece_logo_cybr" alt="">
+                  <div class="bag to_hide">
+                    <img src="design/calculator/bag.webp" class="piece_bag" alt="">
+                    <img src="design/calculator/bag_logo_cybr.webp" class="piece_logo_cybr" alt="">
                   </div>
-                  <div class="calc">
-                    <img src="design/calculator/calculator_main.png" class="piece_calculator_main" alt="">
+                  <div class="calc to_hide">
+                    <img src="design/calculator/calculator_main.webp" class="piece_calculator_main" alt="">
                     
                     <div class="calc_text">
                       <div class="visible_text">
@@ -148,6 +148,22 @@
                       </div>
                       <div class="hidden_text">What is your entry point? - Is that bag big enough? - Got an exit strategy?</div>
                     </div>
+
+                    <div class="calc_numbers">
+                      <div class="visible_text_numbers"></div>
+                    </div>
+
+                    <div class="calc_error">
+                      <div class="visible_error">
+                        <span>E</span>
+                        <span>R</span>
+                        <span>R</span>
+                        <span>O</span>
+                        <span>R</span>
+                      </div>
+                    </div>
+
+                    <div class="calc_line"></div>
 
                     <div class="calc_shadow"></div>
 
@@ -178,20 +194,23 @@
                     <div class="calc_buttons_hover btn_calc_slash"></div>
 
                   </div>
-                  <div class="pen">
-                    <img src="design/calculator/main_feather.png" class="piece_main_feather" alt="">
-                    <img src="design/calculator/feather.png" class="piece_feather" alt="">
-                    <img src="design/calculator/cyber.png" class="piece_cyber" alt="">
-                    <img src="design/calculator/pen.png" class="piece_pen" alt="">
+                  <div class="pen to_hide">
+                    <img src="design/calculator/main_feather.webp" class="piece_main_feather" alt="">
+                    <img src="design/calculator/feather.webp" class="piece_feather" alt="">
+                    <img src="design/calculator/cyber.webp" class="piece_cyber" alt="">
+                    <img src="design/calculator/pen.webp" class="piece_pen" alt="">
                     <div class="piece_spark">
-                      <img src="design/calculator/spark.png" class="piece_spark_el" alt="">
+                      <div class="piece_spark_el">
+                        <img src="design/calculator/spark.webp" width="1" height="1" alt="">
+                      </div>
+        
                     </div>
                     
                   </div>
-                  <div class="pen_hover"></div>
+                  <div class="pen_hover to_hide"></div>
 
-                  <div class="ink">
-                    <img src="design/calculator/ink.png" class="piece_ink" alt="">
+                  <div class="ink to_hide">
+                    <img src="design/calculator/ink.webp" class="piece_ink" alt="">
                   </div>
 
                   <div class="calc_copy">
@@ -200,29 +219,44 @@
                     <div class="calc_buttons_hover btn_calc_m_plus"></div>
                     <div class="calc_buttons_hover btn_calc_on"></div>
                     <div class="calc_buttons_hover btn_calc_ce"></div>
-                    <div class="calc_buttons_hover btn_calc_7"></div>
-                    <div class="calc_buttons_hover btn_calc_8"></div>
-                    <div class="calc_buttons_hover btn_calc_9"></div>
+                    <div class="calc_buttons_hover btn_calc_7 btn_calc_number">7</div>
+                    <div class="calc_buttons_hover btn_calc_8 btn_calc_number">8</div>
+                    <div class="calc_buttons_hover btn_calc_9 btn_calc_number">9</div>
                     <div class="calc_buttons_hover btn_calc_divide"></div>
                     <div class="calc_buttons_hover btn_calc_multiply"></div>
-                    <div class="calc_buttons_hover btn_calc_4"></div>
-                    <div class="calc_buttons_hover btn_calc_5"></div>
-                    <div class="calc_buttons_hover btn_calc_6"></div>
+                    <div class="calc_buttons_hover btn_calc_4 btn_calc_number">4</div>
+                    <div class="calc_buttons_hover btn_calc_5 btn_calc_number">5</div>
+                    <div class="calc_buttons_hover btn_calc_6 btn_calc_number">6</div>
                     <div class="calc_buttons_hover btn_calc_plus_minus"></div>
                     <div class="calc_buttons_hover btn_calc_minus"></div>
-                    <div class="calc_buttons_hover btn_calc_1"></div>
-                    <div class="calc_buttons_hover btn_calc_2"></div>
-                    <div class="calc_buttons_hover btn_calc_3"></div>
+                    <div class="calc_buttons_hover btn_calc_1 btn_calc_number">1</div>
+                    <div class="calc_buttons_hover btn_calc_2 btn_calc_number">2</div>
+                    <div class="calc_buttons_hover btn_calc_3 btn_calc_number">3</div>
                     <div class="calc_buttons_hover btn_calc_radical"></div>
                     <div class="calc_buttons_hover btn_calc_plus"></div>
-                    <div class="calc_buttons_hover btn_calc_0"></div>
+                    <div class="calc_buttons_hover btn_calc_0 btn_calc_number">0</div>
                     <div class="calc_buttons_hover btn_calc_dot"></div>
-                    <div class="calc_buttons_hover btn_calc_equal"></div>
+                    <div class="calc_buttons_hover btn_calc_equal equal_btn"></div>
                     <div class="calc_buttons_hover btn_calc_percent"></div>
                     <div class="calc_buttons_hover btn_calc_slash"></div>
                   </div>
 
-                  
+
+                  <div class="calc_egg egg_80085">
+
+                  </div>
+
+                  <div class="calc_egg egg_800">
+                    
+                  </div>
+
+                  <div class="calc_egg egg_90">
+                    
+                  </div>
+
+                  <div class="calc_egg egg_2026">
+                    
+                  </div>
 
                 </div>
               </div>
@@ -253,7 +287,8 @@
                     <div class="half_field">
                       <div class="input_text">Amount in Currency</div>
                       <div class="input_holder">
-                        <input type="text" id="amount">
+                        <input type="text" id="amount_currency">
+                        <label for="amount_currency">Amount in Currency</label>
                         <span class="token_name">USD</span>
                       </div>
                     </div>
@@ -263,7 +298,8 @@
                     <div class="half_field">
                       <div class="input_text">Amount in Tokens</div>
                       <div class="input_holder">
-                        <input type="text" id="amount">
+                        <input type="text" id="amount_tokens">
+                        <label for="amount_tokens">Amount in Tokens</label>
                         <span class="token_name">CYBR</span>
                       </div>
                     </div>
@@ -275,7 +311,8 @@
                     <div class="half_field">
                       <div class="input_text">Target Token Marketcap</div>
                       <div class="input_holder">
-                        <input type="text" id="amount">
+                        <input type="text" id="target_marketcap">
+                        <label for="target_marketcap">Target Token Marketcap</label>
                         <span class="token_name">USD</span>
                       </div>
                     </div>
@@ -285,7 +322,8 @@
                     <div class="half_field">
                       <div class="input_text">Target Token Price</div>
                       <div class="input_holder">
-                        <input type="text" id="amount">
+                        <input type="text" id="target_token_price">
+                        <label for="target_token_price">Target Token Price</label>
                         <span class="token_name">USD</span>
                       </div>
                     </div>
@@ -298,7 +336,7 @@
                   </div>
 
 
-                  <div class="select_currency hide_select">
+                  <div class="select_currency">
 
                     <div class="select_container">
                       <div class="select_btn">USD</div>
@@ -317,7 +355,7 @@
 
                   </div>
 
-                  <div class="select_token">
+                  <div class="select_token hide_select">
 
                     <div class="select_container">
                       <div class="select_btn">CYBR</div>
@@ -371,7 +409,7 @@
 
               </div>
 
-              <div class="calc_stats">
+              <div class="calc_stats calc_stats_3">
                 <div class="calc_tittle">Quick Comparisons</div>
                 <div class="horizontal_sep"></div>
 

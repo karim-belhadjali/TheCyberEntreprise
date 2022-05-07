@@ -81,7 +81,7 @@
   div.container {
     position : relative;
     width : 100%;
-    overflow : auto;
+    overflow-x : hidden;
     background-color: $mainBg;
     padding-top : 90px;
   }
