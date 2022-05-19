@@ -1,0 +1,393 @@
+div.doc_category {
+  position: relative;
+  width: calc(100% - 40px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+
+  div.doc_left {
+    position: relative;
+    width: 400px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-shrink: 0;
+
+    div.doc_title_category {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      font-size: 26px;
+      color: #ffbc32;
+      text-decoration: underline;
+      margin-bottom: 20px;
+    }
+
+    div.image {
+      width: 100%;
+      height: auto;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+
+      div.image_container_docs {
+        position: relative;
+        width: 340px;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+
+        img.documents_folder {
+          position: relative;
+          width: 100%;
+          display: block;
+          z-index: 10;
+        }
+
+        img.documents_file {
+          position: absolute;
+          width: 100%;
+          top: 110px;
+          left: 0px;
+          display: block;
+          z-index: 5;
+        }
+
+        div.logo_gray_layer {
+          position: absolute;
+          width: 95px;
+          height: 114px;
+          background-color: #232323;
+          top: 94px;
+          left: 241px;
+          overflow: hidden;
+
+          img.cyber_lines {
+            position: absolute;
+            width: 190px;
+            height: 228px;
+            top: -180px;
+            left: -150px;
+            display: block;
+          }
+        }
+
+        img.logo_crop {
+          position: absolute;
+          width: 95px;
+          height: 114px;
+          top: 94px;
+          left: 241px;
+          display: block;
+        }
+
+        div.credit_card_name {
+          position: absolute;
+          height: 28px;
+          color: white;
+          top: 208px;
+          right: 117px;
+          font-size: 24px;
+
+          span.date {
+            position: absolute;
+            right: 0px;
+            top: -20px;
+            font-size: 18px;
+          }
+        }
+
+        div.card_number {
+          position: absolute;
+          height: 48px;
+          width: 210px;
+
+          top: 130px;
+          left: 13px;
+          color: white;
+          font-size: 24px;
+          line-height: 26px;
+          overflow: hidden;
+
+          div.card_number_top_fade {
+            position: relative;
+            width: 100%;
+            height: 12px;
+            background-image: linear-gradient(
+              to top,
+              rgba(35, 35, 35, 0),
+              rgba(35, 35, 35, 1)
+            );
+            z-index: 20;
+          }
+
+          div.fade_full_color {
+            width: 100%;
+            height: 12px;
+            background-color: rgba(35, 35, 35, 1);
+            opacity: 1;
+          }
+
+          div.card_number_container {
+            position: relative;
+            width: 100%;
+            height: 24px;
+
+            display: flex;
+            justify-content: space-between;
+
+            div.card_number_group {
+              position: relative;
+              height: 26px;
+              width: 44px;
+
+              div.number_container_element_1 {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                height: 260px;
+                width: 11px;
+
+                span {
+                  display: block;
+                  width: 11px;
+                  height: 26px;
+                }
+              }
+
+              div.number_container_element_2 {
+                position: absolute;
+                top: 0px;
+                left: 11px;
+                height: 260px;
+                width: 11px;
+
+                span {
+                  display: block;
+                  width: 11px;
+                  height: 26px;
+                }
+              }
+
+              div.number_container_element_3 {
+                position: absolute;
+                top: 0px;
+                left: 22px;
+                height: 260px;
+                width: 11px;
+
+                span {
+                  display: block;
+                  width: 11px;
+                  height: 26px;
+                }
+              }
+
+              div.number_container_element_4 {
+                position: absolute;
+                top: 0px;
+                left: 33px;
+                height: 260px;
+                width: 11px;
+
+                span {
+                  display: block;
+                  width: 11px;
+                  height: 26px;
+                }
+              }
+            }
+          }
+
+          div.card_number_initial {
+            display: none;
+          }
+
+          div.card_number_circulating {
+            display: none;
+          }
+
+          div.card_number_bottom_fade {
+            position: relative;
+            width: 100%;
+            height: 12px;
+            background-image: linear-gradient(
+              to bottom,
+              rgba(35, 35, 35, 0),
+              rgba(35, 35, 35, 1)
+            );
+          }
+        }
+
+        div.credit_card_hover {
+          position: absolute;
+          width: 340px;
+          height: 213px;
+          top: 37px;
+          z-index: 50;
+        }
+
+        div.scroll_gray_background {
+          position: absolute;
+          width: 120px;
+          height: 29px;
+          background-color: #232323;
+          top: 13px;
+          left: 110px;
+        }
+
+        div.scroll_blue_left {
+          position: absolute;
+          width: 0px;
+          height: 29px;
+          background-color: #8dfcfc;
+          top: 13px;
+          left: 110px;
+        }
+
+        div.scroll_blue_right {
+          position: absolute;
+          width: 0px;
+          height: 29px;
+          background-color: #8dfcfc;
+          top: 13px;
+          right: 110px;
+        }
+
+        img.main_scroll {
+          position: relative;
+          width: 100%;
+          display: block;
+        }
+
+        div.scroll_contract {
+          position: absolute;
+          width: 148px;
+          height: 196px;
+          display: block;
+          top: 50px;
+          left: 95px;
+
+          div.scroll_contract_overflow {
+            position: relative;
+            width: 148px;
+            height: 196px;
+            overflow: hidden;
+
+            img.scroll_contract_image_empty {
+              display: none;
+            }
+
+            div.scroll_data {
+              position: absolute;
+              width: 122px;
+              height: 190px;
+              top: 3px;
+              left: 14px;
+              display: none;
+
+              span.title {
+                font-size: 24px;
+                display: block;
+                text-align: center;
+                margin-top: 60px;
+              }
+
+              span.number {
+                font-size: 30px;
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+              }
+            }
+          }
+
+          div.stamp_button {
+            position: absolute;
+            width: 29px;
+            height: 29px;
+            left: 105px;
+            top: 166px;
+            z-index: 50;
+          }
+
+          div.point_cursor {
+            cursor: pointer;
+          }
+
+          div.scroll_signature_click {
+            position: absolute;
+            width: 51px;
+            height: 31px;
+            top: 164px;
+            left: 25px;
+            z-index: 50;
+          }
+
+          img.scroll_wood {
+            position: absolute;
+            bottom: -11px;
+            left: 0px;
+          }
+        }
+
+        img.scroll_stamp {
+          position: absolute;
+          width: 100%;
+          display: block;
+          top: 0px;
+          left: 0px;
+          opacity: 0;
+        }
+
+        div.diamond_left {
+          position: absolute;
+          width: 12px;
+          height: 7px;
+          top: 23px;
+          left: 78px;
+        }
+
+        div.diamond_right {
+          position: absolute;
+          width: 12px;
+          height: 7px;
+          top: 23px;
+          left: 250px;
+        }
+      }
+
+      img.inu_face {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
+
+      div.inu_hover {
+        position: absolute;
+        width: 200px;
+        height: 202px;
+        top: 0px;
+        left: 70px;
+      }
+    }
+  }
+
+  div.doc_list {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    div.doc_item {
+      width: 100%;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 100%;
+    }
+  }
+}

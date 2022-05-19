@@ -1,0 +1,15 @@
+img.documents_folder {
+  position: relative;
+  width: 100%;
+  display: block;
+  z-index: 10;
+}
+
+img.documents_file {
+  position: absolute;
+  width: 100%;
+  top: 110px;
+  left: 0px;
+  display: block;
+  z-index: 5;
+}

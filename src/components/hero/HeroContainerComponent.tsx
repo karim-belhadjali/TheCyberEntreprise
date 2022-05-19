@@ -1,7 +1,8 @@
 import React, { useState, forwardRef, useImperativeHandle } from "react";
 import "./HeroContainerStyle.scss";
-import  mascotSvg from "../../assets/webp/inu.webp";
-import  hero_bottom_svg from "../../assets/svg/top-mask-bar.svg";
+import mascotSvg from "../../assets/webp/inu.webp";
+import hero_bottom_svg from "../../assets/svg/top-mask-bar.svg";
+import TokenInfo from "../token-info/token-info";
 const HeroContainer = forwardRef((props, ref) => {
   const [bigFlameLeft, setBigFlameLeft] = useState(0);
   const [bigFlameTop, setBigFlameTop] = useState(0);
@@ -11,12 +12,12 @@ const HeroContainer = forwardRef((props, ref) => {
   const bigFlameStyle = {
     left: bigFlameLeft + "%",
     top: bigFlameTop + "%",
-    opacity
+    opacity,
   };
   const smallFlameStyle = {
     left: smallFlameLeft + "%",
     top: smallFlameTop + "%",
-    opacity
+    opacity,
   };
   const [hiddenFlames, setHiddenFlames] = useState(true);
 
@@ -25,7 +26,7 @@ const HeroContainer = forwardRef((props, ref) => {
   var ySize = document.body.clientHeight;
   var halfBodyHeight = ySize / 2;
   useImperativeHandle(ref, () => ({
-    mouseMoving(e:any) {
+    mouseMoving(e: any) {
       if (hiddenFlames) {
         setHiddenFlames(false);
         setOpacity(1);
@@ -45,7 +46,7 @@ const HeroContainer = forwardRef((props, ref) => {
 
       let verticalPercentageSmall = ((yPos / halfBodyHeight) * 100) / 20;
       setSmallFlameTop(-verticalPercentageSmall);
-    }
+    },
   }));
 
   return (
@@ -79,6 +80,7 @@ const HeroContainer = forwardRef((props, ref) => {
           </div>
         </div>
       </div>
+      <TokenInfo />
     </>
   );
 });

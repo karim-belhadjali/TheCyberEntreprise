@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Announcements from "../../components/annoucements/AnnouncementComponents";
 import HeroContainer from "../../components/hero/HeroContainerComponent";
 import UtilityBar from "../../components/utility-bar/UtilityBarComponent";
-import TokenInfo from "../../components/token-info/token-info";
 import FixedTop from "../../components/header/fixedTop/FixedTopComponent";
 import FixedBot from "../../components/fixedBottom/FixedBotComponent";
 import {
@@ -19,6 +18,7 @@ import MenuRight from "../../components/menuRight/MenuRightComponent";
 import { Routes, Route } from "react-router-dom";
 import RoadmapScreen from "../roadmap/RoadmapScreen";
 import CalculatorScreen from "../calculator/CalculatorScreen";
+import DocumentsScreen from "../documents/DocumentScreen";
 
 function MainScreen() {
   const heroRef = React.useRef<any>(null);
@@ -50,12 +50,12 @@ function MainScreen() {
       <Announcements />
       <UtilityBar languageClick={openLanguage} />
       <Routes>
-        <Route path="/roadmap" element={<RoadmapScreen />} />
         <Route path="/calculator" element={<CalculatorScreen />} />
+        <Route path="/documents" element={<DocumentsScreen />} />
+        <Route path="/roadmap" element={<RoadmapScreen />} />
         <Route path="/" element={<HeroContainer ref={heroRef} />} />
       </Routes>
       <FixedBot />
-      <TokenInfo />
 
       <div className="bottom_hide"></div>
       <div ref={darklayerRef} className="dark_layer"></div>
