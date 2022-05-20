@@ -1,0 +1,27 @@
+div.press_release {
+  position: relative;
+  width: calc(100% - 40px);
+  overflow: visible;
+  margin-left: auto;
+  margin-right: auto;
+
+  div.press_release_container {
+    position: relative;
+    width: 100%;
+
+    background-color: #0e0e14;
+    overflow: hidden;
+    padding-bottom: 30px;
+
+    div.pr_title {
+      position: relative;
+      width: 100%;
+      overflow: auto;
+      color: white;
+      font-size: 30px;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}

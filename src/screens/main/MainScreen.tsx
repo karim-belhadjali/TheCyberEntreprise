@@ -19,6 +19,7 @@ import { Routes, Route } from "react-router-dom";
 import RoadmapScreen from "../roadmap/RoadmapScreen";
 import CalculatorScreen from "../calculator/CalculatorScreen";
 import DocumentsScreen from "../documents/DocumentScreen";
+import PressRelease from "../press release/PressReleaseScreen";
 
 function MainScreen() {
   const heroRef = React.useRef<any>(null);
@@ -52,6 +53,7 @@ function MainScreen() {
       <Routes>
         <Route path="/calculator" element={<CalculatorScreen />} />
         <Route path="/documents" element={<DocumentsScreen />} />
+        <Route path="/press" element={<PressRelease />} />
         <Route path="/roadmap" element={<RoadmapScreen />} />
         <Route path="/" element={<HeroContainer ref={heroRef} />} />
       </Routes>
