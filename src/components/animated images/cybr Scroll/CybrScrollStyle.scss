@@ -1,0 +1,128 @@
+div.scroll_gray_background {
+  position: absolute;
+  width: 120px;
+  height: 29px;
+  background-color: #232323;
+  top: 13px;
+  left: 110px;
+}
+
+div.scroll_blue_left {
+  position: absolute;
+  width: 0px;
+  height: 29px;
+  background-color: #8dfcfc;
+  top: 13px;
+  left: 110px;
+}
+
+div.scroll_blue_right {
+  position: absolute;
+  width: 0px;
+  height: 29px;
+  background-color: #8dfcfc;
+  top: 13px;
+  right: 110px;
+}
+
+img.main_scroll {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+div.scroll_contract {
+  position: absolute;
+  width: 148px;
+  height: 196px;
+  display: block;
+  top: 50px;
+  left: 95px;
+
+  div.scroll_contract_overflow {
+    position: relative;
+    width: 148px;
+    height: 196px;
+    overflow: hidden;
+
+    img.scroll_contract_image_empty {
+      display: none;
+    }
+
+    div.scroll_data {
+      position: absolute;
+      width: 122px;
+      height: 190px;
+      top: 3px;
+      left: 14px;
+      display: none;
+
+      span.title {
+        font-size: 24px;
+        display: block;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      span.number {
+        font-size: 30px;
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  div.stamp_button {
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    left: 105px;
+    top: 166px;
+    z-index: 50;
+  }
+
+  div.point_cursor {
+    cursor: pointer;
+  }
+
+  div.scroll_signature_click {
+    position: absolute;
+    width: 51px;
+    height: 31px;
+    top: 164px;
+    left: 25px;
+    z-index: 50;
+  }
+
+  img.scroll_wood {
+    position: absolute;
+    bottom: -11px;
+    left: 0px;
+  }
+}
+
+img.scroll_stamp {
+  position: absolute;
+  width: 100%;
+  display: block;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+}
+
+div.diamond_left {
+  position: absolute;
+  width: 12px;
+  height: 7px;
+  top: 23px;
+  left: 78px;
+}
+
+div.diamond_right {
+  position: absolute;
+  width: 12px;
+  height: 7px;
+  top: 23px;
+  left: 250px;
+}

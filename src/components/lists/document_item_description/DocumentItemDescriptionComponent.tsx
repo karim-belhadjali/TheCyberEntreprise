@@ -10,7 +10,7 @@ function DocumentItemDescription({
   description: string;
 }) {
   return (
-    <div className="document_el">
+    <div className="document_el" key={title}>
       <div className="document_content">
         <div className="pdf_title">{title}</div>
         <div className="doc_description">{description}</div>

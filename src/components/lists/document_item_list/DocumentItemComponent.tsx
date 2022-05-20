@@ -12,7 +12,7 @@ function DocumentItem({
 }) {
   const description = document.documents as [];
   return (
-    <div>
+    <div key={document.name}>
       <div className="doc_category">
         <div className="doc_left">
           <div className="doc_title_category">{document.name}</div>
@@ -21,12 +21,12 @@ function DocumentItem({
           </div>
         </div>
         <div className="doc_list">
-          {description.map((document: any) => {
+          {description.map((value: any) => {
             return (
-              <div className="doc_item">
+              <div className="doc_item" key={value.title}>
                 <DocumentItemDescription
-                  title={document.title}
-                  description={document.content}
+                  title={value.title}
+                  description={value.content}
                 />
               </div>
             );

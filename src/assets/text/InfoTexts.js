@@ -229,8 +229,13 @@ export const DocumentsInfos = {
   },
   Join_team: {
     title: "Join our Team!",
-    content:
-      "To become a translator today and help DeFine our Future, feel free to fill to send a message out a message to our HR & Operations department - $CYBR_mdking or our Community Darthwhite department. The team members within these groups are the quickest way to establish a line of communication, but you are also welcome to message in chat on any of our socials or use our implemented ticket system within the Discord.",
+    content_first:
+      "To become a translator today and help DeFine our Future, feel free to fill to send a message out a message to our HR & Operations department ",
+    content_second: "or our Community",
+    content_third:
+      "department. The team members within these groups are the quickest way to establish a line of communication, but you are also welcome to message in chat on any of our socials or use our implemented ticket system within the Discord.",
+    content_filler:
+      "If you are interested in joining the Cyber translation team or becoming a language ambassador today, feel free to reach out to our Ambassador or Community Lead.",
   },
 };
 export const PressReleaseInfos = {
