@@ -16,7 +16,7 @@
     "noEmit": true,
     "jsx": "react",
     "importsNotUsedAsValues": "error",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "noImplicitThis": true,
     "strictNullChecks": true
   },

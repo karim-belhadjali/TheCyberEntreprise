@@ -15,23 +15,30 @@ export const RoadmapInfos = {
     Completed_Tasks: [
       {
         task_1: "T3: New V3 Custom Contract",
-        task_2: " T2: Collected Marketing Data",
-        task_3: " T1: Banners For Marketing",
-        task_4: "T1: Old Etherscan Migrated",
-        task_5: "T1: New Etherscan Updated",
+        task_2: "T3: New Cyber Website",
+        task_3: " T2: Collected Marketing Data",
+        task_4: " T1: Banners For Marketing",
+        task_5: "T1: Old Etherscan Migrated",
+        task_6: "T1: New Etherscan Updated",
+        task_7: "T1: Shill Formats",
       },
     ],
     In_Progress: [
       {
-        task_1: "T3: Cyber Swap Locking Contract",
-        task_2: "T3: Cyber Swap SwappingT",
-        task_3: "T2: Advertising",
-        task_4: "T2: minigame",
+        task_1: "T4: Project Home",
+        task_2: "T3: ShibaSwap",
+        task_3: "T3: Project Run",
+        task_4: "T2: Advertising",
+        task_5: "T2: Decentralized Team Scaling",
       },
     ],
     Planning_Phase: [
       {
-        "task 1": "T4: Cyber Creditors",
+        task_1: "T3: Project Home Expansion",
+        task_2: "T3: Project Run Expansion",
+        task_3: "T3: Polygon Bridge",
+        task_4: "T2: CoinGecko",
+        task_5: "T2: CoinMarketCap",
       },
     ],
   },
@@ -181,39 +188,39 @@ export const DocumentsInfos = {
     name: "Cyber Creditors (CYBRC) Token",
     documents: [
       {
-        title: "Import Token",
+        title: "Cyber Credit-Tokenomics",
         content:
-          "Our Import Token PDF demonstrates how one can import the Cyber (CYBR) token into there wallet so it can be visible to you. The contract address can be taken directly from Etherscan, and this will never change unless a migration is conducted. If you ever have any issues, feel free to reach out to the team on any of our socials.",
+          "The Cyber Credit-Tokenomics documentation breaks down the different economic functions implemented with the Cyber Creditors token, Cyber Credit (CYBRC). The initial supply along with the distribution of the token can be located within this document. It also goes over the ICO phases that will take place and how to participate in them. One of the main functions, token taxes, is discussed and an explanation of how these taxes will change, and be used over time. Examples of bot attacks and anti-bot mechanisms, the same mechanisms used for the Cyber (CYBR) token contract, can also be located within this document.",
       },
       {
-        title: "Cyber Contract Functions",
+        title: "Cyber Creditors - LitePaper",
         content:
-          "The Cyber Contract Functions PDF is a complete list of all the the functions within the contract. It provides a brief description of all 48 read functions, and also all 34 write functions that can be signed off / conducted by the contract creator. All of the functions, including the contract code itself, can be seen, and are viewable on Etherscan.",
+          "The Cyber Creditors-Lite is a shortened version of the Cyber Creditors document. It is the first introduction to this future Decentralised Application (DApp) concept, currently known as Cyber Creditors. This is a Tier 4 Symbiotic Project that the Cyber Enterprise intends to launch on both ETH and BSC how the Credit token will be a BEP-20. Specifically, the stages of how this platform will be created and released alongside the token. With the addition of how it shall interact with the Cyber(CYBR) token and Cyber Enterprise ecosystem on a base level.",
       },
       {
-        title: "Cyber Contract Breakdown",
+        title: "Cyber Creditors",
         content:
-          "The Contract Breakdown PDF takes a closer look at the Cyber (CYBR) tokens custom smart contract. It provides a deep description of all 48 read functions, and also all 34 write functions and the reason why we decided to . All of the functions, including the contract code itself, can be seen, and are viewable on Etherscan. Keep in mind that there is a reason for each write function and they also emit an event live on the blockchain.",
+          "The Cyber Creditors is a complete breakdown of the Cyber Creditors platform. The keys areas found within this 11-page document are the current system in play; the Cyber Creditors structure breakdown; fees that will be on the platform; a complete breakdown of how the Cyber Creditors will provide benefit to the Cyber (CYBR) token/ecosystem; the ICO presales that shall take place; and an index of terminology that is used throughout the document. Multiple images are used to help the reader envision what is being explained, including venn diagrams, pie charts, and more. The figures presented in this document are susceptible to change as we continue to revise and get closer to this initiative.",
       },
     ],
   },
   Cyber_Inu: {
-    name: "Cyber Inu",
+    name: "Cyber Inu - Original CYBR",
     documents: [
       {
-        title: "Import Token",
+        title: "Origins",
         content:
-          "Our Import Token PDF demonstrates how one can import the Cyber (CYBR) token into there wallet so it can be visible to you. The contract address can be taken directly from Etherscan, and this will never change unless a migration is conducted. If you ever have any issues, feel free to reach out to the team on any of our socials.",
+          "The origins document was originally designed for the initial project, Cyber Inu. The intent of this piece of writing was to demonstrate a bit of backstory and how the idea came about, starting back on August 7th. As the project has developed a lot since then, this document should simply be viewed as a part of the Cyber Enterprise history.",
       },
       {
-        title: "Cyber Contract Functions",
+        title: "About Us",
         content:
-          "The Cyber Contract Functions PDF is a complete list of all the the functions within the contract. It provides a brief description of all 48 read functions, and also all 34 write functions that can be signed off / conducted by the contract creator. All of the functions, including the contract code itself, can be seen, and are viewable on Etherscan.",
+          "The About Us document was originally designed for the initial project, Cyber Inu. The intent of this piece of writing was to give some insight into the development journey in creating the initial concept, mascot, and contract testing. The items presented in this document pre-date the initial launch of the Cyber Inu project by a few months with items such as sketches and the initial test launch. As the project has developed a lot since then, this document should simply be viewed as a part of the Cyber Enterprise history.",
       },
       {
-        title: "Cyber Contract Breakdown",
+        title: "Cyber Inu WhitePaper",
         content:
-          "The Contract Breakdown PDF takes a closer look at the Cyber (CYBR) tokens custom smart contract. It provides a deep description of all 48 read functions, and also all 34 write functions and the reason why we decided to . All of the functions, including the contract code itself, can be seen, and are viewable on Etherscan. Keep in mind that there is a reason for each write function and they also emit an event live on the blockchain.",
+          "The Cyber Inu WhitePaper was originally designed for the initial project, Cyber Inu. The intent of this piece of writing was to provide investors with information regarding the Cyber Inu project and what exactly we were trying to develop at that point in time. The WhitePaper was more of a descriptive and creative piece that portrayed the vision of the project as opposed to specifics as this was created still early on. Based on the feedback provided from this document, we were then able to take that information and improve future documents for the Cyber Enterprise.",
       },
     ],
   },
@@ -520,7 +527,7 @@ export const MainPageInfos = {
   ],
 };
 
-export const TeamPAgeInfos = {
+export const TeamPageInfos = {
   title: "Cybr Team",
   sections: [
     {
@@ -530,7 +537,7 @@ export const TeamPAgeInfos = {
           name: "Odysseus",
           discord_name: "Voice_of_Odysseus",
           timeZone: "+1",
-          roles: ["Reason ", "Cybr Developer", "Founder", "Admin"],
+          roles: ["Reason", "Cybr Developer", "Founder", "Admin"],
           interactions: ["Cuzzy", "FL I LG", "Tease", "Villspor"],
           description:
             "I go by Odysseus or Ody, whichever you prefer. I’m a DEV at Cyber Enterprise and have been working on the project since the start. My goal is to revolutionize the token space and use it for what I believe it was intended for. A place to gather like-minded people and develop something truly special that will find its home on the blockchain, and fortify itself in history.Besides working on the project, I also enjoy other pastimes like keeping up with the political and financial system, as well as observing global events play out through a macro lens. Everything is connected, and that’s how I intend for our decentralized ecosystem to act as well.",
@@ -539,8 +546,8 @@ export const TeamPAgeInfos = {
           name: "Tease",
           discord_name: "",
           timeZone: "+1",
-          roles: ["Architect  ", "Cybr Developer", "Coding Lead", "Admin"],
-          interactions: ["Karim", "Marzo", "Odysseus", "Plums"],
+          roles: ["Architect", "Cybr Developer", "Coding Lead", "Admin"],
+          interactions: ["Karim", "Marzopiens", "Odysseus", "Plums"],
           description:
             "The name is Mihai but I go by Tease within the Enterprise. I joined the project back in at the end of August and started getting involved in September. The concept intrigued me and the way the Developer presented themselves is what made me want to get involved. I don’t sugarcoat anything and I didn’t when I first started interacting with Odysseus and ONI. I was critical in areas that I knew I would improve, and to my surprise rather than being on the defense like most projects, they welcomed it with open arms.  I’ve been coding for over 20 years, starting back in 2000 with websites. Over the years this would develop further into Branding, Speed Optimization, SEO, Data Scraping, White-Hat Hacking (against security threats), Improving CTR, and General Traffic. I like cooking old foods and trying old recipes, something your grandma would make. The peace that presents itself outside of the city is something I love, the days feel longer. If I were to do something besides coding, it would be teaching and mentoring the younger generation. The power of knowledge, I believe, is the key to having a better quality of life. I may be biased on this thought, but that’s the truth in my case. ",
         },
@@ -659,7 +666,7 @@ export const TeamPAgeInfos = {
             "Hey all, the name is KingQuokka but y’all can call me KingQuokka. OG Cyber holder and always will be. I work in marketing but do my best to assist all the team where I can to help progress the project.  Keen advocate in business, hold my BBA and almost finished with my MBA, Ten plus years in management. Weekends for me are at work, and working on Cyber. In the off chance I’m not at work I enjoy taking the kids out on the boat, relaxing in the spa with a nice G&T, or stirring everyone up with a little bit of Aussie banter. ",
         },
         {
-          name: "WNx_PhatedOne",
+          name: "WNX_PhatedOne",
           discord_name: "WNx_PhatedOne",
           timeZone: "+8",
           roles: ["Marketing Team", "Mod", "Chinese Ambassador"],
@@ -702,7 +709,7 @@ export const TeamPAgeInfos = {
           roles: ["Chinese Ambassador", "Chinese Team", "Marketing Team"],
           interactions: ["DarthWhite", "FL I LG", "WNX_Phated", "Odysseus"],
           description:
-            "A pleasure to meet you, my name is Cao but people call me Heel or Hell. I joined the project a few months after its creation and was intrigued by its economic model of the project. I grew fond of the NFTs upon their release and started to help the team out with WeChat along with some others. The meticulous work attitude from a project aspect and wonderful content attracted me to take the offer and join the team. I wanted to witness firsthand the success of the project, supporting it along the way by including the Chinese community the best I can as I am a native Chinese speaker.  I graduated from an engineering university with my major being international economics and trade. This is where my interest in international financial systems started and I started looking into as well as reading about crypto. When I have the time I enjoy all sorts of activities, but my favorite would have to be climbing. Additionally, listening to songs. ",
+            "A pleasure to meet you, my name is Cao but people call me Heel or Hell. I joined the project a few months after its creation and was intrigued by its economic model of the project. I grew fond of the NFTs upon their release and started to help the team out with WeChat along with some others. The meticulous work attitude from a project aspect and wonderful content attracted me to take the offer and join the team. I wanted to witness firsthand the success of the project, supporting it along the way by including the Chinese community the best I can as I am a native Chinese speaker.  I graduated from an engineering university with my major being international economics and trade. This is where my interest in international financial systems started and I started looking into as well as reading about crypto. When I have the time I enjoy all sorts of activities, but my favorite would have to be climbing. Additionally, listening to songs and different types of music is another enjoyable pastime of mine. I love all animals, but the ones I especially like are the small ones, such as dogs.",
         },
         {
           name: "Stevenon",
@@ -714,7 +721,7 @@ export const TeamPAgeInfos = {
             "Hello everyone! My name is stevenon but you can call me steve. I have embraced the project since September and have never stopped believing in it ever since! I was fascinated by the correctness and transparency of the devs, the consistency of their work, and the vision they have for the project in the future. A project that has an international team behind it that works day and night to improve, which is open to any type of suggestion with open to dialogue, is a project for me. My passions are fishing, cars, and food (as an Italian I have to be passionate about food) Open to any request I am available to help any person in the community who needs it, if any Italians need support or clarification do not hesitate to contact me. ",
         },
         {
-          name: "WNx_PhatedOne",
+          name: "WNX_PhatedOne",
           discord_name: "WNx_PhatedOne",
           timeZone: "+8",
           roles: ["Marketing Team", "Mod", "Chinese Ambassador"],

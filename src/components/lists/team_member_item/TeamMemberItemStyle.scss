@@ -1,0 +1,205 @@
+div.team_person {
+  position: relative;
+  width: 100%;
+  overflow: auto;
+  background-color: black;
+  margin-bottom: 20px;
+  display: flex;
+
+  gap: 20px;
+
+  div.team_person_image {
+    position: relative;
+    width: 200px;
+    margin-left: 20px;
+    display: flex;
+    img {
+      display: block;
+      align-self: center;
+    }
+  }
+
+  div.team_person_content {
+    flex-grow: 1;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    div.team_person_name {
+      position: relative;
+      height: 30px;
+      font-size: 0px;
+      display: flex;
+
+      div.name_container {
+        position: relative;
+        font-size: 26px;
+        color: white;
+        margin-right: 20px;
+        line-height: 30px;
+        height: 30px;
+        display: inline-block;
+      }
+
+      div.name_container:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+        height: 2px;
+        background-color: #ffa238;
+      }
+    }
+
+    div.person_timezone {
+      position: relative;
+      width: 100%;
+      margin-top: 10px;
+      color: white;
+      font-size: 20px;
+    }
+
+    div.person_contact {
+      position: relative;
+      width: 100%;
+      height: 30px;
+      margin-top: 10px;
+
+      a.discord {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url("../../../assets/team/socials/discord.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 10px;
+      }
+
+      a.telegram {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url("../../../assets/team/socials/telegram.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 10px;
+      }
+
+      a.twitter {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url("../../../assets/team/socials/twitter.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 10px;
+      }
+    }
+
+    div.person_tags {
+      position: relative;
+      width: auto;
+      margin-top: 10px;
+
+      overflow: auto;
+
+      div.tag_element {
+        position: relative;
+        float: left;
+        height: 26px;
+        line-height: 26px;
+        padding-left: 10px;
+        padding-right: 10px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        font-size: 18px;
+        margin-right: 10px;
+        cursor: default;
+        margin-top: 4px;
+        margin-bottom: 10px;
+      }
+    }
+
+    div.person_description {
+      position: relative;
+      width: 100%;
+      overflow: auto;
+      margin-top: 10px;
+
+      p {
+        font-size: 18px;
+        color: white;
+        text-align: justify;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  div.team_person_relation {
+    position: relative;
+    width: 160px;
+    margin-right: 20px;
+    overflow: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+
+    div.team_person_relation_title {
+      position: relative;
+      font-size: 28px;
+      color: white;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    div.team_rel_center {
+      flex-grow: 1;
+      margin-bottom: 20px;
+      display: flex;
+
+      div.team_person_relation_container {
+        position: relative;
+        width: 100%;
+        overflow: auto;
+        align-self: center;
+
+        div.rel_item {
+          position: relative;
+          width: 50%;
+          float: left;
+
+          img {
+            height: auto;
+            display: block;
+            width: 100%;
+          }
+        }
+
+        div.show_name {
+          position: absolute;
+          width: 100%;
+          bottom: 60px;
+          left: 0px;
+          color: white;
+          text-align: center;
+          font-size: 22px;
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  div.team_sep {
+    width: 2px;
+    background-color: rgba(34, 36, 49, 0.4);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+  }
+}
