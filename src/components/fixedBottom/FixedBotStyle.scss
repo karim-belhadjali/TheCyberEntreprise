@@ -33,7 +33,7 @@ div.fixed_bot {
       height: 36px;
 
       div.bottom_icons {
-        margin-top: 3px;
+        margin-top: 10px;
         width: 30px;
         height: 30px;
         display: none;
@@ -44,7 +44,6 @@ div.fixed_bot {
       }
 
       div.button_pdf {
-        background-image: url("../../assets/svg/telegram.svg");
         background-size: contain;
         margin-left: 10px;
         background-position: center;
@@ -56,6 +55,21 @@ div.fixed_bot {
         margin-left: 10px;
         background-position: center;
       }
+      div.button_medium {
+        background-image: url("../../assets/svg/medium.png");
+        background-size: contain;
+        margin-left: 10px;
+        background-position: center;
+        margin-right: 10px;
+      }
+
+      div.button_twitter {
+        background-image: url("../../assets/svg/twitter.png");
+        background-size: contain;
+        margin-left: 10px;
+        background-position: center;
+        margin-right: 10px;
+      }
 
       div.button_telegram {
         background-image: url("../../assets/svg/telegram.svg");
@@ -64,6 +78,41 @@ div.fixed_bot {
         background-position: center;
         margin-right: 10px;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  div.fixed_bot {
+    height: 50px !important;
+    bottom: 0px;
+    width: 100% !important;
+    left: 0px !important;
+    right: auto !important;
+
+    div.fixed_bot_svg {
+      display: none !important;
+    }
+
+    div.fixed_bot_container {
+      height: 50px;
+    }
+
+    div.left_side,
+    div.right_side {
+      height: 50px !important;
+
+      div.bottom_btn {
+        display: none !important;
+      }
+
+      div.bottom_icons {
+        display: inline-block !important;
+      }
+    }
+
+    div.right_side {
+      margin-right: 30px;
     }
   }
 }

@@ -20,6 +20,13 @@ function FixedBot() {
           <div className="bottom_icons button_pdf"></div>
         </div>
         <div className="right_side">
+          <div className="bottom_icons button_medium">
+            <BottomBtn text="Medium" />
+          </div>
+
+          <div className="bottom_icons button_twitter">
+            <BottomBtn text="Twitter" />
+          </div>
           <div className="bottom_icons button_discord"></div>
           <BottomBtn text="Discord" />
           <div className="bottom_icons button_telegram"></div>

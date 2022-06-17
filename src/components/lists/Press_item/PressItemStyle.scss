@@ -84,6 +84,7 @@ div.pr_box {
       span.dots {
         position: relative;
         display: inline-block;
+        margin-right: 0.3em;
         width: 12px;
         height: 7px;
       }
@@ -110,10 +111,11 @@ div.pr_box {
     background-color: black;
   }
 
-  div.logo {
+  div.logos {
     position: relative;
     width: 100px;
     overflow: auto;
+    cursor: pointer;
 
     flex-shrink: 0;
     flex-basis: 1;

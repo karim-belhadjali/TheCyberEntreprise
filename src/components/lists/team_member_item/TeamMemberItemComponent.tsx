@@ -21,7 +21,7 @@ function TeamMember({
   return (
     <div className="team_person">
       <div className="team_person_image">
-        <img src={teamMemberPicture} alt="" />
+        <img src={teamMemberPicture} width={1} height={1} alt="" />
       </div>
 
       <div className="team_sep"></div>
@@ -68,7 +68,9 @@ function TeamMember({
         </div>
 
         <div className="person_description">
-          <p>{member.description}</p>
+          {member.description.map((paragraph) => {
+            return <p>{paragraph}</p>;
+          })}
         </div>
       </div>
 

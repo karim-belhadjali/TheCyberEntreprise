@@ -1,5 +1,10 @@
-import React from "react";
-import { animateRowEnter, animateRowLeave } from "src/animations/team";
+import React, { useEffect } from "react";
+import {
+  animateRowEnter,
+  animateRowLeave,
+  personContactAnimation,
+  SocialAnimations,
+} from "src/animations/team";
 import { TeamPageInfos } from "src/assets/text/InfoTexts";
 import InfoBox from "src/components/info-box/InfoBoxComponent";
 import TeamMember from "src/components/lists/team_member_item/TeamMemberItemComponent";
@@ -7,24 +12,30 @@ import TeamMember from "src/components/lists/team_member_item/TeamMemberItemComp
 import "./TeamScreenStyle.scss";
 
 function TeamScreen() {
-  const timezone = TeamPageInfos.UTC;
-  const interactions = TeamPageInfos.interactions;
+  const teamPageText = TeamPageInfos;
+  const timezone = teamPageText.UTC;
+  const interactions = teamPageText.interactions;
   var relationContainerIndex = -1;
   const membersNames = ["0xmedia", "Vito Luciano", "DTrain", "Imtellingmum"];
   const positionNames = ["Marketing", "Expansion", "Twitter", "HR"];
+
+  useEffect(() => {
+    SocialAnimations();
+    personContactAnimation();
+  }, []);
   return (
     <div>
       <div className="team">
         <div className="team_container">
           <div className="team_title">Team</div>
 
-          {TeamPageInfos.sections.map((section, index) => {
+          {teamPageText.sections.map((section, index) => {
             return (
               <div className="team_cat">
                 <div className="team_cat_title strategical_op">
                   {section.title}
                 </div>
-                {TeamPageInfos.sections[index].members.map((member) => {
+                {teamPageText.sections[index].members.map((member) => {
                   relationContainerIndex++;
                   return (
                     <TeamMember
@@ -45,11 +56,9 @@ function TeamScreen() {
       <div className="team_p">
         <div className="team_p_thanks">
           <div className="doc_title align_left">
-            {TeamPageInfos.mentions.title}
+            {teamPageText.mentions.title}
           </div>
-          <div className="doc_thanks_text">
-            {TeamPageInfos.mentions.content}
-          </div>
+          <div className="doc_thanks_text">{teamPageText.mentions.content}</div>
           <div className="doc_thanks_list">
             <div className="list_names">
               <div className="name_title">
@@ -87,23 +96,13 @@ function TeamScreen() {
         </div>
 
         <div className="team_p_form">
-          <div className="doc_title">{TeamPageInfos.Join_team.title}</div>
+          <div className="doc_title">{teamPageText.Join_team.title}</div>
           <div className="team_p_text">
-            <p>
-              The Cyber Enterprise is always looking for new members that would
-              like to take part in revolutionising the crypto space with us. We
-              are looking for people who are enthusiastic in helping us achieve
-              this, and do not discriminate based on how much one can offer in
-              terms of time, knowledge, or resources. As long as you are eager
-              to grow with us, we will find a spot for you on the team. Here at
-              Cyber enterprise we want to offer our investors, holders,
-              community members the opportunity to DeFining our Future.{" "}
-            </p>
+            <p>{teamPageText.Join_team.content_first}</p>
           </div>
 
           <div className="filler_text_mob">
-            If you are interested in joining the team, feel free to reach out to
-            our Community or H&R Operations Lead.
+            {teamPageText.Join_team.content_filler}
           </div>
 
           <div className="filler">
@@ -131,8 +130,7 @@ function TeamScreen() {
               </div>
             </div>
             <div className="filler_text">
-              If you are interested in joining the team, feel free to reach out
-              to our Community or H&R Operations Lead.
+              {teamPageText.Join_team.content_filler}
             </div>
             <div className="second_image">
               <div className="filler_contact">
@@ -161,8 +159,8 @@ function TeamScreen() {
         </div>
       </div>
       <InfoBox
-        info={TeamPageInfos.information}
-        title={TeamPageInfos.information.title}
+        info={teamPageText.information}
+        title={teamPageText.information.title}
       />
     </div>
   );

@@ -6,9 +6,13 @@ import "./DocumentItemStyle.scss";
 function DocumentItem({
   document,
   imgComponent,
+  commingSoon,
+  commingSoonText,
 }: {
   document: any;
   imgComponent: any;
+  commingSoon: Boolean;
+  commingSoonText: string;
 }) {
   const description = document.documents as [];
   return (
@@ -21,16 +25,27 @@ function DocumentItem({
           </div>
         </div>
         <div className="doc_list">
-          {description.map((value: any) => {
-            return (
-              <div className="doc_item" key={value.title}>
-                <DocumentItemDescription
-                  title={value.title}
-                  description={value.content}
-                />
-              </div>
-            );
-          })}
+          {commingSoon && (
+            <div className="document_el">
+              <div className="coming_soon">{commingSoonText}</div>
+            </div>
+          )}
+          {!commingSoon &&
+            description.map((value: any) => {
+              return (
+                <div className="doc_item" key={value.title}>
+                  <DocumentItemDescription
+                    english={require("../../../assets/documents/english-documents/cyber-contract-functions_EN_V1.10.pdf")}
+                    spanish={null}
+                    arabic={null}
+                    chinese={null}
+                    french={null}
+                    title={value.title}
+                    description={value.content}
+                  />
+                </div>
+              );
+            })}
         </div>
       </div>
 

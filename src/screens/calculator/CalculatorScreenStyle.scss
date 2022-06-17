@@ -56,6 +56,9 @@ div.calculator {
           div.egg_2026 {
             background-image: url("../../assets/calculator/egg/2026.png");
           }
+          div.egg_021 {
+            background-image: url("../../assets/calculator/egg/021.png");
+          }
 
           div.bag {
             position: absolute;
@@ -117,6 +120,7 @@ div.calculator {
                   text-align: center;
                   line-height: 32px;
                   font-size: 30px;
+                  font-family: var(--var-mainFont);
                   overflow: hidden;
                   margin-top: 2px;
                 }
@@ -133,7 +137,7 @@ div.calculator {
 
               color: white;
               text-align: center;
-              font-family: "calc";
+              font-family: var(--var-mainFont);
               font-size: 32px;
             }
 
@@ -544,7 +548,7 @@ div.calculator {
             background-color: #161620;
             top: 0px;
             left: 0px;
-            display: none;
+            display: flex;
             justify-content: center;
 
             div.select_container {
@@ -618,6 +622,7 @@ div.calculator {
 
               div.select_btn:hover {
                 background-color: #ffbc32;
+                transform: scale(1.1);
               }
 
               div.inactive_btn {

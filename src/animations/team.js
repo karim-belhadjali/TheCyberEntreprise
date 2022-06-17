@@ -250,3 +250,80 @@ export const animateRowLeave = (position) => {
 };
 
 // End  Honorable Discharge
+export const SocialAnimations = () => {
+  var filler_contact = document.querySelectorAll("div.filler_contact > a");
+
+  for (let i = 0; i < filler_contact.length; i++) {
+    filler_contact[i].addEventListener("mouseenter", function () {
+      let parentSocialBtn = this.parentElement;
+
+      let relItemsScoped = parentSocialBtn.getElementsByTagName("a");
+
+      let otherRelItems = [];
+
+      for (let j = 0; j < relItemsScoped.length; j++) {
+        if (relItemsScoped[j] !== this) {
+          otherRelItems.push(relItemsScoped[j]);
+        }
+      }
+
+      anime({
+        targets: otherRelItems,
+        opacity: [1, 0.7],
+        duration: 10,
+        easing: "linear",
+      });
+    });
+
+    filler_contact[i].addEventListener("mouseout", function () {
+      anime({
+        targets: filler_contact,
+        opacity: 1,
+        duration: 10,
+        easing: "linear",
+      });
+    });
+  }
+};
+
+// End Filler Contact Social Hover
+
+export const personContactAnimation = () => {
+  // Start Social Hover Effect
+
+  var social_btns = document.querySelectorAll("div.person_contact > a");
+
+  for (let i = 0; i < social_btns.length; i++) {
+    social_btns[i].addEventListener("mouseenter", function () {
+      let parentSocialBtn = this.parentElement;
+
+      let relItemsScoped = parentSocialBtn.getElementsByTagName("a");
+
+      let otherRelItems = [];
+
+      for (let j = 0; j < relItemsScoped.length; j++) {
+        if (relItemsScoped[j] != this) {
+          otherRelItems.push(relItemsScoped[j]);
+        }
+      }
+
+      anime({
+        targets: otherRelItems,
+        opacity: [1, 0.7],
+        duration: 10,
+        easing: "linear",
+      });
+    });
+
+    social_btns[i].addEventListener("mouseout", function () {
+      anime({
+        targets: social_btns,
+        opacity: 1,
+        duration: 10,
+        easing: "linear",
+      });
+    });
+  }
+
+  // End Social Hover Effect
+};

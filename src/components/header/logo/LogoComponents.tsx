@@ -27,7 +27,12 @@ function Logo() {
         </a>
       </div>
       <div className="logo_text">
-        <a href="https://thecyberenterprise.com/">TheCyberEnterprise.com</a>
+        <a href="https://thecyberenterprise.com/" className="website">
+          TheCyberEnterprise
+        </a>
+        <a href="https://thecyberenterprise.com/" className="slogan">
+          DeFine our Future
+        </a>
       </div>
     </>
   );

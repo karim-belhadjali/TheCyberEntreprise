@@ -1,0 +1,41 @@
+div.image_container_phome {
+  position: relative;
+  width: 340px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+
+  div.phome_container {
+    position: relative;
+    width: 340px;
+    height: 132px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+
+    img.mill {
+      z-index: 1;
+    }
+
+    img.on_mill {
+      z-index: 2;
+      opacity: 0;
+    }
+
+    img.factory {
+      z-index: 3;
+    }
+
+    img.light {
+      opacity: 0;
+      z-index: 4;
+    }
+  }
+}

@@ -37,7 +37,7 @@ function SideBtn({
         changeBackgroundToNormal(mainRef.current);
       }}
     >
-      <Link onClick={onClick} to={link} className="indigo-container">
+      <Link onClick={onClick} to={link} className="indigo_container">
         <span
           className="brackets bracket_left_bottom"
           style={{ left: breacketsDistance + "px" }}

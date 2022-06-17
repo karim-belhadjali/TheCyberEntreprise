@@ -34,18 +34,16 @@ export const teamMemberPic = (name: string) => {
       return require("../assets/team/phate.webp");
     }
     case "FL I LG": {
-      return require("../assets/team/oni.webp");
+      return require("../assets/team/gas.webp");
     }
     case "Marzopiens": {
       return require("../assets/team/marzo.webp");
     }
-    case "Ts’ao": {
-      //statements;
-      break;
+    case "Ts'ao": {
+      return require("../assets/team/tseo.webp");
     }
     case "Stevenon": {
-      //statements;
-      break;
+      return require("../assets/team/stevanon.webp");
     }
     case "Oni": {
       return require("../assets/team/oni.webp");

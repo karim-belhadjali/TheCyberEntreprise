@@ -10,7 +10,7 @@ import {
 
 import "./CybrScrollStyle.scss";
 
-function CybrScroll() {
+function CybrScroll({ botbanned }: { botbanned: string }) {
   const stampBtnRef = useRef<any>();
   const scrollStampRef = useRef<any>();
   const scrollSignatureRef = useRef<any>();
@@ -55,8 +55,8 @@ function CybrScroll() {
             alt=""
           />
           <div className="scroll_data" ref={scrollDataRef}>
-            <span className="title">Victims</span>
-            <span className="number">4</span>
+            <span className="title">Bots defeated</span>
+            <span className="number">{botbanned}</span>
           </div>
         </div>
         <div

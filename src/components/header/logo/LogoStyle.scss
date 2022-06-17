@@ -27,15 +27,30 @@ div.logo_text {
   top: 0px;
   left: 72px;
   height: 62px;
-  padding-top: 10px;
-  a {
-    position: relative;
-    font-size: 26px;
-    height: 52px;
-    line-height: 52px;
+
+  a.website {
+    position: absolute;
+    font-size: 27px;
+    height: 36px;
+    line-height: 36px;
     padding-left: 10px;
-    display: inline-block;
+    display: block;
     color: white;
+    top: 7px;
+  }
+
+  a.slogan {
+    position: absolute;
+    font-size: 19px;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 10px;
+    display: block;
+    color: white;
+    white-space: nowrap;
+    top: 37px;
+    font-style: italic;
+    letter-spacing: 4px;
   }
 }
 

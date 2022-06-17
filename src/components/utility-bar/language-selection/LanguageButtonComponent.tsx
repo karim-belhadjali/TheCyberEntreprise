@@ -3,14 +3,19 @@ import "./LanguageButtonStyle.scss";
 import { addBracket, makeTextSpans } from "../../../animations/addBracket";
 import { noiseTrigger } from "../../../animations/useTrigger";
 
-function LanguageButton({ onClick }: { onClick: any }) {
+function LanguageButton({
+  onClick,
+  language,
+}: {
+  onClick: any;
+  language: string;
+}) {
   const span1Ref = useRef<any>();
-  const [text, settext] = useState("English");
   useEffect(() => {
     addBracket(span1Ref.current, "left");
     addBracket(span1Ref.current, "right");
-    makeTextSpans(span1Ref.current, text);
-  }, [text]);
+    makeTextSpans(span1Ref.current, language);
+  }, [language]);
   return (
     <>
       <div onClick={onClick} className="language">
@@ -26,7 +31,7 @@ function LanguageButton({ onClick }: { onClick: any }) {
           id="language_btn"
           className="language_btn"
         >
-          <a>English</a>
+          <a>{language}</a>
         </span>
       </div>
       <div className="language_mask"></div>

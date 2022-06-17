@@ -1,0 +1,1894 @@
+div.hero {
+  position: relative;
+  width: calc(100% - 40px);
+  overflow: visible;
+  margin-left: auto;
+  margin-right: auto;
+
+  div.hero_container {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+
+    div.hero_images {
+      position: relative;
+      width: 100%;
+      overflow: visible;
+
+      div.hero_full {
+        position: relative;
+        width: 100%;
+        overflow: auto;
+
+        img {
+          width: 100%;
+          display: block;
+          z-index: 10;
+        }
+
+        img.absolute_image {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+        }
+
+        img.zero_opacity {
+          opacity: 0;
+        }
+
+        img.old_factory {
+          z-index: 20;
+        }
+
+        img.old_factory_smoke {
+          z-index: 19;
+        }
+
+        img.ground {
+          z-index: 11;
+        }
+
+        img.wind_power {
+          z-index: 2;
+        }
+
+        img.layer_2 {
+          z-index: 30;
+        }
+
+        img.layer_2-1 {
+          z-index: 29;
+        }
+
+        img.layer_2-2 {
+          z-index: 28;
+        }
+
+        img.rubbe_1 {
+          z-index: 33;
+        }
+
+        img.rubbe_2 {
+          z-index: 34;
+        }
+
+        img.rubbe_3 {
+          z-index: 35;
+        }
+
+        img.transport_b {
+          z-index: 40;
+        }
+
+        img.transport_base {
+          z-index: 41;
+        }
+
+        img.transport_char {
+          z-index: 42;
+        }
+
+        img.transport_f {
+          z-index: 43;
+        }
+
+        img.box_mill {
+          z-index: 18;
+        }
+
+        img.wind_power {
+          z-index: 10;
+        }
+
+        img.stixil_1,
+        img.hermit_1 {
+          z-index: 31;
+        }
+
+        img.box_behind {
+          z-index: 17;
+        }
+
+        img.skycolor {
+          z-index: 7;
+        }
+
+        img.fog {
+          z-index: 8;
+        }
+
+        img.suport {
+          z-index: 30;
+        }
+        img.back_suport {
+          z-index: 29;
+        }
+
+        img.top_suport {
+          z-index: 31;
+        }
+
+        img.top_suport-1 {
+          z-index: 32;
+        }
+
+        img.wind_destroyed {
+          z-index: 29;
+        }
+
+        div.dark_shadow {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          z-index: 49;
+          width: 100%;
+          height: 100%;
+          background-color: black;
+          opacity: 0;
+        }
+
+        img.billboard_base {
+          z-index: 50;
+        }
+
+        img.billboard_bulb {
+          z-index: 51;
+        }
+
+        img.billboard_note {
+          z-index: 51;
+        }
+        img.billboard_man {
+          z-index: 52;
+        }
+      }
+
+      div.hero_naming {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        z-index: 85;
+
+        div {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          background-size: contain;
+        }
+
+        div.name_cuzzy_1 {
+          background-image: url("../../assets/main/main/names/cuzzy_1.png");
+        }
+
+        div.name_cuzzy_2 {
+          background-image: url("../../assets/main/main/names/cuzzy_2.png");
+        }
+
+        div.name_cuzzy_3 {
+          background-image: url("../../assets/main/main/names/cuzzy_3.png");
+        }
+
+        div.name_cuzzy_4 {
+          background-image: url("../../assets/main/main/names/cuzzy_4.png");
+        }
+
+        div.name_danield_1 {
+          background-image: url("../../assets/main/main/names/danield_1.png");
+        }
+
+        div.name_danield_2 {
+          background-image: url("../../assets/main/main/names/danield_2.png");
+        }
+
+        div.name_darthwhite_1 {
+          background-image: url("../../assets/main/main/names/darthwhite_1.png");
+        }
+
+        div.name_darthwhite_2 {
+          background-image: url("../../assets/main/main/names/darthwhite_2.png");
+        }
+
+        div.name_darthwhite_3 {
+          background-image: url("../../assets/main/main/names/darthwhite_3.png");
+        }
+
+        div.name_darthwhite_4 {
+          background-image: url("../../assets/main/main/names/darthwhite_4.png");
+        }
+
+        div.name_darthwhite_5 {
+          background-image: url("../../assets/main/main/names/darthwhite_5.png");
+        }
+
+        div.name_gas_1 {
+          background-image: url("../../assets/main/main/names/gas_1.png");
+        }
+
+        div.name_gas_2 {
+          background-image: url("../../assets/main/main/names/gas_2.png");
+        }
+
+        div.name_greek_1 {
+          background-image: url("../../assets/main/main/names/greek_1.png");
+        }
+
+        div.name_greek_2 {
+          background-image: url("../../assets/main/main/names/greek_2.png");
+        }
+
+        div.name_hermit_1 {
+          background-image: url("../../assets/main/main/names/hermit_1.png");
+        }
+
+        div.name_hermit_2 {
+          background-image: url("../../assets/main/main/names/hermit_2.png");
+        }
+
+        div.name_hermit_3 {
+          background-image: url("../../assets/main/main/names/hermit_3.png");
+        }
+
+        div.name_karim_1 {
+          background-image: url("../../assets/main/main/names/karim_1.png");
+        }
+
+        div.name_karim_2 {
+          background-image: url("../../assets/main/main/names/karim_2.png");
+        }
+
+        div.name_karim_3 {
+          background-image: url("../../assets/main/main/names/karim_3.png");
+        }
+
+        div.name_karim_4 {
+          background-image: url("../../assets/main/main/names/karim_4.png");
+        }
+
+        div.name_marzo_1 {
+          background-image: url("../../assets/main/main/names/marzo_1.png");
+        }
+
+        div.name_marzo_2 {
+          background-image: url("../../assets/main/main/names/marzo_2.png");
+        }
+
+        div.name_marzo_3 {
+          background-image: url("../../assets/main/main/names/marzo_3.png");
+        }
+
+        div.name_marzo_4 {
+          background-image: url("../../assets/main/main/names/marzo_4.png");
+        }
+
+        div.name_marzo_5 {
+          background-image: url("../../assets/main/main/names/marzo_5.png");
+        }
+
+        div.name_mdking_1 {
+          background-image: url("../../assets/main/main/names/mdking_1.png");
+        }
+
+        div.name_mdking_2 {
+          background-image: url("../../assets/main/main/names/mdking_2.png");
+        }
+
+        div.name_mdking_3 {
+          background-image: url("../../assets/main/main/names/mdking_3.png");
+        }
+
+        div.name_mdking_4 {
+          background-image: url("../../assets/main/main/names/mdking_4.png");
+        }
+
+        div.name_ody_1 {
+          background-image: url("../../assets/main/main/names/ody_1.png");
+        }
+
+        div.name_oni_1 {
+          background-image: url("../../assets/main/main/names/oni_1.png");
+        }
+
+        div.name_phate_1 {
+          background-image: url("../../assets/main/main/names/phate_1.png");
+        }
+
+        div.name_phate_2 {
+          background-image: url("../../assets/main/main/names/phate_2.png");
+        }
+
+        div.name_phate_3 {
+          background-image: url("../../assets/main/main/names/phate_3.png");
+        }
+
+        div.name_phate_4 {
+          background-image: url("../../assets/main/main/names/phate_4.png");
+        }
+
+        div.name_phate_5 {
+          background-image: url("../../assets/main/main/names/phate_5.png");
+        }
+
+        div.name_plums_1 {
+          background-image: url("../../assets/main/main/names/plums_1.png");
+        }
+
+        div.name_plums_2 {
+          background-image: url("../../assets/main/main/names/plums_2.png");
+        }
+
+        div.name_plums_3 {
+          background-image: url("../../assets/main/main/names/plums_3.png");
+        }
+
+        div.name_quokka_1 {
+          background-image: url("../../assets/main/main/names/quokka_1.png");
+        }
+
+        div.name_quokka_2 {
+          background-image: url("../../assets/main/main/names/quokka_2.png");
+        }
+
+        div.name_quokka_3 {
+          background-image: url("../../assets/main/main/names/quokka_3.png");
+        }
+
+        div.name_quokka_4 {
+          background-image: url("../../assets/main/main/names/quokka_4.png");
+        }
+
+        div.name_ryose_1 {
+          background-image: url("../../assets/main/main/names/ryose_1.png");
+        }
+
+        div.name_ryose_2 {
+          background-image: url("../../assets/main/main/names/ryose_2.png");
+        }
+
+        div.name_stixil_1 {
+          background-image: url("../../assets/main/main/names/stixil_1.png");
+        }
+
+        div.name_stixil_2 {
+          background-image: url("../../assets/main/main/names/stixil_2.png");
+        }
+
+        div.name_stixil_3 {
+          background-image: url("../../assets/main/main/names/stixil_3.png");
+        }
+
+        div.name_tease_1 {
+          background-image: url("../../assets/main/main/names/tease_1.png");
+        }
+
+        div.name_tease_2 {
+          background-image: url("../../assets/main/main/names/tease_2.png");
+        }
+
+        div.name_tease_3 {
+          background-image: url("../../assets/main/main/names/tease_3.png");
+        }
+
+        div.name_tease_4 {
+          background-image: url("../../assets/main/main/names/tease_4.png");
+        }
+
+        div.name_tease_5 {
+          background-image: url("../../assets/main/main/names/tease_5.png");
+        }
+
+        div.name_tease_6 {
+          background-image: url("../../assets/main/main/names/tease_6.png");
+        }
+
+        div.name_tease_7 {
+          background-image: url("../../assets/main/main/names/tease_7.png");
+        }
+
+        div.name_tease_8 {
+          background-image: url("../../assets/main/main/names/tease_8.png");
+        }
+
+        div.name_tease_9 {
+          background-image: url("../../assets/main/main/names/tease_9.png");
+        }
+
+        div.name_villspor_1 {
+          background-image: url("../../assets/main/main/names/villspor_1.png");
+        }
+
+        div.name_villspor_2 {
+          background-image: url("../../assets/main/main/names/villspor_2.png");
+        }
+
+        div.name_villspor_3 {
+          background-image: url("../../assets/main/main/names/villspor_3.png");
+        }
+
+        div.name_villspor_4 {
+          background-image: url("../../assets/main/main/names/villspor_4.png");
+        }
+
+        div.name_villspor_5 {
+          background-image: url("../../assets/main/main/names/villspor_5.png");
+        }
+
+        div.name_villspor_6 {
+          background-image: url("../../assets/main/main/names/villspor_6.png");
+        }
+
+        div.name_villspor_7 {
+          background-image: url("../../assets/main/main/names/villspor_7.png");
+        }
+
+        div.name_vito_1 {
+          background-image: url("../../assets/main/main/names/vito_1.png");
+        }
+
+        div.name_vito_2 {
+          background-image: url("../../assets/main/main/names/vito_2.png");
+        }
+
+        div.name_vito_3 {
+          background-image: url("../../assets/main/main/names/vito_3.png");
+        }
+
+        div.name_vito_4 {
+          background-image: url("../../assets/main/main/names/vito_4.png");
+        }
+
+        div.name_vito_5 {
+          background-image: url("../../assets/main/main/names/vito_5.png");
+        }
+
+        div.name_cat_1 {
+          background-image: url("../../assets/main/main/names/cat_1.png");
+        }
+
+        div.name_cat_2 {
+          background-image: url("../../assets/main/main/names/cat_2.png");
+        }
+
+        div.name_cat_3 {
+          background-image: url("../../assets/main/main/names/cat_3.png");
+        }
+
+        div.name_you {
+          background-image: url("../../assets/main/main/names/ryose_1.png");
+        }
+      }
+
+      div.hero_hover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        z-index: 90;
+
+        div {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+          opacity: 0;
+          display: none;
+        }
+
+        div.path_cuzzy_1 {
+          clip-path: polygon(
+            59% 39%,
+            61% 39%,
+            61% 41%,
+            62% 43%,
+            61% 45%,
+            59% 45%,
+            59% 42%,
+            58% 43%,
+            58% 40%
+          );
+        }
+
+        div.path_cuzzy_2 {
+          clip-path: polygon(
+            15% 75%,
+            21% 74%,
+            24% 86%,
+            21% 84%,
+            19% 87%,
+            21% 91%,
+            15% 96%,
+            15% 91%,
+            12% 89%,
+            13% 79%
+          );
+        }
+
+        div.path_cuzzy_3 {
+          clip-path: polygon(
+            16% 50%,
+            19% 47%,
+            20% 51%,
+            18% 57%,
+            17% 56%,
+            16% 52%
+          );
+        }
+
+        div.path_cuzzy_4 {
+          clip-path: polygon(59% 44%, 61% 46%, 59% 51%, 57% 47%, 58% 43%);
+        }
+
+        div.path_danield_1 {
+          clip-path: polygon(
+            24% 82%,
+            27% 82%,
+            29% 88%,
+            28% 90%,
+            22% 90%,
+            22% 85%
+          );
+        }
+
+        div.path_danield_2 {
+          clip-path: polygon(
+            38% 69%,
+            41% 67%,
+            42% 73%,
+            39% 74%,
+            37% 73%,
+            38% 70%
+          );
+        }
+
+        div.path_darthwhite_1 {
+          clip-path: polygon(
+            66% 32%,
+            68% 35%,
+            66% 42%,
+            65% 40%,
+            65% 36%,
+            65% 35%
+          );
+        }
+
+        div.path_darthwhite_2 {
+          clip-path: polygon(
+            54% 34%,
+            56% 38%,
+            55% 46%,
+            53% 47%,
+            53% 42%,
+            53% 36%
+          );
+        }
+
+        div.path_darthwhite_3 {
+          clip-path: polygon(
+            13% 73%,
+            15% 60%,
+            18% 61%,
+            19% 74%,
+            20% 99%,
+            14% 99%,
+            14% 87%,
+            10% 70%
+          );
+        }
+
+        div.path_darthwhite_4 {
+          clip-path: polygon(
+            18% 44%,
+            19% 50%,
+            18% 57%,
+            16% 56%,
+            15% 47%,
+            17% 43%
+          );
+        }
+
+        div.path_darthwhite_5 {
+          clip-path: polygon(
+            16% 45%,
+            14% 50%,
+            14% 55%,
+            12% 55%,
+            12% 41%,
+            14% 42%
+          );
+        }
+
+        div.path_gas_1 {
+          clip-path: polygon(17% 70%, 18% 71%, 18% 82%, 14% 82%, 14% 69%);
+        }
+
+        div.path_gas_2 {
+          clip-path: polygon(48% 50%, 49% 50%, 50% 55%, 48% 56%, 47% 50%);
+        }
+
+        div.path_greek_1 {
+          clip-path: polygon(
+            38% 34%,
+            41% 35%,
+            39% 41%,
+            39% 45%,
+            38% 46%,
+            36% 45%
+          );
+        }
+
+        div.path_greek_2 {
+          clip-path: polygon(
+            37% 40%,
+            43% 41%,
+            40% 52%,
+            40% 61%,
+            37% 61%,
+            34% 60%
+          );
+        }
+
+        div.path_hermit_1 {
+          clip-path: polygon(8% 46%, 9% 49%, 8% 50%, 7% 50%, 6% 47%);
+        }
+
+        div.path_hermit_2 {
+          clip-path: polygon(63% 36%, 64% 36%, 65% 39%, 63% 39%);
+        }
+
+        div.path_hermit_3 {
+          clip-path: polygon(
+            75% 59%,
+            78% 53%,
+            80% 58%,
+            79% 63%,
+            77% 62%,
+            76% 62%
+          );
+        }
+
+        div.path_karim_1 {
+          clip-path: polygon(69% 34%, 68% 28%, 70% 27%, 71% 35%, 69% 36%);
+        }
+
+        div.path_karim_2 {
+          clip-path: polygon(57% 36%, 59% 34%, 61% 34%, 61% 49%, 58% 48%);
+        }
+
+        div.path_karim_3 {
+          clip-path: polygon(
+            56% 52%,
+            59% 52%,
+            59% 62%,
+            61% 63%,
+            61% 96%,
+            52% 96%,
+            55% 71%,
+            50% 71%,
+            49% 56%,
+            55% 61%
+          );
+        }
+
+        div.path_karim_4 {
+          clip-path: polygon(2% 41%, 6% 42%, 4% 50%, 4% 56%, 2% 56%, 1% 50%);
+        }
+
+        div.path_marzo_1 {
+          clip-path: polygon(
+            74% 27%,
+            78% 25%,
+            79% 27%,
+            78% 32%,
+            75% 33%,
+            74% 30%
+          );
+        }
+
+        div.path_marzo_2 {
+          clip-path: polygon(
+            5% 54%,
+            11% 52%,
+            12% 58%,
+            9% 60%,
+            11% 65%,
+            2% 66%,
+            3% 58%,
+            1% 60%,
+            0 53%,
+            2% 56%
+          );
+        }
+
+        div.path_marzo_3 {
+          clip-path: polygon(
+            4% 53%,
+            10% 51%,
+            9% 57%,
+            8% 56%,
+            10% 62%,
+            2% 62%,
+            3% 56%,
+            1% 56%,
+            1% 50%,
+            2% 55%
+          );
+        }
+
+        div.path_marzo_4 {
+          clip-path: polygon(
+            50% 67%,
+            59% 68%,
+            60% 62%,
+            60% 74%,
+            56% 75%,
+            57% 86%,
+            43% 85%,
+            46% 77%,
+            43% 74%,
+            42% 64%
+          );
+        }
+
+        div.path_marzo_5 {
+          clip-path: polygon(
+            46% 60%,
+            50% 56%,
+            57% 54%,
+            58% 62%,
+            55% 63%,
+            57% 70%,
+            47% 71%,
+            47% 63%,
+            44% 63%,
+            44% 53%
+          );
+        }
+
+        div.path_mdking_1 {
+          clip-path: polygon(
+            31% 38%,
+            35% 45%,
+            32% 50%,
+            32% 57%,
+            29% 57%,
+            29% 51%,
+            26% 44%
+          );
+        }
+
+        div.path_mdking_2 {
+          clip-path: polygon(
+            28% 40%,
+            31% 38%,
+            31% 45%,
+            29% 48%,
+            30% 57%,
+            27% 57%,
+            27% 49%,
+            26% 49%,
+            24% 45%,
+            27% 45%
+          );
+        }
+
+        div.path_mdking_3 {
+          clip-path: polygon(
+            27% 40%,
+            28% 36%,
+            29% 46%,
+            28% 48%,
+            28% 59%,
+            24% 59%,
+            26% 51%,
+            24% 42%,
+            25% 34%,
+            25% 39%
+          );
+        }
+
+        div.path_mdking_4 {
+          clip-path: polygon(
+            18% 36%,
+            19% 42%,
+            17% 48%,
+            18% 57%,
+            15% 57%,
+            15% 48%,
+            14% 46%,
+            15% 36%,
+            15% 41%,
+            17% 40%
+          );
+        }
+
+        div.path_ody_1 {
+          clip-path: polygon(
+            58% 5%,
+            60% 6%,
+            60% 12%,
+            62% 12%,
+            61% 19%,
+            57% 19%,
+            53% 18%,
+            54% 15%,
+            54% 6%,
+            56% 8%
+          );
+        }
+
+        div.path_oni_1 {
+          clip-path: polygon(
+            35% 11%,
+            36% 14%,
+            35% 18%,
+            32% 18%,
+            32% 14%,
+            32% 12%
+          );
+        }
+
+        div.path_phate_1 {
+          clip-path: polygon(70% 35%, 72% 36%, 72% 40%, 70% 41%, 69% 40%);
+        }
+
+        div.path_phate_2 {
+          clip-path: polygon(
+            62% 44%,
+            64% 43%,
+            65% 44%,
+            65% 47%,
+            64% 51%,
+            62% 50%,
+            63% 48%,
+            62% 47%,
+            61% 49%,
+            61% 46%
+          );
+        }
+
+        div.path_phate_3 {
+          clip-path: polygon(
+            73% 49%,
+            78% 48%,
+            79% 53%,
+            77% 60%,
+            74% 58%,
+            72% 57%
+          );
+        }
+
+        div.path_phate_4 {
+          clip-path: polygon(
+            63% 41%,
+            66% 40%,
+            66% 43%,
+            66% 46%,
+            64% 45%,
+            63% 44%
+          );
+        }
+
+        div.path_phate_5 {
+          clip-path: polygon(
+            62% 49%,
+            66% 48%,
+            67% 52%,
+            66% 57%,
+            63% 56%,
+            62% 54%
+          );
+        }
+
+        div.path_plums_1 {
+          clip-path: polygon(
+            22% 46%,
+            24% 77%,
+            17% 78%,
+            17% 63%,
+            15% 57%,
+            16% 51%,
+            18% 52%,
+            18% 47%,
+            19% 43%,
+            20% 43%
+          );
+        }
+
+        div.path_plums_2 {
+          clip-path: polygon(
+            20% 44%,
+            21% 45%,
+            23% 58%,
+            22% 61%,
+            23% 64%,
+            23% 72%,
+            18% 72%,
+            18% 61%,
+            16% 53%,
+            18% 51%
+          );
+        }
+
+        div.path_plums_3 {
+          clip-path: polygon(
+            20% 45%,
+            22% 45%,
+            23% 50%,
+            25% 54%,
+            23% 62%,
+            23% 72%,
+            18% 72%,
+            19% 61%,
+            18% 57%,
+            19% 52%
+          );
+        }
+
+        div.path_quokka_1 {
+          clip-path: polygon(
+            55% 37%,
+            57% 37%,
+            57% 40%,
+            57% 45%,
+            55% 45%,
+            55% 42%
+          );
+        }
+
+        div.path_quokka_2 {
+          clip-path: polygon(
+            6% 68%,
+            7% 77%,
+            7% 84%,
+            6% 87%,
+            8% 93%,
+            5% 91%,
+            3% 97%,
+            1% 85%,
+            2% 78%,
+            4% 67%
+          );
+        }
+
+        div.path_quokka_3 {
+          clip-path: polygon(
+            13% 46%,
+            15% 46%,
+            15% 56%,
+            13% 58%,
+            12% 55%,
+            13% 50%
+          );
+        }
+
+        div.path_quokka_4 {
+          clip-path: polygon(51% 44%, 53% 43%, 54% 49%, 54% 56%, 51% 55%);
+        }
+
+        div.path_ryose_1 {
+          clip-path: polygon(9% 79%, 10% 75%, 11% 80%, 11% 91%, 6% 91%, 6% 75%);
+        }
+
+        div.path_ryose_2 {
+          clip-path: polygon(39% 52%, 41% 53%, 41% 60%, 39% 60%, 38% 57%);
+        }
+
+        div.path_stixil_1 {
+          clip-path: polygon(4% 44%, 6% 45%, 6% 50%, 4% 52%, 3% 50%);
+        }
+
+        div.path_stixil_2 {
+          clip-path: polygon(62% 35%, 63% 38%, 62% 40%, 61% 38%, 62% 36%);
+        }
+
+        div.path_stixil_3 {
+          clip-path: polygon(
+            73% 49%,
+            75% 49%,
+            75% 56%,
+            75% 60%,
+            73% 62%,
+            70% 58%,
+            72% 54%,
+            73% 52%
+          );
+        }
+
+        div.path_tease_1 {
+          clip-path: polygon(51% 14%, 53% 13%, 53% 18%, 52% 21%, 48% 18%);
+        }
+
+        div.path_tease_2 {
+          clip-path: polygon(
+            29% 4%,
+            33% 2%,
+            31% 11%,
+            29% 11%,
+            27% 9%,
+            27% 8%,
+            28% 6%
+          );
+        }
+
+        div.path_tease_3 {
+          clip-path: polygon(
+            45% 74%,
+            48% 79%,
+            49% 84%,
+            46% 85%,
+            46% 93%,
+            41% 94%,
+            42% 83%,
+            40% 82%,
+            41% 76%,
+            43% 73%
+          );
+        }
+
+        div.path_tease_4 {
+          clip-path: polygon(
+            40% 17%,
+            44% 20%,
+            46% 24%,
+            46% 26%,
+            43% 28%,
+            42% 29%,
+            41% 25%,
+            40% 19%
+          );
+        }
+
+        div.path_tease_5 {
+          clip-path: polygon(
+            29% 4%,
+            32% 2%,
+            32% 5%,
+            31% 10%,
+            30% 12%,
+            29% 10%,
+            27% 10%,
+            27% 8%
+          );
+        }
+
+        div.path_tease_6 {
+          clip-path: polygon(19% 9%, 22% 8%, 20% 14%, 19% 14%, 17% 13%);
+        }
+
+        div.path_tease_7 {
+          clip-path: polygon(
+            27% 2%,
+            30% 4%,
+            33% 9%,
+            30% 10%,
+            29% 12%,
+            28% 8%,
+            27% 5%
+          );
+        }
+
+        div.path_tease_8 {
+          clip-path: polygon(
+            40% 17%,
+            43% 20%,
+            45% 22%,
+            47% 26%,
+            43% 27%,
+            42% 29%,
+            41% 24%,
+            39% 18%
+          );
+        }
+
+        div.path_tease_9 {
+          clip-path: polygon(50% 16%, 52% 19%, 51% 21%, 50% 22%, 48% 15%);
+        }
+
+        div.path_villspor_1 {
+          clip-path: polygon(69% 28%, 70% 29%, 72% 34%, 68% 36%, 68% 32%);
+        }
+
+        div.path_villspor_2 {
+          clip-path: polygon(
+            50% 47%,
+            52% 59%,
+            51% 63%,
+            53% 68%,
+            52% 74%,
+            47% 75%,
+            47% 65%,
+            48% 58%,
+            46% 56%,
+            47% 44%
+          );
+        }
+
+        div.path_villspor_3 {
+          clip-path: polygon(
+            44% 53%,
+            44% 45%,
+            46% 46%,
+            49% 51%,
+            47% 58%,
+            48% 69%,
+            43% 69%,
+            44% 56%,
+            41% 54%,
+            41% 50%
+          );
+        }
+
+        div.path_villspor_4 {
+          clip-path: polygon(
+            56% 38%,
+            58% 36%,
+            59% 38%,
+            58% 43%,
+            56% 44%,
+            57% 40%
+          );
+        }
+
+        div.path_villspor_5 {
+          clip-path: polygon(
+            23% 42%,
+            26% 47%,
+            24% 51%,
+            25% 59%,
+            22% 59%,
+            22% 50%,
+            20% 50%,
+            21% 45%,
+            22% 47%
+          );
+        }
+
+        div.path_villspor_6 {
+          clip-path: polygon(
+            0 64%,
+            2% 61%,
+            4% 65%,
+            5% 53%,
+            8% 53%,
+            10% 67%,
+            14% 60%,
+            14% 69%,
+            10% 73%,
+            11% 97%,
+            1% 97%,
+            4% 75%
+          );
+        }
+
+        div.path_villspor_7 {
+          clip-path: polygon(
+            53% 38%,
+            55% 36%,
+            56% 38%,
+            56% 45%,
+            54% 45%,
+            54% 40%
+          );
+        }
+
+        div.path_vito_1 {
+          clip-path: polygon(
+            67% 37%,
+            70% 40%,
+            71% 51%,
+            70% 55%,
+            68% 59%,
+            68% 54%,
+            68% 48%,
+            67% 45%
+          );
+        }
+
+        div.path_vito_2 {
+          clip-path: polygon(
+            65% 41%,
+            68% 47%,
+            69% 60%,
+            68% 66%,
+            66% 72%,
+            65% 69%,
+            65% 65%,
+            65% 57%,
+            64% 56%,
+            64% 49%
+          );
+        }
+
+        div.path_vito_3 {
+          clip-path: polygon(
+            42% 49%,
+            43% 58%,
+            46% 57%,
+            49% 79%,
+            48% 89%,
+            43% 99%,
+            42% 86%,
+            43% 74%,
+            42% 75%,
+            40% 61%
+          );
+        }
+
+        div.path_vito_4 {
+          clip-path: polygon(
+            15% 40%,
+            15% 46%,
+            15% 50%,
+            14% 58%,
+            14% 60%,
+            12% 55%,
+            12% 45%
+          );
+        }
+
+        div.path_vito_4 {
+          clip-path: polygon(
+            15% 40%,
+            15% 46%,
+            15% 50%,
+            14% 58%,
+            14% 60%,
+            12% 55%,
+            12% 45%
+          );
+        }
+
+        div.path_vito_5 {
+          clip-path: polygon(9% 37%, 11% 41%, 12% 48%, 10% 53%, 9% 48%, 9% 44%);
+        }
+
+        div.path_cat_1 {
+          clip-path: polygon(
+            2% 67%,
+            6% 65%,
+            8% 66%,
+            8% 71%,
+            6% 73%,
+            7% 78%,
+            2% 77%,
+            1% 69%,
+            1% 61%,
+            3% 61%
+          );
+        }
+
+        div.path_cat_2 {
+          clip-path: polygon(
+            43% 75%,
+            45% 79%,
+            44% 82%,
+            43% 81%,
+            41% 84%,
+            39% 87%,
+            39% 85%,
+            38% 83%,
+            39% 79%,
+            40% 73%
+          );
+        }
+
+        div.path_cat_3 {
+          clip-path: polygon(
+            44% 60%,
+            45% 57%,
+            45% 78%,
+            40% 77%,
+            41% 74%,
+            40% 72%,
+            39% 67%,
+            41% 66%,
+            42% 62%,
+            44% 65%
+          );
+        }
+
+        div.path_you {
+          clip-path: polygon(
+            19% 49%,
+            21% 50%,
+            22% 47%,
+            23% 53%,
+            23% 58%,
+            25% 62%,
+            25% 73%,
+            23% 74%,
+            26% 91%,
+            17% 88%,
+            19% 76%,
+            18% 71%
+          );
+        }
+      }
+    }
+
+    div.speech {
+      opacity: 1;
+      overflow: visible;
+      position: absolute;
+      bottom: 50px;
+      right: 16vw;
+      color: white;
+      z-index: 300;
+      max-width: calc(50% - 16vw);
+      min-width: 370px;
+      opacity: 0;
+
+      div.fade_background {
+        position: relative;
+        width: 100%;
+        overflow: auto;
+        background-color: rgba(34, 36, 49, 0.4);
+
+        clip-path: polygon(
+          0% 0%,
+          30% 0%,
+          30% 10px,
+          100% 10px,
+          100% 100%,
+          70% 100%,
+          70% calc(100% - 10px),
+          0% calc(100% - 10px)
+        );
+
+        div.visible_text {
+          position: relative;
+          width: calc(100% - 40px);
+
+          z-index: 20;
+          background-color: #222431;
+          padding: 20px;
+          padding-bottom: 30px;
+          margin-left: 20px;
+          margin-right: 20px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          font-size: 22px;
+
+          span {
+            animation-name: textSpanChange;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+          }
+        }
+
+        div.text_container {
+          position: relative;
+          height: 0px;
+          overflow: hidden;
+          div {
+            font-size: 22px;
+            overflow: auto;
+            margin-left: 40px;
+            margin-right: 40px;
+            height: auto;
+
+            span.colors {
+              display: none;
+            }
+          }
+        }
+      }
+
+      div.corner_top {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 40px;
+        height: 40px;
+        background-color: #222431;
+        clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+      }
+
+      div.corner_bottom {
+        position: absolute;
+        bottom: -10px;
+        right: -10px;
+        width: 40px;
+        height: 40px;
+        background-color: #222431;
+        clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+      }
+
+      div.continue_button {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+        background-color: #68696f;
+        height: 34px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        width: auto;
+        opacity: 0;
+        margin-left: auto;
+        margin-right: auto;
+        -webkit-clip-path: polygon(
+          0% 8px,
+          8px 0px,
+          100% 0%,
+          100% calc(100% - 8px),
+          calc(100% - 8px) 100%,
+          0px 100%
+        );
+        clip-path: polygon(
+          0% 8px,
+          8px 0px,
+          100% 0%,
+          100% calc(100% - 8px),
+          calc(100% - 8px) 100%,
+          0px 100%
+        );
+
+        span {
+          cursor: pointer;
+          height: 32px;
+          display: none;
+          background-color: var(--var-yellow);
+          font-size: 22px;
+          line-height: 32px;
+          text-align: center;
+          border-style: solid;
+          border-color: var(--var-btn_color);
+          border-width: 1px;
+          padding-left: 10px;
+          padding-right: 10px;
+          margin-left: 1px;
+          margin-right: 1px;
+          color: var(--var-btn_color);
+          transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+          clip-path: polygon(
+            0% 4px,
+            7px 0px,
+            100% 0%,
+            100% calc(100% - 7px),
+            calc(100% - 7px) 100%,
+            0px 100%
+          );
+        }
+
+        span:hover {
+          background-color: white;
+        }
+      }
+
+      div.end_button {
+        position: absolute;
+        background-color: #68696f;
+        height: 34px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        width: auto;
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+        -webkit-clip-path: polygon(
+          0% 8px,
+          8px 0px,
+          100% 0%,
+          100% calc(100% - 8px),
+          calc(100% - 8px) 100%,
+          0px 100%
+        );
+        clip-path: polygon(
+          0% 8px,
+          8px 0px,
+          100% 0%,
+          100% calc(100% - 8px),
+          calc(100% - 8px) 100%,
+          0px 100%
+        );
+        opacity: 0;
+        a {
+          cursor: pointer;
+          height: 32px;
+          display: none;
+          background-color: var(--var-yellow);
+          font-size: 22px;
+          line-height: 32px;
+          text-align: center;
+          border-style: solid;
+          border-color: var(--var-btn_color);
+          border-width: 1px;
+          padding-left: 10px;
+          padding-right: 10px;
+          margin-left: 1px;
+          margin-right: 1px;
+          color: var(--var-btn_color);
+          transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+          clip-path: polygon(
+            0% 4px,
+            7px 0px,
+            100% 0%,
+            100% calc(100% - 7px),
+            calc(100% - 7px) 100%,
+            0px 100%
+          );
+          display: block;
+        }
+
+        a:hover {
+          background-color: white;
+        }
+      }
+
+      div.join_button {
+        bottom: 10px;
+        right: 20px;
+      }
+
+      div.informed_button {
+        bottom: 10px;
+        right: 170px;
+      }
+    }
+
+    div.mascot_images {
+      position: absolute;
+      width: 16vw;
+
+      right: -0.268vw;
+      bottom: 0px;
+      z-index: 98;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      img.absoluteMascot {
+        position: absolute;
+        width: 100%;
+        display: block;
+        top: 0px;
+        left: 0px;
+      }
+
+      img.hiddenMascot {
+        opacity: 0;
+      }
+    }
+
+    div.hero_main_bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-image: url("../../assets/webp/webp/hero_background.webp");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      top: 0px;
+      left: 0px;
+
+      div.flame_small {
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        top: -10%;
+        left: -10%;
+        background-image: url("../../assets/webp/webp/back.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0;
+      }
+
+      div.flame_big {
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        top: -10%;
+        left: -10%;
+        background-image: url("../../assets/webp/webp/front.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0;
+      }
+    }
+  }
+
+  div.hero_bottom_svg {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0px;
+    z-index: 100;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+@keyframes textSpanChange {
+  from {
+    color: white;
+  }
+  to {
+    color: #ffbc32;
+  }
+}
+
+div.hero_mobile {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  background-color: black;
+  display: none;
+
+  div.mobile_text {
+    position: relative;
+    flex-grow: 1;
+
+    div.mob_speech {
+      opacity: 1;
+      overflow: visible;
+      position: relative;
+      color: white;
+      z-index: 300;
+      width: calc(100% - 40px);
+      margin-left: 30px;
+      margin-right: auto;
+      margin-top: 30px;
+      margin-bottom: 40px;
+
+      div.mob_fade_background {
+        position: relative;
+        width: 100%;
+        overflow: auto;
+        background-color: rgba(34, 36, 49, 0.4);
+
+        clip-path: polygon(
+          0% 0%,
+          30% 0%,
+          30% 10px,
+          100% 10px,
+          100% 100%,
+          70% 100%,
+          70% calc(100% - 10px),
+          0% calc(100% - 10px)
+        );
+
+        div.mob_visible_text {
+          position: relative;
+          width: calc(100% - 40px);
+
+          z-index: 20;
+          background-color: #222431;
+          padding: 20px;
+          margin-left: 20px;
+          margin-right: 20px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          font-size: 22px;
+
+          p.margins {
+            margin-bottom: 20px;
+          }
+
+          p {
+            text-align: justify;
+
+            span {
+              color: #ffbc32;
+            }
+          }
+        }
+
+        div.text_container {
+          position: relative;
+          height: 0px;
+          overflow: hidden;
+          div {
+            font-size: 22px;
+            overflow: auto;
+            margin-left: 40px;
+            margin-right: 40px;
+            height: auto;
+
+            span.colors {
+              display: none;
+            }
+          }
+        }
+      }
+
+      div.mob_corner_top {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 40px;
+        height: 40px;
+        background-color: #222431;
+        clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+      }
+
+      div.mob_corner_bottom {
+        position: absolute;
+        bottom: -10px;
+        right: -10px;
+        width: 40px;
+        height: 40px;
+        background-color: #222431;
+        clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+      }
+    }
+  }
+
+  div.mobile_mascot {
+    width: 240px;
+    overflow: visible;
+    margin-top: 20px;
+    flex-shrink: 0;
+    position: relative;
+
+    img {
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      height: auto;
+      margin-left: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  div.hero
+    div.hero_container
+    div.speech
+    div.fade_background
+    div.text_container
+    div {
+    font-size: 18px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  div.hero div.hero_container div.speech div.fade_background div.visible_text {
+    font-size: 18px;
+  }
+
+  div.hero div.hero_container div.speech div.corner_top {
+    opacity: 0;
+  }
+
+  div.hero div.hero_container div.speech div.corner_bottom {
+    opacity: 0;
+  }
+
+  div.hero div.hero_container div.speech div.continue_button span {
+    font-size: 18px;
+  }
+
+  div.hero div.hero_container div.speech div.continue_button {
+    height: 30px;
+  }
+
+  div.hero div.hero_container div.speech div.continue_button span {
+    height: 28px;
+    line-height: 28px;
+  }
+
+  div.hero div.hero_container div.speech {
+    bottom: 25px;
+  }
+}
+
+@media only screen and (max-width: 1420px) {
+  div.hero
+    div.hero_container
+    div.speech
+    div.fade_background
+    div.text_container
+    div {
+    font-size: 16px;
+  }
+
+  div.hero div.hero_container div.speech div.fade_background div.visible_text {
+    font-size: 16px;
+    padding: 10px;
+    padding-bottom: 10px;
+  }
+
+  div.hero div.hero_container div.speech div.fade_background {
+    background: none;
+  }
+}
+
+@media only screen and (max-width: 1160px) {
+  div.hero_container {
+    height: 0px;
+    div {
+      height: 0px;
+    }
+  }
+
+  div.hero div.hero_container div.speech div.continue_button {
+    display: none;
+  }
+
+  div.hero div.hero_container div.mascot_images {
+    display: none;
+  }
+
+  div.hero_mobile {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  div.mobile_mascot > img {
+    margin-left: 0px !important;
+  }
+
+  div.hero_mobile
+    div.mobile_text
+    div.mob_speech
+    div.mob_fade_background
+    div.mob_visible_text {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  div.hero_mobile div.mobile_mascot {
+    display: none;
+  }
+
+  div.hero_mobile div.mobile_text div.mob_speech {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  div.mob_corner_top,
+  div.mob_corner_bottom {
+    display: none;
+  }
+
+  div.hero_mobile div.mobile_text div.mob_speech div.mob_fade_background {
+    clip-path: none;
+  }
+
+  div.hero_mobile
+    div.mobile_text
+    div.mob_speech
+    div.mob_fade_background
+    div.mob_visible_text {
+    margin: 0px;
+    width: 100%;
+  }
+}

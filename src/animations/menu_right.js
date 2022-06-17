@@ -177,7 +177,7 @@ export const close_language_menu_right = (darkLayer) => {
 };
 
 export const changeBackgroundToWhite = (elem) => {
-  let linkElem = elem.querySelector("a");
+  let linkElem = elem.querySelector(".indigo_container");
 
   let span1 = linkElem.querySelector("span.indigo_1");
   let span2 = linkElem.querySelector("span.indigo_2");
@@ -210,7 +210,7 @@ export const changeBackgroundToWhite = (elem) => {
 };
 
 export const changeBackgroundToNormal = (elem) => {
-  let linkElem = elem.querySelector("a");
+  let linkElem = elem.querySelector(".indigo_container");
 
   let span1 = linkElem.querySelector("span.indigo_1");
   let span2 = linkElem.querySelector("span.indigo_2");

@@ -9,9 +9,14 @@ function Announcements() {
   const [annoucmentsWidth, setannoucmentsWidth] = useState<any>([0]);
   const [annoucementsSpanWidth, setannoucementsSpanWidth] = useState(0);
 
-  useEffect(() => {
+  const handleResize = () => {
     setannoucmentsWidth(annoucementRef.current.offsetWidth);
     setannoucementsSpanWidth(annoucementSpanRef.current.offsetWidth);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   let speed = 70;

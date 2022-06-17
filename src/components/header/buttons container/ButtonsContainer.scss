@@ -1,3 +1,101 @@
+div.mob_shibaswap {
+  display: none;
+}
+
+div.mob_uniswap {
+  display: none;
+}
+
+a.mob_shibaswap_link {
+  display: none;
+}
+
+a.mob_uniswap_link {
+  display: none;
+}
+
+div.shibaswap_buy {
+  position: absolute;
+  width: 300px;
+  height: 70px;
+  right: 112px; // 270px // 112px
+  top: 0px;
+  background-color: white;
+
+  a {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    z-index: 10;
+
+    img.shiba_logo_btn {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      display: block;
+      top: 10px;
+      left: 20px;
+    }
+
+    span.text {
+      position: relative;
+      display: block;
+      font-size: 30px;
+      color: var(--var-btn_color);
+      height: 70px;
+      font-weight: bold;
+      margin-left: 80px;
+      float: left;
+      line-height: 70px;
+      opacity: 0;
+
+      span.text_opacity {
+        position: relative;
+        opacity: 0;
+      }
+
+      span.absolute {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 36px;
+        top: 12px;
+        line-height: 36px;
+        left: 0px;
+      }
+
+      span.text_p1 {
+        clip-path: polygon(0% 100%, 100% 100%, 100% 66.6%, 0% 66.6%);
+      }
+
+      span.text_p2 {
+        clip-path: polygon(0% 31.2%, 100% 31.2%, 100% 68.7%, 0% 68.7%);
+      }
+
+      span.text_p3 {
+        clip-path: polygon(0% 33.3%, 100% 33.3%, 100% 0%, 0% 0%);
+      }
+    }
+
+    span.soon {
+      position: absolute;
+      bottom: 16px;
+      left: 190px;
+      color: black;
+    }
+  }
+
+  div.swap_angle {
+    position: absolute;
+    width: 71px;
+    height: 70px;
+    left: -1px;
+    top: 0px;
+    background-color: black;
+    clip-path: polygon(0% 100%, 0% 0%, 100% 0%);
+  }
+}
+
 div.buttons_container_bg {
   position: absolute;
   top: -10px;
@@ -18,6 +116,7 @@ div.buttons_container_bg {
     }
   }
 }
+
 div.buttons_container {
   position: absolute;
   top: -10px;
@@ -25,7 +124,7 @@ div.buttons_container {
   height: 80px;
   background-color: white;
   clip-path: polygon(0% 100%, 70px 0%, 100% 0%, 100% 100%);
-
+  z-index: 20;
   div.uniswap_btn {
     position: relative;
     width: var(--var-uniswap_btn_width);
@@ -203,5 +302,405 @@ div.buttons_container {
     height: 100%;
     background-color: white;
     clip-path: polygon(100% 0%, 100% 100%, 0 100%);
+  }
+}
+
+// Animations
+
+// Uniswap
+
+@-moz-keyframes increaseSwapIn {
+  0% {
+    clip-path: polygon(0% 100%, 70px 0%, 100% 10px, 100% calc(100% - 10px));
+  }
+  100% {
+    clip-path: polygon(0% 100%, 0% 0%, 100% 0px, 100% 100%);
+  }
+}
+@-webkit-keyframes increaseSwapIn {
+  0% {
+    clip-path: polygon(0% 100%, 70px 0%, 100% 10px, 100% calc(100% - 10px));
+  }
+  100% {
+    clip-path: polygon(0% 100%, 0% 0%, 100% 0px, 100% 100%);
+  }
+}
+@keyframes increaseSwapIn {
+  0% {
+    clip-path: polygon(0% 100%, 70px 0%, 100% 10px, 100% calc(100% - 10px));
+  }
+  100% {
+    clip-path: polygon(0% 100%, 0% 0%, 100% 0px, 100% 100%);
+  }
+}
+
+@-moz-keyframes increaseSwapOut {
+  0% {
+    clip-path: polygon(0% 100%, 0% 0%, 100% 0px, 100% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 100%, 70px 0%, 100% 10px, 100% calc(100% - 10px));
+  }
+}
+@-webkit-keyframes increaseSwapOut {
+  0% {
+    clip-path: polygon(0% 100%, 0% 0%, 100% 0px, 100% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 100%, 70px 0%, 100% 10px, 100% calc(100% - 10px));
+  }
+}
+@keyframes increaseSwapOut {
+  0% {
+    clip-path: polygon(0% 100%, 0% 0%, 100% 0px, 100% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 100%, 70px 0%, 100% 10px, 100% calc(100% - 10px));
+  }
+}
+
+// Menu Button
+
+// fade 1
+@-webkit-keyframes fadein1 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@-moz-keyframes fadein1 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes fadein1 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+// fade 2
+@-webkit-keyframes fadein2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@-moz-keyframes fadein2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fadein2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+// fade 3
+@-webkit-keyframes fadein3 {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@-moz-keyframes fadein3 {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes fadein3 {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+// fade 4
+@-webkit-keyframes fadein4 {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@-moz-keyframes fadein4 {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes fadein4 {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+// fade 5
+@-webkit-keyframes fadein5 {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein5 {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein5 {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  div#menu_btn {
+    margin-left: 50px;
+  }
+
+  div.shibaswap_buy {
+    display: none !important;
+  }
+
+  div.uniswap_btn {
+    display: none !important;
+  }
+
+  div.uniswap_white {
+    display: none !important;
+  }
+
+  div.buttons_container_bg {
+    display: none !important;
+  }
+
+  div.mob_shibaswap {
+    position: absolute;
+    top: 0px;
+    right: 238px;
+    display: block !important;
+    width: 128px;
+    height: 70px;
+    background-color: white;
+
+    div.swap_angle_mob_shiba {
+      position: absolute;
+      width: 71px;
+      height: 70px;
+      left: -1px;
+      top: 0px;
+      background-color: black;
+      clip-path: polygon(0% 100%, 0% 0%, 100% 0%);
+    }
+  }
+
+  div.mob_uniswap {
+    position: absolute;
+    top: 0px;
+    right: 108px;
+    display: block !important;
+    width: 160px;
+    height: 70px;
+    background-color: #ffbc32;
+
+    div.swap_angle_mob_uniswap {
+      position: absolute;
+      width: 71px;
+      height: 70px;
+      left: -1px;
+      top: 0px;
+      background-color: white;
+      clip-path: polygon(0% 100%, 0% 0%, 100% 0%);
+    }
+  }
+
+  a.mob_shibaswap_link {
+    position: absolute;
+    display: block !important;
+    top: 10px;
+    right: 255px;
+    width: 50px;
+    height: 50px;
+    img {
+      display: block;
+    }
+  }
+
+  a.mob_uniswap_link {
+    position: absolute;
+    display: block !important;
+    top: 0px;
+    right: 160px;
+    width: 60px;
+    height: 60px;
+    img {
+      display: block;
+    }
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  div.logo_text {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  div.mob_shibaswap {
+    width: 110px;
+    right: 200px;
+  }
+
+  div.mob_uniswap {
+    width: 150px;
+    right: 80px;
+  }
+
+  a.mob_shibaswap_link {
+    top: 15px;
+    right: 215px;
+    width: 40px;
+    height: 40px;
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  a.mob_uniswap_link {
+    top: 5px;
+    right: 140px;
+    width: 50px;
+    height: 50px;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  div.logo {
+    z-index: 60 !important;
   }
 }

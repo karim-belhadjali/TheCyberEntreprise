@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 
 import { DocumentsInfos } from "src/assets/text/InfoTexts";
 import CreditCard from "src/components/animated images/Cybr Credit Card/CreditCardComponent";
@@ -10,8 +10,16 @@ import { RoadmapInfos } from "src/assets/text/InfoTexts";
 import DocumentItem from "src/components/lists/document_item_list/DocumentItemComponent";
 
 import "./DocumentsScreenStyle.scss";
+import { SocialAnimations } from "src/animations/team";
+import { hoverBackgroundTable } from "src/animations/documents";
+import ProjectRun from "src/components/animated images/projectRun/ProjectRunComponent";
+import ProjectHome from "src/components/animated images/ProjectHome/ProjectHomeComponenet";
 
-function DocumentsScreen() {
+function DocumentsScreen({ data }: { data: any }) {
+  useEffect(() => {
+    SocialAnimations();
+    hoverBackgroundTable();
+  }, []);
   return (
     <>
       <div className="documents">
@@ -23,23 +31,45 @@ function DocumentsScreen() {
           <DocumentItem
             document={DocumentsInfos.TheCyberEnterprise}
             imgComponent={<DocumentImage />}
+            commingSoon={false}
+            commingSoonText=""
             key="TheCyberEnterprise"
           />
 
           <DocumentItem
             document={DocumentsInfos.Cyber_Token}
-            imgComponent={<CybrScroll />}
+            imgComponent={<CybrScroll botbanned={data.botBanned} />}
             key="Cyber_Token"
+            commingSoonText=""
+            commingSoon={false}
+          />
+          <DocumentItem
+            document={DocumentsInfos.Cyber_Token}
+            imgComponent={<ProjectRun />}
+            key="Project Run"
+            commingSoonText="Phase 1 coming in July."
+            commingSoon={true}
+          />
+          <DocumentItem
+            document={DocumentsInfos.Cyber_Token}
+            imgComponent={<ProjectHome />}
+            key="Cyber_Token"
+            commingSoonText="Phase 1 coming in June."
+            commingSoon={true}
           />
           <DocumentItem
             document={DocumentsInfos.Cyber_Creditors_Token}
-            imgComponent={<CreditCard />}
+            imgComponent={<CreditCard supply={data.circulatingSupply} />}
             key="Cyber_Creditors_Token"
+            commingSoonText=""
+            commingSoon={false}
           />
           <DocumentItem
             document={DocumentsInfos.Cyber_Inu}
             imgComponent={<CybrInu />}
+            commingSoonText=""
             key="Cyber_Inu"
+            commingSoon={false}
           />
         </div>
       </div>

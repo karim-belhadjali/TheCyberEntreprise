@@ -4,16 +4,30 @@ import LanguageButton from "./language-selection/LanguageButtonComponent";
 import "./UtilityBarStyle.scss";
 import Anime from "react-animejs-wrapper";
 
-function UtilityBar({ languageClick }: { languageClick: any }) {
+function UtilityBar({
+  languageClick,
+  language,
+  data,
+}: {
+  languageClick: any;
+  language: any;
+  data: any;
+}) {
   const utilityRef = useRef<any>();
   const utilitySpanRef = useRef<any>();
   const animeRef = useRef<any>(null);
   const [utilityWidth, setutilityWidth] = useState(0);
   const [utilitySpanWidth, setutilitySpanWidth] = useState(0);
 
-  useEffect(() => {
+  const handleResize = () => {
     setutilityWidth(utilityRef.current.offsetWidth);
     setutilitySpanWidth(utilitySpanRef.current.offsetWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   let speed = 70; // pixels per second
@@ -38,15 +52,16 @@ function UtilityBar({ languageClick }: { languageClick: any }) {
       >
         <div ref={utilityRef} className="info_bar">
           <div ref={utilitySpanRef} className="bar_container">
-            <Bar text="Price in ETH: 0.0000000000002419" />
-            <Bar text="Price in USD: $0.0000000009154" />
-            <Bar text="Last 24h change: 0.86%" />
-            <Bar text="Total liquidity: $267,160.25" />
-            <Bar text="Daily volume: $6,460.24" />
-            <Bar text="Pooled CYBR: 145,925,290,251,841.84" />
+            <Bar text={"Price in ETH: " + data.ethPrice} />
+            <Bar text={"Price in USD: " + data.usdPrice} />
+            <Bar text={"Last 24h change: " + data.difference24 + "%"} />
+            <Bar text={"Total liquidity: $" + data.totalLiquidity} />
+            <Bar text={"Holders: " + data.holders} />
+            <Bar text={"Pooled CYBR: " + data.pooledCybr} />
+            <Bar text={"Circulating Supply: " + data.circulatingSupply} />
           </div>
         </div>
-        <LanguageButton onClick={languageClick} />
+        <LanguageButton language={language} onClick={languageClick} />
       </div>
     </Anime>
   );

@@ -40,11 +40,9 @@ function Container() {
       className="container"
       onMouseMove={(ev) => heroRef.current.mouseMoving(ev)}
     >
-      <MenuRight closeMenu={closeMenu} />
       <div className="top_hide"></div>
       <FixedTop menuClick={openMainMenu} />
       <Announcements />
-      <UtilityBar languageClick={openLanguage} />
       <HeroContainer ref={heroRef} />
       <TokenInfo />
       <FixedBot />

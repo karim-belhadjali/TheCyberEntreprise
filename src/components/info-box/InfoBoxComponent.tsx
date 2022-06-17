@@ -13,7 +13,7 @@ function InfoBox({ title, info }: { title: string; info: any }) {
 
         {sections.map((list: any) => {
           return (
-            <>
+            <div key={list.title}>
               <div
                 className="pt_text"
                 itemScope={true}
@@ -34,7 +34,7 @@ function InfoBox({ title, info }: { title: string; info: any }) {
                   </div>
                 </div>
               </div>
-            </>
+            </div>
           );
         })}
       </div>

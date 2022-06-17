@@ -1,20 +1,18 @@
 import React, { useRef } from "react";
 import { useEffect } from "react";
 
-import { initalCardNumber, prepareCardNumber } from "src/animations/documents";
-import { creditCardAnimationEnter } from "src/animations/documents";
+import { creditCardAnimation } from "src/animations/documents";
 
 import "./CreditCardStyle.scss";
 
-function CreditCard() {
+function CreditCard({ supply }: { supply: string }) {
   const cyberLinesRef = useRef<any>();
   const cardNumberCirculationRef = useRef<any>();
   const cardNumberContainerRef = useRef<any>();
   const cardNumberInitialRef = useRef<any>();
 
   useEffect(() => {
-    prepareCardNumber(cardNumberContainerRef.current);
-    initalCardNumber(cardNumberInitialRef.current);
+    creditCardAnimation();
   }, [cardNumberContainerRef, cardNumberInitialRef]);
 
   return (
@@ -25,12 +23,6 @@ function CreditCard() {
         height="288"
         className="credit_card"
         alt=""
-        onMouseEnter={() =>
-          creditCardAnimationEnter(
-            cyberLinesRef.current,
-            cardNumberCirculationRef.current
-          )
-        }
       />
       <div className="logo_gray_layer">
         <img
@@ -61,7 +53,7 @@ function CreditCard() {
           1000 0000 0000 0000
         </div>
         <div className="card_number_circulating" ref={cardNumberCirculationRef}>
-          0941 3124 2556 7696
+          {"0" + supply}
         </div>
         <div className="card_number_bottom_fade">
           <div className="fade_full_color"></div>

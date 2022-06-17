@@ -1,52 +1,68 @@
 import React from "react";
 import SideBtn from "./sideButton/SideBtnComponent";
 import "./MenuRightStyle.scss";
+import LanguageBtn from "./language button/LanguageBtnComponent";
 
-function MenuRight({ closeMenu }: { closeMenu: any }) {
+function MenuRight({
+  closeMenu,
+  languageselection,
+}: {
+  closeMenu: any;
+  languageselection: any;
+}) {
   return (
     <div className="menu_right">
       <ul id="language_menu" className="menu_container">
         <li>
-          <SideBtn text="English" link="/" onClick={closeMenu} />
+          <LanguageBtn
+            text="English"
+            onClick={() => languageselection("English")}
+          />
         </li>
         <li>
-          <SideBtn text="Spanish" link="/" onClick={closeMenu} />
+          <LanguageBtn
+            text="Spanish"
+            onClick={() => languageselection("Spanish")}
+          />
         </li>
         <li>
-          <SideBtn text="German" link="/" onClick={closeMenu} />
+          <LanguageBtn
+            text="German"
+            onClick={() => languageselection("German")}
+          />
         </li>
         <li>
-          <SideBtn text="Romanian" link="/" onClick={closeMenu} />
+          <LanguageBtn
+            text="Romanian"
+            onClick={() => languageselection("Romanian")}
+          />
         </li>
         <li>
-          <SideBtn text="Italian" link="/" onClick={closeMenu} />
+          <LanguageBtn
+            text="Italian"
+            onClick={() => languageselection("Italian")}
+          />
         </li>
       </ul>
 
       <ul id="main_menu" className="menu_container">
         <li>
-          <SideBtn text="CyberART" link="/" onClick={closeMenu} />
+          <SideBtn text="Index" link="/" onClick={closeMenu} />
         </li>
         <li>
-          <SideBtn text="Team" link="/" onClick={closeMenu} />
+          <SideBtn text="Team" link="/team" onClick={closeMenu} />
         </li>
         <li>
           <SideBtn text="RoadMap" link="/roadmap" onClick={closeMenu} />
         </li>
         <li>
-          <SideBtn text="Telegram Groups" link="/" onClick={closeMenu} />
+          <SideBtn text="Calculator" link="/calculator" onClick={closeMenu} />
         </li>
         <li>
-          <SideBtn text="How to Buy" link="/" onClick={closeMenu} />
+          <SideBtn text="Documents" link="/documents" onClick={closeMenu} />
         </li>
         <li>
-          <SideBtn text="RUBBE System" link="/" onClick={closeMenu} />
-        </li>
-        <li>
-          <SideBtn text="Chart" link="/" onClick={closeMenu} />
-        </li>
-        <li>
-          <SideBtn text="Press Release" link="/" onClick={closeMenu} />
+          <SideBtn text="Press Release" link="/press" onClick={closeMenu} />
         </li>
       </ul>
 
