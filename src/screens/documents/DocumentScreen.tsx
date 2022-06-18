@@ -44,16 +44,16 @@ function DocumentsScreen({ data }: { data: any }) {
             commingSoon={false}
           />
           <DocumentItem
-            document={DocumentsInfos.Cyber_Token}
+            document={DocumentsInfos.Project_Run}
             imgComponent={<ProjectRun />}
             key="Project Run"
             commingSoonText="Phase 1 coming in July."
             commingSoon={true}
           />
           <DocumentItem
-            document={DocumentsInfos.Cyber_Token}
+            document={DocumentsInfos.Project_Home}
             imgComponent={<ProjectHome />}
-            key="Cyber_Token"
+            key="Project_Home"
             commingSoonText="Phase 1 coming in June."
             commingSoon={true}
           />
@@ -74,7 +74,7 @@ function DocumentsScreen({ data }: { data: any }) {
         </div>
       </div>
 
-      <div className="doc_team">
+      <div className="doc_team last_page_text">
         <div className="doc_team_thanks">
           <div className="doc_title align_left">
             {DocumentsInfos.special_thanks.title}
@@ -95,6 +95,9 @@ function DocumentsScreen({ data }: { data: any }) {
               <div className="thanks_name_el">I Love Gas</div>
 
               <div className="thanks_name_el">Marzopiens</div>
+              <div className="thanks_name_el">I Love Gas</div>
+              <div className="thanks_name_el">Stevenon</div>
+              <div className="thanks_name_el">Rebel77</div>
             </div>
             <div className="list_languages">
               <div className="language_title">
@@ -114,6 +117,15 @@ function DocumentsScreen({ data }: { data: any }) {
               <div className="thanks_language_el">
                 {DocumentsInfos.special_thanks.spanish}
               </div>
+              <div className="thanks_language_el">
+                {DocumentsInfos.special_thanks.dutch}
+              </div>
+              <div className="thanks_language_el">
+                {DocumentsInfos.special_thanks.italic}
+              </div>
+              <div className="thanks_language_el">
+                {DocumentsInfos.special_thanks.italic}
+              </div>
             </div>
           </div>
         </div>
@@ -127,7 +139,7 @@ function DocumentsScreen({ data }: { data: any }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              $CYBR_mdking
+              I love Gas
             </a>
             {DocumentsInfos.Join_team.content_second}
             <a
@@ -135,8 +147,8 @@ function DocumentsScreen({ data }: { data: any }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Darthwhite
-            </a>{" "}
+              Marzopiens
+            </a>
             {DocumentsInfos.Join_team.content_third}
           </div>
 
@@ -146,26 +158,32 @@ function DocumentsScreen({ data }: { data: any }) {
 
           <div className="filler">
             <div className="first_image">
-              <img src={require("../../assets/team/darthwhite.png")} alt="" />
+              <img src={require("../../assets/team/gas.webp")} alt="" />
               <div className="filler_contact">
                 <a
                   href="#"
                   className="discord"
                   target="_blank"
                   rel="nofollow noindex noopener"
-                ></a>
+                >
+                  Discord
+                </a>
                 <a
                   href="#"
                   className="telegram"
                   target="_blank"
                   rel="nofollow noindex noopener"
-                ></a>
+                >
+                  Telegram
+                </a>
                 <a
                   href="#"
                   className="twitter"
                   target="_blank"
                   rel="nofollow noindex noopener"
-                ></a>
+                >
+                  Twitter
+                </a>
               </div>
             </div>
             <div className="filler_text">
@@ -178,26 +196,31 @@ function DocumentsScreen({ data }: { data: any }) {
                   className="discord"
                   target="_blank"
                   rel="nofollow noindex noopener"
-                ></a>
+                >
+                  Discord
+                </a>
                 <a
                   href="#"
                   className="telegram"
                   target="_blank"
                   rel="nofollow noindex noopener"
-                ></a>
+                >
+                  Telegram
+                </a>
                 <a
                   href="#"
                   className="twitter"
                   target="_blank"
                   rel="nofollow noindex noopener"
-                ></a>
+                >
+                  Twitter
+                </a>
               </div>
-              <img src={require("../../assets/team/mdking.png")} alt="" />
+              <img src={require("../../assets/team/marzo.webp")} alt="" />
             </div>
           </div>
         </div>
       </div>
-      <InfoBox title="Information" info={RoadmapInfos.information} />
     </>
   );
 }

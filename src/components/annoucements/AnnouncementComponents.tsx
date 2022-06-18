@@ -5,7 +5,7 @@ import Anime from "react-animejs-wrapper";
 function Announcements() {
   const annoucementRef = useRef<any>();
   const annoucementSpanRef = useRef<any>();
-  const animeRef = useRef(null);
+  const animeRef = useRef<any>();
   const [annoucmentsWidth, setannoucmentsWidth] = useState<any>([0]);
   const [annoucementsSpanWidth, setannoucementsSpanWidth] = useState(0);
 
@@ -33,7 +33,12 @@ function Announcements() {
         translateX: [annoucmentsWidth, "-" + annoucementsSpanWidth],
       }}
     >
-      <div ref={annoucementRef} className="announcements">
+      <div
+        ref={annoucementRef}
+        onMouseEnter={animeRef.current?.pause}
+        onMouseLeave={animeRef.current?.play}
+        className="announcements"
+      >
         <span ref={annoucementSpanRef} className="announcements_text">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae
           consectetur laudantium quam quaerat perferendis voluptatibus et ex

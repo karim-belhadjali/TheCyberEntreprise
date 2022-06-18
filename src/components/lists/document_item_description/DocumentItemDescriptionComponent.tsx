@@ -19,6 +19,9 @@ function DocumentItemDescription({
   chinese: any;
   french: any;
 }) {
+  console.log("====================================");
+  console.log(english);
+  console.log("====================================");
   return (
     <div className="document_el" key={title}>
       <div className="document_content">

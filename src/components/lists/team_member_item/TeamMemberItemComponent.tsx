@@ -21,7 +21,7 @@ function TeamMember({
   return (
     <div className="team_person">
       <div className="team_person_image">
-        <img src={teamMemberPicture} width={1} height={1} alt="" />
+        <img src={teamMemberPicture} width="1" height="1" alt="" />
       </div>
 
       <div className="team_sep"></div>
@@ -41,19 +41,25 @@ function TeamMember({
             className="discord"
             target="_blank"
             rel="nofollow noindex noopener"
-          ></a>
+          >
+            Discord
+          </a>
           <a
             href="#"
             className="telegram"
             target="_blank"
             rel="nofollow noindex noopener"
-          ></a>
+          >
+            Telegram
+          </a>
           <a
             href="#"
             className="twitter"
             target="_blank"
             rel="nofollow noindex noopener"
-          ></a>
+          >
+            Twitter
+          </a>
         </div>
 
         <div className="person_tags">
@@ -92,6 +98,8 @@ function TeamMember({
                   <img
                     src={interactionPicture}
                     alt={value}
+                    width="1"
+                    height="1"
                     onMouseEnter={() => animate(index, value, position)}
                   />
                 </div>

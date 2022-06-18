@@ -8,14 +8,25 @@ import "./IndexStyle.scss";
 
 function IndexScreen() {
   const mainPageText = MainPageInfos;
-
+  const lastElement = (index): boolean => {
+    if (mainPageText.information.length - 1 == index) {
+      return true;
+    } else {
+      return false;
+    }
+  };
   return (
     <div>
       <Hero />
       <TokenInfo />
-      {mainPageText.information.map((section) => {
+      {mainPageText.information.map((section, index) => {
         return (
-          <InfoBox info={section} title={section.title} key={section.title} />
+          <InfoBox
+            info={section}
+            title={section.title}
+            key={section.title}
+            last={lastElement(index)}
+          />
         );
       })}
     </div>

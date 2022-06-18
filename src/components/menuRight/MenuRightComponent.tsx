@@ -47,7 +47,7 @@ function MenuRight({
 
       <ul id="main_menu" className="menu_container">
         <li>
-          <SideBtn text="Index" link="/" onClick={closeMenu} />
+          <SideBtn text="Home" link="/" onClick={closeMenu} />
         </li>
         <li>
           <SideBtn text="Team" link="/team" onClick={closeMenu} />

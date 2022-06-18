@@ -23,6 +23,7 @@ import TeamScreen from "../team/TeamScreen";
 
 import IndexScreen from "../index/IndexScreen";
 import { mockedData } from "src/data/CybrApidData";
+import { getCybrTokenInfo } from "src/api/CurrencyApi";
 
 function MainScreen() {
   const heroRef = React.useRef<any>(null);
@@ -51,6 +52,10 @@ function MainScreen() {
     isMenu
       ? close_main_menu_right(darklayerRef.current)
       : close_language_menu_right(darklayerRef.current);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const handleCybrApi = () => {
@@ -78,8 +83,8 @@ function MainScreen() {
   };
 
   useEffect(() => {
-    document.title = "The Cyber Enterprise";
     handleCybrApi();
+    getCybrTokenInfo();
   }, []);
 
   return (

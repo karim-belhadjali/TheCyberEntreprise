@@ -40,7 +40,12 @@ function PressItem({ press }: { press: any }) {
 
       <div className="logos">
         <a href={press.link} target="_blank" rel="noopener noreferrer">
-          <img src={require("../../../assets/png/medium.png")} alt="" />
+          <img
+            width="1"
+            height="1"
+            src={require("../../../assets/png/medium.png")}
+            alt={press.title}
+          />
         </a>
       </div>
     </div>

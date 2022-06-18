@@ -112,6 +112,7 @@ div.calculator {
                 left: 165px;
                 white-space: nowrap;
                 font-size: 0px;
+                font-family: "calc";
 
                 span {
                   display: inline-block;
@@ -120,7 +121,7 @@ div.calculator {
                   text-align: center;
                   line-height: 32px;
                   font-size: 30px;
-                  font-family: var(--var-mainFont);
+                  font-family: "calc";
                   overflow: hidden;
                   margin-top: 2px;
                 }

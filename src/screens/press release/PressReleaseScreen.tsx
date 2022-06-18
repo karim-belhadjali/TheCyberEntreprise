@@ -24,37 +24,43 @@ function PressRelease() {
   }
 
   const handleClick = (event) => {
-    setcurrentPage(parseInt(event.target.id));
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
+    setcurrentPage(parseInt(event.target.id));
   };
   const handleClickPrev = () => {
-    if (currentPage > pageNumbers[0]) {
-      setcurrentPage(currentPage - 1);
-    }
+    setcurrentPage(currentPage - 1);
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
   const handleClickNext = () => {
-    if (
-      currentPage > pageNumbers[Math.ceil(pressReleases.length / pressPerPage)]
-    ) {
-      setcurrentPage(currentPage + 1);
-    }
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
+    setcurrentPage(currentPage + 1);
   };
-  const handleClassName = (number): string => {
+  const handlePaginationClassName = (number): string => {
     if (number === currentPage) {
       return "selected_pag";
     }
     return "not_selected";
+  };
+  const handlePrevClassName = (): string => {
+    if (currentPage === pageNumbers[0]) {
+      return "hide";
+    }
+    return "";
+  };
+  const handleNextClassName = (): string => {
+    if (currentPage === Math.ceil(pressReleases.length / pressPerPage)) {
+      return "hide";
+    }
+    return "";
   };
   return (
     <div>
@@ -65,24 +71,32 @@ function PressRelease() {
             return <PressItem key={index} press={press} />;
           })}
           <div className="pagination_container">
-            <div onClick={handleClickPrev}>prev</div>
+            <div className={handlePrevClassName()} onClick={handleClickPrev}>
+              prev
+            </div>
             {pageNumbers.map((number) => {
               return (
                 <div
                   key={number}
                   id={number.toString()}
                   onClick={(event) => handleClick(event)}
-                  className={handleClassName(number)}
+                  className={handlePaginationClassName(number)}
                 >
                   {number}
                 </div>
               );
             })}
-            <div onClick={handleClickNext}>next</div>
+            <div className={handleNextClassName()} onClick={handleClickNext}>
+              next
+            </div>
           </div>
         </div>
       </div>
-      <InfoBox title="" info={PressReleaseInfos.sections.information} />
+      <InfoBox
+        title=""
+        info={PressReleaseInfos.sections.information}
+        last={true}
+      />
     </div>
   );
 }

@@ -463,7 +463,7 @@ export const mainAnimation = (
 
   function buildMascot(mascotName, mascotContainer) {
     let element = document.createElement("img");
-    let img = require("../assets/mascot/" + mascotName + ".png");
+    let img = require("../assets/mascot/" + mascotName + ".webp");
     element.src = img;
     element.classList.add("hiddenMascot");
     element.classList.add("absoluteMascot");
@@ -475,7 +475,7 @@ export const mainAnimation = (
     let currentVisibleMascot =
       document.getElementsByClassName("visibleMascot")[0];
 
-    if (mascot != currentVisibleMascot) {
+    if (mascot !== currentVisibleMascot) {
       if (currentVisibleMascot) {
         anime({
           targets: currentVisibleMascot,

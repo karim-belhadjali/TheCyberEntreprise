@@ -182,7 +182,11 @@ function RoadmapScreen() {
         </div>
       </div>
 
-      <InfoBox title="Information" info={RoadmapInfos.information} />
+      <InfoBox
+        title="Information"
+        info={RoadmapInfos.information}
+        last={true}
+      />
     </>
   );
 }

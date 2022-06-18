@@ -22,31 +22,11 @@
   div.token_image {
     width: 400px !important;
   }
-
-  div.token_info_border {
-    width: 400px !important;
-
-    div.token_info_container {
-      div.token_info_element {
-        div.info_title {
-          font-size: 16px !important;
-        }
-
-        div.info_data {
-          font-size: 15px !important;
-        }
-      }
-    }
-  }
 }
 
 @media only screen and (max-width: 900px) {
   img.logo_text {
     display: none !important;
-  }
-
-  div.hero {
-    width: 100% !important;
   }
 
   div.hero_bottom_svg {
@@ -66,11 +46,7 @@
     left: 0px !important;
     right: auto !important;
     overflow: hidden !important;
-    top: 0px;
-
-    div.logo {
-      width: auto !important;
-    }
+    top: 0px !important;
   }
 
   div.announcements {
@@ -90,62 +66,12 @@
     padding-top: 70px !important;
   }
 
-  div.hero {
-    height: calc(100vh - 190px) !important;
-  }
-
-  div.fixed_bot {
-    height: 50px !important;
-    bottom: 0px;
-    width: 100% !important;
-    left: 0px !important;
-    right: auto !important;
-
-    div.fixed_bot_svg {
-      display: none !important;
-    }
-
-    div.fixed_bot_container {
-      height: 50px;
-    }
-
-    div.left_side,
-    div.right_side {
-      height: 50px !important;
-
-      div.bottom_btn {
-        display: none !important;
-      }
-
-      div.bottom_icons {
-        display: inline-block !important;
-      }
-    }
-  }
-
   div.bottom_hide {
     display: none !important;
   }
 
   div.token_image {
     display: none;
-  }
-
-  div.token_info_border {
-    width: 100% !important;
-    transform: translateX(0px) !important;
-
-    div.token_info_container {
-      div.token_info_element {
-        div.info_title {
-          font-size: 22px !important;
-        }
-
-        div.info_data {
-          font-size: 20px !important;
-        }
-      }
-    }
   }
 }
 
@@ -211,43 +137,9 @@
       }
     }
   }
-
-  div.token_info_border {
-    width: 100% !important;
-    transform: translateX(0px) !important;
-
-    div.token_info_container {
-      div.token_info_element {
-        div.info_title {
-          font-size: 16px !important;
-        }
-
-        div.info_data {
-          font-size: 15px !important;
-        }
-      }
-    }
-  }
 }
 
 @media only screen and (max-width: 450px) {
-  div.token_info_border {
-    width: 100% !important;
-    transform: translateX(0px) !important;
-
-    div.token_info_container {
-      div.token_info_element {
-        div.info_title {
-          font-size: 12px !important;
-          color: aqua !important;
-        }
-
-        div.info_data {
-          font-size: 12px !important;
-        }
-      }
-    }
-  }
 }
 
 @-moz-keyframes spin {

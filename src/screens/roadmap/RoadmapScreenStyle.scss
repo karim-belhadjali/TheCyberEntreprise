@@ -257,7 +257,6 @@ div.page_text {
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-  margin-bottom: 90px;
   background-color: #0e0e14;
 
   color: white;
@@ -297,12 +296,6 @@ div.page_text {
       margin-bottom: 5px;
       font-size: 18px;
     }
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  div.page_text {
-    margin-bottom: 70px;
   }
 }
 

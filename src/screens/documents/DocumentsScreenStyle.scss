@@ -708,6 +708,8 @@ div.doc_team {
       a {
         color: white;
         position: relative;
+        margin-left: 3px;
+        margin-right: 3px;
       }
 
       a:after {
@@ -738,8 +740,7 @@ div.doc_team {
       margin-right: auto;
       flex-grow: 1;
       margin-bottom: 20px;
-      margin-top: 10px;
-
+      margin-top: 60px;
       display: flex;
 
       div.filler_text {
@@ -779,6 +780,8 @@ div.doc_team {
             background-position: center;
             background-repeat: no-repeat;
             margin-right: 10px;
+            overflow: hidden;
+            text-indent: -9999px;
           }
 
           a.telegram {
@@ -790,6 +793,8 @@ div.doc_team {
             background-position: center;
             background-repeat: no-repeat;
             margin-right: 10px;
+            overflow: hidden;
+            text-indent: -9999px;
           }
 
           a.twitter {
@@ -801,6 +806,8 @@ div.doc_team {
             background-position: center;
             background-repeat: no-repeat;
             margin-right: 10px;
+            overflow: hidden;
+            text-indent: -9999px;
           }
         }
       }
@@ -833,6 +840,8 @@ div.doc_team {
             background-position: center;
             background-repeat: no-repeat;
             margin-right: 10px;
+            overflow: hidden;
+            text-indent: -9999px;
           }
 
           a.telegram {
@@ -844,6 +853,8 @@ div.doc_team {
             background-position: center;
             background-repeat: no-repeat;
             margin-right: 10px;
+            overflow: hidden;
+            text-indent: -9999px;
           }
 
           a.twitter {
@@ -855,6 +866,8 @@ div.doc_team {
             background-position: center;
             background-repeat: no-repeat;
             margin-right: 10px;
+            overflow: hidden;
+            text-indent: -9999px;
           }
         }
       }

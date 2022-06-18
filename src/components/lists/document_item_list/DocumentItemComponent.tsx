@@ -15,6 +15,46 @@ function DocumentItem({
   commingSoonText: string;
 }) {
   const description = document.documents as [];
+  const mainPathEnglish = "../../../assets/documents/english-documents/";
+
+  const handleFileLocation = (document_title) => {
+    switch (document_title) {
+      case "cyberpaper_inu": {
+        return require("../../../assets/documents/english-documents/cyberpaper_inu.pdf");
+      }
+      case "aboutus_inu": {
+        return require("../../../assets/documents/english-documents/aboutus_inu.pdf");
+      }
+      case "origins_inu": {
+        return require("../../../assets/documents/english-documents/origins_inu.pdf");
+      }
+      case "cyber-creditors": {
+        return require("../../../assets/documents/english-documents/the-cyber-creditors_EN_V1.10.pdf");
+      }
+      case "cyber-creditors-lite": {
+        return require("../../../assets/documents/english-documents/cyberpaper-lite_EN_V1.10.pdf");
+      }
+      case "cyber-credit-tokenomics": {
+        return require("../../../assets/documents/english-documents/cyber-credit-tokenomics_EN_V1.10.pdf");
+      }
+      case "cybr-contract-functions": {
+        return require("../../../assets/documents/english-documents/cyber-contract-functions_EN_V1.10.pdf");
+      }
+      case "import-cybr-token": {
+        return require("../../../assets/documents/english-documents/import-cybr-token_EN_V1.10.pdf");
+      }
+
+      case "the-cybr-enterprise": {
+        return require("../../../assets/documents/english-documents/the-cyber-enterprise_EN_V1.10.pdf");
+      }
+      case "CyberPaper-Lite": {
+        return require("../../../assets/documents/english-documents/cyberpaper-lite_EN_V1.10.pdf");
+      }
+      default: {
+        return require("../../../assets/documents/english-documents/the-cyber-enterprise_EN_V1.10.pdf");
+      }
+    }
+  };
   return (
     <div key={document.name}>
       <div className="doc_category">
@@ -35,7 +75,7 @@ function DocumentItem({
               return (
                 <div className="doc_item" key={value.title}>
                   <DocumentItemDescription
-                    english={require("../../../assets/documents/english-documents/cyber-contract-functions_EN_V1.10.pdf")}
+                    english={handleFileLocation(value.document_title)}
                     spanish={null}
                     arabic={null}
                     chinese={null}

@@ -48,31 +48,43 @@ function TokenInfo() {
           <img
             src={require("../../assets/home_harmony/harmony.webp")}
             className="tkn_images tkn_harmony"
+            width="1"
+            height="1"
             alt=""
           />
           <img
             src={require("../../assets/home_harmony/box1.webp")}
             className="tkn_images tkn_box1"
+            width="1"
+            height="1"
             alt=""
           />
           <img
             src={require("../../assets/home_harmony/box2.webp")}
             className="tkn_images tkn_box2"
+            width="1"
+            height="1"
             alt=""
           />
           <img
             src={require("../../assets/home_harmony/box3.webp")}
             className="tkn_images tkn_box3"
+            width="1"
+            height="1"
             alt=""
           />
           <img
             src={require("../../assets/home_harmony/box4.webp")}
             className="tkn_images tkn_box4"
+            width="1"
+            height="1"
             alt=""
           />
           <img
             src={require("../../assets/home_harmony/box5.webp")}
             className="tkn_images tkn_box5"
+            width="1"
+            height="1"
             alt=""
           />
         </div>

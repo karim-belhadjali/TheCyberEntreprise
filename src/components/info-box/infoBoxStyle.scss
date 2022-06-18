@@ -4,10 +4,9 @@ div.page_text {
   overflow: auto;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1rem;
-  margin-bottom: 1em;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-color: #0e0e14;
-
   color: white;
 
   div.pt_info {
@@ -49,7 +48,4 @@ div.page_text {
 }
 
 @media only screen and (max-width: 900px) {
-  div.page_text {
-    margin-bottom: 70px;
-  }
 }

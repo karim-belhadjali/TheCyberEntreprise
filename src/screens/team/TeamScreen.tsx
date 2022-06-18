@@ -114,19 +114,25 @@ function TeamScreen() {
                   className="discord"
                   target="_blank"
                   rel="nofollow noindex noopener"
-                ></a>
+                >
+                  Discord
+                </a>
                 <a
                   href="#"
                   className="telegram"
                   target="_blank"
                   rel="nofollow noindex noopener"
-                ></a>
+                >
+                  Telegram
+                </a>
                 <a
                   href="#"
                   className="twitter"
                   target="_blank"
                   rel="nofollow noindex noopener"
-                ></a>
+                >
+                  Twitter
+                </a>
               </div>
             </div>
             <div className="filler_text">
@@ -139,19 +145,25 @@ function TeamScreen() {
                   className="discord"
                   target="_blank"
                   rel="nofollow noindex noopener"
-                ></a>
+                >
+                  Discord
+                </a>
                 <a
                   href="#"
                   className="telegram"
                   target="_blank"
                   rel="nofollow noindex noopener"
-                ></a>
+                >
+                  Telegram
+                </a>
                 <a
                   href="#"
                   className="twitter"
                   target="_blank"
                   rel="nofollow noindex noopener"
-                ></a>
+                >
+                  Twitter
+                </a>
               </div>
               <img src={require("../../assets/team/mdking.webp")} alt="" />
             </div>
@@ -161,6 +173,7 @@ function TeamScreen() {
       <InfoBox
         info={teamPageText.information}
         title={teamPageText.information.title}
+        last={true}
       />
     </div>
   );

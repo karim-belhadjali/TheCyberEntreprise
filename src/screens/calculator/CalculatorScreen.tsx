@@ -179,8 +179,8 @@ function CalculatorScreen({ data }: { data: any }) {
     console.log(currencies);
 
     const calculation =
-      parseFloat(value.replace(/,/g, "")) *
-      (parseFloat(cybrPrice) * currentCurrency);
+      (parseFloat(value.replace(/,/g, "")) * parseFloat(cybrPrice)) /
+      currentCurrency;
 
     const amount = new Intl.NumberFormat("en").format(calculation);
     amount_currency_ref.current.value = amount;
@@ -193,7 +193,8 @@ function CalculatorScreen({ data }: { data: any }) {
 
     const calculation =
       parseFloat(value.replace(/,/g, "")) /
-      (parseFloat(cybrPrice) * currentCurrency);
+      currentCurrency /
+      parseFloat(cybrPrice);
     const amount = new Intl.NumberFormat("en").format(calculation);
     amount_tokens_ref.current.value = amount;
 
@@ -219,30 +220,24 @@ function CalculatorScreen({ data }: { data: any }) {
   };
 
   const getCurrenciesData = async () => {
-    const currencies = await getcurrency();
-    localStorage.setItem("currencies", JSON.stringify(currencies));
-    setcurrencies(JSON.parse(localStorage.getItem("currencies")!!));
-    localStorage.setItem("last_time_updated", Date.now().toString());
     console.log("getting data from api :");
-    console.log(JSON.parse(localStorage.getItem("currencies")!!));
 
-    //const tokenData = await getTokensInfo();
-    // console.log(tokenData);
+    const currencies = await getcurrency();
+    localStorage.setItem("currencies", currencies);
+    setcurrencies(JSON.parse(localStorage.getItem("currencies")!!));
   };
 
   useEffect(() => {
     calculatorAnimation();
-    console.log(localStorage.getItem("currencies") === null);
-    console.log(lastTimeUpdated(localStorage.getItem("last_time_updated")!!));
+    localStorage.setItem("currencies", JSON.stringify(mockedCurrencies));
+    setcurrencies(JSON.parse(localStorage.getItem("currencies")!!));
 
     if (
       localStorage.getItem("currencies") !== null ||
       lastTimeUpdated(localStorage.getItem("last_time_updated")!!)
     ) {
-      localStorage.setItem("currencies", JSON.stringify(mockedCurrencies));
       getCurrenciesData();
     } else {
-      setcurrencies(JSON.parse(localStorage.getItem("currencies")!!));
       console.log("getting data from cache :");
       console.log(JSON.parse(localStorage.getItem("currencies")!!));
     }
@@ -784,12 +779,15 @@ function CalculatorScreen({ data }: { data: any }) {
                   className="continue_button"
                   onClick={handleCurrencyVisibilty}
                 >
-                  <span className="btn_text_scene_intro">
+                  <span className="btn_text_scene_intro noselect">
                     Select Your Currency
                   </span>
                 </div>
 
-                <div className="continue_button" onClick={handleTokenVisibilty}>
+                <div
+                  className="continue_button noselect"
+                  onClick={handleTokenVisibilty}
+                >
                   <span className="btn_text_scene_intro">
                     Select Your Token
                   </span>
@@ -1268,7 +1266,7 @@ function CalculatorScreen({ data }: { data: any }) {
           </div>
         </div>
       </div>
-      <InfoBox title="Guide" info={CalculatorInfos.information} />
+      <InfoBox title="Guide" info={CalculatorInfos.information} last={true} />
     </>
   );
 }

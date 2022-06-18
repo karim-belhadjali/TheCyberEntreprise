@@ -359,3 +359,22 @@ div.token_info {
     display: none;
   }
 }
+
+@media only screen and (max-width: 450px) {
+  div.token_info_border {
+    width: 100% !important;
+    transform: translateX(0px) !important;
+
+    div.token_info_container {
+      div.token_info_element {
+        div.info_title {
+          font-size: 12px !important;
+        }
+
+        div.info_data {
+          font-size: 12px !important;
+        }
+      }
+    }
+  }
+}

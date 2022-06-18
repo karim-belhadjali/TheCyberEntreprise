@@ -1,3 +1,6 @@
+import { mockedCurrencies } from "src/data/CybrApidData";
+import * as React from "react";
+
 const axios = require("axios");
 
 const currenciess = [
@@ -14,28 +17,42 @@ const currenciess = [
   "NGN",
 ];
 
-const document = { USD: 1 };
-export const getcurrency = async (): Promise<any> => {
+var document = { USD: 1 };
+export const getcurrency = async (): Promise<string> => {
   for await (const currency of currenciess) {
-    const options = {
-      method: "GET",
-      url: "https://api.apilayer.com/exchangerates_data/convert",
-      params: { to: "usd", from: currency, amount: "1" },
-      headers: {
-        apikey: "lo6q00YmwAxJkAnT3f9FebN8S5XhWZTO",
-      },
-    };
-    const response = await axios.request(options);
-    const data = response.data;
-    document[currency] = await data.info.rate;
+    try {
+      const options = {
+        method: "GET",
+        url: "https://api.apilayer.com/exchangerates_data/convert",
+        params: { to: currency, from: "usd", amount: "1" },
+        headers: {
+          apikey: "lo6q00YmwAxJkAnT3f9FebN8S5XhWZTO",
+        },
+      };
+      const response = await axios.request(options);
+      localStorage.setItem("last_time_updated", Date.now().toString());
+      const data = response.data;
+      document[currency] = await data.info.rate;
+    } catch (err: any) {
+      if (err.response) {
+        // The client was given an error response (5xx, 4xx)
+        console.log("Currency Api : Response Error");
+        console.log(JSON.stringify(err));
+        document = mockedCurrencies;
+      } else {
+        console.log("Currency Api : Request Error");
+        console.log(JSON.stringify(err));
+        document = mockedCurrencies;
+      }
+    }
   }
 
-  return document;
+  return JSON.stringify(document);
 };
 
 export const getTokensInfo = async (): Promise<any> => {
   const response = await fetch(
-    "https://api.nomics.com/v1/currencies/ticker?key=217cc0ff59219b2b4913f0cf503d51e35cab8e08&ids=SHIB,FLOKI&interval=1d"
+    "https://api.nomics.com/v1/currencies/ticker?key=217cc0ff59219b2b4913f0cf503d51e35cab8e08&ids=SHIB,FLOKI&interval=1d954"
   );
   const data = response.json;
   console.log(data);
@@ -55,17 +72,15 @@ export const getCybrTokenInfo = async (): Promise<any> => {
       },
     };
     const response = await axios.request(options);
-
-    console.log(JSON.stringify(response));
+    return response.data;
 
     // Work with the response...
   } catch (err: any) {
     if (err.response) {
       // The client was given an error response (5xx, 4xx)
-    } else if (err.request) {
-      // The client never received a response, and the request was never left
-    } else {
-      // Anything else
+      console.log("cyber APi : error");
+
+      console.log(JSON.stringify(err));
     }
   }
 };

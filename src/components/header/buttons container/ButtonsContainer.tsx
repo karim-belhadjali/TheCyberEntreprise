@@ -25,31 +25,37 @@ function ButtonsContainer({ menuClick }: { menuClick: any }) {
 
       <a
         href="https://shibaswap.com/#/"
-        rel="nofollow noindex noopener"
+        rel="nofollow noindex noreferrer noopener"
+        target="_blank"
         className="mob_shibaswap_link"
       >
         <img
           src={require("../../../assets/png/shibaswap.png")}
           width="50"
           height="50"
-          alt=""
+          alt="Buy CYBR on ShibaSwap"
         />
       </a>
 
       <a
-        href="https://app.uniswap.org/#/swap?chain=mainnet"
-        rel="nofollow noindex noopener"
+        href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x438a6E42813118548C065336844239b63ad4Fcfd&use=V3&chain=mainnet"
+        rel="nofollow noindex noreferrer noopener"
+        target="_blank"
         className="mob_uniswap_link"
       >
-        <img src={uniswap} width="60" height="60" alt="" />
+        <img src={uniswap} width="60" height="60" alt="Buy CYBR on Uniswap" />
       </a>
 
       <div className="shibaswap_buy">
-        <a href="#shiba" target="_blank" rel="nofollow noindex noopener">
+        <a
+          href="https://shibaswap.com/#/"
+          target="_blank"
+          rel="nofollow noindex noreferrer noopener"
+        >
           <img
             src={require("../../../assets/png/shibaswap.png")}
             className="shiba_logo_btn"
-            alt=""
+            alt="Buy CYBR on ShibaSwap"
           />
           <span className="text shibaswap_text">
             <span className="text_opacity">SHIBASWAP</span>
@@ -64,7 +70,12 @@ function ButtonsContainer({ menuClick }: { menuClick: any }) {
 
       <div className="buttons_container_bg">
         <span>
-          <img src={uniswapp} width="100%" height="100%" alt="" />
+          <img
+            src={uniswapp}
+            width="100%"
+            height="100%"
+            alt="Buy CYBR on Uniswap"
+          />
         </span>
       </div>
       <div className="buttons_container">
@@ -75,13 +86,18 @@ function ButtonsContainer({ menuClick }: { menuClick: any }) {
           className="uniswap_btn"
         >
           <a
-            href="https://app.uniswap.org/#/swap?chain=mainnet"
+            href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x438a6E42813118548C065336844239b63ad4Fcfd&use=V3&chain=mainnet"
             target="_blank"
             rel="noopener noreferrer"
             className="mob_uniswap_link"
           >
             <span className="image">
-              <img src={uniswap} width="100%" height="100%" alt="" />
+              <img
+                src={uniswap}
+                width="100%"
+                height="100%"
+                alt="Buy CYBR on Uniswap"
+              />
             </span>
             <span className="text">
               <span className="text_opacity">UNISWAP</span>
