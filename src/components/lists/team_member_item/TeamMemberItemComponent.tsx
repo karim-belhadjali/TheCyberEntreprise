@@ -36,30 +36,36 @@ function TeamMember({
         </div>
 
         <div className="person_contact">
-          <a
-            href="#"
-            className="discord"
-            target="_blank"
-            rel="nofollow noindex noopener"
-          >
-            Discord
-          </a>
-          <a
-            href="#"
-            className="telegram"
-            target="_blank"
-            rel="nofollow noindex noopener"
-          >
-            Telegram
-          </a>
-          <a
-            href="#"
-            className="twitter"
-            target="_blank"
-            rel="nofollow noindex noopener"
-          >
-            Twitter
-          </a>
+          {member.discord_link && (
+            <a
+              href={member.discord_link}
+              className="discord"
+              target="_blank"
+              rel="nofollow noindex noreferrer noopener"
+            >
+              Discord
+            </a>
+          )}
+          {member.telegram_link && (
+            <a
+              href={member.telegram_link}
+              className="telegram"
+              target="_blank"
+              rel="nofollow noindex noreferrer noopener"
+            >
+              Telegram
+            </a>
+          )}
+          {member.twitter_link && (
+            <a
+              href={member.twitter_link}
+              className="twitter"
+              target="_blank"
+              rel="nofollow noindex noreferrer noopener"
+            >
+              Twitter
+            </a>
+          )}
         </div>
 
         <div className="person_tags">

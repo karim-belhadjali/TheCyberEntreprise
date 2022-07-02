@@ -17,7 +17,7 @@ export const addBracket = (elem, position) => {
 };
 
 export const makeTextSpans = (elem, elemText) => {
-  let linkElem = elem.querySelector("a");
+  let linkElem = elem.querySelector("div");
 
   linkElem.innerHTML = "";
 

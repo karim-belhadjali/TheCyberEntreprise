@@ -1,27 +1,49 @@
 import React, { useEffect } from "react";
 
-import { DocumentsInfos } from "src/assets/text/InfoTexts";
-import CreditCard from "src/components/animated images/Cybr Credit Card/CreditCardComponent";
-import CybrInu from "src/components/animated images/cybr Inu/CybrInuImageComponent";
-import CybrScroll from "src/components/animated images/cybr Scroll/CybrScrollComponent";
-import DocumentImage from "src/components/animated images/Document image/DocumentImageComponent";
-import InfoBox from "src/components/info-box/InfoBoxComponent";
-import { RoadmapInfos } from "src/assets/text/InfoTexts";
-import DocumentItem from "src/components/lists/document_item_list/DocumentItemComponent";
+import { DocumentsInfos, TeamPageInfos } from "src/assets/text/InfoTexts";
+import { SocialAnimations } from "src/animations/documents";
+import { hoverBackgroundTable } from "src/animations/documents";
 
 import "./DocumentsScreenStyle.scss";
-import { SocialAnimations } from "src/animations/team";
-import { hoverBackgroundTable } from "src/animations/documents";
-import ProjectRun from "src/components/animated images/projectRun/ProjectRunComponent";
+import DocumentItem from "src/components/lists/document_item_list/DocumentItemComponent";
+import DocumentImage from "src/components/animated images/Document image/DocumentImageComponent";
+import CybrScroll from "src/components/animated images/cybr Scroll/CybrScrollComponent";
+import Run from "src/components/run/ProjectRunComponent";
 import ProjectHome from "src/components/animated images/ProjectHome/ProjectHomeComponenet";
+import CreditCard from "src/components/animated images/Cybr Credit Card/CreditCardComponent";
+import CybrInu from "src/components/animated images/cybr Inu/CybrInuImageComponent";
+import InfoBox from "src/components/info-box/InfoBoxComponent";
+import { useParams } from "react-router-dom";
+import { handleUrlLanguage } from "src/utility/globalUtlities";
 
-function DocumentsScreen({ data }: { data: any }) {
+function DocumentsScreen({
+  data,
+  language,
+  urlLanguages,
+}: {
+  data: any;
+  language: any;
+  urlLanguages: any;
+}) {
+  const DocumentPageText = DocumentsInfos;
+  const teamPageText = TeamPageInfos;
+
+  const lastElement = (index): boolean => {
+    if (DocumentPageText.information.length - 1 === index) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  const { urlLanguage } = useParams();
+  const selectedLanguage = handleUrlLanguage(urlLanguage);
   useEffect(() => {
     SocialAnimations();
     hoverBackgroundTable();
-  }, []);
+    urlLanguages(selectedLanguage);
+  }, [urlLanguages, selectedLanguage]);
   return (
-    <>
+    <div>
       <div className="documents">
         <div className="documents_container">
           <div className="doc_title">Document Page</div>
@@ -34,6 +56,7 @@ function DocumentsScreen({ data }: { data: any }) {
             commingSoon={false}
             commingSoonText=""
             key="TheCyberEnterprise"
+            last={false}
           />
 
           <DocumentItem
@@ -42,20 +65,23 @@ function DocumentsScreen({ data }: { data: any }) {
             key="Cyber_Token"
             commingSoonText=""
             commingSoon={false}
+            last={false}
           />
           <DocumentItem
             document={DocumentsInfos.Project_Run}
-            imgComponent={<ProjectRun />}
+            imgComponent={<Run />}
             key="Project Run"
-            commingSoonText="Phase 1 coming in July."
+            commingSoonText="Introduction coming in June"
             commingSoon={true}
+            last={false}
           />
           <DocumentItem
             document={DocumentsInfos.Project_Home}
             imgComponent={<ProjectHome />}
             key="Project_Home"
-            commingSoonText="Phase 1 coming in June."
+            commingSoonText="Introduction coming in July"
             commingSoon={true}
+            last={false}
           />
           <DocumentItem
             document={DocumentsInfos.Cyber_Creditors_Token}
@@ -63,6 +89,7 @@ function DocumentsScreen({ data }: { data: any }) {
             key="Cyber_Creditors_Token"
             commingSoonText=""
             commingSoon={false}
+            last={false}
           />
           <DocumentItem
             document={DocumentsInfos.Cyber_Inu}
@@ -70,11 +97,12 @@ function DocumentsScreen({ data }: { data: any }) {
             commingSoonText=""
             key="Cyber_Inu"
             commingSoon={false}
+            last={true}
           />
         </div>
       </div>
 
-      <div className="doc_team last_page_text">
+      <div className="doc_team">
         <div className="doc_team_thanks">
           <div className="doc_title align_left">
             {DocumentsInfos.special_thanks.title}
@@ -93,9 +121,8 @@ function DocumentsScreen({ data }: { data: any }) {
               <div className="thanks_name_el">Daniel D</div>
 
               <div className="thanks_name_el">I Love Gas</div>
-
-              <div className="thanks_name_el">Marzopiens</div>
               <div className="thanks_name_el">I Love Gas</div>
+              <div className="thanks_name_el">Marzopiens</div>
               <div className="thanks_name_el">Stevenon</div>
               <div className="thanks_name_el">Rebel77</div>
             </div>
@@ -113,13 +140,14 @@ function DocumentsScreen({ data }: { data: any }) {
               <div className="thanks_language_el">
                 {DocumentsInfos.special_thanks.arabic}
               </div>
+              <div className="thanks_language_el">
+                {DocumentsInfos.special_thanks.dutch}
+              </div>
 
               <div className="thanks_language_el">
                 {DocumentsInfos.special_thanks.spanish}
               </div>
-              <div className="thanks_language_el">
-                {DocumentsInfos.special_thanks.dutch}
-              </div>
+
               <div className="thanks_language_el">
                 {DocumentsInfos.special_thanks.italic}
               </div>
@@ -139,7 +167,7 @@ function DocumentsScreen({ data }: { data: any }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              I love Gas
+              I Love Gas
             </a>
             {DocumentsInfos.Join_team.content_second}
             <a
@@ -158,29 +186,34 @@ function DocumentsScreen({ data }: { data: any }) {
 
           <div className="filler">
             <div className="first_image">
-              <img src={require("../../assets/team/gas.webp")} alt="" />
+              <img
+                src={require("../../assets/team/gas.webp")}
+                height="1"
+                width="1"
+                alt=""
+              />
               <div className="filler_contact">
                 <a
-                  href="#"
+                  href={teamPageText.sections[3].members[0].discord_link}
                   className="discord"
                   target="_blank"
-                  rel="nofollow noindex noopener"
+                  rel="nofollow noindex noreferrer noopener"
                 >
                   Discord
                 </a>
                 <a
-                  href="#"
+                  href={teamPageText.sections[3].members[0].telegram_link}
                   className="telegram"
                   target="_blank"
-                  rel="nofollow noindex noopener"
+                  rel="nofollow noindex noreferrer noopener"
                 >
                   Telegram
                 </a>
                 <a
-                  href="#"
+                  href={teamPageText.sections[3].members[0].twitter_link}
                   className="twitter"
                   target="_blank"
-                  rel="nofollow noindex noopener"
+                  rel="nofollow noindex noreferrer noopener"
                 >
                   Twitter
                 </a>
@@ -192,36 +225,52 @@ function DocumentsScreen({ data }: { data: any }) {
             <div className="second_image">
               <div className="filler_contact">
                 <a
-                  href="#"
+                  href={teamPageText.sections[3].members[1].discord_link}
                   className="discord"
                   target="_blank"
-                  rel="nofollow noindex noopener"
+                  rel="nofollow noindex noreferrer noopener"
                 >
                   Discord
                 </a>
                 <a
-                  href="#"
+                  href={teamPageText.sections[3].members[1].telegram_link}
                   className="telegram"
                   target="_blank"
-                  rel="nofollow noindex noopener"
+                  rel="nofollow noindex noreferrer noopener"
                 >
                   Telegram
                 </a>
                 <a
-                  href="#"
+                  href={teamPageText.sections[3].members[1].twitter_link}
                   className="twitter"
                   target="_blank"
-                  rel="nofollow noindex noopener"
+                  rel="nofollow noindex noreferrer noopener"
                 >
                   Twitter
                 </a>
               </div>
-              <img src={require("../../assets/team/marzo.webp")} alt="" />
+              <img
+                src={require("../../assets/team/marzo.webp")}
+                height="1"
+                width="1"
+                alt=""
+              />
             </div>
           </div>
         </div>
       </div>
-    </>
+
+      {DocumentPageText.information.map((section, index) => {
+        return (
+          <InfoBox
+            info={section}
+            title={section.title}
+            key={section.title}
+            last={lastElement(index)}
+          />
+        );
+      })}
+    </div>
   );
 }
 

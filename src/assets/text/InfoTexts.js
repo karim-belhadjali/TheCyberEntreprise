@@ -1,7 +1,7 @@
 export const RoadmapInfos = {
   color_key: {
-    completed_tasks: "completed_tasks",
-    In_progress: "In progress",
+    completed_tasks: "Completed Tasks",
+    In_progress: "In Progress",
     Planning_Phase: "Planning Phase",
   },
   number_key: {
@@ -11,51 +11,56 @@ export const RoadmapInfos = {
     T4_Symbiotic_project: "T4: Symbiotic project",
   },
   current_Quarter: {
-    name: "Quarter 2 April 1st - June 30th 2022",
+    name: "Quarter 2",
+    date: "April 1st - June 30th",
+    year: "2022",
     Completed_Tasks: [
       {
         task_1: "T3: New V3 Custom Contract",
         task_2: "T3: New Cyber Website",
-        task_3: " T2: Collected Marketing Data",
-        task_4: " T1: Banners For Marketing",
+        task_3: "T2: Collected Marketing Data",
+        task_4: "T2: Decentralized Team Scaling",
         task_5: "T1: Old Etherscan Migrated",
         task_6: "T1: New Etherscan Updated",
         task_7: "T1: Shill Formats",
+        task_8: "T1: Banners For Marketing",
       },
     ],
     In_Progress: [
       {
-        task_1: "T4: Project Home",
-        task_2: "T3: ShibaSwap",
-        task_3: "T3: Project Run",
-        task_4: "T2: Advertising",
-        task_5: "T2: Decentralized Team Scaling",
+        task_1: "T3: ShibaSwap Plan",
+        task_2: "T2: Peer to Peer Advertising",
+        task_3: "T2: Spanish Documentation",
       },
     ],
     Planning_Phase: [
       {
-        task_1: "T3: Project Home Expansion",
-        task_2: "T3: Project Run Expansion",
-        task_3: "T3: Polygon Bridge",
-        task_4: "T2: CoinGecko",
-        task_5: "T2: CoinMarketCap",
+        task_1: "T3: ShibaSwap Liquidity",
+        task_2: "T3: Project Run Introdution",
+        task_3: "T2: CG & CMC Listing Formats",
       },
     ],
   },
-  other_Quarter_1: {
-    name: "Quarter 3    July 1st - August 31st   2022",
-    description:
-      "The goal for this quarter is to further improve the user experience whilst on the Cyber Enterprise Website, and provide Cybernators their first NFTs utility.",
-  },
-  other_Quarter_2: {
-    name: "Quarter 4   October 1st - December 31st  2022",
-    description:
-      "The goal for this quarter is to prioritise the creation of further utilities for Cyber beyond first what was previously created and achieved.",
-  },
   other_Quarter_3: {
-    name: "Quarter 1January 1st - March 31st 2023",
+    name: "Quarter 3",
+    date: "July 1st - September 30th",
+    year: "2022",
     description:
-      "The goal for this quarter is to look into registering as a legal entity within the borders of the EU and creating a transnational cooperative.",
+      "The goal for this quarter includes, but is not limited to, further continuation with ShibaSwap initiatives such as woofable pairing, Project Run Phase 1 & 2, and introduction of Project Home Phase 1 & Phase 2. In addition, micro website updates will also take place during this time.",
+  },
+  other_Quarter_4: {
+    name: "Quarter 4",
+    date: "October 1st - December 31st",
+    year: "2022",
+    description:
+      "The initiative for this quarter includes, but is not limited to, the creation of further utilities for both Cyber (CYBR) via Website updates, Polygon Bridge, Project Run Phase 3, and the start of the redevelopment of the Cybernator NFTs. An NFT contract mitigating OpenSea control over token IDs.",
+  },
+  other_Quarter_1: {
+    name: "Quarter 1 ",
+    date: "January 1st - March 31st",
+    year: "2023",
+    description:
+      "The intent for this quarter includes, but is not limited to,  supporting our decentralized exchange, decentralized application, or decentralized marketplace. In addition, upscaling Project Home is needed for continuing with DeFi ecosystem expansion.",
   },
 
   information: {
@@ -145,25 +150,29 @@ export const CalculatorInfos = {
 export const DocumentsInfos = {
   title: "Document Page",
   TheCyberEnterprise: {
-    name: "the Cyber Enterprise",
+    name: "The Cyber Enterprise",
     documents: [
       {
         title: "CyberEnterprise",
         content:
           "The CyberEnterprise is our introductory PDF of documentation that is here to welcome each and every person to our project and what we're about. The piece is intended to be short and sweet, providing oversight of what the Cyber Enterprise oversight is and what you can expect from us. A definition explaining what types of Tier Projects there are in our ever-growing and developing ecosystem can be seen with a complimentary example.",
         document_title: "the-cybr-enterprise",
+        present: true,
       },
       {
         title: "CyberPaper-Lite",
         content:
           "The CyberPaper-Lite is a shortened version of the CyberPaper. It is our introductory PDF of how the Cyber (CYBR) token works in the Cyber World ecosystem. A brief description explaining the native token in our ever-growing and developing ecosystem is given, along with definitions for Tiers. The piece is intended to be a moderate read, easing the reader into the idea of how the token will be used.",
         document_title: "CyberPaper-Lite",
+        present: true,
       },
       {
         title: "CyberPaper",
         content:
           "The CyberPaper is our take on the traditional whitepaper a project presents to its investors. It is an in-depth breakdown and acts in a similar manner to that of something in between a repository and roadmap. The document Cyber token specifications, and the way will be developed along the way",
         document_title: "CyberPaper-Lite",
+        present: false,
+        coming_soon_text: "Coming soon...",
       },
     ],
   },
@@ -175,18 +184,24 @@ export const DocumentsInfos = {
         content:
           "Our Import Token PDF demonstrates how one can import the Cyber (CYBR) token into there wallet so it can be visible to you. The contract address can be taken directly from Etherscan, and this will never change unless a migration is conducted. If you ever have any issues, feel free to reach out to the team on any of our socials.",
         document_title: "import-cybr-token",
+        present: true,
       },
       {
         title: "Cyber Contract Functions",
         content:
           "The Cyber Contract Functions PDF is a complete list of all the the functions within the contract. It provides a brief description of all 48 read functions, and also all 34 write functions that can be signed off / conducted by the contract creator. All of the functions, including the contract code itself, can be seen, and are viewable on Etherscan.",
         document_title: "cybr-contract-functions",
+        present: true,
+        coming_soon_text: "Coming in June",
       },
       {
         title: "Cyber Contract Breakdown",
         content:
           "The Contract Breakdown PDF takes a closer look at the Cyber (CYBR) tokens custom smart contract. It provides a deep description of all 48 read functions, and also all 34 write functions and the reason why we decided to . All of the functions, including the contract code itself, can be seen, and are viewable on Etherscan. Keep in mind that there is a reason for each write function and they also emit an event live on the blockchain.",
         document_title: "cybr-contract-functions",
+        present: false,
+        coming_soon_text: "Coming soon...",
+        last: true,
       },
     ],
   },
@@ -204,18 +219,21 @@ export const DocumentsInfos = {
         content:
           "The Cyber Credit-Tokenomics documentation breaks down the different economic functions implemented with the Cyber Creditors token, Cyber Credit (CYBRC). The initial supply along with the distribution of the token can be located within this document. It also goes over the ICO phases that will take place and how to participate in them. One of the main functions, token taxes, is discussed and an explanation of how these taxes will change, and be used over time. Examples of bot attacks and anti-bot mechanisms, the same mechanisms used for the Cyber (CYBR) token contract, can also be located within this document.",
         document_title: "cyber-credit-tokenomics",
+        present: true,
       },
       {
         title: "Cyber Creditors - LitePaper",
         content:
           "The Cyber Creditors-Lite is a shortened version of the Cyber Creditors document. It is the first introduction to this future Decentralised Application (DApp) concept, currently known as Cyber Creditors. This is a Tier 4 Symbiotic Project that the Cyber Enterprise intends to launch on both ETH and BSC how the Credit token will be a BEP-20. Specifically, the stages of how this platform will be created and released alongside the token. With the addition of how it shall interact with the Cyber(CYBR) token and Cyber Enterprise ecosystem on a base level.",
         document_title: "cyber-creditors-lite",
+        present: true,
       },
       {
         title: "Cyber Creditors",
         content:
           "The Cyber Creditors is a complete breakdown of the Cyber Creditors platform. The keys areas found within this 11-page document are the current system in play; the Cyber Creditors structure breakdown; fees that will be on the platform; a complete breakdown of how the Cyber Creditors will provide benefit to the Cyber (CYBR) token/ecosystem; the ICO presales that shall take place; and an index of terminology that is used throughout the document. Multiple images are used to help the reader envision what is being explained, including venn diagrams, pie charts, and more. The figures presented in this document are susceptible to change as we continue to revise and get closer to this initiative.",
         document_title: "cyber-creditors",
+        present: true,
       },
     ],
   },
@@ -227,18 +245,21 @@ export const DocumentsInfos = {
         content:
           "The origins document was originally designed for the initial project, Cyber Inu. The intent of this piece of writing was to demonstrate a bit of backstory and how the idea came about, starting back on August 7th. As the project has developed a lot since then, this document should simply be viewed as a part of the Cyber Enterprise history.",
         document_title: "origins_inu",
+        present: true,
       },
       {
         title: "About Us",
         content:
           "The About Us document was originally designed for the initial project, Cyber Inu. The intent of this piece of writing was to give some insight into the development journey in creating the initial concept, mascot, and contract testing. The items presented in this document pre-date the initial launch of the Cyber Inu project by a few months with items such as sketches and the initial test launch. As the project has developed a lot since then, this document should simply be viewed as a part of the Cyber Enterprise history.",
         document_title: "aboutus_inu",
+        present: true,
       },
       {
         title: "Cyber Inu WhitePaper",
         content:
           "The Cyber Inu WhitePaper was originally designed for the initial project, Cyber Inu. The intent of this piece of writing was to provide investors with information regarding the Cyber Inu project and what exactly we were trying to develop at that point in time. The WhitePaper was more of a descriptive and creative piece that portrayed the vision of the project as opposed to specifics as this was created still early on. Based on the feedback provided from this document, we were then able to take that information and improve future documents for the Cyber Enterprise.",
         document_title: "cyberpaper_inu",
+        present: true,
       },
     ],
   },
@@ -257,10 +278,90 @@ export const DocumentsInfos = {
   Join_team: {
     title: "Join the International Team!",
     content_first:
-      "To become a translator today and help DeFine our Future please contact our Ambassadors, lead FLambo I LGas or Marzo. Contacting these team members is the quickest way to establish a line of communication and get situated within the international team. Upon reaching out, you will get invited into a specific language and group channel where you have the option to either become a translator, language strategist, or even ambassador depending on the language. If reaching out to either of these 2 members has proven difficult or there has been some sort of communication issue, you are also welcome to message on any of the Cyber Enterprise official socials. Please tag a team member that is online or administrator when doing so, or use our implemented ticket system within the Discord.",
+      "To become a translator today and help DeFine our Future please contact our Ambassadors, lead FLambo",
+    content_second: "or",
+    content_third:
+      ". Contacting these team members is the quickest way to establish a line of communication and get situated within the international team. Upon reaching out, you will get invited into a specific language and group channel where you have the option to either become a translator, language strategist, or even ambassador depending on the language. If reaching out to either of these 2 members has proven difficult or there has been some sort of communication issue, you are also welcome to message on any of the Cyber Enterprise official socials. Please tag a team member that is online or administrator when doing so, or use our implemented ticket system within the Discord.",
     content_filler:
       "If you are interested in joining the Cyber International team or becoming a language ambassador today, feel free to reach out to our Ambassadors.",
   },
+  information: [
+    {
+      title: "Smart Contract",
+      sections: [
+        {
+          title: "What is a Smart Contract?",
+          content:
+            "A smart contract is a reusable snippet of code that a developer publishes into a self-executing contract with the terms of use and agreement for entity interaction directly written into the code. The published code exists across a decentralized network, with the code controlling the executable events and transactions. Since developers can write arbitrary executable code, applications such as games, marketplaces, financial instruments, etc. once paired with the published code are often called DApps (decentralized applications).",
+        },
+        {
+          title: "Why is a smart contract important?",
+          content:
+            "Our smart contracts are written in Solidity, which is native to the Ethereum blockchain. Smart contracts have a defined set of allowed behaviors to accomplish a certain function, in our case allowing the trade of the fungible token known as Cyber (CYBR). Trade can never be turned off, and people will always be able to use the token as a monetary form of value by giving it utilities inside the Enterprise ecosystem. In the future, dependent on the initiative, the programming language in which the smart contracts are written may vary.",
+        },
+        {
+          title: "What is a Contract Address on Ethereum?",
+          content:
+            "The contract address is the outcome of a hash algorithm that represents the smart contract with a unique identifier, which can be publicly viewed on the Ethereum blockchain. An exemplary application to provide the view is Etherscan. ",
+        },
+        {
+          title: "How does the Cyber (CYBR) smart contract work?",
+          content:
+            "The Cyber (CYBR) token smart contract has anti-inflation measures, bot mitigation, and information emitters for event transparency. The contract includes 48 read functions that equip anyone with a treasury of accessible information, and 34 write functions allowing executable actions to take place within the contract. Most of the write functions can only be conducted via the creator wallet. ",
+        },
+      ],
+    },
+    {
+      title: "WhitePaper",
+      sections: [
+        {
+          title: "What is a whitepaper in Crypto?",
+          content:
+            "A whitepaper for Crypto is when a project, company, or enterprise, writes out all the crucial details of the given entity within a document. This file typically contains details regarding commercial, technical, or financial information about the specific endeavor. With the provided information, an individual has a deep overview of what their investment is aiming towards, the targeted market, and potential risks.",
+        },
+        {
+          title: "Why write a whitepaper?",
+          content:
+            "A whitepaper can be defined as the file harboring two major aspects of a crypto project, its purpose, and the technology behind it. The document provides an in-depth overview, creating a knowledge base for investors about the project. Thus, this document allows potential investors to make educated decisions, as well as give insight into the greater vision.",
+        },
+        {
+          title: "A Whitepaper vs Article ",
+          content:
+            "Articles typically come out every 2-4 weeks and provide general updates of what tasks are at hand, and how they are going. A whitepaper see's minimal change once it's released and is broadly generalized as opposed to micro initiatives that are or have taken place.",
+        },
+        {
+          title: "A Whitepaper vs Report",
+          content:
+            "A report typically comes out each quarter and presents the general analysis of that quarter, the successes, and improvements that must carry over to the next. These happen at the end of each quarter and are updated with specifications also presented within the roadmap. A whitepaper see's minimal change once it's released and is broadly generalized as opposed to macro initiatives that are or have taken place.",
+        },
+      ],
+    },
+    {
+      title: "LitePaper",
+      sections: [
+        {
+          title: "What is a LitePaper?",
+          content:
+            "A LitePaper in Crypto is a brief summary of the WhitePaper. This file contains a surface overview of commercial, technical, or financial information about the specific project. This foundational info allows an individual to overview what his investment is working towards, the targeted market, and potential risks.",
+        },
+        {
+          title: "Why write a LitePaper?",
+          content:
+            "A LitePaper can be defined as a summative document harboring key points of the project. The document provides an informative knowledge base to investors about the project, allowing them to make educated decisions and helps demonstrate the aligned presented vision. ",
+        },
+        {
+          title: "A LitePaper vs WhitePaper",
+          content:
+            "The LitePaper is a shorter read than the WhitePaper, but still consists of all the major components. The number of details is limited when compared to a WhitePaper.",
+        },
+        {
+          title: "Where can I find the LitePaper",
+          content:
+            "Our whitepaper can be found above in varying languages labeled simply as CyberPaper-Lite. It can be viewed within the browser or downloaded and shared.",
+        },
+      ],
+    },
+  ],
 };
 
 export const PressReleaseInfos = {
@@ -420,7 +521,7 @@ export const PressReleaseInfos = {
         {
           title: "Why a press release is written?",
           content:
-            "Typically a press release is used to address developments taking place within the Cyber Enterprise. It is there as an informative piece accessible to every individual, and it doesn’t matter when they are a Cyber currency holder or not.",
+            "Typically a press release is used to address developments taking place within the Cyber Enterprise. It is there as an informative piece accessible to every individual, and it doesn't matter when they are a Cyber currency holder or not.",
         },
         {
           title: "Why a press release is important?",
@@ -571,6 +672,9 @@ export const TeamPageInfos = {
           name: "Odysseus",
           discord_name: "Voice_of_Odysseus",
           timeZone: "+2",
+          discord_link: "https://discordapp.com/users/687072938142335035/",
+          telegram_link: "http://t.me/voice_of_odysseus",
+          twitter_link: "https://twitter.com/VoiceOfOdysseus",
           roles: ["Reason", "Cybr Developer", "Founder", "Admin"],
           interactions: ["Cuzzy", "FL I LG", "Tease", "Villspor"],
           description: [
@@ -580,7 +684,11 @@ export const TeamPageInfos = {
         },
         {
           name: "Tease",
-          discord_name: "",
+          discord_name: "Tease",
+          discord_link: "https://discordapp.com/users/854897990069911552/ ",
+          telegram_link: "http://t.me/TEASE0203",
+          twitter_link:
+            "https://twitter.com/tease_0203?s=21&t=1erJ9kYYc3vkV2062IXLLg",
           timeZone: "+2",
           roles: ["Architect", "Cybr Developer", "Coding Lead", "Admin"],
           interactions: ["Karim", "Marzopiens", "Odysseus", "Plums"],
@@ -593,6 +701,10 @@ export const TeamPageInfos = {
           name: "Cuzzy",
           discord_name: "",
           timeZone: "+10",
+          discord_link: "https://discordapp.com/users/843324324643733518/",
+          telegram_link: "http://t.me/cuzzybro",
+          twitter_link:
+            "https://twitter.com/cybr_cuz?s=21&t=1erJ9kYYc3vkV2062IXLLg",
           roles: ["Enforcer", "Cybr Developer", "Pillar Lead", "Admin"],
           interactions: [
             "DarthWhite",
@@ -616,6 +728,9 @@ export const TeamPageInfos = {
           name: "DarthWhite",
           discord_name: "",
           timeZone: "+1",
+          discord_link: "https://discordapp.com/users/675621674154065922/",
+          telegram_link: "http://t.me/darthwhite1",
+          twitter_link: "https://twitter.com/Darthwhite4",
           roles: [
             "Community Lead",
             "Super-Mod",
@@ -633,6 +748,10 @@ export const TeamPageInfos = {
           name: "$CYBR_mdking",
           discord_name: "",
           timeZone: "0",
+          discord_link: "https://discordapp.com/users/845761613621624843/",
+          telegram_link: "http://t/me/CYBR_mdking",
+          twitter_link:
+            "https://twitter.com/cyber_informant?s=21&t=1erJ9kYYc3vkV2062IXLLg",
           roles: [
             "HR & Operations Lead",
             "Information Auditor",
@@ -651,6 +770,10 @@ export const TeamPageInfos = {
           name: "Villspor",
           discord_name: "Villspor",
           timeZone: "+1",
+          discord_link: "https://discordapp.com/users/200170316297797633/",
+          telegram_link: "http://t.me/villspor",
+          twitter_link:
+            "https://twitter.com/villspor?s=21&t=1erJ9kYYc3vkV2062IXLLg",
           roles: [
             "Development & Infrastructure Lead",
             "IT Lead",
@@ -672,6 +795,10 @@ export const TeamPageInfos = {
           name: "Plums",
           discord_name: "Plums",
           timeZone: "-5",
+          discord_link: "https://discordapp.com/users/538930976374652928/",
+          telegram_link: "http://t.me/mikey_likes_it",
+          twitter_link:
+            "https://twitter.com/plums94?s=21&t=1erJ9kYYc3vkV2062IXLLg",
           roles: [
             "Community Team",
             "Community Lead Developer",
@@ -687,6 +814,8 @@ export const TeamPageInfos = {
           name: "Karim",
           discord_name: "",
           timeZone: "+1",
+          discord_link: "https://discordapp.com/users/229738307192356865/",
+          telegram_link: "http://t.me/karimbelhadj1",
           roles: [
             "Development Team",
             "Website Lead Developer",
@@ -704,6 +833,9 @@ export const TeamPageInfos = {
           name: "DanielD",
           discord_name: "DanielD",
           timeZone: "-5",
+          discord_link: "https://discordapp.com/users/330473327850160129/",
+          twitter_link:
+            "https://twitter.com/daniel_d203?s=21&t=1erJ9kYYc3vkV2062IXLLg",
           roles: [
             "Development Team",
             "Run Lead Developer",
@@ -719,6 +851,8 @@ export const TeamPageInfos = {
           name: "KingQuokka",
           discord_name: "KingQuokka",
           timeZone: "+8",
+          discord_link: "https://discordapp.com/users/850632709167644682/",
+          telegram_link: "http://t.me/kingquokka1",
           roles: ["Marketing Team", "Mod", "External Relations"],
           interactions: ["$CYBR_mdking", "Cuzzy", "Karim", "Odysseus"],
           description: [
@@ -731,6 +865,7 @@ export const TeamPageInfos = {
           name: "WNX_PhatedOne",
           discord_name: "WNx_PhatedOne",
           timeZone: "+12",
+          discord_link: "https://discordapp.com/users/510411143123304460/",
           roles: ["Marketing Team", "Mod", "Chinese Ambassador"],
           interactions: ["Cuzzy", "KingQuokka", "Plums", "Ts'ao"],
           description: [
@@ -748,6 +883,10 @@ export const TeamPageInfos = {
           name: "FL I LG",
           discord_name: "FL I LG",
           timeZone: "+1",
+          discord_link: "https://discordapp.com/users/810141997448822824/",
+          telegram_link: "http://t/me/fliigas",
+          twitter_link:
+            "https://twitter.com/i_love_gas?s=21&t=1erJ9kYYc3vkV2062IXLLg",
           roles: [
             "Ambassador Lead",
             "Arabic Ambassador",
@@ -767,6 +906,10 @@ export const TeamPageInfos = {
           name: "Marzopiens",
           discord_name: "Marzopiens",
           timeZone: "-3",
+          discord_link: "https://discordapp.com/users/822974650082394118/ ",
+          telegram_link: "http://t.me/marzopiens",
+          twitter_link:
+            "https://twitter.com/marzopiens?s=21&t=1erJ9kYYc3vkV2062IXLLg",
           roles: ["Spanish Ambassador", "Spanish Team", "Marketing Team"],
           interactions: ["DarthWhite", "FL I LG", "Stevenon", "Tease"],
           description: [
@@ -778,6 +921,9 @@ export const TeamPageInfos = {
           name: "Ts'ao",
           discord_name: "Ts'ao",
           timeZone: "+8",
+          discord_link: "https://discordapp.com/users/927215386917765171/",
+          twitter_link:
+            "https://twitter.com/cj1610595799?s=21&t=1erJ9kYYc3vkV2062IXLLg",
           roles: ["Chinese Ambassador", "Chinese Team", "Marketing Team"],
           interactions: ["DarthWhite", "FL I LG", "WNX_PhatedOne", "Odysseus"],
           description: [
@@ -789,6 +935,10 @@ export const TeamPageInfos = {
           name: "Stevenon",
           discord_name: "Stevenon",
           timeZone: "+2",
+          discord_link: "https://discordapp.com/users/849638414319878145/ ",
+          telegram_link: "http://t.me/stevecybr",
+          twitter_link:
+            "https://twitter.com/cybrsteve92?s=21&t=1erJ9kYYc3vkV2062IXLLg",
           roles: ["Italian Ambassador", "Italian Team", "Marketing Team"],
           interactions: ["DarthWhite", "FL I LG", "Marzopiens", "Odysseus"],
           description: [
@@ -860,4 +1010,183 @@ export const TeamPageInfos = {
   UTC: "UTC Time Zone",
   roles: "Roles",
   interactions: "Interactions",
+};
+
+export const HighlightedTextSVG = {
+  announcement:
+    "Operation Perfect Storm In Progress: Taxes TURNED OFF for limited time, ShibaSwap Initiatives, Project Run, Project Home, and more!",
+  mobileVersion: [
+    "Hello stranger, I am",
+    " The Cyber Inu",
+    " and",
+    " it's",
+    " truly a pleasure to have ",
+    "you ",
+    "here at the New Cyber Enterprise website! Here at the enterprise, we strive in ",
+    "creating an ever-growing",
+    " and developing ",
+    "decentralized ecosystem",
+    ", a one-stop shop, for all your DeFi needs. Creating decentralized applications ",
+    "under the trusted brand, Cyber",
+    ", and providing reassurance to its users is what we're all about.",
+    "Unfortunately, if you see this message it means that you're missing out on one hell of a story. I'd strongly suggest checking us out on a bigger resolution device to get the full experience.",
+  ],
+  hiddenMessage:
+    "The Cyber Inu is in each and every one of you, no matter the age, skill, or experience. One person can make a difference, but a group of people will make a difference. We appreciate everyone that helps. If you never try, we'll never know what we're truly capable of.",
+  intro: {
+    content: [
+      "Hello stranger! I am The Cyber Inu, a Cyberian that came from the future. Quickly, a crypto disaster is about to happen. There isn't much time but remember, only you can help us.",
+      "The Cyber Inu",
+    ],
+    btn_text: "Help you?",
+  },
+  scene1: {
+    content: [
+      "Do you not see what is happening in the world each and every day? Inflation, Isolation, disinformation… I used to have friends like you, good-hearted but blind to the changing world. We were workers at a factory.",
+      "is * in * each and every",
+    ],
+    btn_text: "What happened?",
+  },
+  scene2: {
+    content: [
+      "It was nice in the beginning. To see each one of us becoming happy, working towards greater goals. The sky was blue, birds flew above our heads and we all did as we were told joyfully. I know you would've liked it!",
+      "of * one * you",
+    ],
+    btn_text: "Continue..",
+  },
+  scene3: {
+    content: [
+      "The factory was thriving, and no matter what the challenge was, together we pushed forward. The age of coal was ending, and we had to learn a new skill building solar panels and wind turbines.",
+      "no matter * the * age *, * skill",
+    ],
+    btn_text: "Go on...",
+  },
+  scene4: {
+    content: [
+      "It was either that, or slow production, but we knew with our experience we had it in us to build an eco-friendly place. We wanted to make sure we didn't harm both old and new communities, as we could all be barking to the moon!",
+      "or * experience",
+    ],
+    btn_text: "What went wrong?",
+  },
+  scene5: {
+    content: [
+      "One bad thing after another, the first bots came quick and nobody had time to react. They took us by surprise…",
+      "One",
+    ],
+    btn_text: "What did they do?",
+  },
+  scene6: {
+    content: ["They started taking our products, our hard work…"],
+    btn_text: "Was that it?",
+  },
+  scene7: {
+    btn_text: "Were you prepared?",
+    content: [
+      "We thought it was, but a person from the neighboring factory ran to warn us something even worse was brewing.",
+      "person",
+    ],
+  },
+  scene8: {
+    btn_text: "And then?",
+    content: [
+      "No, they were too quick and can front run most preparations… and they sandwiched us with their guns, forcing us to make more boxes. We had to sacrifice more time, energy, and our wages.",
+      "can",
+    ],
+  },
+  scene9: {
+    btn_text: "That's outrageous!",
+    content: [
+      "They sandwiched us with their guns, forcing us to make more products. Stealing everything we had worked so damn hard for…",
+      "make",
+    ],
+  },
+  scene10: {
+    btn_text: "Did they break your spirits?",
+    content: [
+      "And that's not all! When a worker's morale is low there's a significant difference in productivity, and when the bots saw this they destroyed what we had left. Our factory, our livelihood, our lives.",
+      "a * difference",
+    ],
+  },
+  scene11: {
+    btn_text: "So what did you do?",
+    content: [
+      "If we let them, they have would have truly succeeded and moved on to others. We knew that we couldn't let this continue and something had to be done, but we knew alone we didn't stand a chance.",
+      "but * a ",
+    ],
+  },
+  scene12: {
+    btn_text: "That's great!",
+    content: [
+      "A group of people over the hill heard all the commotion and came to help. It was almost like destiny made our paths meet. We fought back with everything we had, and it was just the support we needed. That day we made a lot of friends.",
+      "group of people",
+    ],
+  },
+  scene13: {
+    btn_text: "How so?",
+    content: [
+      "Yup, we destroyed some and put them on the run buying ourselves some time. I was heavily wounded losing an arm and part of my face during the battle, but my will to fight back grew. Little did I know I was just preparing myself to come back better and stronger.",
+      "will",
+    ],
+  },
+  scene14: {
+    btn_text: "So you gave up?",
+    content: [
+      "Well, we enjoyed our victory but that didn't last long. Everything around us was destroyed and we either had to make a plan or accept defeat…",
+      "make",
+    ],
+  },
+  scene15: {
+    btn_text: "What happened after?",
+    content: [
+      "Of course not, we started cleaning the rubble and brainstormed ideas that would make a difference.",
+      "a difference",
+    ],
+  },
+  scene16: {
+    btn_text: "That's one cool story!",
+    content: [
+      "We repaired the factory and all of us got back to work. There was a need to bring something new to the table.",
+      "We * need",
+    ],
+  },
+  scene17: {
+    btn_text: "That's amazing!",
+    content: [
+      "Oh it doesn't finish there, everyone that came pitched in to make a new and improved factory which really helps. We couldn't have asked for better newfound friends.",
+      "everyone that",
+    ],
+  },
+  scene18: {
+    btn_text: "Robotic parts and Cybernators?",
+    content: [
+      "If you never try, we'll never know what we're truly capable of. The improved factory allowed us to develop robotic parts and with further research we created Cybernators.",
+      "If you never try, we'll never know what we're truly capable of.",
+    ],
+  },
+  scene19: {
+    btn_text: "On the Offensive?",
+    content:
+      "Yup, I became stronger than ever before! Cybernators are Robotic AI to help us and used a similar technology that had wreaked havoc on us. It was the best chance we had to go on the offensive.",
+  },
+  scene20: {
+    btn_text: "What happened next?",
+    content:
+      "Knowing the enemy could come back at any time and our numbers were too few even with Cybernators, the engineers started building a time machine. We had to attack the problem early on to prevent what was happening.",
+  },
+  scene21: {
+    btn_text: "And your friends?",
+    content:
+      "I was sent back in time with some Cybernators to give the future the best shot it had to stop this insanity.",
+  },
+  scene22: {
+    btn_text: "And?",
+    content:
+      "They continued the production of Cybernators and I told them to meet up with my cousins Harmony, Ethan, and Banion. Last I heard they were working on a game changer in the North. ",
+  },
+  scene23: {
+    btn_text1: "Join the Cause",
+    btn_text2: "Get informed",
+    content:
+      "My friends went to go find them, but I haven't heard from them yet. But stick with me, and I'll keep you updated. You can help DeFine our Future!",
+  },
 };

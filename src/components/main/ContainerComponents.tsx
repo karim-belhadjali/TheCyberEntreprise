@@ -44,7 +44,6 @@ function Container() {
       <FixedTop menuClick={openMainMenu} />
       <Announcements />
       <HeroContainer ref={heroRef} />
-      <TokenInfo />
       <FixedBot />
       <div className="bottom_hide"></div>
       <div ref={darklayerRef} className="dark_layer"></div>

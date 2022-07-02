@@ -27,6 +27,6 @@ div.last_page_text {
 
 @media only screen and (max-width: 900px) {
   div.last_page_text {
-    margin-bottom: 70px;
+    margin-bottom: 70px !important;
   }
 }

@@ -1,5 +1,4 @@
 import { mockedCurrencies } from "src/data/CybrApidData";
-import * as React from "react";
 
 const axios = require("axios");
 
@@ -32,39 +31,59 @@ export const getcurrency = async (): Promise<string> => {
       const response = await axios.request(options);
       localStorage.setItem("last_time_updated", Date.now().toString());
       const data = response.data;
+
       document[currency] = await data.info.rate;
     } catch (err: any) {
       if (err.response) {
         // The client was given an error response (5xx, 4xx)
-        console.log("Currency Api : Response Error");
-        console.log(JSON.stringify(err));
         document = mockedCurrencies;
       } else {
-        console.log("Currency Api : Request Error");
-        console.log(JSON.stringify(err));
         document = mockedCurrencies;
       }
     }
   }
-
   return JSON.stringify(document);
 };
 
-export const getTokensInfo = async (): Promise<any> => {
-  const response = await fetch(
-    "https://api.nomics.com/v1/currencies/ticker?key=217cc0ff59219b2b4913f0cf503d51e35cab8e08&ids=SHIB,FLOKI&interval=1d954"
-  );
-  const data = response.json;
-  console.log(data);
+export const getTokensInfo = async (): Promise<[]> => {
+  try {
+    const options = {
+      method: "GET",
+      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=terra-luna-2%2Cshiba-inu%2Capecoin%2Cfloki-inu%2Clooksrare&order=market_cap_asc&page=1&sparkline=false",
+    };
+    const response = await axios.request(options);
 
-  return data;
+    let tokens_data: any = [];
+    response.data.map((tokenInfo: any, index: number) => {
+      let formattedMarketCap = new Intl.NumberFormat("en", {
+        notation: "compact",
+        compactDisplay: "long",
+      }).format(tokenInfo.market_cap);
+      tokens_data[index] = {
+        title: tokenInfo.name,
+        formattedMarketCap: formattedMarketCap,
+        marketCap: tokenInfo.market_cap,
+        circulatingSupply: tokenInfo.circulating_supply,
+      };
+    });
+
+    return tokens_data;
+
+    // Work with the response...
+  } catch (err: any) {
+    if (err.response) {
+      // The client was given an error response (5xx, 4xx)
+      return [];
+    }
+  }
+  return [];
 };
 
 export const getCybrTokenInfo = async (): Promise<any> => {
   try {
     const options = {
       method: "GET",
-      url: "https://thecyberenterprise.com/api/get_info.php",
+      url: "https://api.thecyberenterprise.com/get_info.php",
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
@@ -76,11 +95,8 @@ export const getCybrTokenInfo = async (): Promise<any> => {
 
     // Work with the response...
   } catch (err: any) {
-    if (err.response) {
-      // The client was given an error response (5xx, 4xx)
-      console.log("cyber APi : error");
-
-      console.log(JSON.stringify(err));
+    if (err) {
+      return null;
     }
   }
 };

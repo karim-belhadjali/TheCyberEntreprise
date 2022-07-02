@@ -46,9 +46,7 @@ export const shibaSwapAnimation = () => {
 
   // START Buy On ShibaSwap Animation
 
-  let linkElemShiba = document
-    .getElementsByClassName("shibaswap_buy")[0]
-    .querySelector("a");
+  let linkElemShiba = document.getElementsByClassName("disabledhref")[0];
 
   linkElemShiba.addEventListener(
     "mouseenter",

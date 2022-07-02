@@ -2,7 +2,7 @@ import React, { useState, forwardRef, useImperativeHandle } from "react";
 import "./HeroContainerStyle.scss";
 import mascotSvg from "../../assets/webp/inu.webp";
 import hero_bottom_svg from "../../assets/svg/top-mask-bar.svg";
-import TokenInfo from "../token-info/token-info";
+
 const HeroContainer = forwardRef((props, ref) => {
   const [bigFlameLeft, setBigFlameLeft] = useState(0);
   const [bigFlameTop, setBigFlameTop] = useState(0);
@@ -80,7 +80,6 @@ const HeroContainer = forwardRef((props, ref) => {
           </div>
         </div>
       </div>
-      <TokenInfo />
     </>
   );
 });

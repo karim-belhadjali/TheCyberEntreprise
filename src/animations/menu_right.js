@@ -27,7 +27,6 @@ export const hideDarkLayer = (darkLayer) => {
 };
 
 export const showLanguageMenu = () => {
-  console.log("ceva");
   let menuRight = document.getElementsByClassName("menu_right")[0];
   let languageMenuUL = document.getElementById("language_menu");
   let languageMenuULli = languageMenuUL.querySelectorAll("li");

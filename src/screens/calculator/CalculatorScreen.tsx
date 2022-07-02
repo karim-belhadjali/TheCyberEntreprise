@@ -15,12 +15,27 @@ import {
 import { getcurrency, getTokensInfo } from "src/api/CurrencyApi";
 import { CalculatorInfos } from "src/assets/text/InfoTexts";
 import InfoBox from "src/components/info-box/InfoBoxComponent";
-import { mockedCurrencies } from "src/data/CybrApidData";
+import { mockedCurrencies, mockedTokens } from "src/data/CybrApidData";
 import { lastTimeUpdated } from "src/utility/date";
-
+import { useParams } from "react-router-dom";
+import { handleUrlLanguage } from "src/utility/globalUtlities";
 import "./CalculatorScreenStyle.scss";
 
-function CalculatorScreen({ data }: { data: any }) {
+// const InfoBox = lazy(() => import("src/components/info-box/InfoBoxComponent"));
+const renderLoader = () => <p>Loading</p>;
+
+function CalculatorScreen({
+  data,
+  language,
+  urlLanguages,
+}: {
+  data: any;
+  language: any;
+  urlLanguages: any;
+}) {
+  const { urlLanguage } = useParams();
+  const selectedLanguage = handleUrlLanguage(urlLanguage);
+
   const quick_line_1_ref = useRef<any>();
   const quick_line_2_ref = useRef<any>();
   const quick_line_3_ref = useRef<any>();
@@ -64,11 +79,17 @@ function CalculatorScreen({ data }: { data: any }) {
   const amount_tokens_ref = useRef<any>();
   const target_token_price_ref = useRef<any>();
   const target_marketcap_ref = useRef<any>();
+  const current_currency_ref = useRef<any>();
 
   const [hidenCurrencyState, sethidenCurrencyState] = useState<Boolean>(true);
   const [hidenTokenState, sethidenTokenState] = useState<Boolean>(true);
   const [currency, setCurrency] = useState<any>("USD");
   const [token, setToken] = useState<any>("CYBR");
+
+  const [currencyAmount, setcurrencyAmount] = useState<any>("0");
+  const [tokenAmount, settokenAmount] = useState<any>("0");
+  const [targetMarketCap, settargetMarketCap] = useState<any>("0");
+  const [TargetTokenPrice, setTargetTokenPrice] = useState<any>("0");
 
   const [estimatedValue, setestimatedValue] = useState("0");
   const [firstEstimate, setfirstEstimate] = useState<any>("0");
@@ -76,10 +97,46 @@ function CalculatorScreen({ data }: { data: any }) {
   const [thirdEstimate, setthirdEstimate] = useState<any>("0");
   const [fourthEstimate, setfourthEstimate] = useState<any>("0");
   const [fifthEstimate, setfifthEstimate] = useState<any>("0");
+
+  const [firstTokenEstimate, setfirstTokenEstimate] = useState("0");
+  const [secondTokenEstimate, setsecondTokenEstimate] = useState("0");
+  const [thirdTokenEstimate, setthirdTokenEstimate] = useState("0");
+  const [fourthTokenEstimate, setfourthTokenEstimate] = useState("0");
+  const [fifthTokenEstimate, setfifthTokenEstimate] = useState("0");
+
   const [currencies, setcurrencies] = useState({});
+  const [tokens, settokens] = useState<any>(mockedTokens);
 
   const cybrPrice = data.usdPrice;
   const cybrSuply = data.circulatingSupply;
+
+  const handleTokenClassNames = (base: string, index: number): string => {
+    let newIndex = index + 1;
+    return base + newIndex;
+  };
+  const handleTokenlogos = (name: string): string => {
+    const base = "token_logo";
+    switch (name) {
+      case "Shiba Inu": {
+        return base + " shiba";
+      }
+      case "ApeCoin": {
+        return base + " ape";
+      }
+      case "Terra": {
+        return base + " terra";
+      }
+      case "LooksRare": {
+        return base + " looks";
+      }
+      case "Floki Inu": {
+        return base + " floki";
+      }
+
+      default:
+        return base + " shiba";
+    }
+  };
 
   const handleCurrencyVisibilty = () => {
     if (hidenCurrencyState && hidenTokenState) {
@@ -125,77 +182,249 @@ function CalculatorScreen({ data }: { data: any }) {
     handleTokenVisibilty();
   };
 
+  const handleFromatedMarketCap = (SplitedMarketCap): number => {
+    switch (SplitedMarketCap[1]) {
+      case "million": {
+        return parseFloat(SplitedMarketCap[0]) * 1000000;
+      }
+      case "billion": {
+        return parseFloat(SplitedMarketCap[0]) * 1000000000;
+      }
+      case "thousand": {
+        return parseFloat(SplitedMarketCap[0]) * 1000;
+      }
+      default: {
+        return parseFloat(SplitedMarketCap[0]) * 1000000;
+      }
+    }
+  };
+
   const handleEstimatedValue = (value: any) => {
     const firstMarketCap = "500000";
     const secondMarketCap = "1000000";
     const thirdMarketCap = "2500000";
     const fourthMarketCap = "5000000";
     const fifthMarketCap = "10000000";
+    const firstSplitedMarketCap = tokens[0].formattedMarketCap.split(" ");
+    const secondSplitedMarketCap = tokens[1].formattedMarketCap.split(" ");
+    const thirdSplitedMarketCap = tokens[2].formattedMarketCap.split(" ");
+    const fourthSplitedMarketCap = tokens[3].formattedMarketCap.split(" ");
+    const fifthSplitedMarketCap = tokens[4].formattedMarketCap.split(" ");
+
+    const firstTokenMarketCap = handleFromatedMarketCap(firstSplitedMarketCap);
+    const secondTokenMarketCap = handleFromatedMarketCap(
+      secondSplitedMarketCap
+    );
+    const thirdTokenMarketCap = handleFromatedMarketCap(thirdSplitedMarketCap);
+    const fourthTokenMarketCap = handleFromatedMarketCap(
+      fourthSplitedMarketCap
+    );
+    const fifthTokenMarketCap = handleFromatedMarketCap(fifthSplitedMarketCap);
+
     if (value !== "" && target_token_price_ref.current.value !== "") {
       const amount = new Intl.NumberFormat("en").format(
         parseFloat(value.replace(/,/g, "")) *
           parseFloat(target_token_price_ref.current.value.replace(/,/g, ""))
       );
-      setestimatedValue(amount);
 
+      setestimatedValue(amount);
       setfirstEstimate(
         new Intl.NumberFormat("en").format(
-          (parseFloat(firstMarketCap) / parseFloat(cybrSuply)) *
-            parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+          parseFloat(
+            (parseFloat(firstMarketCap) / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
         )
       );
+
       setsecondEstimate(
         new Intl.NumberFormat("en").format(
-          (parseFloat(secondMarketCap) / parseFloat(cybrSuply)) *
-            parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+          parseFloat(
+            (parseFloat(secondMarketCap) / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
         )
       );
       setthirdEstimate(
         new Intl.NumberFormat("en").format(
-          (parseFloat(thirdMarketCap) / parseFloat(cybrSuply)) *
-            parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+          parseFloat(
+            (parseFloat(thirdMarketCap) / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
         )
       );
       setfourthEstimate(
         new Intl.NumberFormat("en").format(
-          (parseFloat(fourthMarketCap) / parseFloat(cybrSuply)) *
-            parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+          parseFloat(
+            (parseFloat(fourthMarketCap) / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
         )
       );
 
       setfifthEstimate(
         new Intl.NumberFormat("en").format(
-          (parseFloat(fifthMarketCap) / parseFloat(cybrSuply)) *
-            parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+          parseFloat(
+            (parseFloat(fifthMarketCap) / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
         )
       );
+      setfirstTokenEstimate(
+        new Intl.NumberFormat("en").format(
+          parseFloat(
+            (firstTokenMarketCap / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+        )
+      );
+      setsecondTokenEstimate(
+        new Intl.NumberFormat("en").format(
+          parseFloat(
+            (secondTokenMarketCap / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+        )
+      );
+      setthirdTokenEstimate(
+        new Intl.NumberFormat("en").format(
+          parseFloat(
+            (thirdTokenMarketCap / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+        )
+      );
+      setfourthTokenEstimate(
+        new Intl.NumberFormat("en").format(
+          parseFloat(
+            (fourthTokenMarketCap / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+        )
+      );
+      setfifthTokenEstimate(
+        new Intl.NumberFormat("en").format(
+          parseFloat(
+            (fifthTokenMarketCap / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+        )
+      );
+    } else if (value !== "" && amount_currency_ref.current.value !== "") {
+      setestimatedValue(amount_currency_ref.current.value);
+      setfirstEstimate(
+        new Intl.NumberFormat("en").format(
+          parseFloat(
+            (parseFloat(firstMarketCap) / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+        )
+      );
+
+      setsecondEstimate(
+        new Intl.NumberFormat("en").format(
+          parseFloat(
+            (parseFloat(secondMarketCap) / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+        )
+      );
+      setthirdEstimate(
+        new Intl.NumberFormat("en").format(
+          parseFloat(
+            (parseFloat(thirdMarketCap) / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+        )
+      );
+      setfourthEstimate(
+        new Intl.NumberFormat("en").format(
+          parseFloat(
+            (parseFloat(fourthMarketCap) / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+        )
+      );
+
+      setfifthEstimate(
+        new Intl.NumberFormat("en").format(
+          parseFloat(
+            (parseFloat(fifthMarketCap) / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+        )
+      );
+      setfirstTokenEstimate(
+        new Intl.NumberFormat("en").format(
+          parseFloat(
+            (firstTokenMarketCap / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+        )
+      );
+      setsecondTokenEstimate(
+        new Intl.NumberFormat("en").format(
+          parseFloat(
+            (secondTokenMarketCap / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+        )
+      );
+      setthirdTokenEstimate(
+        new Intl.NumberFormat("en").format(
+          parseFloat(
+            (thirdTokenMarketCap / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+        )
+      );
+      setfourthTokenEstimate(
+        new Intl.NumberFormat("en").format(
+          parseFloat(
+            (fourthTokenMarketCap / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+        )
+      );
+      setfifthTokenEstimate(
+        new Intl.NumberFormat("en").format(
+          parseFloat(
+            (fifthTokenMarketCap / parseFloat(cybrSuply)).toFixed(10)
+          ) * parseFloat(amount_tokens_ref.current.value.replace(/,/g, ""))
+        )
+      );
+    } else if (value === "") {
+      setestimatedValue("0");
+      setfirstEstimate("0");
+      setsecondEstimate("0");
+      setthirdEstimate("0");
+      setfourthEstimate("0");
+      setfifthEstimate("0");
+      setfirstTokenEstimate("0");
+      setsecondTokenEstimate("0");
+      setthirdTokenEstimate("0");
+      setfourthTokenEstimate("0");
+      setfifthTokenEstimate("0");
     }
   };
 
   const handleAmountInTokens = (value: string) => {
     amount_currency_ref.current.value = "";
     setestimatedValue("0");
+    setcurrencyAmount("0");
     let currentCurrency = currencies[currency];
-    console.log(currencies);
-
+    if (value === "") {
+      setcurrencyAmount("");
+      handleEstimatedValue("");
+      return;
+    }
     const calculation =
-      (parseFloat(value.replace(/,/g, "")) * parseFloat(cybrPrice)) /
+      parseFloat(value.replace(/,/g, "")) *
+      parseFloat(cybrPrice) *
       currentCurrency;
 
     const amount = new Intl.NumberFormat("en").format(calculation);
     amount_currency_ref.current.value = amount;
+    setcurrencyAmount(amount);
     handleEstimatedValue(amount_tokens_ref.current.value);
   };
 
   const handleAmountCurrency = (value: string) => {
     amount_tokens_ref.current.value = "";
+    settokenAmount("0");
     let currentCurrency = currencies[currency];
-
+    if (value === "") {
+      settokenAmount("");
+      handleEstimatedValue("");
+      return;
+    }
     const calculation =
       parseFloat(value.replace(/,/g, "")) /
       currentCurrency /
       parseFloat(cybrPrice);
     const amount = new Intl.NumberFormat("en").format(calculation);
+    settokenAmount(amount);
     amount_tokens_ref.current.value = amount;
 
     handleEstimatedValue(amount_tokens_ref.current.value);
@@ -203,28 +432,45 @@ function CalculatorScreen({ data }: { data: any }) {
 
   const handleTargetMarketCap = (value: string) => {
     target_token_price_ref.current.value = "";
+    setTargetTokenPrice("0");
+    if (value === "") {
+      setTargetTokenPrice("");
+      handleEstimatedValue("");
+      return;
+    }
     const amount = parseFloat(value.replace(/,/g, "")) / parseFloat(cybrSuply);
     target_token_price_ref.current.value = amount.toFixed(10);
+    setTargetTokenPrice(amount);
     handleEstimatedValue(amount_tokens_ref.current.value);
   };
 
   const handleTargetTokenPrice = (value: string) => {
     target_marketcap_ref.current.value = "";
+    if (value === "") {
+      settargetMarketCap("");
+      handleEstimatedValue("");
+      return;
+    }
     const amount = new Intl.NumberFormat("en").format(
       parseFloat(value.replace(/,/g, "")) * parseFloat(cybrSuply)
     );
-    console.log(amount);
+    settargetMarketCap(amount);
 
     target_marketcap_ref.current.value = amount;
     handleEstimatedValue(amount_tokens_ref.current.value);
   };
 
   const getCurrenciesData = async () => {
-    console.log("getting data from api :");
-
     const currencies = await getcurrency();
     localStorage.setItem("currencies", currencies);
     setcurrencies(JSON.parse(localStorage.getItem("currencies")!!));
+  };
+
+  const getTokensData = async () => {
+    const tokensData = await getTokensInfo();
+    if (tokensData.length !== 0) {
+      settokens(tokensData);
+    }
   };
 
   useEffect(() => {
@@ -233,18 +479,30 @@ function CalculatorScreen({ data }: { data: any }) {
     setcurrencies(JSON.parse(localStorage.getItem("currencies")!!));
 
     if (
-      localStorage.getItem("currencies") !== null ||
+      localStorage.getItem("currencies") === null ||
       lastTimeUpdated(localStorage.getItem("last_time_updated")!!)
     ) {
       getCurrenciesData();
-    } else {
-      console.log("getting data from cache :");
-      console.log(JSON.parse(localStorage.getItem("currencies")!!));
     }
+    getTokensData();
   }, []);
 
+  useEffect(() => {
+    handleAmountCurrency(amount_currency_ref.current.value);
+    handleTargetMarketCap(target_marketcap_ref.current.value);
+    handleEstimatedValue(amount_tokens_ref.current.value);
+  }, [currency]);
+  useEffect(() => {
+    handleAmountCurrency(amount_currency_ref.current.value);
+    handleTargetMarketCap(target_marketcap_ref.current.value);
+    handleEstimatedValue(amount_tokens_ref.current.value);
+  }, [token]);
+  useEffect(() => {
+    urlLanguages(selectedLanguage);
+  }, [urlLanguages, selectedLanguage]);
+
   return (
-    <>
+    <div>
       <div className="calculator">
         <div className="calculator_container">
           <div className="calc_first">
@@ -811,7 +1069,9 @@ function CalculatorScreen({ data }: { data: any }) {
                       <label htmlFor="amount_currency">
                         Amount in Currency
                       </label>
-                      <span className="token_name">{currency}</span>
+                      <span className="token_name" ref={current_currency_ref}>
+                        {currency}
+                      </span>
                     </div>
                   </div>
 
@@ -1200,22 +1460,19 @@ function CalculatorScreen({ data }: { data: any }) {
                   <div className="calc_subtitle extra_padding">
                     <span className="simple_text">Token</span>
                   </div>
-
-                  <div className="calc_stats_value quick_comp_line_1">
-                    <span className="token_logo doge"></span>Doge Coin
-                  </div>
-                  <div className="calc_stats_value quick_comp_line_2">
-                    <span className="token_logo shiba"></span>Shiba Inu
-                  </div>
-                  <div className="calc_stats_value quick_comp_line_3">
-                    <span className="token_logo saitama"></span>Saitama
-                  </div>
-                  <div className="calc_stats_value quick_comp_line_4">
-                    <span className="token_logo floki"></span>Floki
-                  </div>
-                  <div className="calc_stats_value quick_comp_line_5">
-                    <span className="token_logo doge_elon"></span>Doge ElonMars
-                  </div>
+                  {tokens.map((token: any, index: number) => {
+                    return (
+                      <div
+                        className={handleTokenClassNames(
+                          "calc_stats_value quick_comp_line_",
+                          index
+                        )}
+                      >
+                        <span className={handleTokenlogos(token.title)}></span>
+                        {token.title}
+                      </div>
+                    );
+                  })}
                 </div>
 
                 <div className="calc_stats_first calc_stats_border">
@@ -1223,22 +1480,18 @@ function CalculatorScreen({ data }: { data: any }) {
                     <span className="text">MarketCap</span>
                     <span className="currency">{currency}</span>
                   </div>
-
-                  <div className="calc_stats_value quick_comp_line_1">
-                    1 Million
-                  </div>
-                  <div className="calc_stats_value quick_comp_line_2">
-                    5 Million
-                  </div>
-                  <div className="calc_stats_value quick_comp_line_3">
-                    10 Million
-                  </div>
-                  <div className="calc_stats_value quick_comp_line_4">
-                    50 Million
-                  </div>
-                  <div className="calc_stats_value quick_comp_line_5">
-                    100 Million
-                  </div>
+                  {tokens.map((token: any, index: number) => {
+                    return (
+                      <div
+                        className={handleTokenClassNames(
+                          "calc_stats_value quick_comp_line_",
+                          index
+                        )}
+                      >
+                        {token.formattedMarketCap}
+                      </div>
+                    );
+                  })}
                 </div>
 
                 <div className="calc_stats_third">
@@ -1247,18 +1500,20 @@ function CalculatorScreen({ data }: { data: any }) {
                     <span className="currency">{currency}</span>
                   </div>
 
-                  <div className="calc_stats_value quick_comp_line_1">100</div>
+                  <div className="calc_stats_value quick_comp_line_1">
+                    {firstTokenEstimate}
+                  </div>
                   <div className="calc_stats_value quick_comp_line_2">
-                    1,000
+                    {secondTokenEstimate}{" "}
                   </div>
                   <div className="calc_stats_value quick_comp_line_3">
-                    10,000
+                    {thirdTokenEstimate}{" "}
                   </div>
                   <div className="calc_stats_value quick_comp_line_4">
-                    100,000
+                    {fourthTokenEstimate}{" "}
                   </div>
                   <div className="calc_stats_value quick_comp_line_5">
-                    1,000,000
+                    {fifthTokenEstimate}{" "}
                   </div>
                 </div>
               </div>
@@ -1267,7 +1522,7 @@ function CalculatorScreen({ data }: { data: any }) {
         </div>
       </div>
       <InfoBox title="Guide" info={CalculatorInfos.information} last={true} />
-    </>
+    </div>
   );
 }
 

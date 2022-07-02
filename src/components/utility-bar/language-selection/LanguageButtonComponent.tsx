@@ -31,7 +31,7 @@ function LanguageButton({
           id="language_btn"
           className="language_btn"
         >
-          <a>{language}</a>
+          <div>{language}</div>
         </span>
       </div>
       <div className="language_mask"></div>

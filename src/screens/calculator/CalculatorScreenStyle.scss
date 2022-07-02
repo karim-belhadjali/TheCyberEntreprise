@@ -554,11 +554,11 @@ div.calculator {
 
             div.select_container {
               width: 340px;
-
               align-self: center;
               display: flex;
               flex-wrap: wrap;
               gap: 20px;
+              justify-content: center;
 
               div.select_btn {
                 width: 100px;
@@ -770,24 +770,24 @@ div.calculator {
                 background-size: cover;
               }
 
-              span.doge {
-                background-image: url("../../assets/tokens/doge.png");
+              span.ape {
+                background-image: url("../../assets/tokens/ape.webp");
               }
 
               span.shiba {
                 background-image: url("../../assets/tokens/shiba.png");
               }
 
-              span.saitama {
-                background-image: url("../../assets/tokens/saitama.png");
+              span.terra {
+                background-image: url("../../assets/tokens/luna.webp");
               }
 
               span.floki {
-                background-image: url("../../assets/tokens/floki.png");
+                background-image: url("../../assets/tokens/floki.webp");
               }
 
-              span.doge_elon {
-                background-image: url("../../assets/tokens/doge_elon.png");
+              span.looks {
+                background-image: url("../../assets/tokens/looks_icon.webp");
               }
 
               span.color_boxes {

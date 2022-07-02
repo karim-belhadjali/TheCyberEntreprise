@@ -55,7 +55,8 @@ function CybrScroll({ botbanned }: { botbanned: string }) {
             alt=""
           />
           <div className="scroll_data" ref={scrollDataRef}>
-            <span className="title">Bots defeated</span>
+            <span className="title">Bots </span>
+            <span className="sub_title">defeated </span>
             <span className="number">{botbanned}</span>
           </div>
         </div>

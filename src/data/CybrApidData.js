@@ -33,3 +33,40 @@ export const mockedCurrencies = {
   TRY: 17.32043,
   USD: 1,
 };
+
+export const mockedTokens = [
+  {
+    title: "Shiba Inu",
+    formattedMarketCap: "4.5 billion",
+    marketCap: 4447806988,
+    circulatingSupply: 589390890994175.2,
+  },
+
+  {
+    title: "ApeCoin",
+    formattedMarketCap: "1.1 billion",
+    marketCap: 1059237454,
+    circulatingSupply: 299531250,
+  },
+
+  {
+    title: "Terra",
+    formattedMarketCap: "229 million",
+    marketCap: 227199855,
+    circulatingSupply: 125493830.15506,
+  },
+
+  {
+    title: "LooksRare",
+    formattedMarketCap: "126 million",
+    marketCap: 126394611,
+    circulatingSupply: 462138434.375,
+  },
+
+  {
+    title: "Floki Inu",
+    formattedMarketCap: "47 million",
+    marketCap: 46403326,
+    circulatingSupply: 9028754102685.43,
+  },
+];

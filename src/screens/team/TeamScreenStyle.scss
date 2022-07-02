@@ -377,8 +377,6 @@ div.team_p {
       margin-right: auto;
       flex-grow: 1;
       margin-bottom: 20px;
-      margin-top: 10px;
-
       display: flex;
 
       div.filler_text {
@@ -395,6 +393,8 @@ div.team_p {
         flex-shrink: 0;
         img {
           max-width: 100%;
+          width: 100%;
+          height: auto;
         }
 
         div.filler_contact {
@@ -456,6 +456,8 @@ div.team_p {
         flex-shrink: 0;
         img {
           max-width: 100%;
+          width: 100%;
+          height: auto;
         }
 
         div.filler_contact {

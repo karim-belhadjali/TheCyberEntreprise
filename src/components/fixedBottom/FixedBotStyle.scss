@@ -107,6 +107,11 @@ div.fixed_bot {
         overflow: hidden;
         text-indent: -999px;
         background-repeat: no-repeat;
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
       }
 
       div.button_pdf {

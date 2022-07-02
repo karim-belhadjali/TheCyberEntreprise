@@ -1,6 +1,6 @@
 import { anime } from "react-animejs-wrapper";
 
-export const animateHarmonyToken = () => {
+export const tokenAnimation = () => {
   // Home Harmony Token Animation
   var wave1 = document.getElementsByClassName("wave1")[0];
   var wave2 = document.getElementsByClassName("wave2")[0];

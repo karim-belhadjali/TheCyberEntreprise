@@ -5,24 +5,36 @@ import {
   personContactAnimation,
   SocialAnimations,
 } from "src/animations/team";
+import { useParams } from "react-router-dom";
+
 import { TeamPageInfos } from "src/assets/text/InfoTexts";
 import InfoBox from "src/components/info-box/InfoBoxComponent";
 import TeamMember from "src/components/lists/team_member_item/TeamMemberItemComponent";
 
 import "./TeamScreenStyle.scss";
+import { handleLanguage, handleUrlLanguage } from "src/utility/globalUtlities";
 
-function TeamScreen() {
+function TeamScreen({
+  language,
+  urlLanguages,
+}: {
+  language: any;
+  urlLanguages: any;
+}) {
   const teamPageText = TeamPageInfos;
   const timezone = teamPageText.UTC;
   const interactions = teamPageText.interactions;
   var relationContainerIndex = -1;
   const membersNames = ["0xmedia", "Vito Luciano", "DTrain", "Imtellingmum"];
   const positionNames = ["Marketing", "Expansion", "Twitter", "HR"];
+  const { urlLanguage } = useParams();
+  const selectedLanguage = handleUrlLanguage(urlLanguage);
 
   useEffect(() => {
     SocialAnimations();
     personContactAnimation();
-  }, []);
+    urlLanguages(selectedLanguage);
+  }, [urlLanguages, selectedLanguage]);
   return (
     <div>
       <div className="team">
@@ -70,6 +82,7 @@ function TeamScreen() {
                     className="thanks_name_el"
                     onMouseEnter={() => animateRowEnter(position)}
                     onMouseLeave={() => animateRowLeave(position)}
+                    key={value}
                   >
                     {value}
                   </div>
@@ -86,6 +99,7 @@ function TeamScreen() {
                     className="thanks_language_el"
                     onMouseEnter={() => animateRowEnter(position)}
                     onMouseLeave={() => animateRowLeave(position)}
+                    key={value}
                   >
                     {value}
                   </div>
@@ -107,31 +121,28 @@ function TeamScreen() {
 
           <div className="filler">
             <div className="first_image">
-              <img src={require("../../assets/team/darthwhite.webp")} alt="" />
+              <img
+                src={require("../../assets/team/darthwhite.webp")}
+                height="1"
+                width="1"
+                alt=""
+              />
               <div className="filler_contact">
                 <a
-                  href="#"
+                  href={teamPageText.sections[1].members[0].discord_link}
                   className="discord"
                   target="_blank"
-                  rel="nofollow noindex noopener"
+                  rel="nofollow noindex noreferrer noopener"
                 >
                   Discord
                 </a>
                 <a
-                  href="#"
+                  href={teamPageText.sections[1].members[0].telegram_link}
                   className="telegram"
                   target="_blank"
-                  rel="nofollow noindex noopener"
+                  rel="nofollow noindex noreferrer noopener"
                 >
                   Telegram
-                </a>
-                <a
-                  href="#"
-                  className="twitter"
-                  target="_blank"
-                  rel="nofollow noindex noopener"
-                >
-                  Twitter
                 </a>
               </div>
             </div>
@@ -141,31 +152,36 @@ function TeamScreen() {
             <div className="second_image">
               <div className="filler_contact">
                 <a
-                  href="#"
+                  href={teamPageText.sections[1].members[1].discord_link}
                   className="discord"
                   target="_blank"
-                  rel="nofollow noindex noopener"
+                  rel="nofollow noindex noreferrer noopener"
                 >
                   Discord
                 </a>
                 <a
-                  href="#"
+                  href={teamPageText.sections[1].members[1].telegram_link}
                   className="telegram"
                   target="_blank"
-                  rel="nofollow noindex noopener"
+                  rel="nofollow noindex noreferrer noopener"
                 >
                   Telegram
                 </a>
                 <a
-                  href="#"
+                  href={teamPageText.sections[1].members[1].twitter_link}
                   className="twitter"
                   target="_blank"
-                  rel="nofollow noindex noopener"
+                  rel="nofollow noindex noreferrer noopener"
                 >
                   Twitter
                 </a>
               </div>
-              <img src={require("../../assets/team/mdking.webp")} alt="" />
+              <img
+                src={require("../../assets/team/mdking.webp")}
+                height="1"
+                width="1"
+                alt=""
+              />
             </div>
           </div>
         </div>

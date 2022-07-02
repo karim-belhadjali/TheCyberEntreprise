@@ -95,3 +95,31 @@ div.document_el {
     }
   }
 }
+
+.coming_soon_document {
+  width: 100%;
+  font-size: 20px;
+  margin-top: 10px;
+
+  color: white;
+  text-align: start;
+}
+.coming_soon_document_content {
+  position: relative;
+
+  div.pdf_title {
+    display: inline-block;
+    position: relative;
+    font-size: 22px;
+    color: white;
+  }
+  div.pdf_title:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 2px;
+    width: 100%;
+    background-color: #ffbc32;
+  }
+}

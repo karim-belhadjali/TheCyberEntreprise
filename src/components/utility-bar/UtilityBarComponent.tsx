@@ -55,11 +55,21 @@ function UtilityBar({
           <div ref={utilitySpanRef} className="bar_container">
             <Bar text={"Price in ETH: " + data.ethPrice} />
             <Bar text={"Price in USD: " + data.usdPrice} />
-            <Bar text={"Last 24h change: " + data.difference24 + "%"} />
+            <Bar
+              text={
+                "Last 24h change: " + data.trend + data.difference24 + " % "
+              }
+            />
             <Bar text={"Total liquidity: $" + data.totalLiquidity} />
             <Bar text={"Holders: " + data.holders} />
+            <Bar text={"Pooled WETH: " + data.pooledWeth} />
             <Bar text={"Pooled CYBR: " + data.pooledCybr} />
             <Bar text={"Circulating Supply: " + data.circulatingSupply} />
+            <Bar text={"Burned CYBR: " + data.burnedAmmount} />
+            <Bar text={"Total Transactions: " + data.totalTransactions} />
+            <Bar text={"Donation Received: " + data.donationReceived} />
+            <Bar text={"Donation Spent: " + data.donationSpent} />
+            <Bar text={"Donation Available: " + data.donationAvailable} />
           </div>
         </div>
         <LanguageButton language={language} onClick={languageClick} />

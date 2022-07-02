@@ -95,7 +95,7 @@ function FixedBot() {
             <a
               href=" https://discord.gg/thecyberenterprise"
               target="_blank"
-              rel="nofollow noindex noreferrer noopener"
+              rel="noopener noreferrer "
             >
               discord
             </a>

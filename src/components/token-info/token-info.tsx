@@ -1,15 +1,55 @@
-import React, { useEffect } from "react";
-import { animateHarmonyToken } from "src/animations/tokenInfo";
-import "./token-info.scss";
-function TokenInfo() {
-  useEffect(() => {
-    animateHarmonyToken();
-  }, []);
+import React, { useEffect, useState } from "react";
+import { tokenAnimation } from "src/animations/tokenInfo";
 
+import "./token-info.scss";
+function TokenInfo({ data }: { data: any }) {
   const contractAdress = "0x438a6E42813118548C065336844239b63ad4Fcfd";
   const handleCopyAdress = () => {
     navigator.clipboard.writeText(contractAdress);
   };
+  const formattedsupply = new Intl.NumberFormat("en").format(
+    parseInt(data.circulatingSupply)
+  );
+
+  const handleFormattedNumber = (number: string): number => {
+    if (number) {
+      if (number.includes("T")) {
+        return parseFloat(number) * 1000000000000;
+      } else if (number.includes("B")) {
+        return parseFloat(number) * 1000000000;
+      }
+      return parseFloat(number) * 1000000;
+    }
+    return 0;
+  };
+  const [pooledCybr, setpooledCybr] = useState<any>(0);
+  const [burnedToken, setburnedToken] = useState<any>(0);
+  const [donationReceived, setdonationRecived] = useState<any>(0);
+
+  useEffect(() => {
+    setburnedToken(
+      new Intl.NumberFormat("en").format(
+        handleFormattedNumber(data.burnedAmmount)
+      )
+    );
+    setdonationRecived(
+      new Intl.NumberFormat("en").format(
+        handleFormattedNumber(data.donationReceived)
+      )
+    );
+    setpooledCybr(
+      new Intl.NumberFormat("en").format(handleFormattedNumber(data.pooledCybr))
+    );
+    tokenAnimation();
+  }, [
+    handleFormattedNumber,
+    setburnedToken,
+    setdonationRecived,
+    setpooledCybr,
+    data.burnedAmmount,
+    data.donationReceived,
+    data.pooledCybr,
+  ]);
   return (
     <div className="token_info">
       <div className="token_image">
@@ -101,7 +141,7 @@ function TokenInfo() {
 
               <div className="link_element">
                 <a
-                  href="https://etherscan.io/address/0x438a6E42813118548C065336844239b63ad4Fcfd"
+                  href="https://etherscan.io/address/0x438a6E42813118548C065336844239b63ad4Fcfd#code"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -118,17 +158,17 @@ function TokenInfo() {
 
           <div className="token_info_element">
             <div className="info_title">Circulating Tokens</div>
-            <div className="info_data">999,500,000,000,000</div>
+            <div className="info_data">{formattedsupply}</div>
           </div>
 
           <div className="token_info_element">
             <div className="info_title">Burned Tokens</div>
-            <div className="info_data">500,000,000,000</div>
+            <div className="info_data">{burnedToken}</div>
           </div>
 
           <div className="token_info_element">
             <div className="info_title">Pooled Tokens</div>
-            <div className="info_data">41,759,399,413,594</div>
+            <div className="info_data">{pooledCybr}</div>
             <div className="info_links"></div>
           </div>
 
@@ -144,7 +184,7 @@ function TokenInfo() {
 
           <div className="token_info_element">
             <div className="info_title">Received Donations</div>
-            <div className="info_data">41,759,399,413,594</div>
+            <div className="info_data">{donationReceived}</div>
             <div className="info_links"></div>
           </div>
         </div>

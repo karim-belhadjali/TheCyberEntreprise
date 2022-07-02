@@ -24,7 +24,6 @@ function ButtonsContainer({ menuClick }: { menuClick: any }) {
       </div>
 
       <a
-        href="https://shibaswap.com/#/"
         rel="nofollow noindex noreferrer noopener"
         target="_blank"
         className="mob_shibaswap_link"
@@ -47,25 +46,21 @@ function ButtonsContainer({ menuClick }: { menuClick: any }) {
       </a>
 
       <div className="shibaswap_buy">
-        <a
-          href="https://shibaswap.com/#/"
-          target="_blank"
-          rel="nofollow noindex noreferrer noopener"
-        >
+        <div className="disabledhref noselect">
           <img
             src={require("../../../assets/png/shibaswap.png")}
             className="shiba_logo_btn"
             alt="Buy CYBR on ShibaSwap"
           />
-          <span className="text shibaswap_text">
-            <span className="text_opacity">SHIBASWAP</span>
-            <span className="text_p1 absolute">SHIBASWAP</span>
-            <span className="text_p2 absolute">SHIBASWAP</span>
-            <span className="text_p3 absolute">SHIBASWAP</span>
+          <span className="text shibaswap_text noselect ">
+            <span className="text_opacity noselect">SHIBASWAP</span>
+            <span className="text_p1 absolute noselect">SHIBASWAP</span>
+            <span className="text_p2 absolute noselect">SHIBASWAP</span>
+            <span className="text_p3 absolute noselect">SHIBASWAP</span>
           </span>
-          <span className="soon">soon</span>
-        </a>
-        <div className="swap_angle"></div>
+          <span className="soon noselect">soon</span>
+        </div>
+        <div className="swap_angle noselect"></div>
       </div>
 
       <div className="buttons_container_bg">

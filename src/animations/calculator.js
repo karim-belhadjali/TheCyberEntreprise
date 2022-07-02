@@ -3,7 +3,6 @@ import { anime } from "react-animejs-wrapper";
 // Start Feather Animation
 
 export const penHoverAnimation = (piece_feather, piece_cyber) => {
-  console.log(piece_feather);
   var tl = anime.timeline({
     easing: "easeOutExpo",
   });
@@ -282,7 +281,6 @@ export const calculatorAnimation = () => {
         // add numbers to variable
 
         written_number = written_number + clicked_number;
-        console.log(written_number);
       }
     });
   }

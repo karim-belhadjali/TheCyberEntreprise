@@ -3,16 +3,24 @@ import DocumentItemDescription from "../document_item_description/DocumentItemDe
 
 import "./DocumentItemStyle.scss";
 
+// const DocumentItemDescription = lazy(
+//   () => import("../document_item_description/DocumentItemDescriptionComponent")
+// );
+
+const renderLoader = () => <p>Loading</p>;
+
 function DocumentItem({
   document,
   imgComponent,
   commingSoon,
   commingSoonText,
+  last,
 }: {
   document: any;
   imgComponent: any;
   commingSoon: Boolean;
   commingSoonText: string;
+  last: Boolean;
 }) {
   const description = document.documents as [];
   const mainPathEnglish = "../../../assets/documents/english-documents/";
@@ -55,8 +63,9 @@ function DocumentItem({
       }
     }
   };
+
   return (
-    <div key={document.name}>
+    <div>
       <div className="doc_category">
         <div className="doc_left">
           <div className="doc_title_category">{document.name}</div>
@@ -76,6 +85,8 @@ function DocumentItem({
                 <div className="doc_item" key={value.title}>
                   <DocumentItemDescription
                     english={handleFileLocation(value.document_title)}
+                    present={value.present}
+                    coming_soon_text={value.coming_soon_text}
                     spanish={null}
                     arabic={null}
                     chinese={null}
@@ -88,8 +99,7 @@ function DocumentItem({
             })}
         </div>
       </div>
-
-      <div className="horizontal_line"></div>
+      {!last && <div className="horizontal_line"></div>}
     </div>
   );
 }

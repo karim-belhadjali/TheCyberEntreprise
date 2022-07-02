@@ -15,8 +15,16 @@ import TextContainer from "src/components/textContainer/TextContainerComponent";
 import RoadmapLegend from "src/components/roadmap-legend/RoadmapLegendComponent";
 import InfoBox from "src/components/info-box/InfoBoxComponent";
 import { RoadmapInfos } from "src/assets/text/InfoTexts";
+import { useParams } from "react-router-dom";
+import { handleUrlLanguage } from "src/utility/globalUtlities";
 
-function RoadmapScreen() {
+function RoadmapScreen({
+  language,
+  urlLanguages,
+}: {
+  language: any;
+  urlLanguages: any;
+}) {
   const completedBtn = useRef<any>();
   const progressBtn = useRef<any>(null);
   const preparationBtn = useRef<any>(null);
@@ -30,11 +38,17 @@ function RoadmapScreen() {
   const tier3Btn = useRef<any>(null);
   const tier4Btn = useRef<any>(null);
 
+  const RoadmapText = RoadmapInfos;
+
+  const { urlLanguage } = useParams();
+  const selectedLanguage = handleUrlLanguage(urlLanguage);
+
   useEffect(() => {
     completedLiquidAnim(completedBtn.current, completedLiquid.current);
     progressBtnLiquidAnim(progressBtn.current, progressLiquid.current);
     preparationBtnLiquidAnim(preparationBtn.current, preparationLiquid.current);
-  }, []);
+    urlLanguages(selectedLanguage);
+  }, [urlLanguages, selectedLanguage]);
 
   return (
     <>
@@ -70,64 +84,89 @@ function RoadmapScreen() {
               <TextContainer>
                 <div className="text_container">
                   <div className="title">
-                    <span className="quarter">Quarter 2</span>
-                    <span className="date">April 1st - June 30th</span>
-                    <span className="year">2022</span>
+                    <span className="quarter">
+                      {RoadmapText.current_Quarter.name}
+                    </span>
+                    <span className="date">
+                      {RoadmapText.current_Quarter.date}
+                    </span>
+                    <span className="year">
+                      {RoadmapText.current_Quarter.year}
+                    </span>
                   </div>
                   <div className="horizontal_sep"></div>
                   <div className="tasks">
                     <div className="task_group">
-                      <h3 className="comp">Completed Tasks</h3>
+                      <h3 className="comp">
+                        {RoadmapText.color_key.completed_tasks}
+                      </h3>
                       <h4 className="t3_item comp_items">
-                        <span className="dots completed_dot"></span> T3: New V3
-                        Custom Contract
+                        <span className="dots completed_dot"></span>
+                        {RoadmapText.current_Quarter.Completed_Tasks[0].task_1}
+                      </h4>
+                      <h4 className="t3_item comp_items">
+                        <span className="dots completed_dot"></span>
+                        {RoadmapText.current_Quarter.Completed_Tasks[0].task_2}
                       </h4>
                       <h4 className="t2_item comp_items">
-                        <span className="dots completed_dot"></span> T2:
-                        Collected Marketing Data
+                        <span className="dots completed_dot"></span>
+                        {RoadmapText.current_Quarter.Completed_Tasks[0].task_3}
+                      </h4>
+                      <h4 className="t2_item comp_items">
+                        <span className="dots completed_dot"></span>
+                        {RoadmapText.current_Quarter.Completed_Tasks[0].task_4}
                       </h4>
                       <h4 className="t1_item comp_items">
-                        <span className="dots completed_dot"></span> T1: Banners
-                        For Marketing
+                        <span className="dots completed_dot"></span>
+                        {RoadmapText.current_Quarter.Completed_Tasks[0].task_5}
                       </h4>
                       <h4 className="t1_item comp_items">
-                        <span className="dots completed_dot"></span> T1: Old
-                        Etherscan Migrated
+                        <span className="dots completed_dot"></span>
+                        {RoadmapText.current_Quarter.Completed_Tasks[0].task_6}
                       </h4>
                       <h4 className="t1_item comp_items">
-                        <span className="dots completed_dot"></span> T1: New
-                        Etherscan Updated
+                        <span className="dots completed_dot"></span>
+                        {RoadmapText.current_Quarter.Completed_Tasks[0].task_7}
                       </h4>
                       <h4 className="t1_item comp_items">
-                        <span className="dots completed_dot"></span> T1: Shill
-                        Formats
+                        <span className="dots completed_dot"></span>
+                        {RoadmapText.current_Quarter.Completed_Tasks[0].task_8}
                       </h4>
                     </div>
                     <div className="vertical_sep"></div>
                     <div className="task_group">
-                      <h3 className="prog">In Progress</h3>
+                      <h3 className="prog">
+                        {RoadmapText.color_key.In_progress}
+                      </h3>
                       <h4 className="t3_item prog_items">
-                        <span className="dots progress_dot"></span> T3: Cyber
-                        Swap Locking Contract
-                      </h4>
-                      <h4 className="t3_item prog_items">
-                        <span className="dots progress_dot"></span> T3: Cyber
-                        Swap Swapping
+                        <span className="dots progress_dot"></span>
+                        {RoadmapText.current_Quarter.In_Progress[0].task_1}
                       </h4>
                       <h4 className="t2_item prog_items">
-                        <span className="dots progress_dot"></span> T2:
-                        Advertising
+                        <span className="dots progress_dot"></span>
+                        {RoadmapText.current_Quarter.In_Progress[0].task_2}
                       </h4>
                       <h4 className="t2_item prog_items">
-                        <span className="dots progress_dot"></span> T2: minigame
+                        <span className="dots progress_dot"></span>
+                        {RoadmapText.current_Quarter.In_Progress[0].task_3}
                       </h4>
                     </div>
                     <div className="vertical_sep"></div>
                     <div className="task_group">
-                      <h3 className="prep">In Preparation</h3>
-                      <h4 className="t4_item prep_items">
-                        <span className="dots preparation_dot"></span> T4: Cyber
-                        Creditors
+                      <h3 className="prep">
+                        {RoadmapText.color_key.Planning_Phase}
+                      </h3>
+                      <h4 className="t3_item prep_items">
+                        <span className="dots preparation_dot"></span>
+                        {RoadmapText.current_Quarter.Planning_Phase[0].task_1}
+                      </h4>
+                      <h4 className="t3_item prep_items">
+                        <span className="dots preparation_dot"></span>
+                        {RoadmapText.current_Quarter.Planning_Phase[0].task_2}
+                      </h4>
+                      <h4 className="t2_item prep_items">
+                        <span className="dots preparation_dot"></span>
+                        {RoadmapText.current_Quarter.Planning_Phase[0].task_3}
                       </h4>
                     </div>
                   </div>
@@ -138,40 +177,52 @@ function RoadmapScreen() {
             <div className="next_quarters">
               <div className="quarter_el">
                 <div className="title">
-                  <span className="quarter">Quarter 3</span>
-                  <span className="date">July 1st - August 31st</span>
-                  <span className="year">2022</span>
+                  <span className="quarter">
+                    {RoadmapText.other_Quarter_3.name}
+                  </span>
+                  <span className="date">
+                    {RoadmapText.other_Quarter_3.date}
+                  </span>
+                  <span className="year">
+                    {RoadmapText.other_Quarter_3.year}
+                  </span>
                 </div>
                 <div className="text">
-                  The goal for this quarter is to further improve the user
-                  experience whilst on the Cyber Enterprise Website, and provide
-                  Cybernators their first NFTs utility.
+                  {RoadmapText.other_Quarter_3.description}
                 </div>
               </div>
               <div className="vertical_sep"></div>
               <div className="quarter_el">
                 <div className="title">
-                  <span className="quarter">Quarter 4</span>
-                  <span className="date">October 1st - December 31st</span>
-                  <span className="year">2022</span>
+                  <span className="quarter">
+                    {RoadmapText.other_Quarter_4.name}
+                  </span>
+                  <span className="date">
+                    {RoadmapText.other_Quarter_4.date}
+                  </span>
+                  <span className="year">
+                    {RoadmapText.other_Quarter_4.year}
+                  </span>
                 </div>
                 <div className="text">
-                  The goal for this quarter is to prioritise the creation of
-                  further utilities for Cyber beyond first what was previously
-                  created and achieved.
+                  {RoadmapText.other_Quarter_4.description}
                 </div>
               </div>
               <div className="vertical_sep"></div>
               <div className="quarter_el">
                 <div className="title">
-                  <span className="quarter">Quarter 1</span>
-                  <span className="date">January 1st - March 31st</span>
-                  <span className="year">2023</span>
+                  <span className="quarter">
+                    {RoadmapText.other_Quarter_1.name}
+                  </span>
+                  <span className="date">
+                    {RoadmapText.other_Quarter_1.date}
+                  </span>
+                  <span className="year">
+                    {RoadmapText.other_Quarter_1.year}
+                  </span>
                 </div>
                 <div className="text">
-                  The goal for this quarter is to look into registering as a
-                  legal entity within the borders of the EU and creating a
-                  transnational cooperative.
+                  {RoadmapText.other_Quarter_1.description}
                 </div>
               </div>
             </div>

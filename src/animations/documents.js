@@ -100,7 +100,6 @@ var diamondLeftMouseIn;
 var diamonLeftAnimationInProgress = false;
 
 export const diamondLeftAnimationEnter = (scroll_blue_left) => {
-  console.log("left");
   diamondLeftMouseIn = true;
 
   if (diamonLeftAnimationInProgress === false) {
@@ -192,9 +191,7 @@ var inuAnimationInProgress = false;
 
 export const inuAnimationEnter = (inu_base) => {
   if (inuAnimationInProgress === false) {
-    console.log("enter cybr inu");
     inuAnimationInProgress = true;
-    console.log(inuAnimationInProgress);
     anime({
       targets: inu_base,
       rotate: "14deg",
@@ -391,21 +388,14 @@ export const creditCardAnimation = () => {
   // Stop Credit Card Change Numbers Animation
 };
 
-export const projectRunAnimation = () => {
+export const projectRunAnimation = (width, height) => {
   // Start Project Run Background
-
-  window.addEventListener("resize", function () {
-    xSize = document.body.clientWidth;
-    halfBodyWidth = xSize / 2;
-    ySize = document.body.clientHeight;
-    halfBodyHeight = ySize / 2;
-  });
 
   var run_bg = document.getElementsByClassName("run_bg")[0];
 
-  var xSize = document.body.clientWidth;
+  var xSize = width;
   var halfBodyWidth = xSize / 2;
-  var ySize = document.body.clientHeight;
+  var ySize = height;
   var halfBodyHeight = ySize / 2;
 
   document.addEventListener("mousemove", (e) => {
@@ -791,159 +781,199 @@ export const projectRunAnimation = () => {
   // Start Project Run Animation
 
   var run_cyber_click = document.getElementsByClassName("run_cyber_click")[0];
-
+  var run_cybr_running = false;
   run_cyber_click.addEventListener("click", function () {
-    run_cyber_click.classList.remove("run_cyber_click");
+    if (!run_cybr_running) {
+      run_cybr_running = true;
+      run_cyber_click.classList.remove("run_cyber_click");
 
-    runToRight();
-    gunRightStable();
+      runToRight();
+      gunRightStable();
 
-    let cyberMove = anime.timeline({
-      easing: "linear",
-    });
-
-    cyberMove
-      .add({
-        targets: run_cyber_click,
-        duration: 5000,
-        left: "186px",
-        complete: function () {
-          runToStairs();
-        },
-      })
-
-      .add({
-        targets: run_cyber_click,
-        duration: 5000,
-        bottom: "168px",
-        complete: function () {
-          runToRight();
-          gunRightStable();
-        },
-      })
-
-      .add({
-        targets: run_cyber_click,
-        duration: 1000,
-        left: "214px",
-        complete: function () {
-          let gt = document.getElementsByClassName("gt_3")[0];
-          hideGoldCoin(gt);
-        },
-      })
-
-      .add({
-        targets: run_cyber_click,
-        duration: 1000,
-        left: "245px",
-        complete: function () {
-          let gt = document.getElementsByClassName("gt_2")[0];
-          hideGoldCoin(gt);
-        },
-      })
-
-      .add({
-        targets: run_cyber_click,
-        duration: 1000,
-        left: "278px",
-        complete: function () {
-          let gt = document.getElementsByClassName("gt_1")[0];
-          hideGoldCoin(gt);
-          runToLeft();
-          gunLeftStable();
-        },
-      })
-
-      .add({
-        targets: run_cyber_click,
-        duration: 400,
-        left: "256px",
-        bottom: "208px",
-        complete: function () {
-          animateCyberToken();
-        },
-      })
-
-      .add({
-        targets: run_cyber_click,
-        duration: 400,
-        left: "226px",
-        bottom: "168px",
-      })
-
-      .add({
-        targets: run_cyber_click,
-        duration: 3000,
-        left: "124px",
-        complete: function () {
-          activeteSave();
-          showStanding();
-        },
+      let cyberMove = anime.timeline({
+        easing: "linear",
       });
 
-    // shooting
+      cyberMove
+        .add({
+          targets: run_cyber_click,
+          duration: 5000,
+          left: "186px",
+          complete: function () {
+            runToStairs();
+          },
+        })
 
-    let pew_1 = document.getElementsByClassName("pew_1")[0];
-    let pew_2 = document.getElementsByClassName("pew_2")[0];
-    let pew_3 = document.getElementsByClassName("pew_3")[0];
+        .add({
+          targets: run_cyber_click,
+          duration: 5000,
+          bottom: "168px",
+          complete: function () {
+            runToRight();
+            gunRightStable();
+          },
+        })
 
-    let shooting = anime.timeline({
-      easing: "linear",
-    });
+        .add({
+          targets: run_cyber_click,
+          duration: 1000,
+          left: "214px",
+          complete: function () {
+            let gt = document.getElementsByClassName("gt_3")[0];
+            hideGoldCoin(gt);
+          },
+        })
 
-    shooting
+        .add({
+          targets: run_cyber_click,
+          duration: 1000,
+          left: "245px",
+          complete: function () {
+            let gt = document.getElementsByClassName("gt_2")[0];
+            hideGoldCoin(gt);
+          },
+        })
 
-      .add({
-        targets: pew_1,
-        duration: 0,
-        opacity: 1,
-      })
-      .add({
-        targets: pew_1,
-        duration: 1000,
-        left: "286px",
-        complete: function () {
-          pew_1.style.display = "none";
-        },
-      })
+        .add({
+          targets: run_cyber_click,
+          duration: 1000,
+          left: "278px",
+          complete: function () {
+            let gt = document.getElementsByClassName("gt_1")[0];
+            hideGoldCoin(gt);
+            runToLeft();
+            gunLeftStable();
+          },
+        })
 
-      .add({
-        targets: pew_2,
-        duration: 1,
-        opacity: 1,
-        delay: 90,
-      })
-      .add({
-        targets: pew_2,
-        duration: 1000,
-        left: "286px",
-        delay: 90,
-        complete: function () {
-          pew_2.style.display = "none";
-        },
-      })
+        .add({
+          targets: run_cyber_click,
+          duration: 400,
+          left: "256px",
+          bottom: "208px",
+          complete: function () {
+            animateCyberToken();
+          },
+        })
 
-      .add({
-        targets: pew_3,
-        duration: 1,
-        opacity: 1,
-        delay: 90,
-      })
-      .add({
-        targets: pew_3,
-        duration: 1000,
-        left: "286px",
-        delay: 90,
-        complete: function () {
-          pew_3.style.display = "none";
-          enemyKill();
-        },
+        .add({
+          targets: run_cyber_click,
+          duration: 400,
+          left: "226px",
+          bottom: "168px",
+        })
+
+        .add({
+          targets: run_cyber_click,
+          duration: 3000,
+          left: "124px",
+          complete: function () {
+            activeteSave();
+            showStanding();
+          },
+        });
+
+      // shooting
+
+      let pew_1 = document.getElementsByClassName("pew_1")[0];
+      let pew_2 = document.getElementsByClassName("pew_2")[0];
+      let pew_3 = document.getElementsByClassName("pew_3")[0];
+
+      let shooting = anime.timeline({
+        easing: "linear",
       });
+
+      shooting
+
+        .add({
+          targets: pew_1,
+          duration: 0,
+          opacity: 1,
+        })
+        .add({
+          targets: pew_1,
+          duration: 1000,
+          left: "286px",
+          complete: function () {
+            pew_1.style.display = "none";
+          },
+        })
+
+        .add({
+          targets: pew_2,
+          duration: 1,
+          opacity: 1,
+          delay: 90,
+        })
+        .add({
+          targets: pew_2,
+          duration: 1000,
+          left: "286px",
+          delay: 90,
+          complete: function () {
+            pew_2.style.display = "none";
+          },
+        })
+
+        .add({
+          targets: pew_3,
+          duration: 1,
+          opacity: 1,
+          delay: 90,
+        })
+        .add({
+          targets: pew_3,
+          duration: 1000,
+          left: "286px",
+          delay: 90,
+          complete: function () {
+            pew_3.style.display = "none";
+            enemyKill();
+          },
+        });
+    }
   });
 
   // End Project Run Animation
 };
 
+export const SocialAnimations = () => {
+  var filler_contact = document.querySelectorAll("div.filler_contact > a");
+
+  for (let i = 0; i < filler_contact.length; i++) {
+    filler_contact[i].addEventListener("mouseenter", function () {
+      let parentSocialBtn = this.parentElement;
+
+      let relItemsScoped = parentSocialBtn.getElementsByTagName("a");
+
+      let otherRelItems = [];
+
+      for (let j = 0; j < relItemsScoped.length; j++) {
+        if (relItemsScoped[j] !== this) {
+          otherRelItems.push(relItemsScoped[j]);
+        }
+      }
+
+      anime({
+        targets: otherRelItems,
+        opacity: [1, 0.7],
+        duration: 10,
+        easing: "linear",
+      });
+    });
+
+    filler_contact[i].addEventListener("mouseout", function () {
+      anime({
+        targets: filler_contact,
+        opacity: 1,
+        duration: 10,
+        easing: "linear",
+      });
+    });
+  }
+};
+
+// End Filler Contact Social Hover
 export const projectHomeAnimation = () => {
   // Start Project Home Animation
 
