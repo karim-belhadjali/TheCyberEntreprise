@@ -23,6 +23,7 @@ import PressRelease from "../press release/PressReleaseScreen";
 import RoadmapScreen from "../roadmap/RoadmapScreen";
 import TeamScreen from "../team/TeamScreen";
 import IndexScreen from "../index/IndexScreen";
+import { browserName } from "react-device-detect";
 
 // const Announcements = lazy(
 //   () => import("../../components/annoucements/AnnouncementComponents")
@@ -55,6 +56,7 @@ function MainScreen() {
   const [tokenInfoData, settokenInfoData] = useState<any>({});
   const [documentsData, setdocumentsData] = useState<any>({});
   const [calculatorData, setcalculatorData] = useState<any>({});
+  const [isSafari, setisSafari] = useState<Boolean>(false);
 
   const openMainMenu = () => {
     setisMenu(true);
@@ -161,106 +163,137 @@ function MainScreen() {
   const handleUrlLanguage = (language) => {
     setlanguage(language);
   };
+  const handleSafariBrowser = (browserName: string) => {
+    if (browserName === "Safari") {
+      setisSafari(true);
+    }
+  };
   useEffect(() => {
     handleCybrApi();
     handleCybrInfo();
+    handleSafariBrowser(browserName);
   }, []);
 
   return (
     <div>
-      <div className="container">
-        <MenuRight
-          closeMenu={closeMenu}
-          languageselection={languageSelection}
-          language={language}
-        />
-        <div className="top_hide"></div>
-        <FixedTop menuClick={openMainMenu} />
-        <Announcements />
-        <UtilityBar
-          language={language}
-          languageClick={openLanguage}
-          data={utilityBarData}
-        />
-        <Routes>
-          <Route
-            path="/:urlLanguage/cyber-calculator.html"
-            element={
-              <CalculatorScreen
-                data={calculatorData}
-                language={language}
-                urlLanguages={(language) => handleUrlLanguage(language)}
-              />
-            }
+      {!isSafari && (
+        <div className="container">
+          <MenuRight
+            closeMenu={closeMenu}
+            languageselection={languageSelection}
+            language={language}
           />
-          <Route
-            path="/:urlLanguage/documents.html"
-            element={
-              <DocumentsScreen
-                data={documentsData}
-                language={language}
-                urlLanguages={(language) => handleUrlLanguage(language)}
-              />
-            }
+          <div className="top_hide"></div>
+          <FixedTop menuClick={openMainMenu} />
+          <Announcements />
+          <UtilityBar
+            language={language}
+            languageClick={openLanguage}
+            data={utilityBarData}
           />
-          <Route
-            path="/:urlLanguage/press-release/"
-            element={
-              <PressRelease
-                language={language}
-                urlLanguages={(language) => handleUrlLanguage(language)}
-              />
-            }
-          >
+          <Routes>
             <Route
-              path={":page" + ".html"}
+              path="/:urlLanguage/cyber-calculator.html"
+              element={
+                <CalculatorScreen
+                  data={calculatorData}
+                  language={language}
+                  urlLanguages={(language) => handleUrlLanguage(language)}
+                />
+              }
+            />
+            <Route
+              path="/:urlLanguage/documents.html"
+              element={
+                <DocumentsScreen
+                  data={documentsData}
+                  language={language}
+                  urlLanguages={(language) => handleUrlLanguage(language)}
+                />
+              }
+            />
+            <Route
+              path="/:urlLanguage/press-release/"
               element={
                 <PressRelease
                   language={language}
                   urlLanguages={(language) => handleUrlLanguage(language)}
                 />
               }
+            >
+              <Route
+                path={":page" + ".html"}
+                element={
+                  <PressRelease
+                    language={language}
+                    urlLanguages={(language) => handleUrlLanguage(language)}
+                  />
+                }
+              />
+            </Route>
+            <Route
+              path="/:urlLanguage/roadmap.html"
+              element={
+                <RoadmapScreen
+                  language={language}
+                  urlLanguages={(language) => handleUrlLanguage(language)}
+                />
+              }
             />
-          </Route>
-          <Route
-            path="/:urlLanguage/roadmap.html"
-            element={
-              <RoadmapScreen
-                language={language}
-                urlLanguages={(language) => handleUrlLanguage(language)}
-              />
-            }
-          />
-          <Route
-            path="/:urlLanguage/team.html"
-            element={
-              <TeamScreen
-                language={language}
-                urlLanguages={(language) => handleUrlLanguage(language)}
-              />
-            }
-          />
-          <Route
-            path="/:urlLanguage/"
-            element={
-              <IndexScreen
-                tokenInfoData={tokenInfoData}
-                language={language}
-                urlLanguages={(language) => handleUrlLanguage(language)}
-              />
-            }
-          />
-          <Route path="*" element={<Navigate to="/en/" />} />
-        </Routes>
-        <FixedBot />
+            <Route
+              path="/:urlLanguage/team.html"
+              element={
+                <TeamScreen
+                  language={language}
+                  urlLanguages={(language) => handleUrlLanguage(language)}
+                />
+              }
+            />
+            <Route
+              path="/:urlLanguage/"
+              element={
+                <IndexScreen
+                  tokenInfoData={tokenInfoData}
+                  language={language}
+                  urlLanguages={(language) => handleUrlLanguage(language)}
+                />
+              }
+            />
+            <Route path="*" element={<Navigate to="/en/" />} />
+          </Routes>
+          <FixedBot />
 
-        <div className="bottom_hide"></div>
-        <div
-          ref={darklayerRef}
-          className="dark_layer"
-          onClick={closeMenuDarkLayer}
-        ></div>
-      </div>
+          <div className="bottom_hide"></div>
+          <div
+            ref={darklayerRef}
+            className="dark_layer"
+            onClick={closeMenuDarkLayer}
+          ></div>
+        </div>
+      )}
+      {isSafari && (
+        <div className="saf_container">
+          <div className="saf_title"> Safari Browser Detected </div>
+          <div className="saf_text">
+            {" "}
+            The technologies used to build our website are not yet supported by
+            Safari Browser.{" "}
+          </div>
+          <div className="saf_text2">
+            {" "}
+            Please download some other browser of your choice.{" "}
+          </div>
+          <div className="saf_links">
+            <a href="https://www.google.com/intl/en_en/chrome/">
+              Google Chrome
+            </a>
+            <a href="https://www.mozilla.org/en-US/firefox/new/">
+              Mozilla Firefox
+            </a>
+            <a href="https://www.opera.com/download">Opera</a>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

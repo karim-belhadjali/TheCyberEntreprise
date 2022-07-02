@@ -22,7 +22,7 @@ function DocumentsScreen({
   urlLanguages,
 }: {
   data: any;
-  language: any;
+  language: string;
   urlLanguages: any;
 }) {
   const DocumentPageText = DocumentsInfos;
@@ -163,7 +163,7 @@ function DocumentsScreen({
           <div className="doc_team_text">
             {DocumentsInfos.Join_team.content_first}
             <a
-              href="https://discordapp.com/users/845761613621624843/"
+              href="https://discordapp.com/users/810141997448822824/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -171,7 +171,7 @@ function DocumentsScreen({
             </a>
             {DocumentsInfos.Join_team.content_second}
             <a
-              href="https://discordapp.com/users/675621674154065922/"
+              href="https://discordapp.com/users/822974650082394118/"
               target="_blank"
               rel="noopener noreferrer"
             >

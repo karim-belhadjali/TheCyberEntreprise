@@ -83,12 +83,7 @@ export const getCybrTokenInfo = async (): Promise<any> => {
   try {
     const options = {
       method: "GET",
-      url: "https://api.thecyberenterprise.com/get_info.php",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "X-Requested-With",
-      },
+      url: "https://thecyberapi.com/get_info.php",
     };
     const response = await axios.request(options);
     return response.data;

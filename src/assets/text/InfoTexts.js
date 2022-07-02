@@ -1110,7 +1110,7 @@ export const HighlightedTextSVG = {
   scene11: {
     btn_text: "So what did you do?",
     content: [
-      "If we let them, they have would have truly succeeded and moved on to others. We knew that we couldn't let this continue and something had to be done, but we knew alone we didn't stand a chance.",
+      "If we let them, they would have truly succeeded and moved on to others. We knew that we couldn't let this continue and something had to be done, but we knew alone we didn't stand a chance.",
       "but * a ",
     ],
   },

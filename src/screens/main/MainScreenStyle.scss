@@ -30,3 +30,108 @@ div.last_page_text {
     margin-bottom: 70px !important;
   }
 }
+
+div.saf_container {
+  position: relative;
+  width: 400px;
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+  margin-top: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #ffbc32;
+
+  div.saf_title {
+    position: relative;
+    width: 380px;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+  }
+
+  div.saf_text {
+    position: relative;
+    width: 360px;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 20px;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+
+  div.saf_text2 {
+    position: relative;
+    width: 360px;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 20px;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+
+  div.saf_links {
+    position: relative;
+    width: 360px;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+
+    a {
+      width: 100%;
+      color: white;
+      display: inline-block;
+      text-decoration: underline;
+      margin-top: 10px;
+    }
+
+    a:hover {
+      color: #ffbc32;
+    }
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  div.saf_container {
+    width: 100%;
+    margin-top: 0px;
+
+    div.saf_title {
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    div.saf_text {
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    div.saf_text2 {
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    div.saf_links {
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
