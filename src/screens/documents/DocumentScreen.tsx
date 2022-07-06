@@ -36,7 +36,9 @@ function DocumentsScreen({
     }
   };
   const { urlLanguage } = useParams();
+
   const selectedLanguage = handleUrlLanguage(urlLanguage);
+
   useEffect(() => {
     SocialAnimations();
     hoverBackgroundTable();
@@ -55,6 +57,7 @@ function DocumentsScreen({
             imgComponent={<DocumentImage />}
             commingSoon={false}
             commingSoonText=""
+            commingSoonText2=""
             key="TheCyberEnterprise"
             last={false}
           />
@@ -64,6 +67,7 @@ function DocumentsScreen({
             imgComponent={<CybrScroll botbanned={data.botBanned} />}
             key="Cyber_Token"
             commingSoonText=""
+            commingSoonText2=""
             commingSoon={false}
             last={false}
           />
@@ -71,7 +75,8 @@ function DocumentsScreen({
             document={DocumentsInfos.Project_Run}
             imgComponent={<Run />}
             key="Project Run"
-            commingSoonText="Introduction coming in June"
+            commingSoonText="Introduction Article: "
+            commingSoonText2="Medium"
             commingSoon={true}
             last={false}
           />
@@ -80,6 +85,7 @@ function DocumentsScreen({
             imgComponent={<ProjectHome />}
             key="Project_Home"
             commingSoonText="Introduction coming in July"
+            commingSoonText2=""
             commingSoon={true}
             last={false}
           />
@@ -88,6 +94,7 @@ function DocumentsScreen({
             imgComponent={<CreditCard supply={data.circulatingSupply} />}
             key="Cyber_Creditors_Token"
             commingSoonText=""
+            commingSoonText2=""
             commingSoon={false}
             last={false}
           />
@@ -95,6 +102,7 @@ function DocumentsScreen({
             document={DocumentsInfos.Cyber_Inu}
             imgComponent={<CybrInu />}
             commingSoonText=""
+            commingSoonText2=""
             key="Cyber_Inu"
             commingSoon={false}
             last={true}

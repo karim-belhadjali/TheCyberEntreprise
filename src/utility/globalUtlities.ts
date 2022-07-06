@@ -2,6 +2,8 @@ export const handleLanguage = (language: any): string => {
   switch (language) {
     case "English":
       return "en";
+    case "Spanish":
+      return "es";
     default:
       return "en";
   }

@@ -48,7 +48,6 @@ import { browserName } from "react-device-detect";
 // const IndexScreen = lazy(() => import("../index/IndexScreen"));
 
 function MainScreen() {
-  const heroRef = React.useRef<any>(null);
   const darklayerRef = React.useRef(null);
   const [isMenu, setisMenu] = useState(false);
   const [language, setlanguage] = useState("English");
@@ -62,6 +61,7 @@ function MainScreen() {
     setisMenu(true);
     showDarkLayer(darklayerRef.current, showMainmenu);
   };
+
   const openLanguage = () => {
     setisMenu(false);
     showDarkLayer(darklayerRef.current, showLanguageMenu);
@@ -85,19 +85,6 @@ function MainScreen() {
     isMenu
       ? close_main_menu_right(darklayerRef.current)
       : close_language_menu_right(darklayerRef.current);
-  };
-
-  const handleCybrApi = () => {
-    let documentsData = {
-      botBanned: mockedData.botsBanned,
-      circulatingSupply: mockedData.circulatingSupply,
-    };
-    let calculatorData = {
-      circulatingSupply: mockedData.circulatingSupply,
-      usdPrice: mockedData.usdPrice,
-    };
-    setdocumentsData(documentsData);
-    setcalculatorData(calculatorData);
   };
 
   const handleCybrInfo = async () => {
@@ -126,6 +113,19 @@ function MainScreen() {
       pooledCybr: mockedData.pooledCybr,
       donationReceived: mockedData.donationReceived,
     };
+
+    let documentsData = {
+      botBanned: mockedData.botsBanned,
+      circulatingSupply: mockedData.circulatingSupply,
+    };
+
+    let calculatorData = {
+      circulatingSupply: mockedData.circulatingSupply,
+      usdPrice: mockedData.usdPrice,
+    };
+
+    setdocumentsData(documentsData);
+    setcalculatorData(calculatorData);
     settokenInfoData(tokenInfoData);
     setutilityBarData(utilityData);
     const response = await getCybrTokenInfo();
@@ -156,20 +156,31 @@ function MainScreen() {
         pooledCybr: response.pooledCybr,
         donationReceived: response.donationReceived,
       };
+      documentsData = {
+        botBanned: response.botsBanned,
+        circulatingSupply: response.circulatingSupply,
+      };
+      calculatorData = {
+        circulatingSupply: response.circulatingSupply,
+        usdPrice: response.usdPrice,
+      };
       settokenInfoData(tokenInfoData);
       setutilityBarData(utilityData);
+      setdocumentsData(documentsData);
+      setcalculatorData(calculatorData);
     }
   };
+
   const handleUrlLanguage = (language) => {
     setlanguage(language);
   };
+
   const handleSafariBrowser = (browserName: string) => {
     if (browserName === "Safari") {
       setisSafari(true);
     }
   };
   useEffect(() => {
-    handleCybrApi();
     handleCybrInfo();
     handleSafariBrowser(browserName);
   }, []);

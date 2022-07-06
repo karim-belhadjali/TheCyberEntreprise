@@ -532,6 +532,11 @@ div.documents {
           font-size: 30px;
           color: white;
           text-align: center;
+
+          a {
+            color: var(--var-yellow);
+            cursor: pointer;
+          }
         }
       }
     }

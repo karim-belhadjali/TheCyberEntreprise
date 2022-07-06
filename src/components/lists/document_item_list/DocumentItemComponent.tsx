@@ -14,12 +14,14 @@ function DocumentItem({
   imgComponent,
   commingSoon,
   commingSoonText,
+  commingSoonText2,
   last,
 }: {
   document: any;
   imgComponent: any;
   commingSoon: Boolean;
   commingSoonText: string;
+  commingSoonText2: string;
   last: Boolean;
 }) {
   const description = document.documents as [];
@@ -116,7 +118,18 @@ function DocumentItem({
         <div className="doc_list">
           {commingSoon && (
             <div className="document_el">
-              <div className="coming_soon">{commingSoonText}</div>
+              <div className="coming_soon">
+                {commingSoonText}
+                {commingSoonText2 !== "" && (
+                  <a
+                    href="https://thecyberenterprise.medium.com/project-run-introduction-37fac1374c47"
+                    target="_blank"
+                    rel="nofollow noindex noreferrer noopener"
+                  >
+                    {commingSoonText2}
+                  </a>
+                )}
+              </div>
             </div>
           )}
           {!commingSoon &&

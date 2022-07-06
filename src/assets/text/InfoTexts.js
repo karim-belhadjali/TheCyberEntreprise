@@ -11,58 +11,65 @@ export const RoadmapInfos = {
     T4_Symbiotic_project: "T4: Symbiotic project",
   },
   current_Quarter: {
-    name: "Quarter 2",
-    date: "April 1st - June 30th",
+    name: "Quarter 3",
+    date: "July 1st - September 30th",
     year: "2022",
     Completed_Tasks: [
       {
-        task_1: "T3: New V3 Custom Contract",
-        task_2: "T3: New Cyber Website",
-        task_3: "T2: Collected Marketing Data",
-        task_4: "T2: Decentralized Team Scaling",
-        task_5: "T1: Old Etherscan Migrated",
-        task_6: "T1: New Etherscan Updated",
-        task_7: "T1: Shill Formats",
-        task_8: "T1: Banners For Marketing",
+        task_1: "T3: Project Run Introduction",
+        task_2: "T1: ENS for Project Wallets",
       },
     ],
     In_Progress: [
       {
-        task_1: "T3: ShibaSwap Plan",
-        task_2: "T2: Peer to Peer Advertising",
-        task_3: "T2: Spanish Documentation",
+        task_1: "T3: Art Page Web Update",
+        task_2: "T3: Project Run Teaser Video",
+        task_3: "T3: Project Run Overview Video",
+        task_4: "T2: Spanish Web Translations",
+        task_5: "T2: Dutch Web Translations",
+        task_6: "T2: Arabic Web Translations",
+        task_7: "T2: Italian Web Translations",
+        task_8: "T2: Peer to Peer Advertising ",
       },
     ],
     Planning_Phase: [
       {
-        task_1: "T3: ShibaSwap Liquidity",
-        task_2: "T3: Project Run Introdution",
-        task_3: "T2: CG & CMC Listing Formats",
+        task_1: "T3: Project Run Web Update",
+        task_2: "T3: Project Run Alpha",
+        task_3: "T3: Project Run Beta",
+        task_4: "T3 Project Run v1.0",
+        task_5: "T3: Project Home Intro",
+        task_6: "T3: Project Home 1st Initiatives",
+        task_7: "T2: Project Run Documentation Set",
+        task_8: "T2: Dutch Documentation",
+        task_9: "T2: Italian Documentation",
+        task_10: "T1: CyberPaper Documentation",
+        task_11: "T1: Contract Breakdown Documentation",
       },
     ],
   },
+
   other_Quarter_3: {
-    name: "Quarter 3",
-    date: "July 1st - September 30th",
-    year: "2022",
-    description:
-      "The goal for this quarter includes, but is not limited to, further continuation with ShibaSwap initiatives such as woofable pairing, Project Run Phase 1 & 2, and introduction of Project Home Phase 1 & Phase 2. In addition, micro website updates will also take place during this time.",
-  },
-  other_Quarter_4: {
     name: "Quarter 4",
     date: "October 1st - December 31st",
     year: "2022",
     description:
       "The initiative for this quarter includes, but is not limited to, the creation of further utilities for both Cyber (CYBR) via Website updates, Polygon Bridge, Project Run Phase 3, and the start of the redevelopment of the Cybernator NFTs. An NFT contract mitigating OpenSea control over token IDs.",
   },
-  other_Quarter_1: {
+  other_Quarter_4: {
     name: "Quarter 1 ",
     date: "January 1st - March 31st",
     year: "2023",
     description:
       "The intent for this quarter includes, but is not limited to,  supporting our decentralized exchange, decentralized application, or decentralized marketplace. In addition, upscaling Project Home is needed for continuing with DeFi ecosystem expansion.",
   },
-
+  other_Quarter_1: {
+    name: "Quarter 2",
+    date: "April 1st - June 30th",
+    year: "2023",
+    description:
+      "The intent for this quarter includes, but is not limited to, creating a research base with proper documentation abiding by EU legislation in countries such as Estonia, Lithuania, Poland or Malta that allow the registration of a non-custodial crypto company",
+  },
   information: {
     title: "Information",
     sections: [
@@ -83,24 +90,53 @@ export const RoadmapInfos = {
       },
     ],
   },
-  color_key_definition: {
-    completed_tasks:
-      "Completed tasks are items that have been finalized and implemented within the project.",
-    In_progress:
-      "Items in progress are areas that the team is currently working on, with time and resources being allocated to the desired items in order to reach completion.",
-    Planning_Phase:
-      "Objectives found within the preparation, phase are concepts that are or have been adequately discussed within the team. However, they have either not been given the time, resources, or green light to start this endeavor beyond being mind mapped.",
-  },
-  number_key_definition: {
-    tier_1_project:
-      "Tier 1 projects can also be considered initiatives that are intended to strengthen the foundation of the project. These can typically be done in-house by the team or community members, without taking an extended period of time to achieve.",
-    tier_2_project:
-      "Tier 2 projects support user experience that typically requires a 3rd party to aid the project beyond what is being implemented in-house. Additionally, internal initiatives similar to tier 1s however require the attention of more team members to achieve an anticipated outcome fall under this category.",
-    tier_3_project:
-      "Tier 3 projects are ventures that require planning, coordination, and funding. It typically involves multiple team members from different areas within the project that will progressively develop and evolve. Tier 3s demonstrate what the enterprise can achieve and are considered stepping stone initiatives that can lead and support Tier 4 projects.",
-    tier_4_symbiotic_project:
-      "Tier 4 Symbiotic Projects are considered the most ambitious initiatives the Cyber Enterprise intends to undergo. They require rigorous planning, full internal team coordination as well as support from 3rd party members, and externally funding. These projects can typically be viewed as DApps (Decentralized Applications) or bridging the Enterprise to the physical world that pushes the project beyond something digital.",
-  },
+  definitions: [
+    {
+      title: "Color Key",
+      sections: [
+        {
+          title: "Completed Tasks",
+          content:
+            "Completed tasks are items that have been finalized and implemented within the project.",
+        },
+        {
+          title: "In Progress",
+          content:
+            "Items in progress are areas that the team is currently working on, with time and resources being allocated to the desired items in order to reach completion.",
+        },
+        {
+          title: "In Preparation",
+          content:
+            "Objectives found within the preparation, phase are concepts that are or have been adequately discussed within the team. However, they have either not been given the time, resources, or green light to start this endeavor beyond being mind mapped.",
+        },
+      ],
+    },
+    {
+      title: "Number Key",
+      sections: [
+        {
+          title: "Tier 1 Project",
+          content:
+            "Tier 1 projects can also be considered initiatives that are intended to strengthen the foundation of the project. These can typically be done in-house by the team or community members, without taking an extended period of time to achieve.",
+        },
+        {
+          title: "Tier 2 Projects ",
+          content:
+            "Tier 2 projects support user experience that typically requires a 3rd party to aid the project beyond what is being implemented in-house. Additionally, internal initiatives similar to tier 1s however require the attention of more team members to achieve an anticipated outcome fall under this category.",
+        },
+        {
+          title: "Tier 3 Projects",
+          content:
+            "Tier 3 projects are ventures that require planning, coordination, and funding. It typically involves multiple team members from different areas within the project that will progressively develop and evolve. Tier 3s demonstrate what the enterprise can achieve and are considered stepping stone initiatives that can lead and support Tier 4 projects.",
+        },
+        {
+          title: "Tier 4 Symbiotic Projects",
+          content:
+            "Tier 4 Symbiotic Projects are considered the most ambitious initiatives the Cyber Enterprise intends to undergo. They require rigorous planning, full internal team coordination as well as support from 3rd party members, and externally funding. These projects can typically be viewed as DApps (Decentralised Applications) or bridging the Enterprise to the physical world that pushes the project beyond something digital.",
+        },
+      ],
+    },
+  ],
 };
 
 export const CalculatorInfos = {
@@ -537,6 +573,7 @@ export const PressReleaseInfos = {
     },
   },
 };
+
 export const MainPageInfos = {
   token_info: {
     contract_address: "contract address",
@@ -1014,12 +1051,12 @@ export const TeamPageInfos = {
 
 export const HighlightedTextSVG = {
   announcement:
-    "Operation Perfect Storm In Progress: Taxes TURNED OFF for limited time, ShibaSwap Initiatives, Project Run, Project Home, and more!",
+    "Operation Perfect Storm In Progress: ShibaSwap Initiatives, Project Run, Project Home, and more!",
   mobileVersion: [
     "Hello stranger, I am",
     " The Cyber Inu",
-    " and",
-    " it's",
+    " and it",
+    " is",
     " truly a pleasure to have ",
     "you ",
     "here at the New Cyber Enterprise website! Here at the enterprise, we strive in ",
@@ -1050,7 +1087,7 @@ export const HighlightedTextSVG = {
   scene2: {
     content: [
       "It was nice in the beginning. To see each one of us becoming happy, working towards greater goals. The sky was blue, birds flew above our heads and we all did as we were told joyfully. I know you would've liked it!",
-      "of * one * you",
+      "one *of * one * you",
     ],
     btn_text: "Continue..",
   },
