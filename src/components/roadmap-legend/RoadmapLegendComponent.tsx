@@ -27,6 +27,7 @@ function RoadmapLegend({
   tier2Btn,
   tier3Btn,
   tier4Btn,
+  data,
 }: {
   completedBtn: any;
   progressBtn: any;
@@ -38,11 +39,12 @@ function RoadmapLegend({
   tier2Btn: any;
   tier3Btn: any;
   tier4Btn: any;
+  data: any;
 }) {
   return (
     <>
       <div className="list">
-        <h3>Colour Key:</h3>
+        <h3>{data.RoadmapInfos.definitions[0].title}</h3>
 
         {/*  Completed Tasks  */}
         <h4
@@ -65,7 +67,7 @@ function RoadmapLegend({
             );
           }}
         >
-          Completed Tasks
+          {data.RoadmapInfos.color_key.completed_tasks}
         </h4>
 
         {/*  In Progress  */}
@@ -89,7 +91,7 @@ function RoadmapLegend({
             );
           }}
         >
-          In Progress
+          {data.RoadmapInfos.color_key.In_progress}
         </h4>
 
         {/*  In Preparation  */}
@@ -113,12 +115,12 @@ function RoadmapLegend({
             );
           }}
         >
-          In Preparation
+          {data.RoadmapInfos.color_key.Planning_Phase}
         </h4>
       </div>
 
       <div className="list">
-        <h3>Number Key:</h3>
+        <h3> {data.RoadmapInfos.definitions[1].title}</h3>
 
         {/*   T1: Tier 1 project  */}
         <h4
@@ -127,7 +129,7 @@ function RoadmapLegend({
           onMouseEnter={() => tier1TasksEnter(tier2Btn, tier3Btn, tier4Btn)}
           onMouseLeave={() => tier1TasksLeave(tier2Btn, tier3Btn, tier4Btn)}
         >
-          T1: Tier 1 project
+          {data.RoadmapInfos.number_key.T1_Tier_1_project}
         </h4>
 
         {/*   T2: Tier 2 project  */}
@@ -137,7 +139,7 @@ function RoadmapLegend({
           onMouseEnter={() => tier2TasksEnter(tier1Btn, tier3Btn, tier4Btn)}
           onMouseLeave={() => tier2TasksLeave(tier1Btn, tier3Btn, tier4Btn)}
         >
-          T2: Tier 2 project
+          {data.RoadmapInfos.number_key.T2_Tier_2_project}
         </h4>
 
         {/*  T3: Tier 3 project  */}
@@ -147,7 +149,7 @@ function RoadmapLegend({
           onMouseEnter={() => tier3TasksEnter(tier1Btn, tier2Btn, tier4Btn)}
           onMouseLeave={() => tier3TasksLeave(tier1Btn, tier2Btn, tier4Btn)}
         >
-          T3: Tier 3 project
+          {data.RoadmapInfos.number_key.T3_Tier_3_project}
         </h4>
 
         {/*  T4: Symbiotic project */}
@@ -157,7 +159,7 @@ function RoadmapLegend({
           onMouseEnter={() => tier4TasksEnter(tier1Btn, tier2Btn, tier3Btn)}
           onMouseLeave={() => tier4TasksLeave(tier1Btn, tier2Btn, tier3Btn)}
         >
-          T4: Symbiotic project
+          {data.RoadmapInfos.number_key.T4_Symbiotic_project}
         </h4>
       </div>
     </>

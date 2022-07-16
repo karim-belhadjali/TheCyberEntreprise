@@ -102,7 +102,7 @@ export const calcBtnHoverUp = (element) => {
 
 // End Calc Button Hover
 
-export const calculatorAnimation = () => {
+export const calculatorAnimation = (calcText) => {
   // Estimates Hover
   var quick_line_1 = document.getElementsByClassName("quick_line_1");
   var quick_line_2 = document.getElementsByClassName("quick_line_2");

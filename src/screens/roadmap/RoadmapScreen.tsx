@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 import "./RoadmapScreenStyle.scss";
 
@@ -14,17 +14,24 @@ import CybrHand from "src/components/cyber-hand/CyberHandComponent";
 import TextContainer from "src/components/textContainer/TextContainerComponent";
 import RoadmapLegend from "src/components/roadmap-legend/RoadmapLegendComponent";
 import InfoBox from "src/components/info-box/InfoBoxComponent";
+import * as EnglishText from "src/assets/text/InfoTexts";
+import * as SpanishText from "src/assets/text/SpanishJSFile";
 import { RoadmapInfos } from "src/assets/text/InfoTexts";
 import { useParams } from "react-router-dom";
-import { handleUrlLanguage } from "src/utility/globalUtlities";
+import { handleUrlLanguages } from "src/utility/globalUtlities";
 
 function RoadmapScreen({
   language,
   urlLanguages,
+  setcurrentScreen,
 }: {
   language: any;
   urlLanguages: any;
+  setcurrentScreen: any;
 }) {
+  setcurrentScreen("Roadmap");
+  const [RoadmapText, setRoadmapText] = useState(EnglishText);
+
   const completedBtn = useRef<any>();
   const progressBtn = useRef<any>(null);
   const preparationBtn = useRef<any>(null);
@@ -38,13 +45,11 @@ function RoadmapScreen({
   const tier3Btn = useRef<any>(null);
   const tier4Btn = useRef<any>(null);
 
-  const RoadmapText = RoadmapInfos;
-
   const { urlLanguage } = useParams();
-  const selectedLanguage = handleUrlLanguage(urlLanguage);
+  const selectedLanguage = handleUrlLanguages(urlLanguage);
 
   const lastElement = (index): boolean => {
-    if (RoadmapText.definitions.length - 1 === index) {
+    if (RoadmapText.RoadmapInfos.definitions.length - 1 === index) {
       return true;
     } else {
       return false;
@@ -52,16 +57,20 @@ function RoadmapScreen({
   };
 
   useEffect(() => {
+    if (language === "English") {
+      setRoadmapText(EnglishText);
+    } else if (language === "Spanish") {
+      setRoadmapText(SpanishText);
+    }
+  }, [RoadmapText, language]);
+
+  useEffect(() => {
     completedLiquidAnim(completedBtn.current, completedLiquid.current);
     progressBtnLiquidAnim(progressBtn.current, progressLiquid.current);
     preparationBtnLiquidAnim(preparationBtn.current, preparationLiquid.current);
-    urlLanguages(selectedLanguage);
-    console.log(
-      window.location.protocol +
-        "//" +
-        window.location.host +
-        window.location.pathname
-    );
+    if (selectedLanguage !== language) {
+      urlLanguages(selectedLanguage);
+    }
   }, [selectedLanguage]);
 
   return (
@@ -80,6 +89,7 @@ function RoadmapScreen({
               tier2Btn={tier2Btn}
               tier3Btn={tier3Btn}
               tier4Btn={tier4Btn}
+              data={RoadmapText}
             />
           </div>
 
@@ -99,116 +109,179 @@ function RoadmapScreen({
                 <div className="text_container">
                   <div className="title">
                     <span className="quarter">
-                      {RoadmapText.current_Quarter.name}
+                      {RoadmapText.RoadmapInfos.current_Quarter.name}
                     </span>
                     <span className="date">
-                      {RoadmapText.current_Quarter.date}
+                      {RoadmapText.RoadmapInfos.current_Quarter.date}
                     </span>
                     <span className="year">
-                      {RoadmapText.current_Quarter.year}
+                      {RoadmapText.RoadmapInfos.current_Quarter.year}
                     </span>
                   </div>
                   <div className="horizontal_sep"></div>
                   <div className="tasks">
                     <div className="task_group">
                       <h3 className="comp">
-                        {RoadmapText.color_key.completed_tasks}
+                        {RoadmapText.RoadmapInfos.color_key.completed_tasks}
                       </h3>
                       <h4 className="t3_item comp_items">
                         <span className="dots completed_dot"></span>
-                        {RoadmapText.current_Quarter.Completed_Tasks[0].task_1}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .Completed_Tasks[0].task_1
+                        }
+                      </h4>
+                      <h4 className="t2_item comp_items">
+                        <span className="dots completed_dot"></span>
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .Completed_Tasks[0].task_2
+                        }
                       </h4>
                       <h4 className="t1_item comp_items">
                         <span className="dots completed_dot"></span>
-                        {RoadmapText.current_Quarter.Completed_Tasks[0].task_2}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .Completed_Tasks[0].task_3
+                        }
                       </h4>
                     </div>
                     <div className="vertical_sep"></div>
                     <div className="task_group">
                       <h3 className="prog">
-                        {RoadmapText.color_key.In_progress}
+                        {RoadmapText.RoadmapInfos.color_key.In_progress}
                       </h3>
                       <h4 className="t3_item prog_items">
                         <span className="dots progress_dot"></span>
-                        {RoadmapText.current_Quarter.In_Progress[0].task_1}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .In_Progress[0].task_1
+                        }
                       </h4>
                       <h4 className="t3_item prog_items">
                         <span className="dots progress_dot"></span>
-                        {RoadmapText.current_Quarter.In_Progress[0].task_2}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .In_Progress[0].task_2
+                        }
                       </h4>
                       <h4 className="t3_item prog_items">
                         <span className="dots progress_dot"></span>
-                        {RoadmapText.current_Quarter.In_Progress[0].task_3}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .In_Progress[0].task_3
+                        }
                       </h4>
                       <h4 className="t2_item prog_items">
                         <span className="dots progress_dot"></span>
-                        {RoadmapText.current_Quarter.In_Progress[0].task_4}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .In_Progress[0].task_4
+                        }
                       </h4>
                       <h4 className="t2_item prog_items">
                         <span className="dots progress_dot"></span>
-                        {RoadmapText.current_Quarter.In_Progress[0].task_5}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .In_Progress[0].task_5
+                        }
                       </h4>
                       <h4 className="t2_item prog_items">
                         <span className="dots progress_dot"></span>
-                        {RoadmapText.current_Quarter.In_Progress[0].task_6}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .In_Progress[0].task_6
+                        }
                       </h4>
                       <h4 className="t2_item prog_items">
                         <span className="dots progress_dot"></span>
-                        {RoadmapText.current_Quarter.In_Progress[0].task_7}
-                      </h4>
-                      <h4 className="t2_item prog_items">
-                        <span className="dots progress_dot"></span>
-                        {RoadmapText.current_Quarter.In_Progress[0].task_8}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .In_Progress[0].task_7
+                        }
                       </h4>
                     </div>
                     <div className="vertical_sep"></div>
                     <div className="task_group">
                       <h3 className="prep">
-                        {RoadmapText.color_key.Planning_Phase}
+                        {RoadmapText.RoadmapInfos.color_key.Planning_Phase}
                       </h3>
                       <h4 className="t3_item prep_items">
                         <span className="dots preparation_dot"></span>
-                        {RoadmapText.current_Quarter.Planning_Phase[0].task_1}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .Planning_Phase[0].task_1
+                        }
                       </h4>
                       <h4 className="t3_item prep_items">
                         <span className="dots preparation_dot"></span>
-                        {RoadmapText.current_Quarter.Planning_Phase[0].task_2}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .Planning_Phase[0].task_2
+                        }
                       </h4>
                       <h4 className="t3_item prep_items">
                         <span className="dots preparation_dot"></span>
-                        {RoadmapText.current_Quarter.Planning_Phase[0].task_3}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .Planning_Phase[0].task_3
+                        }
                       </h4>
                       <h4 className="t3_item prep_items">
                         <span className="dots preparation_dot"></span>
-                        {RoadmapText.current_Quarter.Planning_Phase[0].task_4}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .Planning_Phase[0].task_4
+                        }
                       </h4>
                       <h4 className="t3_item prep_items">
                         <span className="dots preparation_dot"></span>
-                        {RoadmapText.current_Quarter.Planning_Phase[0].task_5}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .Planning_Phase[0].task_5
+                        }
                       </h4>
                       <h4 className="t3_item prep_items">
                         <span className="dots preparation_dot"></span>
-                        {RoadmapText.current_Quarter.Planning_Phase[0].task_6}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .Planning_Phase[0].task_6
+                        }
                       </h4>
                       <h4 className="t2_item prep_items">
                         <span className="dots preparation_dot"></span>
-                        {RoadmapText.current_Quarter.Planning_Phase[0].task_7}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .Planning_Phase[0].task_7
+                        }
                       </h4>
                       <h4 className="t2_item prep_items">
                         <span className="dots preparation_dot"></span>
-                        {RoadmapText.current_Quarter.Planning_Phase[0].task_8}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .Planning_Phase[0].task_8
+                        }
                       </h4>
                       <h4 className="t2_item prep_items">
                         <span className="dots preparation_dot"></span>
-                        {RoadmapText.current_Quarter.Planning_Phase[0].task_9}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .Planning_Phase[0].task_9
+                        }
                       </h4>
                       <h4 className="t1_item prep_items">
                         <span className="dots preparation_dot"></span>
-                        {RoadmapText.current_Quarter.Planning_Phase[0].task_10}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .Planning_Phase[0].task_10
+                        }
                       </h4>
                       <h4 className="t1_item prep_items">
                         <span className="dots preparation_dot"></span>
-                        {RoadmapText.current_Quarter.Planning_Phase[0].task_11}
+                        {
+                          RoadmapText.RoadmapInfos.current_Quarter
+                            .Planning_Phase[0].task_11
+                        }
                       </h4>
                     </div>
                   </div>
@@ -220,51 +293,51 @@ function RoadmapScreen({
               <div className="quarter_el">
                 <div className="title">
                   <span className="quarter">
-                    {RoadmapText.other_Quarter_3.name}
+                    {RoadmapText.RoadmapInfos.other_Quarter_3.name}
                   </span>
                   <span className="date">
-                    {RoadmapText.other_Quarter_3.date}
+                    {RoadmapText.RoadmapInfos.other_Quarter_3.date}
                   </span>
                   <span className="year">
-                    {RoadmapText.other_Quarter_3.year}
+                    {RoadmapText.RoadmapInfos.other_Quarter_3.year}
                   </span>
                 </div>
                 <div className="text">
-                  {RoadmapText.other_Quarter_3.description}
+                  {RoadmapText.RoadmapInfos.other_Quarter_3.description}
                 </div>
               </div>
               <div className="vertical_sep"></div>
               <div className="quarter_el">
                 <div className="title">
                   <span className="quarter">
-                    {RoadmapText.other_Quarter_4.name}
+                    {RoadmapText.RoadmapInfos.other_Quarter_4.name}
                   </span>
                   <span className="date">
-                    {RoadmapText.other_Quarter_4.date}
+                    {RoadmapText.RoadmapInfos.other_Quarter_4.date}
                   </span>
                   <span className="year">
-                    {RoadmapText.other_Quarter_4.year}
+                    {RoadmapText.RoadmapInfos.other_Quarter_4.year}
                   </span>
                 </div>
                 <div className="text">
-                  {RoadmapText.other_Quarter_4.description}
+                  {RoadmapText.RoadmapInfos.other_Quarter_4.description}
                 </div>
               </div>
               <div className="vertical_sep"></div>
               <div className="quarter_el">
                 <div className="title">
                   <span className="quarter">
-                    {RoadmapText.other_Quarter_1.name}
+                    {RoadmapText.RoadmapInfos.other_Quarter_1.name}
                   </span>
                   <span className="date">
-                    {RoadmapText.other_Quarter_1.date}
+                    {RoadmapText.RoadmapInfos.other_Quarter_1.date}
                   </span>
                   <span className="year">
-                    {RoadmapText.other_Quarter_1.year}
+                    {RoadmapText.RoadmapInfos.other_Quarter_1.year}
                   </span>
                 </div>
                 <div className="text">
-                  {RoadmapText.other_Quarter_1.description}
+                  {RoadmapText.RoadmapInfos.other_Quarter_1.description}
                 </div>
               </div>
             </div>
@@ -277,11 +350,11 @@ function RoadmapScreen({
 
       <InfoBox
         title="Information"
-        info={RoadmapInfos.information}
+        info={RoadmapText.RoadmapInfos.information}
         last={false}
       />
 
-      {RoadmapText.definitions.map((section, index) => {
+      {RoadmapText.RoadmapInfos.definitions.map((section, index) => {
         return (
           <InfoBox
             info={section}

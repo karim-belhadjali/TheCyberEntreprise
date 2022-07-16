@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import Bar from "./Bar/BarComponent";
 import LanguageButton from "./language-selection/LanguageButtonComponent";
 import "./UtilityBarStyle.scss";
+import * as EnglishText from "src/assets/text/InfoTexts";
+import * as SpanishText from "src/assets/text/SpanishJSFile";
 import Anime from "react-animejs-wrapper";
 
 function UtilityBar({
@@ -18,6 +20,9 @@ function UtilityBar({
   const animeRef = useRef<any>(null);
   const [utilityWidth, setutilityWidth] = useState(0);
   const [utilitySpanWidth, setutilitySpanWidth] = useState(0);
+  const [utilityText, setutilityText] = useState(
+    EnglishText.Globaltext.Cybr_token_info
+  );
 
   const handleResize = () => {
     setutilityWidth(utilityRef.current.offsetWidth);
@@ -29,6 +34,14 @@ function UtilityBar({
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    if (language === "English") {
+      setutilityText(EnglishText.Globaltext.Cybr_token_info);
+    } else if (language === "Spanish") {
+      setutilityText(SpanishText.Globaltext.Cybr_token_info);
+    }
+  }, [language]);
 
   let speed = 70; // pixels per second
   let loopDuration =
@@ -53,23 +66,47 @@ function UtilityBar({
           className="info_bar"
         >
           <div ref={utilitySpanRef} className="bar_container">
-            <Bar text={"Price in ETH: " + data.ethPrice} />
-            <Bar text={"Price in USD: " + data.usdPrice} />
+            <Bar text={utilityText.Price_in_ETH + " " + data.ethPrice} />
+            <Bar text={utilityText.Price_in_USD + " " + data.usdPrice} />
             <Bar
               text={
-                "Last 24h change: " + data.trend + data.difference24 + " % "
+                utilityText.Last_24h_Change +
+                " " +
+                data.trend +
+                data.difference24 +
+                " % "
               }
             />
-            <Bar text={"Total liquidity: $" + data.totalLiquidity} />
-            <Bar text={"Holders: " + data.holders} />
-            <Bar text={"Pooled WETH: " + data.pooledWeth} />
-            <Bar text={"Pooled CYBR: " + data.pooledCybr} />
-            <Bar text={"Circulating Supply: " + data.circulatingSupply} />
-            <Bar text={"Burned CYBR: " + data.burnedAmmount} />
-            <Bar text={"Total Transactions: " + data.totalTransactions} />
-            <Bar text={"Donation Received: " + data.donationReceived} />
-            <Bar text={"Donation Spent: " + data.donationSpent} />
-            <Bar text={"Donation Available: " + data.donationAvailable} />
+            <Bar
+              text={utilityText.Total_Liquidity + " $" + data.totalLiquidity}
+            />
+            <Bar text={utilityText.Holders + " " + data.holders} />
+            <Bar text={utilityText.Pooled_Eth + " " + data.pooledWeth} />
+            <Bar text={utilityText.Pooled_CYBR + " " + data.pooledCybr} />
+            <Bar
+              text={
+                utilityText.Circulating_Supply + " " + data.circulatingSupply
+              }
+            />
+            <Bar text={utilityText.Burned_CYBR + " " + data.burnedAmmount} />
+            <Bar
+              text={
+                utilityText.Total_Transactions + " " + data.totalTransactions
+              }
+            />
+            <Bar
+              text={
+                utilityText.Donations_Received + " " + data.donationReceived
+              }
+            />
+            <Bar
+              text={utilityText.Donations_Spent + " " + data.donationSpent}
+            />
+            <Bar
+              text={
+                utilityText.Donations_Available + " " + data.donationAvailable
+              }
+            />
           </div>
         </div>
         <LanguageButton language={language} onClick={languageClick} />

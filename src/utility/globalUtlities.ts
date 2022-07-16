@@ -8,7 +8,7 @@ export const handleLanguage = (language: any): string => {
       return "en";
   }
 };
-export const handleUrlLanguage = (language: any): string => {
+export const handleUrlLanguages = (language: any): string => {
   switch (language) {
     case "en":
       return "English";

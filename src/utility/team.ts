@@ -149,9 +149,9 @@ export const roleBanner = (role: string): string => {
     case "Chinese Ambassador": {
       return "chinese_ambassador";
     }
-    // case "Ambassador Lead": {
-    //   return require("../assets/team/oni.webp");
-    // }
+    case "Ambassador Lead": {
+      return "lead_ambassador";
+    }
     // case "Dutch Ambassador": {
     //   return require("../assets/team/oni.webp");
     // }

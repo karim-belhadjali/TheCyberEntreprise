@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useParams } from "react-router-dom";
 
 import {
   showLanguageMenu,
@@ -23,7 +23,10 @@ import PressRelease from "../press release/PressReleaseScreen";
 import RoadmapScreen from "../roadmap/RoadmapScreen";
 import TeamScreen from "../team/TeamScreen";
 import IndexScreen from "../index/IndexScreen";
+import * as EnglishText from "src/assets/text/InfoTexts";
+import * as SpanishText from "src/assets/text/SpanishJSFile";
 import { browserName } from "react-device-detect";
+import { handleUrlLanguages } from "src/utility/globalUtlities";
 
 // const Announcements = lazy(
 //   () => import("../../components/annoucements/AnnouncementComponents")
@@ -55,7 +58,10 @@ function MainScreen() {
   const [tokenInfoData, settokenInfoData] = useState<any>({});
   const [documentsData, setdocumentsData] = useState<any>({});
   const [calculatorData, setcalculatorData] = useState<any>({});
+  const [currentScreen, setcurrentScreen] = useState("home");
   const [isSafari, setisSafari] = useState<Boolean>(false);
+  const [CalcPageText, setCalcPageText] = useState(EnglishText.CalculatorInfos);
+  const [reload, setreload] = useState(false);
 
   const openMainMenu = () => {
     setisMenu(true);
@@ -65,11 +71,6 @@ function MainScreen() {
   const openLanguage = () => {
     setisMenu(false);
     showDarkLayer(darklayerRef.current, showLanguageMenu);
-  };
-
-  const languageSelection = (language: string) => {
-    setlanguage(language);
-    closeMenu();
   };
 
   const closeMenu = () => {
@@ -173,6 +174,13 @@ function MainScreen() {
 
   const handleUrlLanguage = (language) => {
     setlanguage(language);
+    if (language === "English") {
+      setCalcPageText(EnglishText.CalculatorInfos);
+      setreload(!reload);
+    } else if (language === "Spanish") {
+      setCalcPageText(SpanishText.CalculatorInfos);
+      setreload(!reload);
+    }
   };
 
   const handleSafariBrowser = (browserName: string) => {
@@ -191,12 +199,14 @@ function MainScreen() {
         <div className="container">
           <MenuRight
             closeMenu={closeMenu}
-            languageselection={languageSelection}
+            closeMenuX={closeMenuDarkLayer}
             language={language}
+            currentScreen={currentScreen}
+            handleUrlLanguage={handleUrlLanguage}
           />
           <div className="top_hide"></div>
-          <FixedTop menuClick={openMainMenu} />
-          <Announcements />
+          <FixedTop language={language} menuClick={openMainMenu} />
+          <Announcements key={reload} language={language} />
           <UtilityBar
             language={language}
             languageClick={openLanguage}
@@ -210,6 +220,9 @@ function MainScreen() {
                   data={calculatorData}
                   language={language}
                   urlLanguages={(language) => handleUrlLanguage(language)}
+                  setcurrentScreen={(screen) => setcurrentScreen(screen)}
+                  CalcPageText={CalcPageText}
+                  key={reload}
                 />
               }
             />
@@ -220,6 +233,7 @@ function MainScreen() {
                   data={documentsData}
                   language={language}
                   urlLanguages={(language) => handleUrlLanguage(language)}
+                  setcurrentScreen={(screen) => setcurrentScreen(screen)}
                 />
               }
             />
@@ -229,6 +243,7 @@ function MainScreen() {
                 <PressRelease
                   language={language}
                   urlLanguages={(language) => handleUrlLanguage(language)}
+                  setcurrentScreen={(screen) => setcurrentScreen(screen)}
                 />
               }
             >
@@ -238,6 +253,7 @@ function MainScreen() {
                   <PressRelease
                     language={language}
                     urlLanguages={(language) => handleUrlLanguage(language)}
+                    setcurrentScreen={(screen) => setcurrentScreen(screen)}
                   />
                 }
               />
@@ -248,6 +264,7 @@ function MainScreen() {
                 <RoadmapScreen
                   language={language}
                   urlLanguages={(language) => handleUrlLanguage(language)}
+                  setcurrentScreen={(screen) => setcurrentScreen(screen)}
                 />
               }
             />
@@ -257,6 +274,7 @@ function MainScreen() {
                 <TeamScreen
                   language={language}
                   urlLanguages={(language) => handleUrlLanguage(language)}
+                  setcurrentScreen={(screen) => setcurrentScreen(screen)}
                 />
               }
             />
@@ -267,6 +285,7 @@ function MainScreen() {
                   tokenInfoData={tokenInfoData}
                   language={language}
                   urlLanguages={(language) => handleUrlLanguage(language)}
+                  setcurrentScreen={(screen) => setcurrentScreen(screen)}
                 />
               }
             />
@@ -286,12 +305,10 @@ function MainScreen() {
         <div className="saf_container">
           <div className="saf_title"> Safari Browser Detected </div>
           <div className="saf_text">
-            {" "}
             The technologies used to build our website are not yet supported by
             Safari Browser.{" "}
           </div>
           <div className="saf_text2">
-            {" "}
             Please download some other browser of your choice.{" "}
           </div>
           <div className="saf_links">

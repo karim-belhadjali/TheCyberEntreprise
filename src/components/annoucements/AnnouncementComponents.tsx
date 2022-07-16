@@ -1,16 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./AnnouncementStyle.scss";
 import Anime from "react-animejs-wrapper";
-import { HighlightedTextSVG } from "src/assets/text/InfoTexts";
+import * as EnglishText from "src/assets/text/InfoTexts";
+import * as SpanishText from "src/assets/text/SpanishJSFile";
 
-function Announcements() {
+function Announcements(props) {
   const annoucementRef = useRef<any>();
   const annoucementSpanRef = useRef<any>();
   const animeRef = useRef<any>();
   const [annoucmentsWidth, setannoucmentsWidth] = useState<any>([0]);
   const [annoucementsSpanWidth, setannoucementsSpanWidth] = useState(0);
-
-  const annoucmentText = HighlightedTextSVG.announcement;
+  const [annoucementText, setannoucementText] = useState(
+    EnglishText.HighlightedTextSVG.announcement
+  );
 
   const handleResize = () => {
     setannoucmentsWidth(annoucementRef.current.offsetWidth);
@@ -19,6 +21,11 @@ function Announcements() {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     handleResize();
+    if (props.language === "English") {
+      setannoucementText(EnglishText.HighlightedTextSVG.announcement);
+    } else if (props.language === "Spanish") {
+      setannoucementText(SpanishText.HighlightedTextSVG.announcement);
+    }
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -43,7 +50,7 @@ function Announcements() {
         className="announcements"
       >
         <span ref={annoucementSpanRef} className="announcements_text">
-          {annoucmentText}
+          {annoucementText}
         </span>
       </div>
     </Anime>

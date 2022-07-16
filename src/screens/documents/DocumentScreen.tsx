@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { DocumentsInfos, TeamPageInfos } from "src/assets/text/InfoTexts";
 import { SocialAnimations } from "src/animations/documents";
@@ -14,18 +14,30 @@ import CreditCard from "src/components/animated images/Cybr Credit Card/CreditCa
 import CybrInu from "src/components/animated images/cybr Inu/CybrInuImageComponent";
 import InfoBox from "src/components/info-box/InfoBoxComponent";
 import { useParams } from "react-router-dom";
-import { handleUrlLanguage } from "src/utility/globalUtlities";
+import { handleUrlLanguages } from "src/utility/globalUtlities";
+import * as EnglishText from "src/assets/text/InfoTexts";
+import * as SpanishText from "src/assets/text/SpanishJSFile";
 
 function DocumentsScreen({
   data,
   language,
   urlLanguages,
+  setcurrentScreen,
 }: {
   data: any;
   language: string;
   urlLanguages: any;
+  setcurrentScreen: any;
 }) {
-  const DocumentPageText = DocumentsInfos;
+  setcurrentScreen("doc");
+
+  const [DocumentPageText, setDocumentPageText] = useState(
+    EnglishText.DocumentsInfos
+  );
+  const [GlobalDocumentText, setGlobalDocumentText] = useState(
+    EnglishText.Globaltext.Documents_Page
+  );
+
   const teamPageText = TeamPageInfos;
 
   const lastElement = (index): boolean => {
@@ -37,23 +49,34 @@ function DocumentsScreen({
   };
   const { urlLanguage } = useParams();
 
-  const selectedLanguage = handleUrlLanguage(urlLanguage);
+  const selectedLanguage = handleUrlLanguages(urlLanguage);
 
   useEffect(() => {
     SocialAnimations();
     hoverBackgroundTable();
-    urlLanguages(selectedLanguage);
-  }, [urlLanguages, selectedLanguage]);
+    if (selectedLanguage !== language) {
+      urlLanguages(selectedLanguage);
+    }
+  }, [selectedLanguage]);
+  useEffect(() => {
+    if (language === "English") {
+      setDocumentPageText(EnglishText.DocumentsInfos);
+      setGlobalDocumentText(EnglishText.Globaltext.Documents_Page);
+    } else if (language === "Spanish") {
+      setDocumentPageText(SpanishText.DocumentsInfos);
+      setGlobalDocumentText(SpanishText.Globaltext.Documents_Page);
+    }
+  }, [language]);
   return (
     <div>
       <div className="documents">
         <div className="documents_container">
-          <div className="doc_title">Document Page</div>
+          <div className="doc_title">{DocumentPageText.title}</div>
 
           <div className="horizontal_line"></div>
 
           <DocumentItem
-            document={DocumentsInfos.TheCyberEnterprise}
+            document={DocumentPageText.TheCyberEnterprise}
             imgComponent={<DocumentImage />}
             commingSoon={false}
             commingSoonText=""
@@ -63,7 +86,7 @@ function DocumentsScreen({
           />
 
           <DocumentItem
-            document={DocumentsInfos.Cyber_Token}
+            document={DocumentPageText.Cyber_Token}
             imgComponent={<CybrScroll botbanned={data.botBanned} />}
             key="Cyber_Token"
             commingSoonText=""
@@ -72,25 +95,25 @@ function DocumentsScreen({
             last={false}
           />
           <DocumentItem
-            document={DocumentsInfos.Project_Run}
+            document={DocumentPageText.Project_Run}
             imgComponent={<Run />}
             key="Project Run"
-            commingSoonText="Introduction Article: "
+            commingSoonText={GlobalDocumentText.Introduction_Article_Medium}
             commingSoonText2="Medium"
             commingSoon={true}
             last={false}
           />
           <DocumentItem
-            document={DocumentsInfos.Project_Home}
+            document={DocumentPageText.Project_Home}
             imgComponent={<ProjectHome />}
             key="Project_Home"
-            commingSoonText="Introduction coming in July"
+            commingSoonText={GlobalDocumentText.Introduction_coming}
             commingSoonText2=""
             commingSoon={true}
             last={false}
           />
           <DocumentItem
-            document={DocumentsInfos.Cyber_Creditors_Token}
+            document={DocumentPageText.Cyber_Creditors_Token}
             imgComponent={<CreditCard supply={data.circulatingSupply} />}
             key="Cyber_Creditors_Token"
             commingSoonText=""
@@ -99,7 +122,7 @@ function DocumentsScreen({
             last={false}
           />
           <DocumentItem
-            document={DocumentsInfos.Cyber_Inu}
+            document={DocumentPageText.Cyber_Inu}
             imgComponent={<CybrInu />}
             commingSoonText=""
             commingSoonText2=""
@@ -113,16 +136,16 @@ function DocumentsScreen({
       <div className="doc_team">
         <div className="doc_team_thanks">
           <div className="doc_title align_left">
-            {DocumentsInfos.special_thanks.title}
+            {DocumentPageText.special_thanks.title}
           </div>
           <div className="doc_thanks_text">
-            {DocumentsInfos.special_thanks.content}
+            {DocumentPageText.special_thanks.content}
           </div>
           <div className="doc_thanks_list">
             <div className="list_names">
               <div className="name_title">
                 <div className="name_title_text">
-                  {DocumentsInfos.special_thanks.name}
+                  {DocumentPageText.special_thanks.name}
                 </div>
               </div>
 
@@ -137,39 +160,39 @@ function DocumentsScreen({
             <div className="list_languages">
               <div className="language_title">
                 <div className="language_title_text">
-                  {DocumentsInfos.special_thanks.language}
+                  {DocumentPageText.special_thanks.language}
                 </div>
               </div>
 
               <div className="thanks_language_el">
-                {DocumentsInfos.special_thanks.french}
+                {DocumentPageText.special_thanks.french}
               </div>
 
               <div className="thanks_language_el">
-                {DocumentsInfos.special_thanks.arabic}
+                {DocumentPageText.special_thanks.arabic}
               </div>
               <div className="thanks_language_el">
-                {DocumentsInfos.special_thanks.dutch}
-              </div>
-
-              <div className="thanks_language_el">
-                {DocumentsInfos.special_thanks.spanish}
+                {DocumentPageText.special_thanks.dutch}
               </div>
 
               <div className="thanks_language_el">
-                {DocumentsInfos.special_thanks.italic}
+                {DocumentPageText.special_thanks.spanish}
+              </div>
+
+              <div className="thanks_language_el">
+                {DocumentPageText.special_thanks.italic}
               </div>
               <div className="thanks_language_el">
-                {DocumentsInfos.special_thanks.italic}
+                {DocumentPageText.special_thanks.italic}
               </div>
             </div>
           </div>
         </div>
 
         <div className="doc_team_form">
-          <div className="doc_title">Join our Team!</div>
+          <div className="doc_title">{DocumentPageText.Join_team.title}</div>
           <div className="doc_team_text">
-            {DocumentsInfos.Join_team.content_first}
+            {DocumentPageText.Join_team.content_first}
             <a
               href="https://discordapp.com/users/810141997448822824/"
               target="_blank"
@@ -177,7 +200,7 @@ function DocumentsScreen({
             >
               I Love Gas
             </a>
-            {DocumentsInfos.Join_team.content_second}
+            {DocumentPageText.Join_team.content_second}
             <a
               href="https://discordapp.com/users/822974650082394118/"
               target="_blank"
@@ -185,11 +208,11 @@ function DocumentsScreen({
             >
               Marzopiens
             </a>
-            {DocumentsInfos.Join_team.content_third}
+            {DocumentPageText.Join_team.content_third}
           </div>
 
           <div className="filler_text_mob">
-            {DocumentsInfos.Join_team.content_filler}
+            {DocumentPageText.Join_team.content_filler}
           </div>
 
           <div className="filler">
@@ -228,7 +251,7 @@ function DocumentsScreen({
               </div>
             </div>
             <div className="filler_text">
-              {DocumentsInfos.Join_team.content_filler}
+              {DocumentPageText.Join_team.content_filler}
             </div>
             <div className="second_image">
               <div className="filler_contact">

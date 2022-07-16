@@ -155,8 +155,11 @@ div.fixed_top {
       span.soon {
         position: absolute;
         bottom: 16px;
-        left: 190px;
+        left: 140px;
         color: black;
+      }
+      span.spanishSoon {
+        left: 140px !important;
       }
     }
     div.disabledhref {

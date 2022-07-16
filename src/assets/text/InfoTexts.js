@@ -17,7 +17,8 @@ export const RoadmapInfos = {
     Completed_Tasks: [
       {
         task_1: "T3: Project Run Introduction",
-        task_2: "T1: ENS for Project Wallets",
+        task_2: "T2: Spanish Web Translations",
+        task_3: "T1: ENS for Project Wallets",
       },
     ],
     In_Progress: [
@@ -25,11 +26,10 @@ export const RoadmapInfos = {
         task_1: "T3: Art Page Web Update",
         task_2: "T3: Project Run Teaser Video",
         task_3: "T3: Project Run Overview Video",
-        task_4: "T2: Spanish Web Translations",
-        task_5: "T2: Dutch Web Translations",
-        task_6: "T2: Arabic Web Translations",
-        task_7: "T2: Italian Web Translations",
-        task_8: "T2: Peer to Peer Advertising ",
+        task_4: "T2: Dutch Web Translations",
+        task_5: "T2: Arabic Web Translations",
+        task_6: "T2: Italian Web Translations",
+        task_7: "T2: Peer to Peer Advertising ",
       },
     ],
     Planning_Phase: [
@@ -157,6 +157,7 @@ export const CalculatorInfos = {
     million: "million",
     thousand: "thousand",
     billion: "bilion",
+    milliones: " millones",
   },
   calculator_text: {
     text: "What is your entry point? - Is that bag big enough? - Got an exit strategy?",
@@ -405,6 +406,16 @@ export const PressReleaseInfos = {
   sections: {
     documents: [
       {
+        title: "Project Run - Introduction",
+        release_date: "Release Date:",
+        date: "July 1st, 2022",
+        read_time: "Read Time: 4 minutes",
+        box_color: "Green",
+        link: "https://thecyberenterprise.medium.com/project-run-introduction-37fac1374c47",
+        content:
+          "The final initiative within the Quarter 2 roadmap was the introduction to the Project Run initiative and that is what this article is all about. A brief insight within this article reveals that Project Run is in fact a game that has been in development and is the first game that will be present within the Cyber Enterprise ecosystem. Within the article, you will find how the game is a stepping stone for other initiatives as well as sneak peeks of some of the game art that will be present. Please note that the designs are subject to change.",
+      },
+      {
         title: "Website Sneak Peek: Calculator Page",
         release_date: "Release Date:",
         date: "May 2nd, 2022",
@@ -571,6 +582,10 @@ export const PressReleaseInfos = {
         },
       ],
     },
+  },
+  global: {
+    next: "next",
+    perv: "prev",
   },
 };
 
@@ -1225,5 +1240,58 @@ export const HighlightedTextSVG = {
     btn_text2: "Get informed",
     content:
       "My friends went to go find them, but I haven't heard from them yet. But stick with me, and I'll keep you updated. You can help DeFine our Future!",
+  },
+};
+
+export const Globaltext = {
+  Header: {
+    soon: "soon",
+  },
+  Cybr_token_info: {
+    Price_in_ETH: "Price in ETH:",
+    Price_in_USD: "Price in USD:",
+    Last_24h_Change: "Last 24h Change:",
+    Total_Liquidity: "Total Liquidity:",
+    Holders: "Holders:",
+    Pooled_Eth: "Pooled Eth:",
+    Pooled_CYBR: "Pooled CYBR:",
+    Circulating_Supply: "Circulating Supply:",
+    Burned_CYBR: "Burned CYBR:",
+    Total_Transactions: "Total Transactions:",
+    Donations_Received: "Donations Received:",
+    Donations_Spent: "Donations Spent:",
+    Donations_Available: "Donations Available:",
+  },
+  Menu: {
+    title: "Menu",
+    Home: "Home",
+    Team: "Team",
+    RoadMap: "RoadMap",
+    Calculator: "Calculator",
+    Documents: "Documents",
+    Press_Release: "Press Release",
+  },
+  Home_Page: {
+    Contract_Address: "Contract Address",
+    copy_address: "copy address",
+    view_on_etherscan: "view on etherscan",
+    Max_Supply: "Max Supply",
+    Circulating_Tokens: "Circulating Tokens",
+    Burned_Tokens: "Burned Tokens",
+    Pooled_Tokens: "Pooled Tokens",
+    Uni_V3_Locked_LP: "Uni V3 Locked LP",
+    UniCrypt_V3_Locking: "UniCrypt V3 Locking",
+    Currently_in_Development: "Currently in Development ",
+    Received_Donations: "Received Donations",
+  },
+  Documents_Page: {
+    Introduction_Article_Medium: "Introduction_Article",
+    Introduction_coming: "Introduction coming in July",
+    Coming_Soon: "Coming Soon...",
+    Max_Supply: "Max Supply",
+  },
+  Team_Page: {
+    Name: "Name",
+    Position: "Position",
   },
 };

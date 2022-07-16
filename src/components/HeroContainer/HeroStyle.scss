@@ -1894,3 +1894,13 @@ div.hero_mobile {
     width: 100%;
   }
 }
+@media only screen and (max-width: 400px) {
+  div.hero_mobile
+    div.mobile_text
+    div.mob_speech
+    div.mob_fade_background
+    div.mob_visible_text
+    p {
+    text-align: left !important;
+  }
+}

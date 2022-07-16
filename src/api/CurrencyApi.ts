@@ -45,7 +45,7 @@ export const getcurrency = async (): Promise<string> => {
   return JSON.stringify(document);
 };
 
-export const getTokensInfo = async (): Promise<[]> => {
+export const getTokensInfo = async (language): Promise<[]> => {
   try {
     const options = {
       method: "GET",
@@ -54,11 +54,13 @@ export const getTokensInfo = async (): Promise<[]> => {
     const response = await axios.request(options);
 
     let tokens_data: any = [];
+
     response.data.map((tokenInfo: any, index: number) => {
-      let formattedMarketCap = new Intl.NumberFormat("en", {
+      let formattedMarketCap = new Intl.NumberFormat(language, {
         notation: "compact",
         compactDisplay: "long",
       }).format(tokenInfo.market_cap);
+
       tokens_data[index] = {
         title: tokenInfo.name,
         formattedMarketCap: formattedMarketCap,

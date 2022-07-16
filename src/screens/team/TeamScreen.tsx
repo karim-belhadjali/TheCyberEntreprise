@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   animateRowEnter,
   animateRowLeave,
@@ -6,59 +6,76 @@ import {
   SocialAnimations,
 } from "src/animations/team";
 import { useParams } from "react-router-dom";
+import * as EnglishText from "src/assets/text/InfoTexts";
+import * as SpanishText from "src/assets/text/SpanishJSFile";
 
-import { TeamPageInfos } from "src/assets/text/InfoTexts";
 import InfoBox from "src/components/info-box/InfoBoxComponent";
 import TeamMember from "src/components/lists/team_member_item/TeamMemberItemComponent";
 
 import "./TeamScreenStyle.scss";
-import { handleLanguage, handleUrlLanguage } from "src/utility/globalUtlities";
+import { handleUrlLanguages } from "src/utility/globalUtlities";
 
 function TeamScreen({
   language,
   urlLanguages,
+  setcurrentScreen,
 }: {
   language: any;
   urlLanguages: any;
+  setcurrentScreen: any;
 }) {
-  const teamPageText = TeamPageInfos;
-  const timezone = teamPageText.UTC;
-  const interactions = teamPageText.interactions;
+  setcurrentScreen("team");
+  const [teamPageText, setteamPageText] = useState(EnglishText);
+  const timezone = teamPageText.TeamPageInfos.UTC;
+  const interactions = teamPageText.TeamPageInfos.interactions;
   var relationContainerIndex = -1;
   const membersNames = ["0xmedia", "Vito Luciano", "DTrain", "Imtellingmum"];
   const positionNames = ["Marketing", "Expansion", "Twitter", "HR"];
   const { urlLanguage } = useParams();
-  const selectedLanguage = handleUrlLanguage(urlLanguage);
+  const selectedLanguage = handleUrlLanguages(urlLanguage);
 
   useEffect(() => {
     SocialAnimations();
     personContactAnimation();
-    urlLanguages(selectedLanguage);
-  }, [urlLanguages, selectedLanguage]);
+    if (selectedLanguage !== language) {
+      urlLanguages(selectedLanguage);
+    }
+  }, [selectedLanguage]);
+
+  useEffect(() => {
+    if (language === "English") {
+      setteamPageText(EnglishText);
+    } else if (language === "Spanish") {
+      setteamPageText(SpanishText);
+    }
+  }, [teamPageText, language]);
+
   return (
     <div>
       <div className="team">
         <div className="team_container">
-          <div className="team_title">Team</div>
+          <div className="team_title">{teamPageText.TeamPageInfos.title}</div>
 
-          {teamPageText.sections.map((section, index) => {
+          {teamPageText.TeamPageInfos.sections.map((section, index) => {
             return (
               <div className="team_cat">
                 <div className="team_cat_title strategical_op">
                   {section.title}
                 </div>
-                {teamPageText.sections[index].members.map((member) => {
-                  relationContainerIndex++;
-                  return (
-                    <TeamMember
-                      member={member}
-                      utc={timezone}
-                      interactions={interactions}
-                      index={relationContainerIndex}
-                      key={member.name}
-                    />
-                  );
-                })}
+                {teamPageText.TeamPageInfos.sections[index].members.map(
+                  (member) => {
+                    relationContainerIndex++;
+                    return (
+                      <TeamMember
+                        member={member}
+                        utc={timezone}
+                        interactions={interactions}
+                        index={relationContainerIndex}
+                        key={member.name}
+                      />
+                    );
+                  }
+                )}
               </div>
             );
           })}
@@ -68,13 +85,17 @@ function TeamScreen({
       <div className="team_p">
         <div className="team_p_thanks">
           <div className="doc_title align_left">
-            {teamPageText.mentions.title}
+            {teamPageText.TeamPageInfos.mentions.title}
           </div>
-          <div className="doc_thanks_text">{teamPageText.mentions.content}</div>
+          <div className="doc_thanks_text">
+            {teamPageText.TeamPageInfos.mentions.content}
+          </div>
           <div className="doc_thanks_list">
             <div className="list_names">
               <div className="name_title">
-                <div className="name_title_text">Name</div>
+                <div className="name_title_text">
+                  {teamPageText.Globaltext.Team_Page.Name}
+                </div>
               </div>
               {membersNames.map((value: string, position) => {
                 return (
@@ -91,7 +112,9 @@ function TeamScreen({
             </div>
             <div className="list_languages">
               <div className="language_title">
-                <div className="language_title_text">Position</div>
+                <div className="language_title_text">
+                  {teamPageText.Globaltext.Team_Page.Position}
+                </div>
               </div>
               {positionNames.map((value, position) => {
                 return (
@@ -110,13 +133,15 @@ function TeamScreen({
         </div>
 
         <div className="team_p_form">
-          <div className="doc_title">{teamPageText.Join_team.title}</div>
+          <div className="doc_title">
+            {teamPageText.TeamPageInfos.Join_team.title}
+          </div>
           <div className="team_p_text">
-            <p>{teamPageText.Join_team.content_first}</p>
+            <p>{teamPageText.TeamPageInfos.Join_team.content_first}</p>
           </div>
 
           <div className="filler_text_mob">
-            {teamPageText.Join_team.content_filler}
+            {teamPageText.TeamPageInfos.Join_team.content_filler}
           </div>
 
           <div className="filler">
@@ -129,7 +154,10 @@ function TeamScreen({
               />
               <div className="filler_contact">
                 <a
-                  href={teamPageText.sections[1].members[0].discord_link}
+                  href={
+                    teamPageText.TeamPageInfos.sections[1].members[0]
+                      .discord_link
+                  }
                   className="discord"
                   target="_blank"
                   rel="nofollow noindex noreferrer noopener"
@@ -137,7 +165,10 @@ function TeamScreen({
                   Discord
                 </a>
                 <a
-                  href={teamPageText.sections[1].members[0].telegram_link}
+                  href={
+                    teamPageText.TeamPageInfos.sections[1].members[0]
+                      .telegram_link
+                  }
                   className="telegram"
                   target="_blank"
                   rel="nofollow noindex noreferrer noopener"
@@ -147,12 +178,15 @@ function TeamScreen({
               </div>
             </div>
             <div className="filler_text">
-              {teamPageText.Join_team.content_filler}
+              {teamPageText.TeamPageInfos.Join_team.content_filler}
             </div>
             <div className="second_image">
               <div className="filler_contact">
                 <a
-                  href={teamPageText.sections[1].members[1].discord_link}
+                  href={
+                    teamPageText.TeamPageInfos.sections[1].members[1]
+                      .discord_link
+                  }
                   className="discord"
                   target="_blank"
                   rel="nofollow noindex noreferrer noopener"
@@ -160,7 +194,10 @@ function TeamScreen({
                   Discord
                 </a>
                 <a
-                  href={teamPageText.sections[1].members[1].telegram_link}
+                  href={
+                    teamPageText.TeamPageInfos.sections[1].members[1]
+                      .telegram_link
+                  }
                   className="telegram"
                   target="_blank"
                   rel="nofollow noindex noreferrer noopener"
@@ -168,7 +205,10 @@ function TeamScreen({
                   Telegram
                 </a>
                 <a
-                  href={teamPageText.sections[1].members[1].twitter_link}
+                  href={
+                    teamPageText.TeamPageInfos.sections[1].members[1]
+                      .twitter_link
+                  }
                   className="twitter"
                   target="_blank"
                   rel="nofollow noindex noreferrer noopener"
@@ -187,8 +227,8 @@ function TeamScreen({
         </div>
       </div>
       <InfoBox
-        info={teamPageText.information}
-        title={teamPageText.information.title}
+        info={teamPageText.TeamPageInfos.information}
+        title={teamPageText.TeamPageInfos.information.title}
         last={true}
       />
     </div>

@@ -12,29 +12,24 @@ import {
   removeHover,
   showElement,
 } from "src/animations/calculator";
+
 import { getcurrency, getTokensInfo } from "src/api/CurrencyApi";
-import { CalculatorInfos } from "src/assets/text/InfoTexts";
 import InfoBox from "src/components/info-box/InfoBoxComponent";
 import { mockedCurrencies, mockedTokens } from "src/data/CybrApidData";
 import { lastTimeUpdated } from "src/utility/date";
 import { useParams } from "react-router-dom";
-import { handleUrlLanguage } from "src/utility/globalUtlities";
+import { handleUrlLanguages } from "src/utility/globalUtlities";
 import "./CalculatorScreenStyle.scss";
 
 // const InfoBox = lazy(() => import("src/components/info-box/InfoBoxComponent"));
 const renderLoader = () => <p>Loading</p>;
 
-function CalculatorScreen({
-  data,
-  language,
-  urlLanguages,
-}: {
-  data: any;
-  language: any;
-  urlLanguages: any;
-}) {
+function CalculatorScreen(props) {
+  props.setcurrentScreen("calc");
+  //const [props.CalcPageText, setCalcPageText] = useState(EnglishText.CalculatorInfos);
+
   const { urlLanguage } = useParams();
-  const selectedLanguage = handleUrlLanguage(urlLanguage);
+  const selectedLanguage = handleUrlLanguages(urlLanguage);
 
   const quick_line_1_ref = useRef<any>();
   const quick_line_2_ref = useRef<any>();
@@ -80,6 +75,7 @@ function CalculatorScreen({
   const target_token_price_ref = useRef<any>();
   const target_marketcap_ref = useRef<any>();
   const current_currency_ref = useRef<any>();
+  const visible_text = useRef<any>();
 
   const [hidenCurrencyState, sethidenCurrencyState] = useState<Boolean>(true);
   const [hidenTokenState, sethidenTokenState] = useState<Boolean>(true);
@@ -107,8 +103,8 @@ function CalculatorScreen({
   const [currencies, setcurrencies] = useState({});
   const [tokens, settokens] = useState<any>(mockedTokens);
 
-  const cybrPrice = data.usdPrice;
-  const cybrSuply = data.circulatingSupply;
+  const cybrPrice = props.data.usdPrice;
+  const cybrSuply = props.data.circulatingSupply;
 
   const handleTokenClassNames = (base: string, index: number): string => {
     let newIndex = index + 1;
@@ -466,8 +462,8 @@ function CalculatorScreen({
     setcurrencies(JSON.parse(localStorage.getItem("currencies")!!));
   };
 
-  const getTokensData = async () => {
-    const tokensData = await getTokensInfo();
+  const getTokensData = async (language: string) => {
+    const tokensData = await getTokensInfo(language);
     if (tokensData.length !== 0) {
       settokens(tokensData);
     }
@@ -475,16 +471,15 @@ function CalculatorScreen({
 
   useEffect(() => {
     calculatorAnimation();
+
     localStorage.setItem("currencies", JSON.stringify(mockedCurrencies));
     setcurrencies(JSON.parse(localStorage.getItem("currencies")!!));
-
     if (
       localStorage.getItem("currencies") === null ||
       lastTimeUpdated(localStorage.getItem("last_time_updated")!!)
     ) {
       getCurrenciesData();
     }
-    getTokensData();
   }, []);
 
   useEffect(() => {
@@ -492,14 +487,26 @@ function CalculatorScreen({
     handleTargetMarketCap(target_marketcap_ref.current.value);
     handleEstimatedValue(amount_tokens_ref.current.value);
   }, [currency]);
+
   useEffect(() => {
     handleAmountCurrency(amount_currency_ref.current.value);
     handleTargetMarketCap(target_marketcap_ref.current.value);
     handleEstimatedValue(amount_tokens_ref.current.value);
   }, [token]);
+
   useEffect(() => {
-    urlLanguages(selectedLanguage);
-  }, [urlLanguages, selectedLanguage]);
+    if (selectedLanguage !== props.language) {
+      props.urlLanguages(selectedLanguage);
+    }
+  }, [selectedLanguage]);
+
+  useEffect(() => {
+    if (props.language === "English") {
+      getTokensData("en");
+    } else if (props.language === "Spanish") {
+      getTokensData("es");
+    }
+  }, [props.language]);
 
   return (
     <div>
@@ -528,10 +535,9 @@ function CalculatorScreen({
                   />
 
                   <div className="calc_text">
-                    <div className="visible_text"></div>
+                    <div className="visible_text" ref={visible_text}></div>
                     <div className="hidden_text">
-                      What is your entry point? - Is that bag big enough? - Got
-                      an exit strategy?
+                      {props.CalcPageText.calculator_text.text}
                     </div>
                   </div>
 
@@ -1031,14 +1037,16 @@ function CalculatorScreen({
               </div>
             </div>
             <div className="calculator_form">
-              <div className="calc_title">CyberNation Calculator</div>
+              <div className="calc_title">
+                {props.CalcPageText.calculator_form.title}
+              </div>
               <div className="calc_buttons">
                 <div
                   className="continue_button"
                   onClick={handleCurrencyVisibilty}
                 >
                   <span className="btn_text_scene_intro noselect">
-                    Select Your Currency
+                    {props.CalcPageText.calculator_form.select_currency}
                   </span>
                 </div>
 
@@ -1047,7 +1055,7 @@ function CalculatorScreen({
                   onClick={handleTokenVisibilty}
                 >
                   <span className="btn_text_scene_intro">
-                    Select Your Token
+                    {props.CalcPageText.calculator_form.select_currency}
                   </span>
                 </div>
               </div>
@@ -1055,7 +1063,9 @@ function CalculatorScreen({
               <div className="calc_box">
                 <div className="double_field no_top_margin">
                   <div className="half_field">
-                    <div className="input_text">Amount in Currency</div>
+                    <div className="input_text">
+                      {props.CalcPageText.calculator_form.ammount_currency}
+                    </div>
                     <div className="input_holder">
                       <input
                         type="text"
@@ -1067,7 +1077,7 @@ function CalculatorScreen({
                       />
 
                       <label htmlFor="amount_currency">
-                        Amount in Currency
+                        {props.CalcPageText.calculator_form.ammount_currency}
                       </label>
                       <span className="token_name" ref={current_currency_ref}>
                         {currency}
@@ -1078,7 +1088,9 @@ function CalculatorScreen({
                   <div className="or_field">OR</div>
 
                   <div className="half_field">
-                    <div className="input_text">Amount in Tokens</div>
+                    <div className="input_text">
+                      {props.CalcPageText.calculator_form.ammount_token}
+                    </div>
                     <div className="input_holder">
                       <input
                         type="text"
@@ -1088,7 +1100,9 @@ function CalculatorScreen({
                           handleAmountInTokens(event.target.value)
                         }
                       />
-                      <label htmlFor="amount_tokens">Amount in Tokens</label>
+                      <label htmlFor="amount_tokens">
+                        {props.CalcPageText.calculator_form.ammount_token}
+                      </label>
                       <span className="token_name">{token}</span>
                     </div>
                   </div>
@@ -1096,7 +1110,9 @@ function CalculatorScreen({
 
                 <div className="double_field">
                   <div className="half_field">
-                    <div className="input_text">Target Token Marketcap</div>
+                    <div className="input_text">
+                      {props.CalcPageText.calculator_form.target_token_cap}
+                    </div>
                     <div className="input_holder">
                       <input
                         type="text"
@@ -1108,7 +1124,7 @@ function CalculatorScreen({
                       />
 
                       <label htmlFor="target_marketcap">
-                        Target Token Marketcap
+                        {props.CalcPageText.calculator_form.target_token_cap}
                       </label>
                       <span className="token_name">{currency}</span>
                     </div>
@@ -1117,7 +1133,9 @@ function CalculatorScreen({
                   <div className="or_field">OR</div>
 
                   <div className="half_field">
-                    <div className="input_text">Target Token Price</div>
+                    <div className="input_text">
+                      {props.CalcPageText.calculator_form.target_token_price}
+                    </div>
                     <div className="input_holder">
                       <input
                         type="text"
@@ -1129,7 +1147,7 @@ function CalculatorScreen({
                       />
 
                       <label htmlFor="target_token_price">
-                        Target Token Price
+                        {props.CalcPageText.calculator_form.target_token_price}
                       </label>
                       <span className="token_name">{currency}</span>
                     </div>
@@ -1137,7 +1155,9 @@ function CalculatorScreen({
                 </div>
 
                 <div className="estimated_container">
-                  <div className="estimated_text">Estimated Value</div>
+                  <div className="estimated_text">
+                    {props.CalcPageText.calculator_form.estimated_value}
+                  </div>
                   <div className="estimated_number">
                     {estimatedValue} {currency}
                   </div>
@@ -1244,13 +1264,17 @@ function CalculatorScreen({
 
           <div className="calc_second">
             <div className="calc_stats">
-              <div className="calc_tittle">Quick Estimates</div>
+              <div className="calc_tittle">
+                {props.CalcPageText.calculator_form.quick_estimates}
+              </div>
               <div className="horizontal_sep"></div>
 
               <div className="calc_stats_container">
                 <div className="calc_stats_first calc_stats_border">
                   <div className="calc_subtitle">
-                    <span className="text">MarketCap</span>
+                    <span className="text">
+                      {props.CalcPageText.calculator_form.quick_estimates}
+                    </span>
                     <span className="currency">{currency}</span>
                   </div>
 
@@ -1271,7 +1295,7 @@ function CalculatorScreen({
                     }
                   >
                     <span className="color_boxes color_box_green"></span> 500
-                    Thousand
+                    {props.CalcPageText.calculator_form.thousand}
                   </div>
                   <div
                     className="calc_stats_value quick_line_2"
@@ -1290,7 +1314,7 @@ function CalculatorScreen({
                     }
                   >
                     <span className="color_boxes color_box_yellow"></span> 1
-                    Million
+                    {props.CalcPageText.calculator_form.million}
                   </div>
                   <div
                     className="calc_stats_value quick_line_3"
@@ -1309,7 +1333,7 @@ function CalculatorScreen({
                     }
                   >
                     <span className="color_boxes color_box_red"></span> 2.5
-                    Million
+                    {props.CalcPageText.calculator_form.milliones}
                   </div>
                   <div
                     className="calc_stats_value quick_line_4"
@@ -1328,7 +1352,7 @@ function CalculatorScreen({
                     }
                   >
                     <span className="color_boxes color_box_red"></span> 5
-                    Million
+                    {props.CalcPageText.calculator_form.milliones}
                   </div>
                   <div
                     className="calc_stats_value quick_line_5"
@@ -1347,13 +1371,15 @@ function CalculatorScreen({
                     }
                   >
                     <span className="color_boxes color_box_red"></span> 10
-                    Million
+                    {props.CalcPageText.calculator_form.milliones}
                   </div>
                 </div>
 
                 <div className="calc_stats_third">
                   <div className="calc_subtitle">
-                    <span className="text">User Value</span>
+                    <span className="text">
+                      {props.CalcPageText.calculator_form.user_value}
+                    </span>
                     <span className="currency">{currency}</span>
                   </div>
 
@@ -1452,13 +1478,18 @@ function CalculatorScreen({
             </div>
 
             <div className="calc_stats calc_stats_3">
-              <div className="calc_tittle">Quick Comparisons</div>
+              <div className="calc_tittle">
+                {" "}
+                {props.CalcPageText.calculator_form.quick_comparisons}
+              </div>
               <div className="horizontal_sep"></div>
 
               <div className="calc_stats_container">
                 <div className="calc_stats_project">
                   <div className="calc_subtitle extra_padding">
-                    <span className="simple_text">Token</span>
+                    <span className="simple_text">
+                      {props.CalcPageText.calculator_form.token}
+                    </span>
                   </div>
                   {tokens.map((token: any, index: number) => {
                     return (
@@ -1477,7 +1508,9 @@ function CalculatorScreen({
 
                 <div className="calc_stats_first calc_stats_border">
                   <div className="calc_subtitle">
-                    <span className="text">MarketCap</span>
+                    <span className="text">
+                      {props.CalcPageText.calculator_form.market_cap}
+                    </span>
                     <span className="currency">{currency}</span>
                   </div>
                   {tokens.map((token: any, index: number) => {
@@ -1496,7 +1529,9 @@ function CalculatorScreen({
 
                 <div className="calc_stats_third">
                   <div className="calc_subtitle">
-                    <span className="text">User Value</span>
+                    <span className="text">
+                      {props.CalcPageText.calculator_form.user_value}
+                    </span>
                     <span className="currency">{currency}</span>
                   </div>
 
@@ -1521,7 +1556,11 @@ function CalculatorScreen({
           </div>
         </div>
       </div>
-      <InfoBox title="Guide" info={CalculatorInfos.information} last={true} />
+      <InfoBox
+        title="Guide"
+        info={props.CalcPageText.information}
+        last={true}
+      />
     </div>
   );
 }

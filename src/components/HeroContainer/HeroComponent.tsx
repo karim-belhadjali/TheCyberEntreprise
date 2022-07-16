@@ -11,12 +11,14 @@ import hero_bottom_svg from "../../assets/svg/top-mask-bar.svg";
 
 import "./HeroStyle.scss";
 
-function Hero() {
+function Hero(props) {
   const [width, setwidth] = useState<any>(document.body.clientWidth);
   const [height, setheight] = useState<any>(document.body.clientHeight);
   const hero_ref = useRef<any>();
-
-  const heroSceneText = HighlightedTextSVG;
+  var heroSceneText;
+  if (props.data) {
+    heroSceneText = props.data;
+  }
 
   const handleLinkclick = () => {
     window.scrollTo({

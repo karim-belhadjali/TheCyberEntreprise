@@ -5,25 +5,35 @@ import { useParams } from "react-router-dom";
 import { PressReleaseInfos } from "src/assets/text/InfoTexts";
 import InfoBox from "src/components/info-box/InfoBoxComponent";
 import PressItem from "src/components/lists/Press_item/PressItemComponent";
-import { handleUrlLanguage } from "src/utility/globalUtlities";
+import { handleUrlLanguages } from "src/utility/globalUtlities";
+import * as EnglishText from "src/assets/text/InfoTexts";
+import * as SpanishText from "src/assets/text/SpanishJSFile";
 
 import "./PressReleaseScreenStyle.scss";
 
 function PressRelease({
   language,
   urlLanguages,
+  setcurrentScreen,
   ...othersProps
 }: {
   language: any;
   urlLanguages: any;
+  setcurrentScreen: any;
 }) {
+  setcurrentScreen("press");
+
+  const [PressRelaseText, setPressRelaseText] = useState(
+    EnglishText.PressReleaseInfos
+  );
+
   const [currentPage, setcurrentPage] = useState<any>(1);
   const pressPerPage = 5;
-  const pressReleases = PressReleaseInfos.sections.documents;
+  const pressReleases = PressRelaseText.sections.documents;
 
   const { page } = useParams();
   const { urlLanguage } = useParams();
-  const selectedLanguage = handleUrlLanguage(urlLanguage);
+  const selectedLanguage = handleUrlLanguages(urlLanguage);
 
   let indexOfLastPress;
   let indexOfFirstPress;
@@ -97,17 +107,27 @@ function PressRelease({
   };
 
   useEffect(() => {
-    urlLanguages(selectedLanguage);
-  }, []);
+    if (selectedLanguage !== language) {
+      urlLanguages(selectedLanguage);
+    }
+  }, [selectedLanguage]);
+
+  useEffect(() => {
+    if (language === "English") {
+      setPressRelaseText(EnglishText.PressReleaseInfos);
+    } else if (language === "Spanish") {
+      setPressRelaseText(SpanishText.PressReleaseInfos);
+    }
+  }, [PressRelaseText, language]);
 
   return (
     <div>
       <div className="press_release">
         <div className="press_release_container">
-          <div className="pr_title">{PressReleaseInfos.title}</div>
+          <div className="pr_title">{PressRelaseText.title}</div>
           <div className="pagination_container">
             <div className={handlePrevClassName()} onClick={handleClickPrev}>
-              prev
+              {PressRelaseText.global.perv}
             </div>
             {pageNumbers.map((number) => {
               return (
@@ -122,7 +142,7 @@ function PressRelease({
               );
             })}
             <div className={handleNextClassName()} onClick={handleClickNext}>
-              next
+              {PressRelaseText.global.next}
             </div>
           </div>
           {currentPress.map((press, index) => {
@@ -130,7 +150,7 @@ function PressRelease({
           })}
           <div className="pagination_container">
             <div className={handlePrevClassName()} onClick={handleClickPrev}>
-              prev
+              {PressRelaseText.global.perv}
             </div>
             {pageNumbers.map((number) => {
               return (
@@ -145,14 +165,14 @@ function PressRelease({
               );
             })}
             <div className={handleNextClassName()} onClick={handleClickNext}>
-              next
+              {PressRelaseText.global.next}
             </div>
           </div>
         </div>
       </div>
       <InfoBox
         title=""
-        info={PressReleaseInfos.sections.information}
+        info={PressRelaseText.sections.information}
         last={true}
       />
     </div>
