@@ -25,7 +25,7 @@ export const getcurrency = async (): Promise<string> => {
         url: "https://api.apilayer.com/exchangerates_data/convert",
         params: { to: currency, from: "usd", amount: "1" },
         headers: {
-          apikey: "lo6q00YmwAxJkAnT3f9FebN8S5XhWZTO",
+          apikey: "",
         },
       };
       const response = await axios.request(options);
